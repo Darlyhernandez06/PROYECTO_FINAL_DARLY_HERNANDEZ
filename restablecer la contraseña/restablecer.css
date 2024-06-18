@@ -329,7 +329,7 @@ body {
 /*PARTE DE LA SEGUNDA SECCION LA INFROMACION DE MEGAPAQUETES*/
 
 .additional-info {
-    background-color: #99E89D; /* Color de fondo */
+    background-color: var(--color-primario); /* Color de fondo */
     padding: 20px; /* Padding */
     display: flex; /* Contenedor flexible */
     justify-content: center; /* Justificar contenido horizontalmente */

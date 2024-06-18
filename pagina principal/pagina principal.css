@@ -217,7 +217,6 @@ body {
     color: var(--color-fondo-principal); 
 }
 
-
 .contenedor__secundario {
     width: 90%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -264,13 +263,12 @@ body {
 .image__2{
     margin-top: -250px;
 }
-
 /*PARTE DE LA SEGUNDA SECCION DE LA PAGINA*/
 
 .segunda__seccion--contenedor {
     max-width: 100%;
     min-height: 50%;
-    background-color: #99E89D;
+    background-color: var(--color-primario);
     padding: 30px;
 }
   
@@ -278,6 +276,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap:200px;
 }
   
@@ -296,21 +295,21 @@ body {
   
 .texto__imagen1{
     text-align: center;
-    color: #000000;
+    color: var(--color-fondo-principal);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 40px;
 }
   
 .texto__imagen2{
     text-align: center;
-    color: #000000;
+    color: var(--color-fondo-principal);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 40px;
 }
   
 .texto__imagen3{
     text-align: center;
-    color: #000000;
+    color: var(--color-fondo-principal);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 40px;
 }
@@ -339,7 +338,6 @@ body {
   
 .contenedor__ofertas {
     background-image: url('../imagenes/fondo seccion 3.jpg'); /* Ruta a tu imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     padding: 30px; /* Espacio de relleno alrededor del contenido dentro del contenedor */
@@ -356,7 +354,7 @@ body {
   
 /*PARTE DE LA CUARTA SECCION DE LA PAGINA*/
 .contenedor__informacion {
-    background-color: #99E89D;
+    background-color: var(--color-primario);
     padding: 30px;
 }
   
@@ -367,11 +365,204 @@ body {
   
 .titulo__informacion{
     font-size: 64px;
-    margin-top: 30px;
+    margin-top: 50px;
   
 }
   
 .texto__informacion{
     font-size: 16px;
-    margin-top: 40px;
+    margin-top: 50px;
+}
+
+.boton-comprar__link {
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-texto-principal); /* Color de fondo principal */
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor apuntador */
+    border-radius: 15px; /* Radio del borde */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    box-sizing: border-box; /* Incluir el borde en el cálculo total del tamaño */
+    padding: 10px 20px; /* Añadir relleno dentro del botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinear el texto en el centro */
+    margin: 0 auto; /* Centrar el botón horizontalmente */
+    margin-top: 50px;
+}
+
+.boton-comprar__link:hover {
+    background-color: var(--color-acento-1); 
+    color: var(--color-fondo-principal); 
+}
+
+.boton-comprar__link:active {
+    background-color: var(--color-secundario); 
+    color: var(--color-fondo-principal); 
+}
+
+/*PARTE DE LA QUINTA SECCION DE LA PAGINA*/
+
+.contenedor__opiniones {
+    background-image: url('../imagenes/fondo de opiniones.jpg'); /* Ruta a tu imagen de fondo */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    padding: 30px; /* Espacio de relleno alrededor del contenido dentro del contenedor */
+}
+.informacion__parrafos--opiniones{
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+  
+.titulo__opiniones{
+    font-size: 64px;
+    margin-top: 30px;
+}
+
+/*PARTE DE LA SECCION LA INFROMACION DE MEGAPAQUETES*/
+
+.additional-info {
+    background-color: var(--color-primario); /* Color de fondo */
+    padding: 20px; /* Padding */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Justificar contenido horizontalmente */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    min-height: 100vh; /* Altura mínima de la vista */
+}
+
+/* Estilos para el contenido principal */
+.additional-info__main {
+    display: grid; /* Contenedor de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    grid-auto-rows: minmax(100px, auto); /* Altura mínima 100px, tamaño automático */
+    gap: 20px; /* Espacio entre columnas y filas */
+    padding: 20px; /* Padding */
+}
+
+.additional-info__secondary {
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.additional-info__title {
+    flex: 1; /* Flexibilidad */
+}
+
+.additional-info__subtitle {
+    font-size: 14px; /* Tamaño de la fuente */
+    color: var(--color-fondo-principal); /* Color de texto */
+}
+
+.additional-info__logo img {
+    max-width: 60px; /* Ancho máximo */
+    height: auto; /* Altura automática */
+}
+
+.additional-info__image img {
+    max-width: 100%; /* Ancho máximo */
+    display: block; /* Bloque de visualización */
+    border-radius: 10px; /* Radio del borde */
+}
+
+.additional-info__image {
+    grid-column: 1; /* Columna 1 */
+    grid-row: 2; /* Fila 2 */
+}
+
+.additional-info__nav-list {
+    grid-column: 3; /* Columna 3 */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.additional-info__store-info {
+    grid-column: 3; /* Columna 3 */
+    margin-top: 30px; /* Margen superior */
+}
+
+.additional-info__nav-item {
+    margin-bottom: 10px; /* Margen inferior */
+    color: var(--color-fondo-principal); /* Color de texto */
+}
+
+.additional-info__heading {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 18px; /* Tamaño de la fuente */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.additional-info__contact {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Dirección de columna */
+    align-items: start; /* Alinear elementos a la izquierda */
+    text-align: center; /* Alinear texto al centro */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.additional-info__contact-item {
+    color: var(--color-fondo-principal); /* Color de texto */
+    margin-bottom: 5px; /* Margen inferior */
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alinear elementos al centro */
+}
+
+.additional-info__contact-item img {
+    margin-right: 10px; /* Margen derecho */
+}
+
+.additional-info__text_1 {
+    background-color: var(--color-terciario); /* Color de fondo */
+    width: 73%; /* Ancho */
+    border-radius: 10px; /* Radio del borde */
+    padding: var(--paddin-button); /* Padding */
+    color: var(--color-texto-principal); /* Color de texto */
+    text-align: start; /* Alinear texto a la izquierda */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    font-size: 17px; /* Tamaño de la fuente */
+}
+
+.additional-info__social {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Dirección de columna */
+}
+
+.additional-info__heading {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+.additional-info__text {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.additional-info__social-icons {
+    display: flex; /* Contenedor flexible */
+    flex-direction: row; /* Dirección de fila */
+    margin-left: -13px; /* Margen izquierdo negativo */
+}
+
+.additional-info__social-icon {
+    width: 70px; /* Ancho */
+    height: auto; /* Altura automática */
+    cursor: pointer; /* Cursor apuntador */
+    margin-right: -10px; /* Margen derecho negativo */
+}
+
+/* ESTILOS PARA EL PIE DE PAGINA*/
+.footer {
+    height: 140px; /* Altura */
+    background: url('../imagenes/footer.png') no-repeat; /* Imagen de fondo */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Justificar contenido horizontalmente */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+}
+
+.footer__parrafo {
+    text-align: center; /* Alinear texto al centro */
+    font-weight: bold; /* Peso de la fuente */
 }
