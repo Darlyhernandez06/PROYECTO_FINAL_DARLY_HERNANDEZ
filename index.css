@@ -1,7 +1,7 @@
 /* Definición de la fuente personalizada */
 @font-face {
     font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
-    src: url('../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+    src: url('imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
 }
 
 /* Estilos globales para todos los elementos */
@@ -28,7 +28,7 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../imagenes/fondo de ingresar.png'); /* Imagen de fondo */
+    background: url('imagenes/fondo de ingresar.png'); /* Imagen de fondo */
     background-repeat: no-repeat;             /* No repetir el fondo */
     font-family: 'MiFuente';                  /* Fuente personalizada */
 }
@@ -532,7 +532,7 @@ input:active {
 /* ESTILOS PARA EL PIE DE PAGINA*/
 .footer {
     height: 140px; /* Altura */
-    background: url('../imagenes/footer.png') no-repeat; /* Imagen de fondo */
+    background: url('imagenes/footer.png') no-repeat; /* Imagen de fondo */
     display: flex; /* Contenedor flexible */
     justify-content: center; /* Justificar contenido horizontalmente */
     align-items: center; /* Alinear elementos al centro verticalmente */
