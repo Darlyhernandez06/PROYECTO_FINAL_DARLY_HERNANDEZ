@@ -28,20 +28,28 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('imagenes/fondo de ingresar.png'); /* Imagen de fondo */
-    background-repeat: no-repeat;             /* No repetir el fondo */
-    font-family: 'MiFuente';                  /* Fuente personalizada */
+    background: url('imagenes/fondoingresarindex.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+    font-family: 'MiFuente';        /* Fuente personalizada */
+    background-position: center;    /* Centra la imagen de fondo */
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/
 
 .navbar {
+    max-width: 100vw;
     display: flex;                          /* Mostrar como flexbox */
     align-items: center;                    /* Centrar elementos verticalmente */
     justify-content: space-between;         /* Espacio entre elementos */
     background-color: var(--color-primario); /* Color de fondo */
     padding: 18px 30px;                     /* Padding interno */
     flex-wrap: wrap;                        /* Permitir envolver elementos en pantalla pequeña */
+}
+
+.negrita {
+    font-weight: bold;  /* Define el texto en negrita */
+    font-size: 16px;    /* Establece el tamaño de la fuente a 16 píxeles */
 }
 
 .navbar__logo img {
@@ -71,7 +79,7 @@ body {
     font-weight: bold; /* Peso de la fuente */
 }
 
-.navbar__link:hover,
+.nav-link:hover,
 .menu__toggle:hover {
     color: var(--color-acento-1); /* Color al pasar el mouse */
 }
@@ -132,34 +140,34 @@ body {
     margin: 10px 0; /* Margen superior e inferior */
 }
 
+/* Estilos para el menú desplegable */
+
+li .dropdown-item:hover {
+    background-color: var(--color-primario);  /* Color de fondo al pasar el mouse */
+}
+
+li .dropdown-item:active {
+    background-color: var(--color-resaltado); /* Color de fondo al hacer clic */
+}
+
 /* Estilos para los botones */
-.button {
-    background-color: var(--color-texto-principal); /* Color de fondo */
-    color: var(--color-fondo-principal); /* Color de texto */
-    padding: 10px 20px; /* Padding del botón */
-    border-radius: 10px; /* Radio del borde */
-    text-align: center; /* Alinear texto al centro */
-    font-weight: bold; /* Peso de la fuente */
-    text-decoration: none; /* Sin decoración de texto */
-    margin: 0 10px; /* Margen horizontal */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cursor apuntador */
-}
 
-.button:hover {
+.btn.btn-light.button.d-flex.align-items-center:hover {
     background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+    border: none;                            /* Elimina el borde */
 }
 
-.button:active {
+.btn.btn-light.button.d-flex.align-items-center:active {
     background-color: var(--color-acento-1); /* Color de fondo al hacer clic */
+    border: none;                            /* Elimina el borde */
 }
 
 /*PARTE DE LA PRIMER SECCION EL FORMULARIO DE INGRESO*/
 
-.welcome {
+.bienvenidos {
     /* Estilos del contenedor principal de bienvenida */
-    max-width: 50%; /* Ancho máximo del contenedor */
-    min-height: 50%; /* Altura mínima del contenedor */
+    max-width: 60%; /* Ancho máximo del contenedor */
+    min-height: 60%; /* Altura mínima del contenedor */
     margin: 100px auto; /* Margen superior e inferior automáticos y 100px en los laterales */
     background-color: var(--color-texto-principal); /* Color de fondo principal */
     border-radius: 20px; /* Radio del borde */
@@ -171,43 +179,53 @@ body {
     margin-top: 250px; /* Margen superior específico */
 }
 
-.welcome__logo {
+.bienvenidos__logo{
     /* Estilos del logo dentro del contenedor de bienvenida */
     text-align: center; /* Alinear al centro */
     position: relative; /* Posición relativa para ajustar el margen superior */
     margin-top: -150px; /* Mover hacia arriba para superponerse parcialmente */
 }
 
-.welcome__title {
+.bienvenidos__title {
     /* Estilos del título dentro del contenedor de bienvenida */
     text-align: center; /* Alinear al centro */
     color: var(--color-acento-2); /* Color de acento 2 */
     font-weight: bold; /* Texto en negrita */
-    font-size: 40px; /* Tamaño de fuente */
+    font-size: 70px; /* Tamaño de fuente */
 }
 
-.welcome__subtitle {
+.bienvenidos__subtitle {
     /* Estilos del subtítulo dentro del contenedor de bienvenida */
     text-align: center; /* Alinear al centro */
     color: var(--color-terciario); /* Color terciario */
     font-weight: bold; /* Texto en negrita */
-    font-size: 25px; /* Tamaño de fuente */
+    font-size: 45px; /* Tamaño de fuente */
     padding: var(--padding); /* Espaciado interno definido por la variable --padding */
 }
 
-.welcome__description {
+.bienvenidos__description {
     /* Estilos de la descripción dentro del contenedor de bienvenida */
     text-align: center; /* Alinear al centro */
     color: var(--color-acento-1); /* Color de acento 1 */
     font-weight: bold; /* Texto en negrita */
-    font-size: 17px; /* Tamaño de fuente */
-    margin-left: 300px; /* Margen izquierdo específico */
+    font-size: 13px; /* Tamaño de fuente */
     margin-top: -20px; /* Margen superior específico */
+}
+
+.form__group {
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: column; /* Cambiar la dirección de los elementos a columna */
+    justify-content: center; /* Justificar contenido al centro verticalmente */
+    height: 100px; /* Altura específica para el contenedor */
+    margin-bottom: 40px; /* Espacio inferior de 40 píxeles */
 }
 
 .form {
     /* Estilos del formulario */
-    padding: var(--padding); /* Espaciado interno definido por la variable --padding */
+    padding: var(--padding);      /* Espaciado interno definido por la variable --padding */
+    width: auto;                  /* Ancho automático que se ajusta al contenido */
+    display: flex;                /* Utiliza Flexbox para el diseño */
+    justify-content: center;      /* Centra los elementos dentro del formulario horizontalmente */
 }
 
 .form__alternative {
@@ -220,6 +238,7 @@ body {
     text-align: center; /* Alinear al centro */
     color: var(--color-acento-2); /* Color de acento 2 */
     font-weight: bold; /* Texto en negrita */
+    font-size: 16px; /* Tamaño de fuente */
 }
 
 .recover-password {
@@ -227,51 +246,50 @@ body {
     text-align: center; /* Alinear al centro */
     color: var(--color-texto-principal); /* Color de texto principal */
     font-weight: bold; /* Texto en negrita */
+    margin-bottom: 30px; /* Espacio inferior de 30 píxeles */
+    font-size: 16px; /* Tamaño de fuente */
     padding: var(--padding); /* Espaciado interno definido por la variable --padding */
 }
 
-label {
+.form__label {
     /* Estilos de las etiquetas */
-    margin-bottom: 5px; /* Margen inferior */
-    color: var(--color-terciario); /* Color terciario */
-    font-weight: bold; /* Texto en negrita */
-    margin-left: 20%; /* Margen izquierdo específico */
+    display: flex;                  /* Utiliza Flexbox para el diseño */
+    justify-content: flex-start;    /* Alinea los elementos al inicio del contenedor */
+    align-items: center;            /* Alinea los elementos en el centro verticalmente */
+    margin-bottom: 5px;             /* Margen inferior */
+    color: var(--color-terciario);  /* Color terciario */
+    font-weight: bold;              /* Texto en negrita */
 }
 
 /* Asegurar que los inputs y botones tengan el tamaño adecuado */
-input[type="email"],
-input[type="password"] {
+.form__input {
     /* Estilos para campos de correo electrónico y contraseña */
-    width: calc(100% - 40px); /* Ancho calculado con margen */
-    max-width: 500px; /* Ancho máximo */
+    width: 100%; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     padding: var(--paddin-button); /* Espaciado interno definido por la variable --paddin-button */
     border: 1px solid #ccc; /* Borde sólido con color gris */
     border-radius: 15px; /* Radio del borde */
-    margin: 10px auto; /* Margen automático arriba y abajo, centrado horizontalmente */
     display: block; /* Mostrar como bloque */
 }
 
-input[type="email"]::placeholder,
-input[type="password"]::placeholder {
+.form__input::placeholder{
     /* Estilos para los placeholders de los campos de correo electrónico y contraseña */
     color: rgba(77, 167, 104, 0.5); /* Color semi-transparente */
     font-weight: bold; /* Texto en negrita */
     padding: var(--paddin-button); /* Espaciado interno definido por la variable --paddin-button */
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
+.form__input:focus {
     /* Estilos para cuando los campos de correo electrónico y contraseña están enfocados */
     outline: none; /* Sin contorno */
 }
 
-input:hover {
+.form__input:hover {
     /* Estilos para cuando el mouse está sobre los campos de entrada */
     border: 2px solid var(--color-acento-1); /* Borde sólido con color de acento 1 */
 }
 
-input:active {
+.form__input:active {
     /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
     border: 2px solid var(--color-secundario); /* Borde sólido con color secundario */
 }
@@ -286,8 +304,7 @@ input:active {
 
 .button-button--submit {
     /* Estilos del botón de envío del formulario */
-    width: calc(100% - 40px); /* Ancho calculado con margen */
-    max-width: 500px; /* Ancho máximo */
+    width: 600px; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     background-color: var(--color-texto-principal); /* Color de fondo principal */
     color: rgba(77, 167, 104, 0.5); /* Color de texto semi-transparente */
@@ -311,17 +328,18 @@ input:active {
 
 .social-login {
     /* Estilos del contenedor de inicio de sesión social */
-    display: flex; /* Mostrar como flexbox */
-    align-items: center; /* Alinear ítems al centro */
-    justify-content: center; /* Justificar contenido al centro */
-    text-align: center; /* Alinear texto al centro */
-    margin-bottom: 20px; /* Margen inferior */
-    margin-top: -25px; /* Margen superior negativo para ajuste */
+    display: flex;              /* Mostrar como flexbox para alinear elementos */
+    align-items: center;        /* Alinear ítems al centro verticalmente */
+    justify-content: center;    /* Justificar contenido al centro horizontalmente */
+    text-align: center;         /* Alinear texto al centro */
+    margin-bottom: 20px;        /* Margen inferior */
+    margin-top: -25px;          /* Margen superior negativo para ajuste */
+    gap: 10px;                  /* Espacio entre los elementos internos */
 }
 
 .social-login__button {
     /* Estilos de los botones de inicio de sesión social */
-    width: 25%; /* Ancho específico */
+    width: 40%; /* Ancho específico */
     margin: 5px; /* Margen */
     padding: 10px 20px; /* Relleno interno */
     border: none; /* Sin borde */
@@ -344,14 +362,13 @@ input:active {
 .create-account {
     /* Estilos del contenedor para crear una cuenta */
     display: flex; /* Mostrar como flexbox */
+    flex-direction: column; /* Dirección de columna para los elementos internos */
     justify-content: center; /* Justificar contenido al centro */
     align-items: center; /* Alinear ítems al centro */
-    padding: var(--padding); /* Espaciado interno definido por la variable --padding */
 }
 
 .create-account .parrafo {
     /* Estilos del párrafo dentro del contenedor para crear una cuenta */
-    margin-right: 30px; /* Margen derecho */
     color: var(--color-acento-2); /* Color de acento 2 */
 }
 
@@ -374,6 +391,8 @@ input:active {
 
 .create-account__link {
     /* Estilos del enlace para crear una cuenta */
+    width: 200px; /* Ancho calculado con margen */
+    min-height: 50px; /* Altura mínima */
     background-color: var(--color-texto-principal); /* Color de fondo principal */
     color: rgba(77, 167, 104, 0.5); /* Color de texto semi-transparente */
     text-decoration: none; /* Sin decoración de texto */
@@ -384,7 +403,6 @@ input:active {
     padding: 12px 20px; /* Relleno interno */
     text-align: center; /* Alinear texto al centro */
     border: 1px solid #ccc; /* Borde sólido con color gris */
-    width: 150px; /* Ancho específico */
 }
 
 .create-account__link:hover {
@@ -402,8 +420,8 @@ input:active {
 /*PARTE DE LA SEGUNDA SECCION LA INFROMACION DE MEGAPAQUETES*/
 
 .additional-info {
-    background-color: var(--color-primario); /* Color de fondo */
-    padding: 20px; /* Padding */
+    background-color: #99E89D; /* Color de fondo */
+    padding: 20px; /* Define el espacio interno alrededor del contenido del elemento */
     display: flex; /* Contenedor flexible */
     justify-content: center; /* Justificar contenido horizontalmente */
     align-items: center; /* Alinear elementos al centro verticalmente */
@@ -416,12 +434,13 @@ input:active {
     grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
     grid-auto-rows: minmax(100px, auto); /* Altura mínima 100px, tamaño automático */
     gap: 20px; /* Espacio entre columnas y filas */
-    padding: 20px; /* Padding */
+    padding: 20px; /* Define el espacio interno alrededor del contenido del elemento */
 }
 
 .additional-info__secondary {
-    display: flex; /* Contenedor flexible */
-    align-items: center; /* Alinear elementos al centro verticalmente */
+    display: flex; /* Utiliza flexbox para el diseño */
+    align-items: center; /* Alinea los elementos al centro verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
     gap: 15px; /* Espacio entre elementos */
 }
 
@@ -541,4 +560,123 @@ input:active {
 .footer__parrafo {
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
+}
+
+
+/*RESPONSIVE*/
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .bienvenidos__title {
+        font-size: 60px; /* Tamaño de fuente de 60 píxeles */
+        margin-top: 20px; /* Margen superior de 20 píxeles */
+    }
+    .bienvenidos__subtitle {
+        font-size: 45px; /* Tamaño de fuente de 45 píxeles */
+        margin-top: -20px; /* Margen superior negativo de 20 píxeles */
+    }
+    .bienvenidos {
+        /* Estilos del contenedor principal de bienvenida */
+        max-width: 90%; /* Ancho máximo del contenedor del 90% */
+        border-radius: 20px; /* Radio del borde de 20 píxeles */
+        margin-top: 70px; /* Margen superior de 70 píxeles */
+    }
+    .bienvenidos__logo {
+        margin-top: -50px; /* Margen superior negativo de 50 píxeles */
+    }
+    .bienvenidos__logo > img {
+        width: 100px; /* Ancho de la imagen de 100 píxeles */
+        margin-top: -30px; /* Margen superior negativo de 30 píxeles */
+    }
+    .bienvenidos__description {
+        /* Estilos de la descripción dentro del contenedor de bienvenida */
+        width: 100%; /* Ancho del 100% */
+        margin-left: 0px; /* Margen izquierdo de 0 píxeles */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
+}
+
+
+/*RESPONSIVE*/
+
+/* Media query para pantallas pequeñas como móviles */
+@media (min-width: 500px) and (max-width: 767px) {
+    .form {
+        flex-direction: column; /* Cambia a dirección de columna para móviles */
+    }
+    .form__group {
+        width: auto; /* Ancho automático para ajustar al contenido */
+        min-width: auto; /* Ancho mínimo automático */
+        min-height: 40px; /* Altura mínima reducida para móviles */
+    }
+    textarea {
+        width: auto; /* Ancho automático para ajustar al contenido */
+        min-width: auto; /* Ancho mínimo automático */
+        min-height: 150px; /* Altura mínima reducida para móviles */
+    }
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .bienvenidos__title {
+        font-size: 50px; /* Tamaño de fuente de 50 píxeles */
+        margin-top: 20px; /* Margen superior de 20 píxeles */
+    }
+    .bienvenidos__subtitle {
+        font-size: 40px; /* Tamaño de fuente de 40 píxeles */
+        margin-top: -20px; /* Margen superior negativo de 20 píxeles */
+    }
+    .bienvenidos {
+        /* Estilos del contenedor principal de bienvenida */
+        max-width: 90%; /* Ancho máximo del contenedor del 90% */
+        border-radius: 20px; /* Radio del borde de 20 píxeles */
+        margin-top: 70px; /* Margen superior de 70 píxeles */
+    }
+    .bienvenidos__logo {
+        margin-top: -50px; /* Margen superior negativo de 50 píxeles */
+    }
+    .bienvenidos__logo > img {
+        width: 100px; /* Ancho de la imagen de 100 píxeles */
+        margin-top: -30px; /* Margen superior negativo de 30 píxeles */
+    }
+    .bienvenidos__description {
+        /* Estilos de la descripción dentro del contenedor de bienvenida */
+        width: 100%; /* Ancho del 100% */
+        margin-left: 0px; /* Margen izquierdo de 0 píxeles */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
 }

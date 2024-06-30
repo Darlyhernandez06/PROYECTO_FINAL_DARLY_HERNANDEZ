@@ -28,9 +28,11 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../imagenes/fondo crear cuenta.png'); /* Imagen de fondo */
-    background-repeat: no-repeat;             /* No repetir el fondo */
-    font-family: 'MiFuente';                  /* Fuente personalizada */
+    background: url('../imagenes/fondoingresarindex.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+    font-family: 'MiFuente';        /* Fuente personalizada */
+    background-position: center;    /* Centra la imagen de fondo */
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/
@@ -42,6 +44,11 @@ body {
     background-color: var(--color-primario); /* Color de fondo */
     padding: 18px 30px;                     /* Padding interno */
     flex-wrap: wrap;                        /* Permitir envolver elementos en pantalla pequeña */
+}
+
+.negrita {
+    font-weight: bold;  /* Define el texto en negrita */
+    font-size: 16px;    /* Establece el tamaño de la fuente a 16 píxeles */
 }
 
 .navbar__logo img {
@@ -132,33 +139,33 @@ body {
     margin: 10px 0; /* Margen superior e inferior */
 }
 
+/* Estilos para el menú desplegable */
+
+li .dropdown-item:hover {
+    background-color: var(--color-primario);  /* Color de fondo al pasar el mouse */
+}
+
+li .dropdown-item:active {
+    background-color: var(--color-resaltado); /* Color de fondo al hacer clic */
+}
+
 /* Estilos para los botones */
-.button {
-    background-color: var(--color-texto-principal); /* Color de fondo */
-    color: var(--color-fondo-principal); /* Color de texto */
-    padding: 10px 20px; /* Padding del botón */
-    border-radius: 10px; /* Radio del borde */
-    text-align: center; /* Alinear texto al centro */
-    font-weight: bold; /* Peso de la fuente */
-    text-decoration: none; /* Sin decoración de texto */
-    margin: 0 10px; /* Margen horizontal */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cursor apuntador */
-}
 
-.button:hover {
+.btn.btn-light.button.d-flex.align-items-center:hover {
     background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+    border: none;                            /* Elimina el borde */
 }
 
-.button:active {
+.btn.btn-light.button.d-flex.align-items-center:active {
     background-color: var(--color-acento-1); /* Color de fondo al hacer clic */
+    border: none;                            /* Elimina el borde */
 }
 
 /*PARTE DE LA PRIMER SECCION EL FORMULARIO DE CREAR NUEVA CUENTA*/
 
 .create-account-section {
-    max-width: 50%; /* Ancho máximo */
-    min-height: 50%; /* Altura mínima */
+    max-width: 60%; /* Ancho máximo */
+    min-height: 60%; /* Altura mínima */
     margin: 100px auto; /* Margen superior e inferior automático, centrado horizontalmente */
     background-color: rgba(0, 0, 0, 0.2); /* Color de fondo con transparencia */
     border-radius: 20px; /* Radio del borde */
@@ -179,14 +186,15 @@ body {
     text-align: center; /* Alinear texto al centro */
     color: var(--color-acento-2); /* Color del texto */
     font-weight: bold; /* Peso de la fuente */
-    font-size: 35px; /* Tamaño de la fuente */
+    font-size: 60px; /* Tamaño de la fuente */
+    
 }
 
 .subtitle-container {
     text-align: center; /* Alinear texto al centro */
     color: var(--color-terciario); /* Color del texto */
     font-weight: bold; /* Peso de la fuente */
-    font-size: 25px; /* Tamaño de la fuente */
+    font-size: 45px; /* Tamaño de la fuente */
     padding: var(--padding); /* Padding */
 }
 
@@ -194,30 +202,40 @@ body {
     text-align: center; /* Alinear texto al centro */
     color: var(--color-acento-1); /* Color del texto */
     font-weight: bold; /* Peso de la fuente */
-    font-size: 17px; /* Tamaño de la fuente */
-    margin-left: 300px; /* Margen izquierdo */
+    font-size: 13px; /* Tamaño de la fuente */
     margin-top: -20px; /* Margen superior negativo */
 }
 
-.form {
-    padding: var(--padding); /* Padding */
+.form__group {
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: column; /* Cambiar la dirección de los elementos a columna */
+    justify-content: center; /* Justificar contenido al centro verticalmente */
+    height: 100px; /* Altura específica para el contenedor */
+    margin-bottom: 40px; /* Espacio inferior de 40 píxeles */
 }
 
-label {
-    margin-bottom: 5px; /* Margen inferior */
-    color: var(--color-terciario); /* Color del texto */
-    font-weight: bold; /* Peso de la fuente */
-    margin-left: 20%; /* Margen izquierdo */
+.form {
+    /* Estilos del formulario */
+    padding: var(--padding);      /* Espaciado interno definido por la variable --padding */
+    width: auto;                  /* Ancho automático que se ajusta al contenido */
+    display: flex;                /* Utiliza Flexbox para el diseño */
+    justify-content: center;      /* Centra los elementos dentro del formulario horizontalmente */
+}
+
+.form__label {
+    display: flex; /* Mostrar como flexbox */
+    justify-content: flex-start; /* Justificar contenido al inicio horizontalmente */
+    align-items: center; /* Alinear ítems al centro verticalmente */
+    margin-top: 70px; /* Margen superior de 70 píxeles */
+    margin-bottom: 5px; /* Margen inferior de 5 píxeles */
+    color: var(--color-terciario); /* Color terciario definido por variable */
+    font-weight: bold; /* Texto en negrita */
 }
 
 /* Estilos para inputs y botones */
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="password"] {
+.form__input {
     display: block; /* Bloque de visualización */
-    width: calc(100% - 40px); /* Ancho calculado */
-    max-width: 500px; /* Ancho máximo */
+    width: 100%; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     padding: var(--paddin-button); /* Padding */
     border: 1px solid #ccc; /* Borde */
@@ -226,45 +244,37 @@ input[type="password"] {
     margin-bottom: 40px; /* Margen inferior */
 }
 
-input[type="text"]::placeholder,
-input[type="tel"]::placeholder,
-input[type="email"]::placeholder,
-input[type="password"]::placeholder,
-textarea::placeholder {
+.form__input::placeholder {
     color: rgba(77, 167, 104, 0.5); /* Color del placeholder */
     font-weight: bold; /* Peso de la fuente */
     padding: var(--paddin-button); /* Padding */
 }
 
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
+.form__input:focus {
     outline: none; /* Sin contorno */
 }
 
-input:hover {
+.form__input:hover {
     border: 2px solid var(--color-acento-1); /* Borde al pasar el mouse */
 }
 
-input:active {
+.form__input:active {
     border: 2px solid var(--color-secundario); /* Borde al hacer clic */
 }
 
 textarea {
     display: block; /* Bloque de visualización */
-    width: calc(100% - 40px); /* Ancho calculado */
-    max-width: 500px; /* Ancho máximo */
-    height: 200px; /* Altura */
+    width: 600px; /* Ancho calculado con margen */
+    min-height: 60px; /* Altura mínima */
     padding: var(--paddin-button); /* Padding */
     border: 1px solid #ccc; /* Borde */
     margin: 10px auto; /* Margen automático */
-    margin-bottom: 40px; /* Margen inferior */
+    margin-bottom: 80px; /* Margen inferior */
     outline: none; /* Sin contorno */
 }
 
 textarea {
-    min-height: 100px; /* Altura mínima para textarea */
+    min-height: 150px; /* Altura mínima para textarea */
 }
 
 textarea:hover {
@@ -273,6 +283,12 @@ textarea:hover {
 
 textarea:active {
     border: 2px solid var(--color-secundario); /* Borde al hacer clic */
+}
+
+textarea::placeholder {
+    color: rgba(77, 167, 104, 0.5); /* Color del placeholder */
+    font-weight: bold; /* Peso de la fuente */
+    padding: var(--paddin-button); /* Padding */
 }
 
 /* Contenedor para botones de formulario */
@@ -285,7 +301,7 @@ textarea:active {
 
 /* Estilos para el botón de enviar 01 */
 .button-button--submit01 {
-    width: calc(30% - 40px); /* Ancho calculado */
+    width: calc(50% - 40px); /* Ancho calculado */
     max-width: 500px; /* Ancho máximo */
     min-height: 50px; /* Altura mínima */
     color: var(--color-texto-principal); /* Color de texto */
@@ -297,6 +313,7 @@ textarea:active {
     padding: 12px 20px; /* Padding */
     text-align: center; /* Alinear texto al centro */
     background: none; /* Fondo transparente */
+    margin-top: 80px;
 }
 
 .button-button--submit01:hover {
@@ -311,7 +328,7 @@ textarea:active {
 
 /* Estilos para el botón de enviar */
 .button-button--submit {
-    width: calc(30% - 40px); /* Ancho calculado */
+    width: calc(50% - 40px); /* Ancho calculado */
     max-width: 500px; /* Ancho máximo */
     min-height: 50px; /* Altura mínima */
     background-color: var(--color-texto-principal); /* Color de fondo */
@@ -323,6 +340,7 @@ textarea:active {
     cursor: pointer; /* Cursor apuntador */
     padding: 12px 20px; /* Padding */
     text-align: center; /* Alinear texto al centro */
+    margin-top: 80px;
 }
 
 .button-button--submit:hover {
@@ -349,9 +367,10 @@ textarea:active {
 }
 
 .confirmar-section__icon {
-    width: 20px; /* Ancho del ícono */
-    height: 20px; /* Altura del ícono */
-    margin-left: -358px; /* Margen izquierdo negativo */
+    /* Estilos para los iconos dentro de la sección de restablecer contraseña */
+    width: 50px; /* Ancho de icono */
+    height: 25px; /* Altura de icono */
+    margin-top: -35px;
 }
 
 /*PARTE DE LA SEGUNDA SECCION LA INFROMACION DE MEGAPAQUETES*/
@@ -496,4 +515,122 @@ textarea:active {
 .footer__parrafo {
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
+}
+
+/*RESPONSIVE*/
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .title-container {
+        font-size: 60px; /* Tamaño de fuente de 60 píxeles */
+        margin-top: 20px; /* Margen superior de 20 píxeles */
+    }
+    .subtitle-container {
+        font-size: 45px; /* Tamaño de fuente de 45 píxeles */
+        margin-top: -20px; /* Margen superior negativo de 20 píxeles */
+    }
+    .create-account-section {
+        /* Estilos del contenedor principal de bienvenida */
+        max-width: 90%; /* Ancho máximo del contenedor del 90% */
+        border-radius: 20px; /* Radio del borde de 20 píxeles */
+        margin-top: 70px; /* Margen superior de 70 píxeles */
+    }
+    .logo-container {
+        margin-top: -50px; /* Margen superior negativo de 50 píxeles */
+    }
+    .logo-container > img {
+        width: 100px; /* Ancho de la imagen de 100 píxeles */
+        margin-top: -30px; /* Margen superior negativo de 30 píxeles */
+    }
+    .bienvenidos__description {
+        /* Estilos de la descripción dentro del contenedor de bienvenida */
+        width: 100%; /* Ancho del 100% */
+        margin-left: 0px; /* Margen izquierdo de 0 píxeles */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
+}
+
+
+/*RESPONSIVE*/
+
+/* Media query para pantallas pequeñas como móviles */
+@media (min-width: 500px) and (max-width: 767px) {
+    .form {
+        flex-direction: column; /* Cambia a dirección de columna para móviles */
+    }
+    .form__group {
+        width: auto; /* Ancho automático para ajustar al contenido */
+        min-width: auto; /* Ancho mínimo automático */
+        min-height: 40px; /* Altura mínima reducida para móviles */
+    }
+    textarea {
+        width: auto; /* Ancho automático para ajustar al contenido */
+        min-width: auto; /* Ancho mínimo automático */
+        min-height: 150px; /* Altura mínima reducida para móviles */
+    }
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .title-container {
+        font-size: 50px; /* Tamaño de fuente de 50 píxeles */
+        margin-top: 20px; /* Margen superior de 20 píxeles */
+    }
+    .subtitle-container {
+        font-size: 40px; /* Tamaño de fuente de 40 píxeles */
+        margin-top: -20px; /* Margen superior negativo de 20 píxeles */
+    }
+    .create-account-section {
+        /* Estilos del contenedor principal de bienvenida */
+        max-width: 90%; /* Ancho máximo del contenedor del 90% */
+        border-radius: 20px; /* Radio del borde de 20 píxeles */
+        margin-top: 70px; /* Margen superior de 70 píxeles */
+    }
+    .logo-container {
+        margin-top: -50px; /* Margen superior negativo de 50 píxeles */
+    }
+    .logo-container > img {
+        width: 100px; /* Ancho de la imagen de 100 píxeles */
+        margin-top: -30px; /* Margen superior negativo de 30 píxeles */
+    }
+    .bienvenidos__description {
+        /* Estilos de la descripción dentro del contenedor de bienvenida */
+        width: 100%; /* Ancho del 100% */
+        margin-left: 0px; /* Margen izquierdo de 0 píxeles */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
 }

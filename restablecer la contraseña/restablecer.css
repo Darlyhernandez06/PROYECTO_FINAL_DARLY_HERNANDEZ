@@ -28,9 +28,11 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../imagenes/fondo.jpg'); /* Imagen de fondo */
-    background-repeat: no-repeat;             /* No repetir el fondo */
-    font-family: 'MiFuente';                  /* Fuente personalizada */
+    background: url('../imagenes/fondoingresarindex.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+    font-family: 'MiFuente';        /* Fuente personalizada */
+    background-position: center;    /* Centra la imagen de fondo */
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/
@@ -42,6 +44,11 @@ body {
     background-color: var(--color-primario); /* Color de fondo */
     padding: 18px 30px;                     /* Padding interno */
     flex-wrap: wrap;                        /* Permitir envolver elementos en pantalla pequeña */
+}
+
+.negrita {
+    font-weight: bold;  /* Define el texto en negrita */
+    font-size: 16px;    /* Establece el tamaño de la fuente a 16 píxeles */
 }
 
 .navbar__logo img {
@@ -132,34 +139,34 @@ body {
     margin: 10px 0; /* Margen superior e inferior */
 }
 
+/* Estilos para el menú desplegable */
+
+li .dropdown-item:hover {
+    background-color: var(--color-primario);  /* Color de fondo al pasar el mouse */
+}
+
+li .dropdown-item:active {
+    background-color: var(--color-resaltado); /* Color de fondo al hacer clic */
+}
+
 /* Estilos para los botones */
-.button {
-    background-color: var(--color-texto-principal); /* Color de fondo */
-    color: var(--color-fondo-principal); /* Color de texto */
-    padding: 10px 20px; /* Padding del botón */
-    border-radius: 10px; /* Radio del borde */
-    text-align: center; /* Alinear texto al centro */
-    font-weight: bold; /* Peso de la fuente */
-    text-decoration: none; /* Sin decoración de texto */
-    margin: 0 10px; /* Margen horizontal */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cursor apuntador */
-}
 
-.button:hover {
+.btn.btn-light.button.d-flex.align-items-center:hover {
     background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+    border: none;                            /* Elimina el borde */
 }
 
-.button:active {
+.btn.btn-light.button.d-flex.align-items-center:active {
     background-color: var(--color-acento-1); /* Color de fondo al hacer clic */
+    border: none;                            /* Elimina el borde */
 }
 
 /* PARTE DE LA PRIMER SECCION EL FORMULARIO DE RESTABLECER LA CONTRASEÑA*/
 
 /* Estilos para la sección de restablecer contraseña */
 .restablecer-section {
-    max-width: 50%; /* Ancho máximo del contenedor */
-    min-height: 50%; /* Altura mínima del contenedor */
+    max-width: 60%; /* Ancho máximo del contenedor */
+    min-height: 60%; /* Altura mínima del contenedor */
     margin: 100px auto; /* Margen superior e inferior automáticos y 100px en los laterales */
     background-color: var(--color-texto-principal); /* Color de fondo principal */
     border-radius: 20px; /* Radio del borde */
@@ -182,8 +189,8 @@ body {
     /* Estilos del título principal dentro de la sección de restablecer contraseña */
     text-align: center; /* Alinear al centro */
     color: var(--color-acento-2); /* Color de acento 2 */
+    font-size: 50px; /* Tamaño de fuente de 50 píxeles */
     font-weight: bold; /* Texto en negrita */
-    font-size: 35px; /* Tamaño de fuente */
 }
 
 .restablecer-section__title {
@@ -191,7 +198,7 @@ body {
     text-align: center; /* Alinear al centro */
     color: var(--color-terciario); /* Color terciario */
     font-weight: bold; /* Texto en negrita */
-    font-size: 25px; /* Tamaño de fuente */
+    font-size: 45px; /* Tamaño de fuente */ 
     padding: var(--padding); /* Espaciado interno definido por la variable --padding */
 }
 
@@ -200,8 +207,7 @@ body {
     text-align: center; /* Alinear al centro */
     color: var(--color-acento-1); /* Color de acento 1 */
     font-weight: bold; /* Texto en negrita */
-    font-size: 17px; /* Tamaño de fuente */
-    margin-left: 300px; /* Margen izquierdo específico */
+    font-size: 13px; /* Tamaño de fuente */
     margin-top: -20px; /* Margen superior específico */
 }
 
@@ -210,28 +216,41 @@ body {
     text-align: center; /* Alinear al centro */
     color: var(--color-acento-1); /* Color de acento 1 */
     font-weight: bold; /* Texto en negrita */
-    font-size: 15px; /* Tamaño de fuente */
+    font-size: 17px; /* Tamaño de fuente de 17 píxeles */
+    margin-top: 40px; /* Margen superior de 40 píxeles */
     padding: var(--padding); /* Espaciado interno definido por la variable --padding */
+}
+
+.restablecer-section__form-group {
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: column; /* Dirección de columna para alinear verticalmente */
+    justify-content: center; /* Justificar contenido al centro verticalmente */
+    height: 100px; /* Altura específica */
+    margin-bottom: 40px; /* Espacio inferior de 40 píxeles */
 }
 
 .restablecer-section__form-container {
     /* Estilos del contenedor del formulario dentro de la sección de restablecer contraseña */
     padding: var(--padding); /* Espaciado interno definido por la variable --padding */
+    width: auto; /* Ancho automático que se ajusta al contenido */
+    display: flex; /* Mostrar como flexbox */
+    justify-content: center; /* Centrar contenido horizontalmente */
 }
 
 .restablecer-section__label {
     /* Estilos de las etiquetas dentro de la sección de restablecer contraseña */
+    display: flex; /* Mostrar como flexbox */
+    justify-content: flex-start; /* Justificar contenido al inicio */
+    align-items: center; /* Alinear ítems al centro verticalmente */
     margin-bottom: 5px; /* Margen inferior */
     color: var(--color-terciario); /* Color terciario */
     font-weight: bold; /* Texto en negrita */
-    margin-left: 20%; /* Margen izquierdo específico */
 }
 
 /* Asegurar que los inputs y botones tengan el tamaño adecuado */
 .restablecer-section__input {
     /* Estilos para campos de entrada dentro de la sección de restablecer contraseña */
-    width: calc(100% - 40px); /* Ancho calculado con margen */
-    max-width: 500px; /* Ancho máximo */
+    width: 100%; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     padding: var(--paddin-button); /* Espaciado interno definido por la variable --paddin-button */
     border: 1px solid #ccc; /* Borde sólido con color gris */
@@ -240,8 +259,7 @@ body {
     display: block; /* Mostrar como bloque */
 }
 
-.restablecer-section__input[type="email"]::placeholder,
-.restablecer-section__input[type="password"]::placeholder {
+.restablecer-section__input::placeholder {
     /* Estilos para los placeholders de los campos de correo electrónico y contraseña */
     color: rgba(77, 167, 104, 0.5); /* Color semi-transparente */
     font-weight: bold; /* Texto en negrita */
@@ -285,9 +303,8 @@ body {
 
 .restablecer-section__icon {
     /* Estilos para los iconos dentro de la sección de restablecer contraseña */
-    width: 20px; /* Ancho de icono */
-    height: 20px; /* Altura de icono */
-    margin-left: -358px; /* Margen izquierdo negativo */
+    width: 50px; /* Ancho de icono */
+    height: 25px; /* Altura de icono */
 }
 
 .restablecer-section__button-container {
@@ -300,8 +317,7 @@ body {
 
 .restablecer-section__button01 {
     /* Estilos del botón 01 dentro de la sección de restablecer contraseña */
-    width: calc(100% - 40px); /* Ancho calculado con margen */
-    max-width: 500px; /* Ancho máximo */
+    width: 600px; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     background-color: var(--color-texto-principal); /* Color de fondo principal */
     color: rgba(77, 167, 104, 0.5); /* Color de texto semi-transparente */
@@ -469,3 +485,117 @@ body {
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
 }
+
+
+/*RESPONSIVE*/
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .esconder {
+        display: none; /* Ocultar elemento */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro */
+    }
+    .restablecer-section__title-principal {
+        font-size: 60px; /* Tamaño de fuente */
+        margin-top: 20px; /* Margen superior */
+    }
+    .restablecer-section__title {
+        font-size: 45px; /* Tamaño de fuente */
+        margin-top: -20px; /* Margen superior negativo */
+    }
+    .restablecer-section {
+        /* Estilos del contenedor principal de bienvenida */
+        max-width: 90%; /* Ancho máximo del contenedor */
+        border-radius: 20px; /* Radio del borde */
+        margin-top: 70px; /* Margen superior específico */
+    }
+    .restablecer-section__logo {
+        margin-top: -50px; /* Margen superior negativo */
+    }
+    .restablecer-section__logo > img {
+        width: 100px; /* Ancho de la imagen */
+        margin-top: -30px; /* Margen superior negativo */
+    }
+    .restablecer-section__subtitle {
+        /* Estilos de la descripción dentro del contenedor de bienvenida */
+        width: 100%; /* Ancho completo */
+        margin-left: 0px; /* Margen izquierdo */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro */
+        flex-wrap: wrap; /* Permitir ajuste de línea */
+        gap: 20px; /* Espacio entre columnas y filas */
+        padding: 20px; /* Padding */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho completo */
+        text-align: center; /* Alinear texto al centro */
+    }
+}
+
+
+
+/*RESPONSIVE*/
+/* Media query para pantallas pequeñas como móviles */
+@media (min-width: 500px) and (max-width: 767px) {
+    .restablecer-section__form-container {
+        flex-direction: column; /* Cambia a dirección de columna para móviles */
+    }
+    .restablecer-section__form-group {
+        width: auto; /* Ancho automático para ajustar al contenido */
+        min-width: auto;
+        min-height: 40px; /* Altura mínima reducida para móviles */
+    }
+    .esconder {
+        display: none; /* Ocultar elemento */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro */
+    }
+    .restablecer-section__title-principal {
+        font-size: 50px; /* Tamaño de fuente */
+        margin-top: 20px; /* Margen superior */
+    }
+    .restablecer-section__title {
+        font-size: 40px; /* Tamaño de fuente */
+        margin-top: -20px; /* Margen superior negativo */
+    }
+    .restablecer-section {
+        /* Estilos del contenedor principal de bienvenida */
+        max-width: 90%; /* Ancho máximo del contenedor */
+        border-radius: 20px; /* Radio del borde */
+        margin-top: 70px; /* Margen superior específico */
+    }
+    .restablecer-section__logo {
+        margin-top: -50px; /* Margen superior negativo */
+    }
+    .restablecer-section__logo > img {
+        width: 100px; /* Ancho de la imagen */
+        margin-top: -30px; /* Margen superior negativo */
+    }
+    .restablecer-section__subtitle {
+        /* Estilos de la descripción dentro del contenedor de bienvenida */
+        width: 100%; /* Ancho completo */
+        margin-left: 0px; /* Margen izquierdo */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro */
+        flex-wrap: wrap; /* Permitir ajuste de línea */
+        gap: 20px; /* Espacio entre columnas y filas */
+        padding: 20px; /* Padding */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho completo */
+        text-align: center; /* Alinear texto al centro */
+    }
+}  
