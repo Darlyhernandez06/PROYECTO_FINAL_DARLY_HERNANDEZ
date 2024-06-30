@@ -543,7 +543,7 @@ li .dropdown-item:active {
 
 /*RESPONSIVE*/
 /* Media query para pantallas pequeñas como móviles */
-@media (min-width: 500px) and (max-width: 767px) {
+@media (min-width: 400px) and (max-width: 767px) {
     .restablecer-section__form-container {
         flex-direction: column; /* Cambia a dirección de columna para móviles */
     }
@@ -560,7 +560,7 @@ li .dropdown-item:active {
         justify-content: center; /* Justificar contenido al centro */
     }
     .restablecer-section__title-principal {
-        font-size: 50px; /* Tamaño de fuente */
+        font-size: 48px; /* Tamaño de fuente */
         margin-top: 20px; /* Margen superior */
     }
     .restablecer-section__title {

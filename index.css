@@ -641,7 +641,7 @@ li .dropdown-item:active {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
     .bienvenidos__title {
-        font-size: 50px; /* Tamaño de fuente de 50 píxeles */
+        font-size: 48px; /* Tamaño de fuente de 50 píxeles */
         margin-top: 20px; /* Margen superior de 20 píxeles */
     }
     .bienvenidos__subtitle {

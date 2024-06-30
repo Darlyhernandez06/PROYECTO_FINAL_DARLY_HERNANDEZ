@@ -573,7 +573,7 @@ textarea::placeholder {
 /*RESPONSIVE*/
 
 /* Media query para pantallas pequeñas como móviles */
-@media (min-width: 500px) and (max-width: 767px) {
+@media (min-width: 400px) and (max-width: 767px) {
     .form {
         flex-direction: column; /* Cambia a dirección de columna para móviles */
     }
@@ -595,7 +595,7 @@ textarea::placeholder {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
     .title-container {
-        font-size: 50px; /* Tamaño de fuente de 50 píxeles */
+        font-size: 48px; /* Tamaño de fuente de 50 píxeles */
         margin-top: 20px; /* Margen superior de 20 píxeles */
     }
     .subtitle-container {
