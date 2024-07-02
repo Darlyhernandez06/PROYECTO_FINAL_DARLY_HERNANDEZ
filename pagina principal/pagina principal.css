@@ -162,7 +162,7 @@ li .dropdown-item:active {
 
 .contenedor__fondo {
     background: url('../imagenes/fondo principal.svg'); /* Imagen de fondo */
-    height: 1700px;
+    height: 1700px; /* Altura del contenedor */
     background-repeat: no-repeat; /* No repetir el fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
@@ -170,11 +170,11 @@ li .dropdown-item:active {
 
 .contenedor__title {
     text-align: start; /* Alinear al inicio (izquierda) */
-    color: var(--color-fondo-principal); /* Color del fondo principal */
+    color: var(--color-fondo-principal); /* Color del texto usando una variable de CSS */
     font-weight: bold; /* Texto en negrita */
     font-size: 60px; /* Tamaño de fuente */
     margin-left: 300px; /* Margen izquierdo específico */
-    padding-top: 200px;
+    padding-top: 200px; /* Relleno superior */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
@@ -365,12 +365,12 @@ li .dropdown-item:active {
 }
 
 .contenedor__ofertas {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Ancho del contenedor al 100% del contenedor padre */
+    height: auto; /* Altura automática basada en el contenido */
     background-image: url('../imagenes/fondo ofertas.svg'); /* Ruta a tu imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-position: center;    /* Centra la imagen de fondo */
+    background-position: center; /* Centra la imagen de fondo */
     padding: 30px; /* Espacio de relleno alrededor del contenido dentro del contenedor */
 }
 
@@ -384,51 +384,51 @@ li .dropdown-item:active {
 }
 
 .productos__destacados--contenedor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 100px;
-    margin-top: 60px;
+    display: flex; /* Utiliza flexbox para el diseño del contenedor */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+    gap: 100px; /* Espacio entre los elementos */
+    margin-top: 60px; /* Margen superior del contenedor */
 }
 
 .contenedor__imagen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Utiliza flexbox para el diseño del contenedor */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
 }
 
 .contenedor__imagen img {
-    width: 150%;
-    background-color: var(--color-texto-principal);
-    border: 6px solid var(--color-terciario);
-    border-radius: 10px;
+    width: 150%; /* Ancho de la imagen en 150% del contenedor */
+    background-color: var(--color-texto-principal); /* Color de fondo de la imagen */
+    border: 6px solid var(--color-terciario); /* Borde sólido de 6px con color terciario */
+    border-radius: 10px; /* Bordes redondeados de 10px */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .informacion__producto {
-    background-color: var(--color-primario);
-    margin-top: 30px;
-    text-align: center;
+    background-color: var(--color-primario); /* Color de fondo primario */
+    margin-top: 30px; /* Margen superior */
+    text-align: center; /* Alinear el texto al centro */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .texto__producto {
-    color: var(--color-fondo-principal);
-    font-size: 16px;
-    margin-bottom: 5px;
+    color: var(--color-fondo-principal); /* Color del texto de fondo principal */
+    font-size: 16px; /* Tamaño de fuente de 16px */
+    margin-bottom: 5px; /* Margen inferior de 5px */
 }
 
 .titulo__producto {
-    color: var(--color-acento-2);
-    font-size: 18px;
-    margin-bottom: 5px;
+    color: var(--color-acento-2); /* Color del texto con acento 2 */
+    font-size: 18px; /* Tamaño de fuente de 18px */
+    margin-bottom: 5px; /* Margen inferior de 5px */
 }
 
 .precio__producto {
-    color: var(--color-terciario);
-    font-size: 18px;
-    margin-bottom: 30px;
+    color: var(--color-terciario); /* Color del texto terciario */
+    font-size: 18px; /* Tamaño de fuente de 18px */
+    margin-bottom: 30px; /* Margen inferior de 30px */
 }
 
 /*PARTE DE LA CUARTA SECCION DE LA PAGINA*/
@@ -687,7 +687,7 @@ li .dropdown-item:active {
     color: var(--color-fondo-principal);
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
-    font-size: 15px;
+    font-size: 15px; /* Tamaño de fuente de 15px */
 }
 
 /*RESPONSIVE*/
@@ -701,35 +701,30 @@ li .dropdown-item:active {
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
-    .contenedor__opiniones{
-        height: 1400px;
+    .contenedor__opiniones {
+        height: 1400px; /* Altura ajustada para tablets */
     }
     .contenedor__fondo {
         height: 1700px; /* Ajusta la altura según sea necesario */
     }
-
     .contenedor__title {
         font-size: 60px; /* Tamaño de fuente ajustado para tablets */
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
         padding-top: 100px; /* Ajusta el padding superior según sea necesario */
     }
-
     .contenedor__subtitle {
         font-size: 20px; /* Tamaño de fuente ajustado para tablets */
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
         margin-top: 10px; /* Ajusta el margen superior según sea necesario */
     }
-
     .contenedor__description {
         font-size: 12px; /* Tamaño de fuente ajustado para tablets */
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
         margin-top: 10px; /* Ajusta el margen superior según sea necesario */
     }
-
     .boton-continuar__link {
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
     }
-
     .contenedor__secundario {
         display: flex;
         flex-direction: column; /* Coloca las imágenes una debajo de la otra */
@@ -737,32 +732,26 @@ li .dropdown-item:active {
         margin: 50px auto; /* Margen ajustado para tablets */
         padding: 15px; /* Padding ajustado para tablets */
     }
-
     .contenedor__subtitle--secundario {
         font-size: 30px; /* Tamaño de fuente ajustado para tablets */
         margin-bottom: 5px; /* Margen inferior ajustado para tablets */
     }
-
     .contenedor__description--secundario {
         font-size: 18px; /* Tamaño de fuente ajustado para tablets */
         margin-bottom: 10px; /* Margen inferior ajustado para tablets */
     }
-
-    .contenedor__imagenes--secundario{
-        gap: 10px;
+    .contenedor__imagenes--secundario {
+        gap: 10px; /* Espacio entre elementos ajustado para tablets */
     }
-
     .imagen-row {
         display: flex;
         flex-direction: column; /* Coloca las imágenes una debajo de la otra */
         align-items: center; /* Centra las imágenes horizontalmente */
         margin-top: 10px; /* Ajusta el margen superior si es necesario */
     }
-
     .imagen-row2 {
         margin-top: -250px; /* Ajusta el margen superior si es necesario */
     }
-
     .additional-info__main {
         display: flex; /* Contenedor de cuadrícula con flexbox */
         align-items: center; /* Alinear elementos al centro verticalmente */
@@ -776,8 +765,8 @@ li .dropdown-item:active {
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
     }
-    .footer{
-        height: 100px;
+    .footer {
+        height: 100px; /* Altura ajustada para tablets */
     }
 }
 
@@ -795,99 +784,79 @@ li .dropdown-item:active {
     .contenedor__fondo {
         height: 1700px; /* Ajusta la altura según sea necesario */
     }
-
     .contenedor__title {
-        font-size: 40px; /* Tamaño de fuente ajustado para tablets */
-        margin-left: 30px; /* Margen izquierdo ajustado para tablets */
+        font-size: 40px; /* Tamaño de fuente ajustado para móviles */
+        margin-left: 30px; /* Margen izquierdo ajustado para móviles */
         padding-top: 100px; /* Ajusta el padding superior según sea necesario */
     }
-
     .contenedor__subtitle {
-        font-size: 20px; /* Tamaño de fuente ajustado para tablets */
-        margin-left: 30px; /* Margen izquierdo ajustado para tablets */
+        font-size: 20px; /* Tamaño de fuente ajustado para móviles */
+        margin-left: 30px; /* Margen izquierdo ajustado para móviles */
         margin-top: 10px; /* Ajusta el margen superior según sea necesario */
     }
-
     .contenedor__description {
-        font-size: 10px; /* Tamaño de fuente ajustado para tablets */
-        margin-left: 30px; /* Margen izquierdo ajustado para tablets */
+        font-size: 10px; /* Tamaño de fuente ajustado para móviles */
+        margin-left: 30px; /* Margen izquierdo ajustado para móviles */
         margin-top: 10px; /* Ajusta el margen superior según sea necesario */
     }
-
     .boton-continuar__link {
-        margin-left: 100px; /* Margen izquierdo ajustado para tablets */
+        margin-left: 100px; /* Margen izquierdo ajustado para móviles */
     }
-
     .contenedor__secundario {
         display: flex;
         flex-direction: column; /* Coloca las imágenes una debajo de la otra */
         align-items: center; /* Centra las imágenes horizontalmente */
-        margin: 50px auto; /* Margen ajustado para tablets */
-        padding: 15px; /* Padding ajustado para tablets */
+        margin: 50px auto; /* Margen ajustado para móviles */
+        padding: 15px; /* Padding ajustado para móviles */
     }
-
     .contenedor__subtitle--secundario {
-        font-size: 30px; /* Tamaño de fuente ajustado para tablets */
-        margin-bottom: 5px; /* Margen inferior ajustado para tablets */
+        font-size: 30px; /* Tamaño de fuente ajustado para móviles */
+        margin-bottom: 5px; /* Margen inferior ajustado para móviles */
     }
-
     .contenedor__description--secundario {
-        font-size: 18px; /* Tamaño de fuente ajustado para tablets */
-        margin-bottom: 10px; /* Margen inferior ajustado para tablets */
+        font-size: 18px; /* Tamaño de fuente ajustado para móviles */
+        margin-bottom: 10px; /* Margen inferior ajustado para móviles */
     }
-
-    .contenedor__imagenes--secundario{
-        gap: 10px;
+    .contenedor__imagenes--secundario {
+        gap: 10px; /* Espacio entre elementos ajustado para móviles */
     }
-
     .imagen-row {
         display: flex;
         flex-direction: column; /* Coloca las imágenes una debajo de la otra */
         align-items: center; /* Centra las imágenes horizontalmente */
         margin-top: 10px; /* Ajusta el margen superior si es necesario */
     }
-
     .imagen-row2 {
         margin-top: -250px; /* Ajusta el margen superior si es necesario */
     }
-
-    .titulo__ofertas{
-        font-size: 35px; /* Tamaño de fuente ajustado para tablets */
+    .titulo__ofertas {
+        font-size: 35px; /* Tamaño de fuente ajustado para móviles */
     }
-
-    .subtitulo__ofertas{
-        font-size: 25px; /* Tamaño de fuente ajustado para tablets */
+    .subtitulo__ofertas {
+        font-size: 25px; /* Tamaño de fuente ajustado para móviles */
     }
-
-    .texto__ofertas{
-        font-size: 12px; /* Tamaño de fuente ajustado para tablets */
+    .texto__ofertas {
+        font-size: 12px; /* Tamaño de fuente ajustado para móviles */
     }
-
-    .titulo__informacion{
-        font-size: 40px; /* Tamaño de fuente ajustado para tablets */
+    .titulo__informacion {
+        font-size: 40px; /* Tamaño de fuente ajustado para móviles */
     }
-
-    .texto__informacion{
-        font-size: 14px; /* Tamaño de fuente ajustado para tablets */
+    .texto__informacion {
+        font-size: 14px; /* Tamaño de fuente ajustado para móviles */
     }
-
-    .titulo__opiniones{
-        font-size: 40px; /* Tamaño de fuente ajustado para tablets */
+    .titulo__opiniones {
+        font-size: 40px; /* Tamaño de fuente ajustado para móviles */
     }
-
-    .cards__opiniones{
-        height: 200px;
+    .cards__opiniones {
+        height: 200px; /* Altura ajustada para móviles */
     }
-
-    .card__texto{
-        height: 150px;
-        font-size: 12px; /* Tamaño de fuente ajustado para tablets */
+    .card__texto {
+        height: 150px; /* Altura ajustada para móviles */
+        font-size: 12px; /* Tamaño de fuente ajustado para móviles */
     }
-
-    .contenedor__opiniones{
-        height: 1100px;
+    .contenedor__opiniones {
+        height: 1100px; /* Altura ajustada para móviles */
     }
-
     .additional-info__main {
         display: flex; /* Contenedor de cuadrícula con flexbox */
         align-items: center; /* Alinear elementos al centro verticalmente */
@@ -901,7 +870,7 @@ li .dropdown-item:active {
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
     }
-    .footer{
-        height: 50px;
+    .footer {
+        height: 50px; /* Altura ajustada para móviles */
     }
 }
