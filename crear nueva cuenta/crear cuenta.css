@@ -569,6 +569,9 @@ textarea::placeholder {
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
     }
+    .footer{
+        height: 100px;
+    }
 }
 
 
@@ -635,5 +638,8 @@ textarea::placeholder {
     .additional-info__text_1 {
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
+    }
+    .footer{
+        height: 50px;
     }
 }
