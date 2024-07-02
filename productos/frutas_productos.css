@@ -1,0 +1,275 @@
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    background: url('../imagenes/fondo de productos.svg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    font-family: 'MiFuente';                  /* Fuente personalizada */
+}
+
+/*PARTE DEL MENU DE NAVEGACION*/
+
+
+/*PARTE DEL LOS PRODUCTOS*/
+
+/* Contenedor de los párrafos principales */
+.contenedor__parrafos {
+    display: flex; /* Utiliza Flexbox */
+    flex-direction: column; /* Dirección en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    gap: 30px; /* Espacio entre elementos */
+}
+  
+/* Título principal */
+.titulo__parrafos {
+    font-size: 64px; /* Tamaño de fuente grande */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+  
+/* Subtítulo */
+.subtitulo__parrafos {
+    font-size: 32px; /* Tamaño de fuente medio */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+  
+/* Párrafo descriptivo */
+.parrafo__parrafos {
+    font-size: 16px; /* Tamaño de fuente pequeño */
+}
+  
+/* Contenedor principal de productos - Fila 1 */
+.contenedor__verduras--principal01 {
+    width: 100%; /* Ancho completo */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 100px; /* Espacio entre elementos */
+    margin-top: 200px; /* Margen superior */
+}
+  
+/* Contenedor principal de productos - Fila 2 */
+.contenedor__verduras--principal02 {
+    width: 100%; /* Ancho completo */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 100px; /* Espacio entre elementos */
+    margin-top: 200px; /* Margen superior */
+}
+  
+/* Contenedor de imagen del producto */
+.contenedor__imagen {
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+  
+/* Imagen del producto */
+.contenedor__imagen img {
+    width: 150%; /* Ancho mayor al contenedor */
+    border: 6px solid var(--color-terciario); /* Borde sólido */
+    border-radius: 10px; /* Bordes redondeados */
+}
+  
+/* Información del producto */
+.informacion__producto {
+    margin-top: 30px; /* Margen superior */
+    text-align: center; /* Alinea el texto al centro */
+}
+  
+/* Texto adicional del producto */
+.texto__producto {
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Margen inferior */
+}
+  
+/* Título del producto */
+.titulo__producto {
+    color: var(--color-acento-2); /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Margen inferior */
+}
+  
+/* Precio del producto */
+.precio__producto {
+    color: var(--color-terciario); /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 30px; /* Margen inferior */
+}
+  
+/* Contenedor de la cantidad de productos */
+.contenedor__cantidad {
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 120px; /* Ancho fijo */
+    margin: 0 auto; /* Margen automático */
+    font-size: 18px; /* Tamaño de fuente */
+    gap: 20px; /* Espacio entre elementos */
+    margin-bottom: 50px; /* Margen inferior */
+}
+  
+/* Input para la cantidad de productos */
+.input__cantidad {
+    width: 100px; /* Ancho fijo */
+    height: 50px; /* Altura fija */
+    text-align: center; /* Alinea el texto al centro */
+    font-size: 18px; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde sólido */
+    padding: 5px; /* Relleno */
+}
+  
+/* Botón para aumentar la cantidad */
+.boton__cantidad {
+    background-color: var(--color-terciario); /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno */
+    cursor: pointer; /* Cursor en forma de mano */
+    font-size: 20px; /* Tamaño de fuente */
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 12px 17px; /* Relleno */
+}
+  
+/* Estilo del botón al pasar el ratón por encima */
+.boton__cantidad:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-texto-principal); /* Color del texto al pasar el ratón por encima */
+}
+  
+/* Estilo del botón al hacer clic */
+.boton__cantidad:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-texto-principal); /* Color del texto al hacer clic */
+}
+  
+/* Botón para disminuir la cantidad */
+.boton__cantidad01 {
+    background-color: #FD0000; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno */
+    cursor: pointer; /* Cursor en forma de mano */
+    font-size: 20px; /* Tamaño de fuente */
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 12px 20px; /* Relleno */
+}
+  
+/* Estilo del botón al pasar el ratón por encima */
+.boton__cantidad01:hover {
+    background-color: #CA0202; /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-texto-principal); /* Color del texto al pasar el ratón por encima */
+}
+  
+/* Estilo del botón al hacer clic */
+.boton__cantidad01:active {
+    background-color: #8D0303; /* Color de fondo al hacer clic */
+    color: var(--color-texto-principal); /* Color del texto al hacer clic */
+}
+  
+/* Contenedor del botón de añadir */
+.boton-añadir {
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+  
+/* Enlace del botón de añadir */
+.boton__añadir--link {
+    width: 100%; /* Ancho completo */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-terciario); /* Color de fondo terciario */
+    color: var(--color-fondo-principal); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor en forma de mano */
+    border-radius: 15px; /* Bordes redondeados */
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    box-sizing: border-box; /* Incluir el borde en el cálculo del tamaño total */
+    padding: 10px 20px; /* Relleno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 50px; /* Margen inferior */
+}
+  
+/* Estilo del enlace al pasar el ratón por encima */
+.boton__añadir--link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
+}
+  
+/* Estilo del enlace al hacer clic */
+.boton__añadir--link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
+}
+  
+/* Contenedor de la descripción del producto */
+.producto__descripcion {
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Ancho completo */
+    height: 150px; /* Altura fija */
+    background-color: var(--color-texto-principal); /* Color de fondo */
+    border: 1px solid var(--color-fondo-principal); /* Borde sólido */
+    padding: 10px; /* Relleno */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    width: 100%; /* Ancho completo */
+    height: 104px; /* Altura del pie de página */
+    background-color: var(--color-primario); /* Color de fondo */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 200px; /* Margen superior */
+}
+
+/* Estilos para el texto dentro del pie de página */
+.footer__parrafo {
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-align: center; /* Alinea el texto al centro */
+    font-weight: bold; /* Fuente en negrita */
+}

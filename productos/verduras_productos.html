@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="verduras_productos.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+  
+    <!-- Seccion de los productos -->
+    <section class="contenedor__productos--seccion">
+        <div class="contenedor__parrafos">
+            <h1 class="titulo__parrafos"><strong>Compra tus Frutas y Verduras Aquí</strong></h1>
+            <h3 class="subtitulo__parrafos"><strong>Verduras Frescas</strong></h3>
+            <p class="parrafo__parrafos">Nuestras Verduras se entregan cuidadosamente seleccionada de acuerdo a tus
+                preferencias. <br>
+                “¡Ofresemos juntos las mejores verduras para una vida mas saludable y deliciosa!
+            </p>
+        </div>
+        <!-- Primer producto -->
+        <div class="contenedor__verduras--principal01">
+            <div class="contenedor__producto">
+                <!-- Contenedor de la imagen del producto -->
+                <div class="contenedor__imagen">
+                    <img src="../imagenes/Zanahoria.jpg" alt="Imagen de producto">
+                </div>
+                <!-- Información del producto -->
+                <div class="informacion__producto">
+                    <p class="texto__producto">Verduras</p>
+                    <h3 class="titulo__producto"><strong>Zanahoria (500 Gramo)</strong></h3>
+                    <p class="precio__producto"><strong>$1.900</strong></p>
+                    <!-- Contenedor de botones para control de cantidad -->
+                    <div class="contenedor__cantidad">
+                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
+                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                    </div>
+                    <!-- Botón para añadir producto -->
+                    <div class="boton-añadir">
+                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
+                    </div>
+                    <!-- Contenedor para la descripcion del producto -->
+                    <div class="producto__descripcion--contenedor">
+                        <div class="producto__descripcion">
+                            <p><strong>Zanahoria:</strong> Raíz nutritiva, colorida y <br>
+                                versátil. Beneficia la visión, <br>
+                                fortalece el sistema inmunológico y <br>
+                                favorece la digestión. Perfecta <br> cruda o cocida. ¡Salud en cada <br>
+                                bocado!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Segundo producto -->
+            <div class="contenedor__producto">
+                <!-- Contenedor de la imagen del producto -->
+                <div class="contenedor__imagen">
+                    <img src="../imagenes/Tomate-Chonto.jpg" alt="Imagen de producto">
+                </div>
+                <!-- Información del producto -->
+                <div class="informacion__producto">
+                    <p class="texto__producto">Verduras</p>
+                    <h3 class="titulo__producto"><strong>Tomate Chonto (500 Gramos)</strong></h3>
+                    <p class="precio__producto"><strong>$4.200</strong></p>
+                    <!-- Contenedor de botones para control de cantidad -->
+                    <div class="contenedor__cantidad">
+                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
+                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                    </div>
+                    <!-- Botón para añadir producto -->
+                    <div class="boton-añadir">
+                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
+                    </div>
+                     <!-- Contenedor para la descripcion del producto -->
+                    <div class="producto__descripcion--contenedor">
+                        <div class="producto__descripcion">
+                            <p><strong>Tomate Chonto:</strong> Dulce, jugoso y <br> versátil. Ideal para salsas, ensaladas <br>
+                                y platos frescos. ¡Deléitate con su <br>
+                                sabor intenso y textura firme!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tercer producto -->
+            <div class="contenedor__producto">
+                <!-- Contenedor de la imagen del producto -->
+                <div class="contenedor__imagen">
+                    <img src="../imagenes/Cebolla-Blanca.jpg" alt="Imagen de producto">
+                </div>
+                <!-- Información del producto -->
+                <div class="informacion__producto">
+                    <p class="texto__producto">Verduras</p>
+                    <h3 class="titulo__producto"><strong>Cebolla Blanca (500 Gramos)</strong></h3>
+                    <p class="precio__producto"><strong>$2.700</strong></p>
+                    <!-- Contenedor de botones para control de cantidad -->
+                    <div class="contenedor__cantidad">
+                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
+                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                    </div>
+                    <!-- Botón para añadir producto -->
+                    <div class="boton-añadir">
+                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
+                    </div>
+                    <!-- Contenedor para la descripcion del producto -->
+                    <div class="producto__descripcion--contenedor">
+                        <div class="producto__descripcion">
+                            <p><strong>Cebolla Blanca:</strong> Dulce, suave y <br>
+                                versátil, perfecta para tus platos <br>
+                                favoritos, la cebolla blanca aporta <br>
+                                beneficios para la salud ¡Agrega <br>
+                                sabor a tus comidas con este <br>
+                                ingrediente imprescindible!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor__verduras--principal02">
+            <!-- Cuarto producto -->
+            <div class="contenedor__producto">
+                <!-- Contenedor de la imagen del producto -->
+                <div class="contenedor__imagen">
+                    <img src="../imagenes/pepino.jpg" alt="Imagen de producto">
+                </div>
+                <!-- Información del producto -->
+                <div class="informacion__producto">
+                    <p class="texto__producto">Verduras</p>
+                    <h3 class="titulo__producto"><strong>Pepino Cohombro (Unidad)</strong></h3>
+                    <p class="precio__producto"><strong>$1.000</strong></p>
+                    <!-- Contenedor de botones para control de cantidad -->
+                    <div class="contenedor__cantidad">
+                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
+                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                    </div>
+                    <!-- Botón para añadir producto -->
+                    <div class="boton-añadir">
+                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
+                    </div>
+                    <!-- Contenedor para la descripcion del producto -->
+                    <div class="producto__descripcion--contenedor">
+                        <div class="producto__descripcion">
+                            <p><strong>Pepino Cohombro:</strong> Refrescante y <br>
+                                crujiente, el pepino cohombro es un <br>
+                                ingrediente versátil que se utiliza <br>
+                                en ensaladas, sándwiches y <br>
+                                platos frescos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Quinto producto -->
+            <div class="contenedor__producto">
+                <!-- Contenedor de la imagen del producto -->
+                <div class="contenedor__imagen">
+                    <img src="../imagenes/Cebolla-Roja.jpg" alt="Imagen de producto">
+                </div>
+                <!-- Información del producto -->
+                <div class="informacion__producto">
+                    <p class="texto__producto">Verduras</p>
+                    <h3 class="titulo__producto"><strong>Cebolla Roja (500 Gramos)</strong></h3>
+                    <p class="precio__producto"><strong>$2.900</strong></p>
+                    <!-- Contenedor de botones para control de cantidad -->
+                    <div class="contenedor__cantidad">
+                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
+                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                    </div>
+                    <!-- Botón para añadir producto -->
+                    <div class="boton-añadir">
+                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
+                    </div>
+                    <!-- Contenedor para la descripcion del producto -->
+                    <div class="producto__descripcion--contenedor">
+                        <div class="producto__descripcion">
+                            <p><strong>Cebolla Roja:</strong> La cebolla roja es <br>
+                                conocida por su sabor picante y <br>
+                                vibrante. Aporta un toque de <br>
+                                dulzura a tus platos y es ideal para <br>
+                                ensaladas, salsas, guisos y platos <br>
+                                asados.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sexto producto -->
+            <div class="contenedor__producto">
+                <!-- Contenedor de la imagen del producto -->
+                <div class="contenedor__imagen">
+                    <img src="../imagenes/mazorca.jpg" alt="Imagen de producto">
+                </div>
+                <!-- Información del producto -->
+                <div class="informacion__producto">
+                    <p class="texto__producto">Verduras</p>
+                    <h3 class="titulo__producto"><strong>Mazorca (Unidad)</strong></h3>
+                    <p class="precio__producto"><strong>$3.500</strong></p>
+                    <!-- Contenedor de botones para control de cantidad -->
+                    <div class="contenedor__cantidad">
+                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
+                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                    </div>
+                    <!-- Botón para añadir producto -->
+                    <div class="boton-añadir">
+                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
+                    </div>
+                    <!-- Contenedor para la descripcion del producto -->
+                    <div class="producto__descripcion--contenedor">
+                        <div class="producto__descripcion">
+                            <p><strong>Mazorca:</strong> La mazorca, también <br>
+                                conocida como elote, es un <br>
+                                ingrediente delicioso y versátil. Su <br>
+                                textura jugosa y su sabor dulce hacen <br>
+                                que sea perfecta para disfrutarla a la <br>
+                                parrilla, hervida o en guisos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p class="footer__parrafo">@Megapaquetes</p>
+    </footer>
+
+    <script src="main.js"></script> <!-- Script personalizado -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- Bootstrap Bundle JS desde CDN -->
+</body>
+</html>

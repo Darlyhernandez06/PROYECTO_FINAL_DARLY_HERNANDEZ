@@ -511,6 +511,7 @@ textarea::placeholder {
 }
 
 .footer__parrafo {
+    color: var(--color-fondo-principal);
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
 }

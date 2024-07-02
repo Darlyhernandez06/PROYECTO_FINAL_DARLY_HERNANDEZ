@@ -1,0 +1,677 @@
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    font-family: 'MiFuente';        /* Fuente personalizada */
+}
+
+/*PARTE DEL MENU DE NAVEGACION*/
+
+.navbar {
+    max-width: 100vw;
+    display: flex;                          /* Mostrar como flexbox */
+    align-items: center;                    /* Centrar elementos verticalmente */
+    justify-content: space-between;         /* Espacio entre elementos */
+    background-color: var(--color-primario); /* Color de fondo */
+    padding: 18px 30px;                     /* Padding interno */
+    flex-wrap: wrap;                        /* Permitir envolver elementos en pantalla pequeña */
+}
+
+.negrita {
+    font-weight: bold;  /* Define el texto en negrita */
+    font-size: 16px;    /* Establece el tamaño de la fuente a 16 píxeles */
+}
+
+.navbar__logo img {
+    height: 40px; /* Altura del logo */
+}
+
+.navbar__contenedor {
+    display: flex;                         /* Mostrar como flexbox */
+    flex-direction: column;                /* Dirección de columna para el contenido */
+    color: var(--color-fondo-principal);   /* Color de texto */
+}
+
+.navbar__title {
+    font-size: 16px; /* Tamaño del título */
+}
+
+.navbar__subtitle {
+    font-size: 11px; /* Tamaño del subtítulo */
+}
+
+.navbar__link,
+.menu__toggle {
+    color: var(--color-fondo-principal); /* Color del enlace */
+    padding: 14px 20px; /* Padding del enlace */
+    font-size: 16px; /* Tamaño de fuente del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.nav-link:hover,
+.menu__toggle:hover {
+    color: var(--color-acento-1); /* Color al pasar el mouse */
+}
+
+.navbar__link:active,
+.menu__toggle:active {
+    color: var(--color-secundario);         /* Color al hacer clic */
+    text-decoration: underline solid;       /* Subrayado sólido al hacer clic */
+}
+
+/* Menú desplegable */
+.menu {
+    position: relative;                     /* Posición relativa */
+    display: inline-block;                  /* Mostrar como bloque en línea */
+}
+
+.menu__container {
+    display: none;                          /* Ocultar contenedor por defecto */
+    position: absolute;                     /* Posición absoluta */
+    top: 100%;                              /* Alinear en la parte inferior del elemento padre */
+    left: 0;                                /* Alinear a la izquierda */
+    background-color: var(--color-secundario); /* Color de fondo del menú */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1;                             /* Índice de apilamiento */
+    text-align: left;                       /* Alinear texto a la izquierda */
+}
+
+.menu__container h2 {
+    color: var(--color-texto-principal); /* Color del título */
+    margin: 10px; /* Margen */
+}
+
+.menu__link {
+    color: var(--color-texto-principal); /* Color del enlace */
+    padding: 12px 16px; /* Padding del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    display: block; /* Bloque de visualización */
+}
+
+.menu__link:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+}
+
+.menu__link:active {
+    background-color: var(--color-acento-2); /* Color de fondo al hacer clic */
+}
+
+.menu__toggle:hover + .menu__container,
+.menu__container:hover {
+    display: block; /* Mostrar menú al pasar el mouse */
+}
+
+.menu__vector {
+    margin: 10px; /* Margen */
+}
+
+.menu__heading {
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para el menú desplegable */
+
+li .dropdown-item:hover {
+    background-color: var(--color-primario);  /* Color de fondo al pasar el mouse */
+}
+
+li .dropdown-item:active {
+    background-color: var(--color-resaltado); /* Color de fondo al hacer clic */
+}
+
+/* Estilos para los botones */
+
+.btn.btn-light.button.d-flex.align-items-center:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+    border: none;                            /* Elimina el borde */
+}
+
+.btn.btn-light.button.d-flex.align-items-center:active {
+    background-color: var(--color-acento-1); /* Color de fondo al hacer clic */
+    border: none;                            /* Elimina el borde */
+}
+
+/*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
+
+
+.contenedor__title {
+    text-align: start; /* Alinear al inicio (izquierda) */
+    color: var(--color-fondo-principal); /* Color del fondo principal */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 60px; /* Tamaño de fuente */
+    margin-left: 300px; /* Margen izquierdo específico */
+    margin-top: 200px; /* Margen superior específico */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+.contenedor__subtitle {
+    text-align: start; /* Alinear al inicio (izquierda) */
+    color: var(--color-fondo-principal); /* Color del fondo principal */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 25px; /* Tamaño de fuente */
+    margin-left: 300px; /* Margen izquierdo específico */
+    margin-top: 20px; /* Margen superior específico */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+.contenedor__description {
+    text-align: start; /* Alinear al inicio (izquierda) */
+    color: var(--color-fondo-principal); /* Color del fondo principal */
+    font-size: 17px; /* Tamaño de fuente */
+    margin-left: 300px; /* Margen izquierdo específico */
+    margin-top: 20px; /* Margen superior específico */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+.boton-continuar {
+    margin-top: 100px; /* Margen superior específico */
+}
+
+.boton-continuar__link {
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-terciario); /* Color de fondo terciario */
+    color: var(--color-fondo-principal); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    border-radius: 15px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    box-sizing: border-box; /* Incluir el borde en el cálculo del tamaño total */
+    padding: 10px 20px; /* Relleno interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinear el texto en el centro */
+    margin-left: 300px; /* Margen izquierdo específico */
+}
+
+.boton-continuar__link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
+}
+
+.boton-continuar__link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
+}
+
+.contenedor__secundario {
+    width: 90%; /* Ancho del 90% del contenedor padre */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 100px auto; /* Margen superior e inferior específico, centrado horizontalmente */
+    padding: 20px; /* Relleno interno */
+    display: flex; /* Usar flexbox para disposición de los elementos */
+    flex-wrap: wrap; /* Permitir el ajuste de los elementos */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
+}
+
+.contenedor__texto {
+    position: relative; /* Posicionamiento relativo */
+    flex: 1; /* Flexibilidad del elemento para ocupar espacio */
+    text-align: start; /* Alinear el texto al inicio (izquierda) */
+}
+
+.contenedor__subtitle--secundario {
+    color: var(--color-primario); /* Color primario */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 50px; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Margen inferior específico */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+.contenedor__description--secundario {
+    color: var(--color-texto-principal); /* Color del texto principal */
+    font-size: 20px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Margen inferior específico */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+.contenedor__imagenes--secundario {
+    display: flex; /* Usar flexbox para disposición de las imágenes */
+    flex-direction: column; /* Dirección de columna para los elementos hijos */
+    align-items: center; /* Centrar las imágenes horizontalmente */
+    margin-top: 20px; /* Margen superior específico */
+}
+
+.imagen-row {
+    display: flex; /* Usar flexbox para disposición de las imágenes en fila */
+    gap: 10px; /* Espacio entre las imágenes */
+}
+
+.image__2 {
+    margin-top: -250px; /* Margen superior negativo específico */
+}
+
+/*PARTE DE LA SEGUNDA SECCION DE LA PAGINA*/
+
+.segunda__seccion--contenedor {
+    max-width: 100%; /* Ancho máximo del 100% del contenedor padre */
+    min-height: 50%; /* Altura mínima del 50% del contenedor padre */
+    background-color: var(--color-primario); /* Color de fondo primario */
+    padding: 30px; /* Relleno interno */
+}
+
+.contenedor__imagenes {
+    display: flex; /* Usar flexbox para la disposición de las imágenes */
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    flex-wrap: wrap; /* Permitir el ajuste de los elementos en varias filas */
+    gap: 250px; /* Espacio entre los elementos */
+}
+
+.imagen1, .imagen2, .imagen3 {
+    display: flex; /* Usar flexbox para la disposición interna */
+    align-items: center; /* Centrar verticalmente los elementos internos */
+    justify-content: center; /* Centrar horizontalmente los elementos internos */
+    background-color: rgba(0, 102, 51, 0.5); /* Color de fondo con transparencia */
+    padding: 20px; /* Relleno interno */
+    border-radius: 50%; /* Hace que el contenedor sea un círculo perfecto */
+    width: 200px; /* Ancho de la imagen */
+    height: 200px; /* Altura de la imagen */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.contenedor__imagen1, .contenedor__imagen2, .contenedor__imagen3 {
+    display: flex; /* Usar flexbox para la disposición interna */
+    flex-direction: column; /* Disposición en columna de los elementos internos */
+    align-items: center; /* Centrar verticalmente los elementos internos */
+    justify-content: center; /* Centrar horizontalmente los elementos internos */
+}
+
+.texto__imagen1 {
+    text-align: center; /* Alinear el texto al centro */
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    margin-top: 40px; /* Margen superior específico */
+}
+
+.texto__imagen2 {
+    text-align: center; /* Alinear el texto al centro */
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    margin-top: 40px; /* Margen superior específico */
+}
+
+.texto__imagen3 {
+    text-align: center; /* Alinear el texto al centro */
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    margin-top: 40px; /* Margen superior específico */
+}
+
+
+/*PARTE DE LA TERCERA SECCION DE LA PAGINA*/
+
+.contenedor__parrafos {
+    text-align: center; /* Alinear el texto al centro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto con desplazamiento y color */
+}
+
+.titulo__ofertas {
+    color: var(--color-fondo-principal);
+    font-size: 64px; /* Tamaño de fuente del título */
+    margin-top: 30px; /* Margen superior específico */
+}
+
+.subtitulo__ofertas {
+    color: var(--color-fondo-principal);
+    font-size: 42px; /* Tamaño de fuente del subtítulo */
+    margin-top: 40px; /* Margen superior específico */
+}
+
+.texto__ofertas {
+    color: var(--color-fondo-principal);
+    font-size: 16px; /* Tamaño de fuente del texto */
+    margin-top: 40px; /* Margen superior específico */
+}
+
+.contenedor__ofertas {
+    width: 100%;
+    height: auto;
+    background-image: url(''); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+    background-position: center;    /* Centra la imagen de fondo */
+    padding: 30px; /* Espacio de relleno alrededor del contenido dentro del contenedor */
+}
+
+.contenedor__dentro--seccion {
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    color: var(--color-texto-principal); /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto con desplazamiento y color */
+    padding: 30px; /* Espacio de relleno interno */
+    text-align: center; /* Alinear el texto al centro */
+    margin-top: 80px; /* Margen superior específico */
+}
+  
+.productos__destacados--contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-top: 60px;
+}
+
+.contenedor__imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor__imagen img {
+    width: 150%;
+    border: 6px solid var(--color-terciario);
+    border-radius: 10px;
+}
+
+.informacion__producto {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.texto__producto {
+    color: var(--color-fondo-principal);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.titulo__producto {
+    color: var(--color-acento-2);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.precio__producto {
+    color: var(--color-terciario);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/*PARTE DE LA CUARTA SECCION DE LA PAGINA*/
+.contenedor__informacion {
+    background-color: var(--color-primario); /* Color de fondo principal */
+    padding: 30px; /* Espacio de relleno interno */
+}
+
+.informacion__parrafos {
+    text-align: center; /* Alinear el texto al centro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto con desplazamiento y color */
+}
+
+.titulo__informacion {
+    color: var(--color-fondo-principal);
+    font-size: 64px; /* Tamaño de fuente del título */
+    margin-top: 50px; /* Margen superior específico */
+}
+
+.texto__informacion {
+    color: var(--color-fondo-principal);
+    font-size: 16px; /* Tamaño de fuente del texto */
+    margin-top: 50px; /* Margen superior específico */
+}
+
+.boton-comprar__link {
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-texto-principal); /* Color de fondo principal */
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor apuntador */
+    border-radius: 15px; /* Radio del borde */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    box-sizing: border-box; /* Incluir el borde en el cálculo total del tamaño */
+    padding: 10px 20px; /* Añadir relleno dentro del botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinear el texto en el centro */
+    margin: 0 auto; /* Centrar el botón horizontalmente */
+    margin-top: 50px; /* Margen superior específico */
+}
+
+.boton-comprar__link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el cursor */
+    color: var(--color-fondo-principal); /* Color de texto al pasar el cursor */
+}
+
+.boton-comprar__link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color de texto al hacer clic */
+}
+
+/*PARTE DE LA QUINTA SECCION DE LA PAGINA*/
+
+.contenedor__opiniones {
+    width: 100%; /* Ancho completo del contenedor */
+    height: 800px; /* Altura fija del contenedor */
+    background-image: url(''); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    padding: 30px; /* Espacio de relleno alrededor del contenido dentro del contenedor */
+}
+
+.informacion__parrafos--opiniones {
+    text-align: center; /* Alinear el texto al centro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto con desplazamiento y color */
+}
+
+.titulo__opiniones {
+    color: var(--color-fondo-principal);
+    font-size: 64px; /* Tamaño de fuente del título */
+    margin-top: 100px; /* Margen superior específico */
+    margin-bottom: 100px; /* Margen inferior específico */
+}
+
+.cards__opiniones {
+    display: flex; /* Utiliza flexbox para el diseño de las tarjetas */
+    justify-content: center; /* Centra horizontalmente las tarjetas */
+    align-items: center; /* Centra verticalmente las tarjetas */
+    gap: 100px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap;
+}
+
+.card__texto {
+    width: 100%; /* Ancho completo del texto dentro de la tarjeta */
+    height: 300px; /* Altura fija del texto dentro de la tarjeta */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    text-align: center; /* Alinear el texto al centro */
+    background-color: var(--color-texto-principal); /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    border: solid 1px var(--color-fondo-principal); /* Borde con color definido */
+    padding: 20px; /* Espaciado interno */
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto con desplazamiento y color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 50px; /* Margen inferior específico */
+}
+
+.card__pie {
+    color: var(--color-fondo-principal);
+    font-size: 20px; /* Tamaño de fuente del pie de la tarjeta */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+/*PARTE DE LA SECCION LA INFROMACION DE MEGAPAQUETES*/
+
+.additional-info {
+    background-color: var(--color-primario); /* Color de fondo */
+    padding: 20px; /* Padding */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Justificar contenido horizontalmente */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    min-height: 100vh; /* Altura mínima de la vista */
+}
+
+/* Estilos para el contenido principal */
+.additional-info__main {
+    display: grid; /* Contenedor de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    grid-auto-rows: minmax(100px, auto); /* Altura mínima 100px, tamaño automático */
+    gap: 20px; /* Espacio entre columnas y filas */
+    padding: 20px; /* Padding */
+}
+
+.additional-info__secondary {
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.additional-info__title {
+    flex: 1; /* Flexibilidad */
+}
+
+.additional-info__subtitle {
+    font-size: 14px; /* Tamaño de la fuente */
+    color: var(--color-fondo-principal); /* Color de texto */
+}
+
+.additional-info__logo img {
+    max-width: 60px; /* Ancho máximo */
+    height: auto; /* Altura automática */
+}
+
+.additional-info__image img {
+    max-width: 100%; /* Ancho máximo */
+    display: block; /* Bloque de visualización */
+    border-radius: 10px; /* Radio del borde */
+}
+
+.additional-info__image {
+    grid-column: 1; /* Columna 1 */
+    grid-row: 2; /* Fila 2 */
+}
+
+.additional-info__nav-list {
+    grid-column: 3; /* Columna 3 */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.additional-info__store-info {
+    grid-column: 3; /* Columna 3 */
+    margin-top: 30px; /* Margen superior */
+}
+
+.additional-info__nav-item {
+    margin-bottom: 10px; /* Margen inferior */
+    color: var(--color-fondo-principal); /* Color de texto */
+}
+
+.additional-info__heading {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 18px; /* Tamaño de la fuente */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.additional-info__contact {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Dirección de columna */
+    align-items: start; /* Alinear elementos a la izquierda */
+    text-align: center; /* Alinear texto al centro */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.additional-info__contact-item {
+    color: var(--color-fondo-principal); /* Color de texto */
+    margin-bottom: 5px; /* Margen inferior */
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alinear elementos al centro */
+}
+
+.additional-info__contact-item img {
+    margin-right: 10px; /* Margen derecho */
+}
+
+.additional-info__text_1 {
+    background-color: var(--color-terciario); /* Color de fondo */
+    width: 73%; /* Ancho */
+    border-radius: 10px; /* Radio del borde */
+    padding: var(--paddin-button); /* Padding */
+    color: var(--color-texto-principal); /* Color de texto */
+    text-align: start; /* Alinear texto a la izquierda */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    font-size: 17px; /* Tamaño de la fuente */
+}
+
+.additional-info__social {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Dirección de columna */
+}
+
+.additional-info__heading {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+.additional-info__text {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.additional-info__social-icons {
+    display: flex; /* Contenedor flexible */
+    flex-direction: row; /* Dirección de fila */
+    margin-left: -13px; /* Margen izquierdo negativo */
+}
+
+.additional-info__social-icon {
+    width: 70px; /* Ancho */
+    height: auto; /* Altura automática */
+    cursor: pointer; /* Cursor apuntador */
+    margin-right: -10px; /* Margen derecho negativo */
+}
+
+/* ESTILOS PARA EL PIE DE PAGINA*/
+.footer {
+    height: 140px; /* Altura */
+    background: url('../imagenes/footer.png') no-repeat; /* Imagen de fondo */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Justificar contenido horizontalmente */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+}
+
+.footer__parrafo {
+    color: var(--color-fondo-principal);
+    text-align: center; /* Alinear texto al centro */
+    font-weight: bold; /* Peso de la fuente */
+}
