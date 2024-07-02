@@ -28,8 +28,6 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url(''); /* Imagen de fondo */
-    background-repeat: no-repeat;             /* No repetir el fondo */
     font-family: 'MiFuente';        /* Fuente personalizada */
 }
 
@@ -162,11 +160,12 @@ li .dropdown-item:active {
 
 /*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
 
-.contenedor__principal{
-    background: url('../imagenes/footer.svg'); /* Imagen de fondo */
+.contenedor__fondo {
+    background: url('../imagenes/fondo principal.svg'); /* Imagen de fondo */
+    height: 1700px;
+    background-repeat: no-repeat; /* No repetir el fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .contenedor__title {
@@ -175,7 +174,7 @@ li .dropdown-item:active {
     font-weight: bold; /* Texto en negrita */
     font-size: 60px; /* Tamaño de fuente */
     margin-left: 300px; /* Margen izquierdo específico */
-    margin-top: 200px; /* Margen superior específico */
+    padding-top: 200px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
@@ -368,7 +367,7 @@ li .dropdown-item:active {
 .contenedor__ofertas {
     width: 100%;
     height: auto;
-    background-image: url(''); /* Ruta a tu imagen de fondo */
+    background-image: url('../imagenes/fondo ofertas.svg'); /* Ruta a tu imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center;    /* Centra la imagen de fondo */
@@ -486,8 +485,8 @@ li .dropdown-item:active {
 
 .contenedor__opiniones {
     width: 100%; /* Ancho completo del contenedor */
-    height: 800px; /* Altura fija del contenedor */
-    background-image: url(''); /* Ruta a la imagen de fondo */
+    height: 850px; /* Altura fija del contenedor */
+    background-image: url('../imagenes/fondo opiniones.svg'); /* Ruta a la imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -671,7 +670,10 @@ li .dropdown-item:active {
 /* ESTILOS PARA EL PIE DE PAGINA*/
 .footer {
     height: 140px; /* Altura */
-    background: url('../imagenes/footer.png') no-repeat; /* Imagen de fondo */
+    background: url('../imagenes/footer.svg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
     display: flex; /* Contenedor flexible */
     justify-content: center; /* Justificar contenido horizontalmente */
     align-items: center; /* Alinear elementos al centro verticalmente */
@@ -681,4 +683,5 @@ li .dropdown-item:active {
     color: var(--color-fondo-principal);
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
+    font-size: 20px;
 }
