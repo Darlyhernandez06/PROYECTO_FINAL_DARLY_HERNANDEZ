@@ -382,7 +382,7 @@ li .dropdown-item:active {
     text-align: center; /* Alinear el texto al centro */
     margin-top: 80px; /* Margen superior específico */
 }
-  
+
 .productos__destacados--contenedor {
     display: flex;
     justify-content: center;
@@ -400,13 +400,17 @@ li .dropdown-item:active {
 
 .contenedor__imagen img {
     width: 150%;
+    background-color: var(--color-texto-principal);
     border: 6px solid var(--color-terciario);
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .informacion__producto {
+    background-color: var(--color-primario);
     margin-top: 30px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .texto__producto {
@@ -684,4 +688,198 @@ li .dropdown-item:active {
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
     font-size: 20px;
+}
+
+/*RESPONSIVE*/
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .contenedor__opiniones{
+        height: 1400px;
+    }
+    .contenedor__fondo {
+        height: 1700px; /* Ajusta la altura según sea necesario */
+    }
+
+    .contenedor__title {
+        font-size: 60px; /* Tamaño de fuente ajustado para tablets */
+        margin-left: 50px; /* Margen izquierdo ajustado para tablets */
+        padding-top: 100px; /* Ajusta el padding superior según sea necesario */
+    }
+
+    .contenedor__subtitle {
+        font-size: 20px; /* Tamaño de fuente ajustado para tablets */
+        margin-left: 50px; /* Margen izquierdo ajustado para tablets */
+        margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    }
+
+    .contenedor__description {
+        font-size: 12px; /* Tamaño de fuente ajustado para tablets */
+        margin-left: 50px; /* Margen izquierdo ajustado para tablets */
+        margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    }
+
+    .boton-continuar__link {
+        margin-left: 50px; /* Margen izquierdo ajustado para tablets */
+    }
+
+    .contenedor__secundario {
+        display: flex;
+        flex-direction: column; /* Coloca las imágenes una debajo de la otra */
+        align-items: center; /* Centra las imágenes horizontalmente */
+        margin: 50px auto; /* Margen ajustado para tablets */
+        padding: 15px; /* Padding ajustado para tablets */
+    }
+
+    .contenedor__subtitle--secundario {
+        font-size: 30px; /* Tamaño de fuente ajustado para tablets */
+        margin-bottom: 5px; /* Margen inferior ajustado para tablets */
+    }
+
+    .contenedor__description--secundario {
+        font-size: 18px; /* Tamaño de fuente ajustado para tablets */
+        margin-bottom: 10px; /* Margen inferior ajustado para tablets */
+    }
+
+    .contenedor__imagenes--secundario{
+        gap: 10px;
+    }
+
+    .imagen-row {
+        display: flex;
+        flex-direction: column; /* Coloca las imágenes una debajo de la otra */
+        align-items: center; /* Centra las imágenes horizontalmente */
+        margin-top: 10px; /* Ajusta el margen superior si es necesario */
+    }
+
+    .imagen-row2 {
+        margin-top: -250px; /* Ajusta el margen superior si es necesario */
+    }
+
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .footer{
+        height: 100px;
+    }
+}
+
+/*RESPONSIVE*/
+
+/* Media query para pantallas pequeñas como móviles */
+@media (min-width: 300px) and (max-width: 767px) {
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .contenedor__opiniones{
+        height: 1400px;
+    }
+    .contenedor__fondo {
+        height: 1700px; /* Ajusta la altura según sea necesario */
+    }
+
+    .contenedor__title {
+        font-size: 40px; /* Tamaño de fuente ajustado para tablets */
+        margin-left: 30px; /* Margen izquierdo ajustado para tablets */
+        padding-top: 100px; /* Ajusta el padding superior según sea necesario */
+    }
+
+    .contenedor__subtitle {
+        font-size: 20px; /* Tamaño de fuente ajustado para tablets */
+        margin-left: 30px; /* Margen izquierdo ajustado para tablets */
+        margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    }
+
+    .contenedor__description {
+        font-size: 10px; /* Tamaño de fuente ajustado para tablets */
+        margin-left: 30px; /* Margen izquierdo ajustado para tablets */
+        margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    }
+
+    .boton-continuar__link {
+        margin-left: 100px; /* Margen izquierdo ajustado para tablets */
+    }
+
+    .contenedor__secundario {
+        display: flex;
+        flex-direction: column; /* Coloca las imágenes una debajo de la otra */
+        align-items: center; /* Centra las imágenes horizontalmente */
+        margin: 50px auto; /* Margen ajustado para tablets */
+        padding: 15px; /* Padding ajustado para tablets */
+    }
+
+    .contenedor__subtitle--secundario {
+        font-size: 30px; /* Tamaño de fuente ajustado para tablets */
+        margin-bottom: 5px; /* Margen inferior ajustado para tablets */
+    }
+
+    .contenedor__description--secundario {
+        font-size: 18px; /* Tamaño de fuente ajustado para tablets */
+        margin-bottom: 10px; /* Margen inferior ajustado para tablets */
+    }
+
+    .contenedor__imagenes--secundario{
+        gap: 10px;
+    }
+
+    .imagen-row {
+        display: flex;
+        flex-direction: column; /* Coloca las imágenes una debajo de la otra */
+        align-items: center; /* Centra las imágenes horizontalmente */
+        margin-top: 10px; /* Ajusta el margen superior si es necesario */
+    }
+
+    .imagen-row2 {
+        margin-top: -250px; /* Ajusta el margen superior si es necesario */
+    }
+
+    .titulo__ofertas{
+        font-size: 35px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .subtitulo__ofertas{
+        font-size: 20px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .texto__ofertas{
+        font-size: 10px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .footer{
+        height: 50px;
+    }
 }
