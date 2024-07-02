@@ -488,6 +488,7 @@ li .dropdown-item:active {
     color: var(--color-fondo-principal);
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
+    font-size: 15px;
 }
 
 

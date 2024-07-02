@@ -687,7 +687,7 @@ li .dropdown-item:active {
     color: var(--color-fondo-principal);
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
-    font-size: 20px;
+    font-size: 15px;
 }
 
 /*RESPONSIVE*/
@@ -792,9 +792,6 @@ li .dropdown-item:active {
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
-    .contenedor__opiniones{
-        height: 1400px;
-    }
     .contenedor__fondo {
         height: 1700px; /* Ajusta la altura según sea necesario */
     }
@@ -859,11 +856,36 @@ li .dropdown-item:active {
     }
 
     .subtitulo__ofertas{
-        font-size: 20px; /* Tamaño de fuente ajustado para tablets */
+        font-size: 25px; /* Tamaño de fuente ajustado para tablets */
     }
 
     .texto__ofertas{
-        font-size: 10px; /* Tamaño de fuente ajustado para tablets */
+        font-size: 12px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .titulo__informacion{
+        font-size: 40px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .texto__informacion{
+        font-size: 14px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .titulo__opiniones{
+        font-size: 40px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .cards__opiniones{
+        height: 200px;
+    }
+
+    .card__texto{
+        height: 150px;
+        font-size: 12px; /* Tamaño de fuente ajustado para tablets */
+    }
+
+    .contenedor__opiniones{
+        height: 1100px;
     }
 
     .additional-info__main {
