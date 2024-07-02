@@ -301,8 +301,7 @@ textarea::placeholder {
 
 /* Estilos para el botón de enviar 01 */
 .button-button--submit01 {
-    width: calc(50% - 40px); /* Ancho calculado */
-    max-width: 500px; /* Ancho máximo */
+    width: 250px; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     color: var(--color-texto-principal); /* Color de texto */
     border: 3px solid var(--color-texto-principal); /* Borde */
@@ -313,7 +312,7 @@ textarea::placeholder {
     padding: 12px 20px; /* Padding */
     text-align: center; /* Alinear texto al centro */
     background: none; /* Fondo transparente */
-    margin-top: 80px;
+    margin-top: 80px; /* Añade un margen superior de 80 píxeles */
 }
 
 .button-button--submit01:hover {
@@ -328,19 +327,18 @@ textarea::placeholder {
 
 /* Estilos para el botón de enviar */
 .button-button--submit {
-    width: calc(50% - 40px); /* Ancho calculado */
-    max-width: 500px; /* Ancho máximo */
+    width: 250px; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     background-color: var(--color-texto-principal); /* Color de fondo */
     color: rgba(77, 167, 104, 0.5); /* Color de texto */
-    border: 1px solid #ccc; /* Borde */
+    border: 3px solid var(--color-texto-principal); /* Borde */
     border-radius: 15px; /* Radio del borde */
     font-weight: bold; /* Peso de la fuente */
     font-size: 16px; /* Tamaño de la fuente */
     cursor: pointer; /* Cursor apuntador */
     padding: 12px 20px; /* Padding */
     text-align: center; /* Alinear texto al centro */
-    margin-top: 80px;
+    margin-top: 80px; /* Añade un margen superior de 80 píxeles */
 }
 
 .button-button--submit:hover {
@@ -573,7 +571,7 @@ textarea::placeholder {
 /*RESPONSIVE*/
 
 /* Media query para pantallas pequeñas como móviles */
-@media (min-width: 400px) and (max-width: 767px) {
+@media (min-width: 300px) and (max-width: 767px) {
     .form {
         flex-direction: column; /* Cambia a dirección de columna para móviles */
     }
@@ -595,11 +593,11 @@ textarea::placeholder {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
     .title-container {
-        font-size: 48px; /* Tamaño de fuente de 50 píxeles */
+        font-size: 35px; /* Tamaño de fuente de 35 píxeles */
         margin-top: 20px; /* Margen superior de 20 píxeles */
     }
     .subtitle-container {
-        font-size: 40px; /* Tamaño de fuente de 40 píxeles */
+        font-size: 30px; /* Tamaño de fuente de 30 píxeles */
         margin-top: -20px; /* Margen superior negativo de 20 píxeles */
     }
     .create-account-section {
@@ -619,6 +617,7 @@ textarea::placeholder {
         /* Estilos de la descripción dentro del contenedor de bienvenida */
         width: 100%; /* Ancho del 100% */
         margin-left: 0px; /* Margen izquierdo de 0 píxeles */
+        font-size: 10px; /* Tamaño de fuente de 10 píxeles */
     }
     .additional-info__main {
         display: flex; /* Contenedor de cuadrícula con flexbox */

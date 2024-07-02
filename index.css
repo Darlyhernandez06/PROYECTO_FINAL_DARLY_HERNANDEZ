@@ -619,7 +619,7 @@ li .dropdown-item:active {
 /*RESPONSIVE*/
 
 /* Media query para pantallas pequeñas como móviles */
-@media (min-width: 400px) and (max-width: 767px) {
+@media (min-width: 300px) and (max-width: 767px) {
     .form {
         flex-direction: column; /* Cambia a dirección de columna para móviles */
     }
@@ -641,11 +641,11 @@ li .dropdown-item:active {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
     .bienvenidos__title {
-        font-size: 48px; /* Tamaño de fuente de 50 píxeles */
+        font-size: 38px; /* Tamaño de fuente de 38 píxeles */
         margin-top: 20px; /* Margen superior de 20 píxeles */
     }
     .bienvenidos__subtitle {
-        font-size: 40px; /* Tamaño de fuente de 40 píxeles */
+        font-size: 30px; /* Tamaño de fuente de 30 píxeles */
         margin-top: -20px; /* Margen superior negativo de 20 píxeles */
     }
     .bienvenidos {
@@ -665,6 +665,7 @@ li .dropdown-item:active {
         /* Estilos de la descripción dentro del contenedor de bienvenida */
         width: 100%; /* Ancho del 100% */
         margin-left: 0px; /* Margen izquierdo de 0 píxeles */
+        font-size: 10px; /* Tamaño de fuente de 10 píxeles */
     }
     .additional-info__main {
         display: flex; /* Contenedor de cuadrícula con flexbox */
