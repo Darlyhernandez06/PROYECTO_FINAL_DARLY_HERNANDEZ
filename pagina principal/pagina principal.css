@@ -28,6 +28,8 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
+    background: url(''); /* Imagen de fondo */
+    background-repeat: no-repeat;             /* No repetir el fondo */
     font-family: 'MiFuente';        /* Fuente personalizada */
 }
 
@@ -160,6 +162,12 @@ li .dropdown-item:active {
 
 /*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
 
+.contenedor__principal{
+    background: url('../imagenes/footer.svg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
 
 .contenedor__title {
     text-align: start; /* Alinear al inicio (izquierda) */
@@ -363,7 +371,6 @@ li .dropdown-item:active {
     background-image: url(''); /* Ruta a tu imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     background-position: center;    /* Centra la imagen de fondo */
     padding: 30px; /* Espacio de relleno alrededor del contenido dentro del contenedor */
 }
