@@ -161,7 +161,7 @@ li .dropdown-item:active {
 /*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
 
 .contenedor__fondo {
-    background: url('../imagenes/fondo principal.svg'); /* Imagen de fondo */
+    background: url('../imagenes/fondo de la pagina principal.svg'); /* Imagen de fondo */
     height: 1700px; /* Altura del contenedor */
     background-repeat: no-repeat; /* No repetir el fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
