@@ -796,7 +796,7 @@ li .dropdown-item:active {
     }
     
     .contenedor__subtitle {
-        font-size: 20px; /* Tamaño de fuente ajustado para móviles */
+        font-size: 13px; /* Tamaño de fuente ajustado para móviles */
         margin-left: 30px; /* Margen izquierdo ajustado para móviles */
         margin-top: 10px; /* Margen superior ajustado para móviles */
     }
