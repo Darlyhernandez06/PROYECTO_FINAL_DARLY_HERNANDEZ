@@ -161,8 +161,7 @@ li .dropdown-item:active {
 /*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
 
 .contenedor__fondo {
-    background: url('../imagenes/fondo de la pagina principal.svg'); /* Imagen de fondo */
-    height: 1700px; /* Altura del contenedor */
+    background: url('../imagenes/fondo principal.svg'); /* Imagen de fondo */
     background-repeat: no-repeat; /* No repetir el fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
@@ -237,17 +236,10 @@ li .dropdown-item:active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     margin: 100px auto; /* Margen superior e inferior específico, centrado horizontalmente */
     padding: 20px; /* Relleno interno */
-    display: flex; /* Usar flexbox para disposición de los elementos */
-    flex-wrap: wrap; /* Permitir el ajuste de los elementos */
-    justify-content: center; /* Centrar los elementos horizontalmente */
     align-items: center; /* Centrar los elementos verticalmente */
 }
 
-.contenedor__texto {
-    position: relative; /* Posicionamiento relativo */
-    flex: 1; /* Flexibilidad del elemento para ocupar espacio */
-    text-align: start; /* Alinear el texto al inicio (izquierda) */
-}
+
 
 .contenedor__subtitle--secundario {
     color: var(--color-primario); /* Color primario */
@@ -774,6 +766,10 @@ li .dropdown-item:active {
 
 /* Media query para pantallas pequeñas como móviles */
 @media (min-width: 300px) and (max-width: 767px) {
+   
+    .body{
+        width: 100vw;
+    }
     .esconder {
         display: none; /* Ocultar elemento con display none */
         width: 50%; /* Ancho del 50% */
@@ -781,8 +777,8 @@ li .dropdown-item:active {
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
-    .contenedor__fondo {
-        height: 1700px; /* Ajusta la altura según sea necesario */
+    .contenedor__principal{
+        width: 100vw;
     }
     .contenedor__title {
         font-size: 40px; /* Tamaño de fuente ajustado para móviles */
@@ -803,19 +799,34 @@ li .dropdown-item:active {
         margin-left: 100px; /* Margen izquierdo ajustado para móviles */
     }
     .contenedor__secundario {
+        width: 100%;
         display: flex;
         flex-direction: column; /* Coloca las imágenes una debajo de la otra */
         align-items: center; /* Centra las imágenes horizontalmente */
         margin: 50px auto; /* Margen ajustado para móviles */
         padding: 15px; /* Padding ajustado para móviles */
     }
+    .segunda__seccion--contenedor{
+        width: 100vw;
+    }
+    .tercera__seccion--contenedor{
+        width: 100vw;
+    }
+    .cuarta__seccion--contenedor{
+        width: 100vw;
+    }
+    .quinta__seccion--contenedor{
+        width: 100vw;
+    }
+    .additional-info{
+        width: 100vw;
+    }
+    
     .contenedor__subtitle--secundario {
         font-size: 30px; /* Tamaño de fuente ajustado para móviles */
-        margin-bottom: 5px; /* Margen inferior ajustado para móviles */
     }
     .contenedor__description--secundario {
         font-size: 18px; /* Tamaño de fuente ajustado para móviles */
-        margin-bottom: 10px; /* Margen inferior ajustado para móviles */
     }
     .contenedor__imagenes--secundario {
         gap: 10px; /* Espacio entre elementos ajustado para móviles */
@@ -827,7 +838,11 @@ li .dropdown-item:active {
         margin-top: 10px; /* Ajusta el margen superior si es necesario */
     }
     .imagen-row2 {
+        padding-left: 20px;
         margin-top: -250px; /* Ajusta el margen superior si es necesario */
+    }
+    .image__2{
+        padding-left: 20px;
     }
     .titulo__ofertas {
         font-size: 35px; /* Tamaño de fuente ajustado para móviles */
@@ -855,6 +870,7 @@ li .dropdown-item:active {
         font-size: 12px; /* Tamaño de fuente ajustado para móviles */
     }
     .contenedor__opiniones {
+        width: 100vw;
         height: 1100px; /* Altura ajustada para móviles */
     }
     .additional-info__main {
@@ -871,6 +887,7 @@ li .dropdown-item:active {
         text-align: center; /* Alinear texto al centro */
     }
     .footer {
+        width: 100vw;
         height: 50px; /* Altura ajustada para móviles */
     }
 }

@@ -485,10 +485,10 @@ li .dropdown-item:active {
 }
 
 .footer__parrafo {
-    color: var(--color-fondo-principal);
+    color: var(--color-fondo-principal); /* Color de texto */
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
-    font-size: 15px;
+    font-size: 15px; /* Tamaño de la fuente */
 }
 
 
@@ -543,7 +543,7 @@ li .dropdown-item:active {
         text-align: center; /* Alinear texto al centro */
     }
     .footer{
-        height: 100px;
+        height: 100px; /* Altura fija de 100px para el footer */
     }
 }
 
@@ -560,12 +560,14 @@ li .dropdown-item:active {
         min-height: 40px; /* Altura mínima reducida para móviles */
     }
     .restablecer-section__input, .restablecer-section__button-container {
-        margin-left: -20px;
-        width: 120%;
+        margin-left: -20px; /* Aplica un margen negativo de 20px a la izquierda del elemento */
+        width: 120%; /* Establece el ancho del elemento al 120% de su contenedor padre */
     }
-    .restablecer-section__icon{
-        margin-right: -30px;
+    
+    .restablecer-section__icon {
+        margin-right: -30px; /* Aplica un margen negativo de 30px a la derecha del elemento */
     }
+
     .esconder {
         display: none; /* Ocultar elemento */
         width: 50%; /* Ancho del 50% */
@@ -617,6 +619,6 @@ li .dropdown-item:active {
         text-align: center; /* Alinear texto al centro */
     }
     .footer{
-        height: 50px;
+        height: 50px; /* Altura fija de 50px para el footer */
     }
 }  

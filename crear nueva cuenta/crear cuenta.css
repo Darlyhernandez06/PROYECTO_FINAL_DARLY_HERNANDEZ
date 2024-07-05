@@ -365,10 +365,10 @@ textarea::placeholder {
 }
 
 .confirmar-section__icon {
-    /* Estilos para los iconos dentro de la sección de restablecer contraseña */
-    width: 50px; /* Ancho de icono */
-    height: 25px; /* Altura de icono */
-    margin-top: -35px;
+    /* Estilos para los iconos dentro de la sección de confirmación */
+    width: 50px; /* Ancho del icono */
+    height: 25px; /* Altura del icono */
+    margin-top: -35px; /* Aplica un margen negativo de 35px en la parte superior del icono */
 }
 
 /*PARTE DE LA SEGUNDA SECCION LA INFROMACION DE MEGAPAQUETES*/
@@ -514,10 +514,10 @@ textarea::placeholder {
 }
 
 .footer__parrafo {
-    color: var(--color-fondo-principal);
+    color: var(--color-fondo-principal); /* Color de texto */
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
-    font-size: 15px;
+    font-size: 15px; /* Tamaño de la fuente */
 }
 
 /*RESPONSIVE*/
@@ -571,7 +571,7 @@ textarea::placeholder {
         text-align: center; /* Alinear texto al centro */
     }
     .footer{
-        height: 100px;
+        height: 100px; /* Altura fija de 100px para el footer */
     }
 }
 
@@ -644,9 +644,9 @@ textarea::placeholder {
         text-align: center; /* Alinear texto al centro */
     }
     .footer{
-        height: 50px;
+        height: 50px; /* Altura fija de 50px para el footer */
     }
-    .confirmar-section__icon-button{
-        right: -25px;
+    .confirmar-section__icon-button {
+        right: -25px; /* Desplaza el botón 25px hacia la izquierda desde su posición original a la derecha */
     }
 }
