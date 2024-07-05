@@ -344,11 +344,13 @@ textarea::placeholder {
 .button-button--submit:hover {
     background-image: linear-gradient(to right, #99E89D, #4DA768); /* Gradiente al pasar el mouse */
     color: rgba(255, 255, 255, 0.5); /* Color de texto al pasar el mouse */
+    border: none; /* Quitar el borde */
 }
 
 .button-button--submit:active {
     background-image: linear-gradient(to right, #3BC975, #006633); /* Gradiente al hacer clic */
     color: rgba(255, 255, 255, 0.5); /* Color de texto al hacer clic */
+    border: none; /* Quitar el borde */
 }
 
 .confirmar-section__input-wrapper {
