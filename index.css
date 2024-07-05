@@ -673,7 +673,7 @@ li .dropdown-item:active {
         /* Estilos de la descripción dentro del contenedor de bienvenida */
         width: 100%; /* Ancho del 100% */
         margin-left: 0px; /* Margen izquierdo de 0 píxeles */
-        font-size: 10px; /* Tamaño de fuente de 10 píxeles */
+        font-size: 11px; /* Tamaño de fuente de 10 píxeles */
     }
     .additional-info__main {
         display: flex; /* Contenedor de cuadrícula con flexbox */

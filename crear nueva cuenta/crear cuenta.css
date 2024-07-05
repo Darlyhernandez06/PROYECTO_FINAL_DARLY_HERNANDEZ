@@ -552,8 +552,8 @@ textarea::placeholder {
         width: 100px; /* Ancho de la imagen de 100 píxeles */
         margin-top: -30px; /* Margen superior negativo de 30 píxeles */
     }
-    .bienvenidos__description {
-        /* Estilos de la descripción dentro del contenedor de bienvenida */
+    .description-container {
+        /* Estilos de la descripción dentro del contenedor */
         width: 100%; /* Ancho del 100% */
         margin-left: 0px; /* Margen izquierdo de 0 píxeles */
     }
@@ -580,6 +580,11 @@ textarea::placeholder {
 
 /* Media query para pantallas pequeñas como móviles */
 @media (min-width: 300px) and (max-width: 767px) {
+   
+    .form__input{
+        margin-left: -20px;
+        width: 120%;
+    }
     .form {
         flex-direction: column; /* Cambia a dirección de columna para móviles */
     }
@@ -588,10 +593,9 @@ textarea::placeholder {
         min-width: auto; /* Ancho mínimo automático */
         min-height: 40px; /* Altura mínima reducida para móviles */
     }
-    textarea {
-        width: auto; /* Ancho automático para ajustar al contenido */
-        min-width: auto; /* Ancho mínimo automático */
-        min-height: 150px; /* Altura mínima reducida para móviles */
+    .textarea {
+        width: 120%; /* Ancho automático para ajustar al contenido */
+        margin-left: -20px;
     }
     .esconder {
         display: none; /* Ocultar elemento con display none */
@@ -609,7 +613,7 @@ textarea::placeholder {
         margin-top: -20px; /* Margen superior negativo de 20 píxeles */
     }
     .create-account-section {
-        /* Estilos del contenedor principal de bienvenida */
+        /* Estilos del contenedor principal */
         max-width: 90%; /* Ancho máximo del contenedor del 90% */
         border-radius: 20px; /* Radio del borde de 20 píxeles */
         margin-top: 70px; /* Margen superior de 70 píxeles */
@@ -621,11 +625,10 @@ textarea::placeholder {
         width: 100px; /* Ancho de la imagen de 100 píxeles */
         margin-top: -30px; /* Margen superior negativo de 30 píxeles */
     }
-    .bienvenidos__description {
-        /* Estilos de la descripción dentro del contenedor de bienvenida */
+    .description-container {
         width: 100%; /* Ancho del 100% */
         margin-left: 0px; /* Margen izquierdo de 0 píxeles */
-        font-size: 10px; /* Tamaño de fuente de 10 píxeles */
+        font-size: 11px; /* Tamaño de fuente de 10 píxeles */
     }
     .additional-info__main {
         display: flex; /* Contenedor de cuadrícula con flexbox */
@@ -642,5 +645,8 @@ textarea::placeholder {
     }
     .footer{
         height: 50px;
+    }
+    .confirmar-section__icon-button{
+        right: -25px;
     }
 }

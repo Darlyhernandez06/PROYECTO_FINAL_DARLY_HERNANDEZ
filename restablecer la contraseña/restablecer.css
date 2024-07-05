@@ -548,7 +548,6 @@ li .dropdown-item:active {
 }
 
 
-
 /*RESPONSIVE*/
 /* Media query para pantallas pequeñas como móviles */
 @media (min-width: 300px) and (max-width: 767px) {
@@ -559,6 +558,13 @@ li .dropdown-item:active {
         width: auto; /* Ancho automático para ajustar al contenido */
         min-width: auto;
         min-height: 40px; /* Altura mínima reducida para móviles */
+    }
+    .restablecer-section__input, .restablecer-section__button-container {
+        margin-left: -20px;
+        width: 120%;
+    }
+    .restablecer-section__icon{
+        margin-right: -30px;
     }
     .esconder {
         display: none; /* Ocultar elemento */
