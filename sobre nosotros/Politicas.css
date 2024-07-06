@@ -1,0 +1,408 @@
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    background-image: url('../imagenes/fondo de lechuga.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No repetir el fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    font-family: 'MiFuente';        /* Fuente personalizada */
+}
+
+/*PARTE DEL MENU DE NAVEGACION*/
+
+.navbar {
+    max-width: 100vw;
+    display: flex;                          /* Mostrar como flexbox */
+    align-items: center;                    /* Centrar elementos verticalmente */
+    justify-content: space-between;         /* Espacio entre elementos */
+    background-color: var(--color-primario); /* Color de fondo */
+    padding: 18px 30px;                     /* Padding interno */
+    flex-wrap: wrap;                        /* Permitir envolver elementos en pantalla pequeña */
+}
+
+.negrita {
+    font-weight: bold;  /* Define el texto en negrita */
+    font-size: 16px;    /* Establece el tamaño de la fuente a 16 píxeles */
+}
+
+.navbar__logo img {
+    height: 40px; /* Altura del logo */
+}
+
+.navbar__contenedor {
+    display: flex;                         /* Mostrar como flexbox */
+    flex-direction: column;                /* Dirección de columna para el contenido */
+    color: var(--color-fondo-principal);   /* Color de texto */
+}
+
+.navbar__title {
+    font-size: 16px; /* Tamaño del título */
+}
+
+.navbar__subtitle {
+    font-size: 11px; /* Tamaño del subtítulo */
+}
+
+.navbar__link,
+.menu__toggle {
+    color: var(--color-fondo-principal); /* Color del enlace */
+    padding: 14px 20px; /* Padding del enlace */
+    font-size: 16px; /* Tamaño de fuente del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.nav-link:hover,
+.menu__toggle:hover {
+    color: var(--color-acento-1); /* Color al pasar el mouse */
+}
+
+.navbar__link:active,
+.menu__toggle:active {
+    color: var(--color-secundario);         /* Color al hacer clic */
+    text-decoration: underline solid;       /* Subrayado sólido al hacer clic */
+}
+
+/* Menú desplegable */
+.menu {
+    position: relative;                     /* Posición relativa */
+    display: inline-block;                  /* Mostrar como bloque en línea */
+}
+
+.menu__container {
+    display: none;                          /* Ocultar contenedor por defecto */
+    position: absolute;                     /* Posición absoluta */
+    top: 100%;                              /* Alinear en la parte inferior del elemento padre */
+    left: 0;                                /* Alinear a la izquierda */
+    background-color: var(--color-secundario); /* Color de fondo del menú */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1;                             /* Índice de apilamiento */
+    text-align: left;                       /* Alinear texto a la izquierda */
+}
+
+.menu__container h2 {
+    color: var(--color-texto-principal); /* Color del título */
+    margin: 10px; /* Margen */
+}
+
+.menu__link {
+    color: var(--color-texto-principal); /* Color del enlace */
+    padding: 12px 16px; /* Padding del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    display: block; /* Bloque de visualización */
+}
+
+.menu__link:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+}
+
+.menu__link:active {
+    background-color: var(--color-acento-2); /* Color de fondo al hacer clic */
+}
+
+.menu__toggle:hover + .menu__container,
+.menu__container:hover {
+    display: block; /* Mostrar menú al pasar el mouse */
+}
+
+.menu__vector {
+    margin: 10px; /* Margen */
+}
+
+.menu__heading {
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para el menú desplegable */
+
+li .dropdown-item:hover {
+    background-color: var(--color-primario);  /* Color de fondo al pasar el mouse */
+}
+
+li .dropdown-item:active {
+    background-color: var(--color-resaltado); /* Color de fondo al hacer clic */
+}
+
+/* Estilos para los botones */
+
+.btn.btn-light.button.d-flex.align-items-center:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+    border: none;                            /* Elimina el borde */
+}
+
+.btn.btn-light.button.d-flex.align-items-center:active {
+    background-color: var(--color-acento-1); /* Color de fondo al hacer clic */
+    border: none;                            /* Elimina el borde */
+}
+
+
+/*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
+
+.contenedor__fondo {
+    min-height: 290px; /* Altura mínima del fondo */
+}
+
+.contenedor__dentro {
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    max-width: 1700px; /* Ancho máximo del contenido dentro del fondo */
+    margin: 0 auto; /* Centrar el contenido horizontalmente */
+    padding: 20px; /* Ajuste de padding para separación interna */
+    gap: 50px; /* Espacio entre elementos */
+    margin-top: 120px; /* Separación superior */
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
+}
+
+.contenedor__logo {
+    text-align: center; /* Alinear el logo al centro */
+    margin-bottom: 20px; /* Espacio inferior para separación */
+}
+
+.contenedor__title {
+    font-size: 60px; /* Tamaño de fuente para el título */
+    text-align: center; /* Alinear el título al centro */
+    margin-bottom: 10px; /* Espacio inferior para separación */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+.contenedor__subtitle {
+    font-size: 18px; /* Tamaño de fuente para el subtítulo */
+    text-align: center; /* Alinear el subtítulo al centro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+/*PARTE DE LA SECCION CON INFORMACION DEL NEGOCIO*/
+
+.contenedor__fondo--secundario {
+    background: url('../imagenes/fondo informacion.svg') no-repeat center/cover; /* Imagen de fondo ajustada */
+    height: 1200px; /* Altura deseada del contenedor */
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+}
+
+.contenedor__dentro--secundario {
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    padding: 20px; /* Ajuste de padding para separación interna */
+}
+
+.contenedor__titulo-texto {
+    background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
+    width: 1500px; /* Ancho del contenedor */
+    height: 800px; /* Altura del contenedor */
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
+    padding: var(--padding); /* Padding usando una variable CSS */
+    gap: 150px; /* Espacio entre elementos */
+}
+
+.contenedor__title--seccion {
+    font-size: 60px; /* Tamaño de fuente del título */
+    text-align: center; /* Alineación del texto al centro */
+    color: var(--color-acento-2); /* Color del texto usando una variable CSS */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+.contenedor__texto--seccion {
+    font-size: 18px; /* Tamaño de fuente del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+/*PARTE DE LA SECCION CON INFORMACION*/
+
+.contenedor__fondo--terciario {
+    background-color: #EFF7FD; /* Color de fondo */
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centra contenido horizontalmente */
+    align-items: center; /* Centra contenido verticalmente */
+    height: 1300px; /* Altura deseada del contenedor */
+}
+
+.contenedor__dentro--terciario {
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centra contenido horizontalmente */
+    align-items: center; /* Centra contenido verticalmente */
+    padding: 20px; /* Ajuste de padding para separación interna */
+}
+
+/*PARTE DE LA SECCION LA INFROMACION DE MEGAPAQUETES*/
+
+.additional-info {
+    background-color: var(--color-primario); /* Color de fondo */
+    padding: 20px; /* Padding */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Justificar contenido horizontalmente */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    min-height: 100vh; /* Altura mínima de la vista */
+}
+
+/* Estilos para el contenido principal */
+.additional-info__main {
+    display: grid; /* Contenedor de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    grid-auto-rows: minmax(100px, auto); /* Altura mínima 100px, tamaño automático */
+    gap: 20px; /* Espacio entre columnas y filas */
+    padding: 20px; /* Padding */
+}
+
+.additional-info__secondary {
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.additional-info__title {
+    flex: 1; /* Flexibilidad */
+}
+
+.additional-info__subtitle {
+    font-size: 14px; /* Tamaño de la fuente */
+    color: var(--color-fondo-principal); /* Color de texto */
+}
+
+.additional-info__logo img {
+    max-width: 60px; /* Ancho máximo */
+    height: auto; /* Altura automática */
+}
+
+.additional-info__image img {
+    max-width: 100%; /* Ancho máximo */
+    display: block; /* Bloque de visualización */
+    border-radius: 10px; /* Radio del borde */
+}
+
+.additional-info__image {
+    grid-column: 1; /* Columna 1 */
+    grid-row: 2; /* Fila 2 */
+}
+
+.additional-info__nav-list {
+    grid-column: 3; /* Columna 3 */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.additional-info__store-info {
+    grid-column: 3; /* Columna 3 */
+    margin-top: 30px; /* Margen superior */
+}
+
+.additional-info__nav-item {
+    margin-bottom: 10px; /* Margen inferior */
+    color: var(--color-fondo-principal); /* Color de texto */
+}
+
+.additional-info__heading {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 18px; /* Tamaño de la fuente */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.additional-info__contact {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Dirección de columna */
+    align-items: start; /* Alinear elementos a la izquierda */
+    text-align: center; /* Alinear texto al centro */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.additional-info__contact-item {
+    color: var(--color-fondo-principal); /* Color de texto */
+    margin-bottom: 5px; /* Margen inferior */
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alinear elementos al centro */
+}
+
+.additional-info__contact-item img {
+    margin-right: 10px; /* Margen derecho */
+}
+
+.additional-info__text_1 {
+    background-color: var(--color-terciario); /* Color de fondo */
+    width: 73%; /* Ancho */
+    border-radius: 10px; /* Radio del borde */
+    padding: var(--paddin-button); /* Padding */
+    color: var(--color-texto-principal); /* Color de texto */
+    text-align: start; /* Alinear texto a la izquierda */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    font-size: 17px; /* Tamaño de la fuente */
+}
+
+.additional-info__social {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Dirección de columna */
+}
+
+.additional-info__heading {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+.additional-info__text {
+    color: var(--color-fondo-principal); /* Color de texto */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.additional-info__social-icons {
+    display: flex; /* Contenedor flexible */
+    flex-direction: row; /* Dirección de fila */
+    margin-left: -13px; /* Margen izquierdo negativo */
+}
+
+.additional-info__social-icon {
+    width: 70px; /* Ancho */
+    height: auto; /* Altura automática */
+    cursor: pointer; /* Cursor apuntador */
+    margin-right: -10px; /* Margen derecho negativo */
+}
+
+/* ESTILOS PARA EL PIE DE PAGINA*/
+.footer {
+    height: 140px; /* Altura */
+    background: url('../imagenes/footer.svg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Justificar contenido horizontalmente */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+}
+
+.footer__parrafo {
+    color: var(--color-fondo-principal); /* Color de texto */
+    text-align: center; /* Alinear texto al centro */
+    font-weight: bold; /* Peso de la fuente */
+    font-size: 15px; /* Tamaño de fuente de 15px */
+}

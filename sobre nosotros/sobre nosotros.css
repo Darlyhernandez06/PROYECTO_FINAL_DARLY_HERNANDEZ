@@ -28,6 +28,10 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
+    background-image: url('../imagenes/fondo aguacate.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No repetir el fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
     font-family: 'MiFuente';        /* Fuente personalizada */
 }
 
@@ -159,17 +163,23 @@ li .dropdown-item:active {
 }
 
 
-/**/
+/*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
+
+.contenedor__fondo {
+    min-height: 290px; /* Altura mínima del fondo */
+}
 
 .contenedor__dentro {
-    display: flex;
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
     max-width: 1700px; /* Ancho máximo del contenido dentro del fondo */
     margin: 0 auto; /* Centrar el contenido horizontalmente */
     padding: 20px; /* Ajuste de padding para separación interna */
-    gap: 50px;
+    gap: 50px; /* Espacio entre elementos */
+    margin-top: 120px; /* Separación superior */
     background: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
 }
 
 .contenedor__logo {
@@ -181,107 +191,108 @@ li .dropdown-item:active {
     font-size: 60px; /* Tamaño de fuente para el título */
     text-align: center; /* Alinear el título al centro */
     margin-bottom: 10px; /* Espacio inferior para separación */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
 .contenedor__subtitle {
     font-size: 18px; /* Tamaño de fuente para el subtítulo */
     text-align: center; /* Alinear el subtítulo al centro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
-/**/
+/*PARTE DE LA SECCION CON INFORMACION DEL NEGOCIO*/
 
 .contenedor__fondo--secundario {
-    background: url('../imagenes/fondo informacion.svg') no-repeat center/cover; /* Ajustes para el fondo */
+    background: url('../imagenes/fondo informacion.svg') no-repeat center/cover; /* Imagen de fondo ajustada */
     height: 1200px; /* Altura deseada del contenedor */
-    display: flex;
+    display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
 }
 
-.contenedor__dentro--secundario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.contenedor__dentro--secundario {
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    padding: 20px; /* Ajuste de padding para separación interna */
 }
 
-.contenedor__titulo-texto{
-    background-color: var(--color-texto-principal);
-    width: 1500px;
-    height: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    padding: var(--padding);
-    gap: 150px;
+.contenedor__titulo-texto {
+    background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
+    width: 1500px; /* Ancho del contenedor */
+    height: 800px; /* Altura del contenedor */
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
+    padding: var(--padding); /* Padding usando una variable CSS */
+    gap: 150px; /* Espacio entre elementos */
 }
 
-.contenedor__title--secundario{
-    font-size: 50px;
-    text-align: center;
-    color: var(--color-acento-2);
+.contenedor__title--secundario {
+    font-size: 50px; /* Tamaño de fuente del título */
+    text-align: center; /* Alineación del texto al centro */
+    color: var(--color-acento-2); /* Color del texto usando una variable CSS */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
-.contenedor__texto--secundario{
-    font-size: 18px;
+.contenedor__texto--secundario {
+    font-size: 18px; /* Tamaño de fuente del texto */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
-/**/
 
-.contenedor__fondo--terciario{
-    background-color: #EFF7FD;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1300px;
+/*PARTE DE LA SECCION CON INFORMACION DE MISION Y VISION*/
+
+.contenedor__fondo--terciario {
+    background-color: #EFF7FD; /* Color de fondo */
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centra contenido horizontalmente */
+    align-items: center; /* Centra contenido verticalmente */
+    height: 1300px; /* Altura deseada del contenedor */
 }
+
 .contenedor__dentro--terciario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centra contenido horizontalmente */
+    align-items: center; /* Centra contenido verticalmente */
+    padding: 20px; /* Ajuste de padding para separación interna */
 }
 
 .contenedor__titulotexto--terciario {
-    background-color: var(--color-texto-principal);
-    width: 1500px;
-    height: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    padding: var(--padding);
+    background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
+    width: 1500px; /* Ancho del contenedor */
+    height: 900px; /* Altura del contenedor */
+    display: flex; /* Establece el contenedor como flex */
+    justify-content: center; /* Centra contenido horizontalmente */
+    align-items: center; /* Centra contenido verticalmente */
+    flex-direction: column; /* Dirección de los elementos (columna) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
+    padding: var(--padding); /* Padding usando una variable CSS */
 }
 
 .contenedor__mision-vision {
-    display: flex;
-    gap: 150px;
+    display: flex; /* Establece el contenedor como flex */
+    gap: 150px; /* Espacio entre elementos */
 }
 
-.contenedor__mision, .contenedor__vision {
-    flex: 1;
+.contenedor__mision, 
+.contenedor__vision {
+    flex: 1; /* Flexibilidad para ocupar espacio igualmente */
 }
 
 .contenedor__title--terciario {
-    font-size: 50px;
-    text-align: center;
-    color: var(--color-acento-2);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 50px; /* Tamaño de fuente del título */
+    text-align: center; /* Alineación del texto al centro */
+    color: var(--color-acento-2); /* Color del texto usando una variable CSS */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
 .contenedor__texto--terciario {
-    font-size: 18px;
-    text-align: justify;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 18px; /* Tamaño de fuente del texto */
+    text-align: justify; /* Alineación justificada del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
-
-
-
-
 
 /*PARTE DE LA SECCION LA INFROMACION DE MEGAPAQUETES*/
 
@@ -443,6 +454,28 @@ li .dropdown-item:active {
     }
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .contenedor__dentro{
+        display: flex; /* Establece el contenedor como flex */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        max-width: 100vw; /* Ancho máximo del contenido dentro del fondo */
+    }
+    .contenedor__titulo-texto {
+        width: 100vw; /* Ancho del contenedor */
+        height: 1000px; /* Altura del contenedor */
+        flex-direction: column;
+        gap:50px;
+        margin-top: 100px;
+    }
+    .contenedor__fondo--terciario{
+        height: 1700px;
+    }
+    .contenedor__titulotexto--terciario {
+        width: 100vw; /* Ancho del contenedor */
+        height: 1300px; /* Altura del contenedor */
+        flex-direction: column;
+        gap:50px;
     }
     .additional-info__main {
         display: flex; /* Contenedor de cuadrícula con flexbox */
