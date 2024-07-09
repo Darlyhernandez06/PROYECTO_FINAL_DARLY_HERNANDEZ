@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡CONTACTO!</title>
+    <!-- Enlace al archivo CSS para estilos -->
+    <link rel="stylesheet" href="Contacto.css">
+    <!-- Favicon para el navegador -->
+    <link rel="icon" type="image/svg" href="../imagenes/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="negrita navbar navbar-expand-lg p-4">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <img src="../imagenes/logo.svg" alt="logo">
+            <div class="px-4">
+                <a class="nav-link active" href="">MEGAPAQUETES</a>
+                <div class="esconder">
+                    <!-- Contenido escondido -->
+                </div>
+            </div>
+            <!-- Botón para mostrar el menú en pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenedor del menú desplegable -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex gap-5">
+                    <!-- Elementos del menú -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a> <!-- Enlace "Inicio" activo -->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Megamenu <!-- Enlace del megamenu activo -->
+                        </a>
+                        <!-- Menú desplegable -->
+                        <ul class="dropdown-menu bg-success text-light">
+                            <li class="px-2">MEGAPAQUETES</li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-light" href="../productos/verduras_productos.html">Verduras</a></li>
+                            <li><a class="dropdown-item text-light" href="../productos/frutas_productos.html">Frutas</a></li>
+                            <li><a class="dropdown-item text-light" href="../productos/tubérculos_hortalizas_productos.html">Tubérculos/Hortalizas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Ofertas</a> <!-- Enlace "Ofertas" activo -->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sobre Nosotros <!-- Enlace "Sobre Nosotros" activo -->
+                        </a>
+                        <!-- Menú desplegable -->
+                        <ul class="dropdown-menu bg-success text-light">
+                            <li class="px-2">MEGAPAQUETES</li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-light" href="#">Sobre Nosotros</a></li>
+                            <li><a class="dropdown-item text-light" href="#">Contacto</a></li>
+                            <li><a class="dropdown-item text-light" href="#">Politicas(Terminos y Condiciones)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <!-- Botones de acción -->
+                    <div class="d-flex gap-5 botones">
+                        <a href="../ingresar/ingresar.html" class="btn btn-light button d-flex align-items-center" type="submit">Iniciar Sesion</a>
+                        <a href="../crear nueva cuenta/crear cuenta.html" class="btn btn-light button d-flex align-items-center" type="submit">Registrarse</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección principal de la pagina -->
+    <section class="contenedor__section">
+        <!-- Tamaño para el fondo del body-->
+        <div class="contenedor__fondo">
+            <!-- Contenedor Interno -->
+            <div class="contenedor__dentro">
+                <!-- Logo -->
+                <div class="contenedor__logo">
+                    <img src="../imagenes/logo.png" alt="Logo">
+                </div>
+                <!-- Título -->
+                <div class="contenedor__title">
+                    <p><strong>MEGAPAQUETES</strong></p>
+                    <!-- Subtítulo -->
+                    <div class="contenedor__subtitle">
+                        <p>FRUTAS . VERDURAS . TUBERCULOS . HORTALIZAS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Sección del formulario para enviar mensaje -->
+    <section class="contenedor__section--contacto">
+        <div class="contenedor__fondo--contacto">
+            <div class="contenedor__section--dentro">
+                <!-- Título de la sección de detalles de contacto -->
+                <div class="title__section">
+                    <p><strong>Detalles de Contacto</strong></p>
+                </div>
+                <!-- Contenedor de contacto con iconos y textos -->
+                <div class="contenedor__contacto">
+                    <div class="primero">
+                        <div class="primero__texto--logo">
+                            <img src="../imagenes/correo.svg" alt="Logo">
+                            <p class="title"><strong>Correo Electrónico</strong></p>
+                        </div>
+                        <p class="texto">Megapaquetes12@gmail.com</p>
+                    </div>
+                    <div class="primero">
+                        <div class="primero__texto--logo">
+                            <img src="../imagenes/Whatsapp.svg" alt="Logo">
+                            <p class="title"><strong>Whatsapp - Teléfono</strong></p>
+                        </div>
+                        <p class="texto">+57 3187800946</p>
+                    </div>
+                </div>
+                <!-- Línea separadora -->
+                <div class="contenedor__linea"></div>
+                <!-- Contenedor para el mensaje -->
+                <div class="contenedor__mensaje">
+                    <!-- Título de la sección de mensaje -->
+                    <div class="title__section">
+                        <p><strong>Déjanos tu mensaje</strong></p>
+                    </div>
+                    <!-- Formulario para enviar mensaje -->
+                    <div class="form">
+                        <form action="#" method="" class="create-account-form">
+                            <!-- Campo del nombre completo -->
+                            <div class="form__group">
+                                <label class="form__label" for="full-name">Nombres</label>
+                                <input class="form__input" type="text" id="full-name" name="full-name" placeholder="Ingresa tus nombres" required>
+                            </div>
+                            <!-- Campo del correo -->
+                            <div class="form__group">
+                                <label class="form__label" for="email">Correo</label>
+                                <input class="form__input" type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+                            </div>
+                            <!-- Campo del teléfono -->
+                            <div class="form__group">
+                                <label class="form__label" for="phone">Teléfono</label>
+                                <input class="form__input" type="tel" id="phone" name="phone" placeholder="Ingresa tu teléfono" required>
+                            </div>
+                            <!-- Campo de la descripción -->
+                            <div class="form__group d-flex flex-column">
+                                <label class="form__label" for="description">Descripción</label>
+                                <textarea class="textarea" id="description" name="description" rows="4" placeholder="Escribe brevemente..." required></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Botón para enviar el mensaje -->
+                    <div class="form__button-container">
+                        <a href="#" class="button-button--submit">Enviar Mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección adicional con información -->
+    <section class="additional-info">
+        <div class="additional-info__main">
+            <div class="additional-info__secondary">
+                <!-- Logotipo en la sección adicional -->
+                <div class="additional-info__logo">
+                    <img src="../imagenes/logo.svg" alt="Logo">
+                </div>
+                <!-- Título y subtítulo en la sección adicional -->
+                <div class="additional-info__title">
+                    <strong>MEGAPAQUETES</strong>
+                    <div class="additional-info__subtitle">FRUTAS . VERDURAS . TUBERCULOS . HORTALIZAS</div>
+                </div>
+            </div>
+            <!-- Imagen principal de la sección adicional -->
+            <div class="additional-info__image">
+                <img src="../imagenes/image frutas.png" alt="Logo">
+            </div>
+            <!-- Lista de navegación en la sección adicional -->
+            <div class="additional-info__nav-list">
+                <p class="additional-info__nav-item">Inicio</p>
+                <p class="additional-info__nav-item">Megamenu</p>
+                <p class="additional-info__nav-item">Ofertas</p>
+                <p class="additional-info__nav-item">Sobre nosotros</p>
+                <p class="additional-info__nav-item">Carrito de compras</p>
+            </div>
+            <!-- Contenedor de información de la tienda -->
+            <div class="additional-info__store-info">
+                <h4 class="additional-info__heading">¡INFORMACION DE LA TIENDA!</h4>
+                <img src="../imagenes/Group 113.png" alt="Logo" class="additional-info__store-image">
+            </div>
+            <!-- Contenedor del compromiso de la empresa -->
+            <div class="additional-info__commitment">
+                <h4 class="additional-info__heading">/// EL COMPROMISO DE MEGAPAQUETES</h4>
+                <h5 class="additional-info__text_1">¡Descubre la frescura en línea con <br> Megapaquetes! Ordena tus frutas y <br> verduras favoritas desde la comodidad <br> de tu hogar con nuestra plataforma en <br> línea. ¡Calidad, variedad y conveniencia a <br> solo un clic de distancia!</h5>
+            </div>
+            <!-- Contenedor de información de contacto -->
+            <div class="additional-info__contact">
+                <h4 class="additional-info__heading">///INFORMACIÓN DE CONTACTO</h4>
+                <p class="additional-info__contact-item"><img src="../imagenes/ubicacion.svg" alt="Vector"> Carrera 9 #30-14 — La cumbre</p>
+                <p class="additional-info__contact-item"><img src="../imagenes/Whatsapp.svg" alt="Vector"> +57 3187800946</p>
+                <p class="additional-info__contact-item"><img src="../imagenes/correo.svg" alt="Vector"> Megapaquetesalego12@gmail.com</p>
+            </div>
+            <!-- Contenedor de redes sociales -->
+            <div class="additional-info__social">
+                <h4 class="additional-info__heading">///SÍGUENOS</h4>
+                <p class="additional-info__text"><strong>Puedes encontrarnos en:</strong></p>
+                <div class="additional-info__social-icons">
+                <img src="../imagenes/instagram.svg" alt="Vector" class="additional-info__social-icon">
+                <img src="../imagenes/twitter.svg" alt="Vector" class="additional-info__social-icon">
+                <img src="../imagenes/facebook.svg" alt="Vector" class="additional-info__social-icon">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p class="footer__parrafo">@Megapaquetes</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- Bootstrap Bundle JS desde CDN -->
+</body>
+</html>

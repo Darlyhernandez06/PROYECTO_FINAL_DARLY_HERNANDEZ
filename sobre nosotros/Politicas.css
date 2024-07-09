@@ -219,14 +219,14 @@ li .dropdown-item:active {
 
 .contenedor__titulo-texto {
     background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
-    width: 1500px; /* Ancho del contenedor */
+    width: 1600px; /* Ancho del contenedor */
     height: 800px; /* Altura del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
     padding: var(--padding); /* Padding usando una variable CSS */
-    gap: 150px; /* Espacio entre elementos */
+    gap: 100px; /* Espacio entre elementos */
 }
 
 .contenedor__title--seccion {
