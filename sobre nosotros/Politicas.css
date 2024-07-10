@@ -166,7 +166,7 @@ li .dropdown-item:active {
 /*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
 
 .contenedor__fondo {
-    min-height: 290px; /* Altura mínima del fondo */
+   height: 290px; /* Altura del fondo */
 }
 
 .contenedor__dentro {
@@ -405,4 +405,122 @@ li .dropdown-item:active {
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
     font-size: 15px; /* Tamaño de fuente de 15px */
+}
+
+/*RESPONSIVE*/
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .contenedor__dentro{
+        display: flex; /* Establece el contenedor como flex */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        max-width: auto; /* Ancho máximo del contenido dentro del fondo */
+    }
+    .contenedor__fondo--secundario{
+        height: 2000px;
+    }
+    .contenedor__fondo--terciario{
+        height: 1500px;
+    }
+    .contenedor__titulo-texto {
+        width: 700px; /* Ancho del contenedor */
+        height: auto; /* Altura del contenedor */
+        flex-direction: column; /* Dirección de columna */
+        gap:50px; /* Espacio entre elementos */
+        margin-top: 100px; /* Margen superior */
+    }
+    .contenedor__title--seccion{
+        font-size: 40px; /* Tamaño de fuente de 16px */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .footer{
+        height: 100px; /* Altura fija de 100px para el footer */
+    }
+}
+
+/*RESPONSIVE*/
+
+/* Media query para pantallas pequeñas como móviles */
+@media (min-width: 300px) and (max-width: 767px) {
+    .esconder {
+        display: none; /* Ocultar elemento con display none */
+        width: 50%; /* Ancho del 50% */
+    }
+    .botones {
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+    }
+    .contenedor__fondo--secundario{
+        height: 1000px; /* Altura del contenedor */
+    }
+    .contenedor__dentro{
+        display: flex; /* Establece el contenedor como flex */
+        flex-direction: column; /* Dirección de columna */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        width: auto; /* Ancho máximo del contenido dentro del fondo */
+        margin-top: -5px; /* Margen superior negativo*/
+    }
+    .contenedor__title{
+        font-size: 30px; /* Tamaño de fuente de 30px */
+        margin-top: -30px; /* Margen superior negativo*/
+    }
+    .contenedor__subtitle{
+        font-size: 15px; /* Tamaño de fuente de 15px */
+    }
+    .contenedor__logo{
+        margin-top: 50px; /* Margen superior */
+    }
+    .contenedor__logo img{
+        width: 100px; /* Ancho del contenedor */
+    }
+    .contenedor__titulo-texto {
+        width: auto; /* Ancho del contenedor */
+        height: auto; /* Altura del contenedor */
+        flex-direction: column; /* Dirección de columna */
+        gap:30px; /* Espacio entre elementos */
+        margin-top: 100px; /* Margen superior */
+    }
+    .contenedor__title--seccion{
+        font-size: 30px; /* Tamaño de fuente de 30px */
+    }
+    .contenedor__texto--seccion{
+        font-size: 10px; /* Tamaño de fuente de 10px */
+        text-align: start; /* Coloca el texto al inicio del contenedor */
+    }
+    .additional-info__main {
+        display: flex; /* Contenedor de cuadrícula con flexbox */
+        align-items: center; /* Alinear elementos al centro verticalmente */
+        justify-content: center; /* Justificar contenido al centro horizontalmente */
+        flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
+        gap: 20px; /* Espacio entre columnas y filas de 20 píxeles */
+        padding: 20px; /* Padding de 20 píxeles */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .additional-info__text_1 {
+        width: 100%; /* Ancho del 100% */
+        text-align: center; /* Alinear texto al centro */
+    }
+    .footer{
+        height: 50px; /* Altura fija de 50px para el footer */
+    }
 }
