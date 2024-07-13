@@ -163,7 +163,7 @@ li .dropdown-item:active {
 
 /*PARTE DE LA PRIMER SECCION EL FORMULARIO DE CREAR NUEVA CUENTA*/
 
-.create-account-section {
+.crear__cuenta--seccion{
     max-width: 60%; /* Ancho máximo */
     min-height: 60%; /* Altura mínima */
     margin: 100px auto; /* Margen superior e inferior automático, centrado horizontalmente */
@@ -176,13 +176,13 @@ li .dropdown-item:active {
     margin-top: 250px; /* Margen superior */
 }
 
-.logo-container {
+.logo__contenedor {
     text-align: center; /* Alinear texto al centro */
     position: relative; /* Posición relativa */
     margin-top: -150px; /* Margen superior negativo */
 }
 
-.title-container {
+.titulo__contenedor {
     text-align: center; /* Alinear texto al centro */
     color: var(--color-acento-2); /* Color del texto */
     font-weight: bold; /* Peso de la fuente */
@@ -190,7 +190,7 @@ li .dropdown-item:active {
     
 }
 
-.subtitle-container {
+.subtitulo__contenedor{
     text-align: center; /* Alinear texto al centro */
     color: var(--color-terciario); /* Color del texto */
     font-weight: bold; /* Peso de la fuente */
@@ -198,7 +198,7 @@ li .dropdown-item:active {
     padding: var(--padding); /* Padding */
 }
 
-.description-container {
+.descripcion__contenedor{
     text-align: center; /* Alinear texto al centro */
     color: var(--color-acento-1); /* Color del texto */
     font-weight: bold; /* Peso de la fuente */
@@ -206,7 +206,7 @@ li .dropdown-item:active {
     margin-top: -20px; /* Margen superior negativo */
 }
 
-.form__group {
+.formulario__grupo {
     display: flex; /* Mostrar como flexbox */
     flex-direction: column; /* Cambiar la dirección de los elementos a columna */
     justify-content: center; /* Justificar contenido al centro verticalmente */
@@ -214,7 +214,7 @@ li .dropdown-item:active {
     margin-bottom: 40px; /* Espacio inferior de 40 píxeles */
 }
 
-.form {
+.formulario {
     /* Estilos del formulario */
     padding: var(--padding);      /* Espaciado interno definido por la variable --padding */
     width: auto;                  /* Ancho automático que se ajusta al contenido */
@@ -292,7 +292,7 @@ textarea::placeholder {
 }
 
 /* Contenedor para botones de formulario */
-.form__button-container {
+.form__boton--contenedor {
     display: flex; /* Contenedor flexible */
     justify-content: space-around; /* Justificar espacio alrededor */
     align-items: center; /* Alinear elementos al centro */
@@ -300,7 +300,7 @@ textarea::placeholder {
 }
 
 /* Estilos para el botón de enviar 01 */
-.button-button--submit01 {
+.boton__boton--submit01 {
     width: 250px; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     color: var(--color-texto-principal); /* Color de texto */
@@ -315,18 +315,18 @@ textarea::placeholder {
     margin-top: 80px; /* Añade un margen superior de 80 píxeles */
 }
 
-.button-button--submit01:hover {
+.boton__boton--submit01:hover {
     border: 3px solid var(--color-terciario); /* Borde al pasar el mouse */
     color: var(--color-terciario); /* Color al pasar el mouse */
 }
 
-.button-button--submit01:active {
+.boton__boton--submit01:active {
     border: 3px solid var(--color-acento-1); /* Borde al hacer clic */
     color: var(--color-acento-1); /* Color al hacer clic */
 }
 
 /* Estilos para el botón de enviar */
-.button-button--submit {
+.boton__boton--submit {
     width: 250px; /* Ancho calculado con margen */
     min-height: 50px; /* Altura mínima */
     background-color: var(--color-texto-principal); /* Color de fondo */
@@ -341,23 +341,23 @@ textarea::placeholder {
     margin-top: 80px; /* Añade un margen superior de 80 píxeles */
 }
 
-.button-button--submit:hover {
+.boton__boton--submit:hover {
     background-image: linear-gradient(to right, #99E89D, #4DA768); /* Gradiente al pasar el mouse */
     color: rgba(255, 255, 255, 0.5); /* Color de texto al pasar el mouse */
     border: none; /* Quitar el borde */
 }
 
-.button-button--submit:active {
+.boton__boton--submit:active {
     background-image: linear-gradient(to right, #3BC975, #006633); /* Gradiente al hacer clic */
     color: rgba(255, 255, 255, 0.5); /* Color de texto al hacer clic */
     border: none; /* Quitar el borde */
 }
 
-.confirmar-section__input-wrapper {
+.confirmar__seccion--input {
     position: relative; /* Posición relativa */
 }
 
-.confirmar-section__icon-button {
+.confirmar__seccion--iconboton{
     position: absolute; /* Posición absoluta */
     top: 50%; /* Desde arriba el 50% */
     right: 10px; /* Desde la derecha 10px */
@@ -366,7 +366,7 @@ textarea::placeholder {
     border: none; /* Sin borde */
 }
 
-.confirmar-section__icon {
+.confirmar__seccion--icon {
     /* Estilos para los iconos dentro de la sección de confirmación */
     width: 50px; /* Ancho del icono */
     height: 25px; /* Altura del icono */
@@ -375,7 +375,7 @@ textarea::placeholder {
 
 /*PARTE DE LA SEGUNDA SECCION LA INFROMACION DE MEGAPAQUETES*/
 
-.additional-info {
+.adicional__informacion {
     background-color: var(--color-primario); /* Color de fondo */
     padding: 20px; /* Padding */
     display: flex; /* Contenedor flexible */
@@ -385,7 +385,7 @@ textarea::placeholder {
 }
 
 /* Estilos para el contenido principal */
-.additional-info__main {
+.adicional__informacion--principal {
     display: grid; /* Contenedor de cuadrícula */
     grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
     grid-auto-rows: minmax(100px, auto); /* Altura mínima 100px, tamaño automático */
@@ -393,59 +393,59 @@ textarea::placeholder {
     padding: 20px; /* Padding */
 }
 
-.additional-info__secondary {
+.adicional__informacion--secundario {
     display: flex; /* Contenedor flexible */
     align-items: center; /* Alinear elementos al centro verticalmente */
     gap: 15px; /* Espacio entre elementos */
 }
 
-.additional-info__title {
+.adicional__informacion--titulo {
     flex: 1; /* Flexibilidad */
 }
 
-.additional-info__subtitle {
+.adicional__informacion--subtitulo {
     font-size: 14px; /* Tamaño de la fuente */
     color: var(--color-fondo-principal); /* Color de texto */
 }
 
-.additional-info__logo img {
+.adicional__informacion--logo img {
     max-width: 60px; /* Ancho máximo */
     height: auto; /* Altura automática */
 }
 
-.additional-info__image img {
+.adicional__informacion--image img {
     max-width: 100%; /* Ancho máximo */
     display: block; /* Bloque de visualización */
     border-radius: 10px; /* Radio del borde */
 }
 
-.additional-info__image {
+.adicional__informacion--image {
     grid-column: 1; /* Columna 1 */
     grid-row: 2; /* Fila 2 */
 }
 
-.additional-info__nav-list {
+.adicional__informacion--lista {
     grid-column: 3; /* Columna 3 */
     font-weight: bold; /* Peso de la fuente */
 }
 
-.additional-info__store-info {
+.adicional__informacion--info {
     grid-column: 3; /* Columna 3 */
     margin-top: 30px; /* Margen superior */
 }
 
-.additional-info__nav-item {
+.adicional__informacion--item {
     margin-bottom: 10px; /* Margen inferior */
     color: var(--color-fondo-principal); /* Color de texto */
 }
 
-.additional-info__heading {
+.adicional__informacion--infotexto {
     color: var(--color-fondo-principal); /* Color de texto */
     font-size: 18px; /* Tamaño de la fuente */
     margin-bottom: 10px; /* Margen inferior */
 }
 
-.additional-info__contact {
+.adicional__informacion--contacto {
     display: flex; /* Contenedor flexible */
     flex-direction: column; /* Dirección de columna */
     align-items: start; /* Alinear elementos a la izquierda */
@@ -453,18 +453,18 @@ textarea::placeholder {
     font-weight: bold; /* Peso de la fuente */
 }
 
-.additional-info__contact-item {
+.adicional__informacion--contactoitem {
     color: var(--color-fondo-principal); /* Color de texto */
     margin-bottom: 5px; /* Margen inferior */
     display: flex; /* Contenedor flexible */
     align-items: center; /* Alinear elementos al centro */
 }
 
-.additional-info__contact-item img {
+.adicional__informacion--contactoitem img {
     margin-right: 10px; /* Margen derecho */
 }
 
-.additional-info__text_1 {
+.adicional__informacion--compromisotexto1 {
     background-color: var(--color-terciario); /* Color de fondo */
     width: 73%; /* Ancho */
     border-radius: 10px; /* Radio del borde */
@@ -475,28 +475,28 @@ textarea::placeholder {
     font-size: 17px; /* Tamaño de la fuente */
 }
 
-.additional-info__social {
+.adicional__informacion--social {
     display: flex; /* Contenedor flexible */
     flex-direction: column; /* Dirección de columna */
 }
 
-.additional-info__heading {
+.adicional__informacion--compromisotexto {
     color: var(--color-fondo-principal); /* Color de texto */
     font-size: 18px; /* Tamaño de la fuente */
 }
 
-.additional-info__text {
+.adicional__informacion--socialtexto{
     color: var(--color-fondo-principal); /* Color de texto */
     font-size: 14px; /* Tamaño de la fuente */
 }
 
-.additional-info__social-icons {
+.adicional__informacion--socialicons {
     display: flex; /* Contenedor flexible */
     flex-direction: row; /* Dirección de fila */
     margin-left: -13px; /* Margen izquierdo negativo */
 }
 
-.additional-info__social-icon {
+.adicional__informacion--socialicon {
     width: 70px; /* Ancho */
     height: auto; /* Altura automática */
     cursor: pointer; /* Cursor apuntador */
@@ -533,33 +533,33 @@ textarea::placeholder {
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
-    .title-container {
+    .titulo__contenedor {
         font-size: 60px; /* Tamaño de fuente de 60 píxeles */
         margin-top: 20px; /* Margen superior de 20 píxeles */
     }
-    .subtitle-container {
+    .subtitulo__contenedor {
         font-size: 45px; /* Tamaño de fuente de 45 píxeles */
         margin-top: -20px; /* Margen superior negativo de 20 píxeles */
     }
-    .create-account-section {
+    .crear__cuenta--seccion {
         /* Estilos del contenedor principal de bienvenida */
         max-width: 90%; /* Ancho máximo del contenedor del 90% */
         border-radius: 20px; /* Radio del borde de 20 píxeles */
         margin-top: 70px; /* Margen superior de 70 píxeles */
     }
-    .logo-container {
+    .logo__contenedor {
         margin-top: -50px; /* Margen superior negativo de 50 píxeles */
     }
-    .logo-container > img {
+    .logo__contenedor > img {
         width: 100px; /* Ancho de la imagen de 100 píxeles */
         margin-top: -30px; /* Margen superior negativo de 30 píxeles */
     }
-    .description-container {
+    .descripcion__contenedor {
         /* Estilos de la descripción dentro del contenedor */
         width: 100%; /* Ancho del 100% */
         margin-left: 0px; /* Margen izquierdo de 0 píxeles */
     }
-    .additional-info__main {
+    .adicional__informacion--principal {
         display: flex; /* Contenedor de cuadrícula con flexbox */
         align-items: center; /* Alinear elementos al centro verticalmente */
         justify-content: center; /* Justificar contenido al centro horizontalmente */
@@ -568,7 +568,7 @@ textarea::placeholder {
         padding: 20px; /* Padding de 20 píxeles */
         text-align: center; /* Alinear texto al centro */
     }
-    .additional-info__text_1 {
+    .adicional__informacion--compromisotexto1 {
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
     }
@@ -587,10 +587,10 @@ textarea::placeholder {
         margin-left: -20px;
         width: 120%;
     }
-    .form {
+    .formulario {
         flex-direction: column; /* Cambia a dirección de columna para móviles */
     }
-    .form__group {
+    .formulario__grupo {
         width: auto; /* Ancho automático para ajustar al contenido */
         min-width: auto; /* Ancho mínimo automático */
         min-height: 40px; /* Altura mínima reducida para móviles */
@@ -606,33 +606,33 @@ textarea::placeholder {
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
-    .title-container {
+    .titulo__contenedor {
         font-size: 35px; /* Tamaño de fuente de 35 píxeles */
         margin-top: 20px; /* Margen superior de 20 píxeles */
     }
-    .subtitle-container {
+    .subtitulo__contenedor {
         font-size: 30px; /* Tamaño de fuente de 30 píxeles */
         margin-top: -20px; /* Margen superior negativo de 20 píxeles */
     }
-    .create-account-section {
+    .crear__cuenta--seccion {
         /* Estilos del contenedor principal */
         max-width: 90%; /* Ancho máximo del contenedor del 90% */
         border-radius: 20px; /* Radio del borde de 20 píxeles */
         margin-top: 70px; /* Margen superior de 70 píxeles */
     }
-    .logo-container {
+    .logo__contenedor {
         margin-top: -50px; /* Margen superior negativo de 50 píxeles */
     }
-    .logo-container > img {
+    .logo__contenedor > img {
         width: 100px; /* Ancho de la imagen de 100 píxeles */
         margin-top: -30px; /* Margen superior negativo de 30 píxeles */
     }
-    .description-container {
+    .descripcion__contenedor {
         width: 100%; /* Ancho del 100% */
         margin-left: 0px; /* Margen izquierdo de 0 píxeles */
         font-size: 11px; /* Tamaño de fuente de 10 píxeles */
     }
-    .additional-info__main {
+    .adicional__informacion--principal {
         display: flex; /* Contenedor de cuadrícula con flexbox */
         align-items: center; /* Alinear elementos al centro verticalmente */
         justify-content: center; /* Justificar contenido al centro horizontalmente */
@@ -641,14 +641,14 @@ textarea::placeholder {
         padding: 20px; /* Padding de 20 píxeles */
         text-align: center; /* Alinear texto al centro */
     }
-    .additional-info__text_1 {
+    .adicional__informacion--compromisotexto1 {
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
     }
     .footer{
         height: 50px; /* Altura fija de 50px para el footer */
     }
-    .confirmar-section__icon-button {
+    .confirmar__seccion--iconboton {
         right: -25px; /* Desplaza el botón 25px hacia la izquierda desde su posición original a la derecha */
     }
 }

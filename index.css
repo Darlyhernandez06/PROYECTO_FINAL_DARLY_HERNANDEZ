@@ -168,7 +168,7 @@ li .dropdown-item:active {
     height: 1800px; /* Altura fija del contenedor */
 }
 
-.contenedor__title {
+.contenedor__titulo {
     text-align: start; /* Alinear al inicio (izquierda) */
     color: var(--color-fondo-principal); /* Color del texto usando una variable de CSS */
     font-weight: bold; /* Texto en negrita */
@@ -178,7 +178,7 @@ li .dropdown-item:active {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
-.contenedor__subtitle {
+.contenedor__subtitulo {
     text-align: start; /* Alinear al inicio (izquierda) */
     color: var(--color-fondo-principal); /* Color del fondo principal */
     font-weight: bold; /* Texto en negrita */
@@ -188,7 +188,7 @@ li .dropdown-item:active {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
-.contenedor__description {
+.contenedor__descripcion {
     text-align: start; /* Alinear al inicio (izquierda) */
     color: var(--color-fondo-principal); /* Color del fondo principal */
     font-size: 17px; /* Tamaño de fuente */
@@ -197,11 +197,11 @@ li .dropdown-item:active {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
-.boton-continuar {
+.boton__continuar {
     margin-top: 100px; /* Margen superior específico */
 }
 
-.boton-continuar__link {
+.boton__continuar--link {
     width: 100%; /* Ancho del 100% del contenedor padre */
     max-width: 200px; /* Ancho máximo */
     min-height: 50px; /* Altura mínima */
@@ -214,19 +214,18 @@ li .dropdown-item:active {
     display: flex; /* Usar flexbox para centrar el texto */
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
-    box-sizing: border-box; /* Incluir el borde en el cálculo del tamaño total */
     padding: 10px 20px; /* Relleno interno */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
     text-align: center; /* Alinear el texto en el centro */
     margin-left: 300px; /* Margen izquierdo específico */
 }
 
-.boton-continuar__link:hover {
+.boton__continuar--link:hover {
     background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
     color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
 }
 
-.boton-continuar__link:active {
+.boton__continuar--link:active {
     background-color: var(--color-secundario); /* Color de fondo al hacer clic */
     color: var(--color-fondo-principal); /* Color del texto al hacer clic */
 }
@@ -240,9 +239,7 @@ li .dropdown-item:active {
     align-items: center; /* Centrar los elementos verticalmente */
 }
 
-
-
-.contenedor__subtitle--secundario {
+.contenedor__subtitulo--secundario {
     color: var(--color-primario); /* Color primario */
     font-weight: bold; /* Texto en negrita */
     font-size: 50px; /* Tamaño de fuente */
@@ -250,7 +247,7 @@ li .dropdown-item:active {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
-.contenedor__description--secundario {
+.contenedor__descripcion--secundario {
     color: var(--color-texto-principal); /* Color del texto principal */
     font-size: 20px; /* Tamaño de fuente */
     margin-bottom: 20px; /* Margen inferior específico */
@@ -264,7 +261,7 @@ li .dropdown-item:active {
     margin-top: 20px; /* Margen superior específico */
 }
 
-.imagen-row {
+.imagen__row {
     display: flex; /* Usar flexbox para disposición de las imágenes en fila */
     gap: 10px; /* Espacio entre las imágenes */
 }
@@ -447,7 +444,7 @@ li .dropdown-item:active {
     margin-top: 50px; /* Margen superior específico */
 }
 
-.boton-comprar__link {
+.boton__comprar--link{
     width: 100%; /* Ancho del 100% del contenedor padre */
     max-width: 200px; /* Ancho máximo */
     min-height: 50px; /* Altura mínima */
@@ -460,7 +457,6 @@ li .dropdown-item:active {
     display: flex; /* Usar flexbox para centrar el texto */
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
-    box-sizing: border-box; /* Incluir el borde en el cálculo total del tamaño */
     padding: 10px 20px; /* Añadir relleno dentro del botón */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
     text-align: center; /* Alinear el texto en el centro */
@@ -468,12 +464,12 @@ li .dropdown-item:active {
     margin-top: 50px; /* Margen superior específico */
 }
 
-.boton-comprar__link:hover {
+.boton__comprar--link:hover {
     background-color: var(--color-acento-1); /* Color de fondo al pasar el cursor */
     color: var(--color-fondo-principal); /* Color de texto al pasar el cursor */
 }
 
-.boton-comprar__link:active {
+.boton__comprar--link:active {
     background-color: var(--color-secundario); /* Color de fondo al hacer clic */
     color: var(--color-fondo-principal); /* Color de texto al hacer clic */
 }
@@ -536,7 +532,7 @@ li .dropdown-item:active {
 
 /*PARTE DE LA SECCION LA INFROMACION DE MEGAPAQUETES*/
 
-.additional-info {
+.adicional__informacion {
     background-color: var(--color-primario); /* Color de fondo */
     padding: 20px; /* Padding */
     display: flex; /* Contenedor flexible */
@@ -546,7 +542,7 @@ li .dropdown-item:active {
 }
 
 /* Estilos para el contenido principal */
-.additional-info__main {
+.adicional__informacion--principal {
     display: grid; /* Contenedor de cuadrícula */
     grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
     grid-auto-rows: minmax(100px, auto); /* Altura mínima 100px, tamaño automático */
@@ -554,59 +550,59 @@ li .dropdown-item:active {
     padding: 20px; /* Padding */
 }
 
-.additional-info__secondary {
+.adicional__informacion--secundario {
     display: flex; /* Contenedor flexible */
     align-items: center; /* Alinear elementos al centro verticalmente */
     gap: 15px; /* Espacio entre elementos */
 }
 
-.additional-info__title {
+.adicional__informacion--titulo {
     flex: 1; /* Flexibilidad */
 }
 
-.additional-info__subtitle {
+.adicional__informacion--subtitulo {
     font-size: 14px; /* Tamaño de la fuente */
     color: var(--color-fondo-principal); /* Color de texto */
 }
 
-.additional-info__logo img {
+.adicional__informacion--logo img {
     max-width: 60px; /* Ancho máximo */
     height: auto; /* Altura automática */
 }
 
-.additional-info__image img {
+.adicional__informacion--image img {
     max-width: 100%; /* Ancho máximo */
     display: block; /* Bloque de visualización */
     border-radius: 10px; /* Radio del borde */
 }
 
-.additional-info__image {
+.adicional__informacion--image {
     grid-column: 1; /* Columna 1 */
     grid-row: 2; /* Fila 2 */
 }
 
-.additional-info__nav-list {
+.adicional__informacion--lista {
     grid-column: 3; /* Columna 3 */
     font-weight: bold; /* Peso de la fuente */
 }
 
-.additional-info__store-info {
+.adicional__informacion--info {
     grid-column: 3; /* Columna 3 */
     margin-top: 30px; /* Margen superior */
 }
 
-.additional-info__nav-item {
+.adicional__informacion--item {
     margin-bottom: 10px; /* Margen inferior */
     color: var(--color-fondo-principal); /* Color de texto */
 }
 
-.additional-info__heading {
+.adicional__informacion--infotexto {
     color: var(--color-fondo-principal); /* Color de texto */
     font-size: 18px; /* Tamaño de la fuente */
     margin-bottom: 10px; /* Margen inferior */
 }
 
-.additional-info__contact {
+.adicional__informacion--contacto {
     display: flex; /* Contenedor flexible */
     flex-direction: column; /* Dirección de columna */
     align-items: start; /* Alinear elementos a la izquierda */
@@ -614,18 +610,18 @@ li .dropdown-item:active {
     font-weight: bold; /* Peso de la fuente */
 }
 
-.additional-info__contact-item {
+.adicional__informacion--contactoitem {
     color: var(--color-fondo-principal); /* Color de texto */
     margin-bottom: 5px; /* Margen inferior */
     display: flex; /* Contenedor flexible */
     align-items: center; /* Alinear elementos al centro */
 }
 
-.additional-info__contact-item img {
+.adicional__informacion--contactoitem img {
     margin-right: 10px; /* Margen derecho */
 }
 
-.additional-info__text_1 {
+.adicional__informacion--compromisotexto1 {
     background-color: var(--color-terciario); /* Color de fondo */
     width: 73%; /* Ancho */
     border-radius: 10px; /* Radio del borde */
@@ -636,28 +632,28 @@ li .dropdown-item:active {
     font-size: 17px; /* Tamaño de la fuente */
 }
 
-.additional-info__social {
+.adicional__informacion--social {
     display: flex; /* Contenedor flexible */
     flex-direction: column; /* Dirección de columna */
 }
 
-.additional-info__heading {
+.adicional__informacion--compromisotexto {
     color: var(--color-fondo-principal); /* Color de texto */
     font-size: 18px; /* Tamaño de la fuente */
 }
 
-.additional-info__text {
+.adicional__informacion--socialtexto{
     color: var(--color-fondo-principal); /* Color de texto */
     font-size: 14px; /* Tamaño de la fuente */
 }
 
-.additional-info__social-icons {
+.adicional__informacion--socialicons {
     display: flex; /* Contenedor flexible */
     flex-direction: row; /* Dirección de fila */
     margin-left: -13px; /* Margen izquierdo negativo */
 }
 
-.additional-info__social-icon {
+.adicional__informacion--socialicon {
     width: 70px; /* Ancho */
     height: auto; /* Altura automática */
     cursor: pointer; /* Cursor apuntador */
@@ -700,22 +696,22 @@ li .dropdown-item:active {
     .contenedor__fondo {
         height: 1700px; /* Ajusta la altura según sea necesario */
     }
-    .contenedor__title {
+    .contenedor__titulo{
         font-size: 60px; /* Tamaño de fuente ajustado para tablets */
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
         padding-top: 100px; /* Ajusta el padding superior según sea necesario */
     }
-    .contenedor__subtitle {
+    .contenedor__subtitulo {
         font-size: 20px; /* Tamaño de fuente ajustado para tablets */
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
         margin-top: 10px; /* Ajusta el margen superior según sea necesario */
     }
-    .contenedor__description {
+    .contenedor__descripcion {
         font-size: 12px; /* Tamaño de fuente ajustado para tablets */
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
         margin-top: 10px; /* Ajusta el margen superior según sea necesario */
     }
-    .boton-continuar__link {
+    .boton__continuar--link {
         margin-left: 50px; /* Margen izquierdo ajustado para tablets */
     }
     .contenedor__secundario {
@@ -725,18 +721,18 @@ li .dropdown-item:active {
         margin: 50px auto; /* Margen ajustado para tablets */
         padding: 15px; /* Padding ajustado para tablets */
     }
-    .contenedor__subtitle--secundario {
+    .contenedor__subtitulo--secundario {
         font-size: 30px; /* Tamaño de fuente ajustado para tablets */
         margin-bottom: 5px; /* Margen inferior ajustado para tablets */
     }
-    .contenedor__description--secundario {
+    .contenedor__descripcion--secundario {
         font-size: 18px; /* Tamaño de fuente ajustado para tablets */
         margin-bottom: 10px; /* Margen inferior ajustado para tablets */
     }
     .contenedor__imagenes--secundario {
         gap: 10px; /* Espacio entre elementos ajustado para tablets */
     }
-    .imagen-row {
+    .imagen__row {
         display: flex;
         flex-direction: column; /* Coloca las imágenes una debajo de la otra */
         align-items: center; /* Centra las imágenes horizontalmente */
@@ -745,7 +741,7 @@ li .dropdown-item:active {
     .imagen-row2 {
         margin-top: -250px; /* Ajusta el margen superior si es necesario */
     }
-    .additional-info__main {
+    .adicional__informacion--principal {
         display: flex; /* Contenedor de cuadrícula con flexbox */
         align-items: center; /* Alinear elementos al centro verticalmente */
         justify-content: center; /* Justificar contenido al centro horizontalmente */
@@ -754,7 +750,7 @@ li .dropdown-item:active {
         padding: 20px; /* Padding de 20 píxeles */
         text-align: center; /* Alinear texto al centro */
     }
-    .additional-info__text_1 {
+    .adicional__informacion--compromisotexto1{
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
     }
@@ -789,25 +785,25 @@ li .dropdown-item:active {
         width: 100vw; /* Ancho igual al viewport */
     }
     
-    .contenedor__title {
+    .contenedor__titulo {
         font-size: 40px; /* Tamaño de fuente ajustado para móviles */
         margin-left: 30px; /* Margen izquierdo ajustado para móviles */
         padding-top: 100px; /* Ajuste del padding superior */
     }
     
-    .contenedor__subtitle {
+    .contenedor__subtitulo {
         font-size: 13px; /* Tamaño de fuente ajustado para móviles */
         margin-left: 30px; /* Margen izquierdo ajustado para móviles */
         margin-top: 10px; /* Margen superior ajustado para móviles */
     }
     
-    .contenedor__description {
+    .contenedor__descripcion {
         font-size: 10px; /* Tamaño de fuente ajustado para móviles */
         margin-left: 30px; /* Margen izquierdo ajustado para móviles */
         margin-top: 10px; /* Margen superior ajustado para móviles */
     }
     
-    .boton-continuar__link {
+    .boton__continuar--link {
         margin-left: 30px; /* Margen izquierdo ajustado para móviles */
     }
     
@@ -828,11 +824,11 @@ li .dropdown-item:active {
         width: 100vw; /* Ancho igual al viewport */
     }
     
-    .contenedor__subtitle--secundario {
+    .contenedor__subtitulo--secundario {
         font-size: 30px; /* Tamaño de fuente ajustado para móviles */
     }
     
-    .contenedor__description--secundario {
+    .contenedor__descripcion--secundario {
         font-size: 18px; /* Tamaño de fuente ajustado para móviles */
     }
     
@@ -840,7 +836,7 @@ li .dropdown-item:active {
         gap: 10px; /* Espacio entre imágenes ajustado para móviles */
     }
     
-    .imagen-row {
+    .imagen__row {
         display: flex;
         flex-direction: column; /* Colocar imágenes una debajo de la otra */
         align-items: center; /* Centrar imágenes horizontalmente */
@@ -894,7 +890,7 @@ li .dropdown-item:active {
         height: 1100px; /* Altura ajustada para móviles */
     }
     
-    .additional-info__main {
+    .adicional__informacion--principal {
         display: flex; /* Contenedor de cuadrícula con flexbox */
         align-items: center; /* Alinear elementos al centro verticalmente */
         justify-content: center; /* Justificar contenido al centro horizontalmente */
@@ -904,7 +900,7 @@ li .dropdown-item:active {
         text-align: center; /* Alinear texto al centro */
     }
     
-    .additional-info__text_1 {
+    .adicional__informacion--compromisotexto1 {
         width: 100%; /* Ancho del 100% */
         text-align: center; /* Alinear texto al centro */
     }
