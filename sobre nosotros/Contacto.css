@@ -236,6 +236,7 @@ li .dropdown-item:active {
     align-items: center; /* Centrar contenido verticalmente */
     gap: 200px; /* Espacio entre los elementos hijos */
     padding: 20px; /* Espaciado interno */
+    flex-wrap: wrap;
 }
 
 .primero {
@@ -558,6 +559,13 @@ textarea::placeholder {
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
     }
+    .contenedor__dentro{
+        display: flex; /* Establece el contenedor como flex */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        max-width: auto; /* Ancho máximo del contenido dentro del fondo */
+        margin-top: -1px; /* Margen superior negativa */
+    }
     .adicional__informacion--principal {
         display: flex; /* Contenedor de cuadrícula con flexbox */
         align-items: center; /* Alinear elementos al centro verticalmente */
@@ -573,6 +581,35 @@ textarea::placeholder {
     }
     .footer{
         height: 100px; /* Altura fija de 100px para el footer */
+    }
+    .contenedor__contacto {
+        display: flex; /* Establece el contenedor como flex */
+        justify-content: center; /* Centrar contenido horizontalmente */
+        align-items: center; /* Centrar contenido verticalmente */
+        gap: 20px; /* Espacio entre los elementos hijos */
+        padding: 20px; /* Espaciado interno */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    }
+    .contenedor__fondo--contacto{
+        background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background-repeat: no-repeat; /* No repetir el fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+        height: 1600px; /* Altura fija de 800px */
+        padding: 0px; /* Relleno interno */
+        margin-top: 20px; /* Margen superior */
+    }
+    .contenedor__fondo {
+        height: 350px; /* Altura del contenedor */
+    }
+    .contenedor__seccion--dentro {
+        width: 750px; /* Ancho máximo del contenido dentro del fondo */
+        height: 1300px; /* Altura del contenido */
+        padding: 20px; /* Ajuste de padding para separación interna */
+        background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con opacidad */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
+    }
+    .contenedor__linea{
+        width: 90%; /* Ancho del contenedor */
     }
 }
 
@@ -623,5 +660,46 @@ textarea::placeholder {
     }
     .footer{
         height: 50px; /* Altura fija de 50px para el footer */
+    }
+    .contenedor__seccion--dentro {
+        width: 370px; /* Ancho máximo del contenido dentro del fondo */
+        height: 1500px; /* Altura del contenido */
+        padding: 20px; /* Ajuste de padding para separación interna */
+        background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con opacidad */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
+    }
+    .contenedor__contacto {
+        display: flex; /* Establece el contenedor como flex */
+        justify-content: center; /* Centrar contenido horizontalmente */
+        align-items: center; /* Centrar contenido verticalmente */
+        gap: 20px; /* Espacio entre los elementos hijos */
+        padding: 20px; /* Espaciado interno */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    }
+    .titulo__seccion{
+        font-size: 50px; /* Tamaño de fuente de 50px */
+    }
+    .titulo{
+        font-size: 20px; /* Tamaño de fuente de 20px */
+    }
+    .form__input{
+        width: 100%; /* Ancho del contenedor */
+    }
+    #descripcion{
+        width: 350px; /* Ancho del contenedor */
+    }
+    .contenedor__linea{
+        width: 80%; /* Ancho del contenedor */
+    }
+    .contenedor__fondo {
+        height: 400px; /* Altura del contenedor */
+    }
+    .contenedor__fondo--contacto{
+        background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background-repeat: no-repeat; /* No repetir el fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+        height: 1600px; /* Altura fija de 1600px */
+        padding: 0px; /* Relleno interno */
+        margin-top: 20px; /* Margen superior */
     }
 }

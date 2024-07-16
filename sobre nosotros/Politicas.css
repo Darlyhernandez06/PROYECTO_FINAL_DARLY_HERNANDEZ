@@ -177,7 +177,7 @@ li .dropdown-item:active {
     margin: 0 auto; /* Centrar el contenido horizontalmente */
     padding: 20px; /* Ajuste de padding para separación interna */
     gap: 50px; /* Espacio entre elementos */
-    margin-top: 120px; /* Separación superior */
+    margin-top: 50px; /* Separación superior */
     background: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
 }
@@ -204,7 +204,6 @@ li .dropdown-item:active {
 
 .contenedor__fondo--secundario {
     background: url('../imagenes/fondo informacion.svg') no-repeat center/cover; /* Imagen de fondo ajustada */
-    height: 1200px; /* Altura deseada del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
@@ -220,7 +219,6 @@ li .dropdown-item:active {
 .contenedor__titulo-texto {
     background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
     width: 1600px; /* Ancho del contenedor */
-    height: 800px; /* Altura del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
@@ -243,12 +241,13 @@ li .dropdown-item:active {
 
 /*PARTE DE LA SECCION CON INFORMACION*/
 
+
 .contenedor__fondo--terciario {
+    margin-top: 40px;
     background-color: #EFF7FD; /* Color de fondo */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centra contenido horizontalmente */
     align-items: center; /* Centra contenido verticalmente */
-    height: 1300px; /* Altura deseada del contenedor */
 }
 
 .contenedor__dentro--terciario {
@@ -423,19 +422,17 @@ li .dropdown-item:active {
         justify-content: center; /* Centrar horizontalmente */
         align-items: center; /* Centrar verticalmente */
         max-width: auto; /* Ancho máximo del contenido dentro del fondo */
-    }
-    .contenedor__fondo--secundario{
-        height: 2000px;
+        margin-top: -1px; /* Margen superior negativa */
     }
     .contenedor__fondo--terciario{
-        height: 1500px;
+        height: 1500px; /* Altura del contenedor */
+        margin-top: 0px; /* Margen superior */
     }
     .contenedor__titulo-texto {
         width: 700px; /* Ancho del contenedor */
         height: auto; /* Altura del contenedor */
         flex-direction: column; /* Dirección de columna */
         gap:50px; /* Espacio entre elementos */
-        margin-top: 100px; /* Margen superior */
     }
     .contenedor__titulo--seccion{
         font-size: 40px; /* Tamaño de fuente de 16px */
@@ -456,6 +453,17 @@ li .dropdown-item:active {
     .footer{
         height: 100px; /* Altura fija de 100px para el footer */
     }
+    .contenedor__fondo--secundario{
+        background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background-repeat: no-repeat; /* No repetir el fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+        height: 1200px; /* Altura fija de 800px */
+        padding: 0px; /* Relleno interno */
+        margin-top: 20px; /* Margen superior */
+    }
+    .contenedor__fondo {
+        height: 350px; /* Altura del contenedor */
+    }
 }
 
 /*RESPONSIVE*/
@@ -468,9 +476,6 @@ li .dropdown-item:active {
     }
     .botones {
         justify-content: center; /* Justificar contenido al centro horizontalmente */
-    }
-    .contenedor__fondo--secundario{
-        height: 1000px; /* Altura del contenedor */
     }
     .contenedor__dentro{
         display: flex; /* Establece el contenedor como flex */
@@ -494,11 +499,10 @@ li .dropdown-item:active {
         width: 100px; /* Ancho del contenedor */
     }
     .contenedor__titulo-texto {
-        width: auto; /* Ancho del contenedor */
+        width: 350px; /* Ancho del contenedor */
         height: auto; /* Altura del contenedor */
         flex-direction: column; /* Dirección de columna */
         gap:30px; /* Espacio entre elementos */
-        margin-top: 100px; /* Margen superior */
     }
     .contenedor__titulo--seccion{
         font-size: 30px; /* Tamaño de fuente de 30px */
@@ -522,5 +526,23 @@ li .dropdown-item:active {
     }
     .footer{
         height: 50px; /* Altura fija de 50px para el footer */
+    }
+    .contenedor__fondo--secundario{
+        background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background-repeat: no-repeat; /* No repetir el fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+        height: 800px; /* Altura fija de 800px */
+        padding: 0px; /* Relleno interno */
+        margin-top: 20px; /* Margen superior */
+    }
+    .contenedor__titulo-texto{
+        margin-top: 0; /* Margen superior */
+    }
+    .contenedor__fondo--terciario{
+        margin-top: 0; /* Margen superior */
+        height: 1000px; /* Altura del contenedor */
+    }
+    .contenedor__fondo {
+        height: 400px; /* Altura del contenedor */
     }
 }
