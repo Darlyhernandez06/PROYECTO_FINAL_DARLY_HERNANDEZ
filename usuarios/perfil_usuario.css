@@ -147,3 +147,21 @@ body {
     border: 2px solid var(--color-secundario);
     border-radius: 4px;
 }
+
+/* Estilos para el pie de página */
+.footer {
+    width: 100%; /* Ancho completo */
+    height: 104px; /* Altura del pie de página */
+    background-color: var(--color-primario); /* Color de fondo */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 200px; /* Margen superior */
+}
+
+/* Estilos para el texto dentro del pie de página */
+.footer__parrafo {
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-align: center; /* Alinea el texto al centro */
+    font-weight: bold; /* Fuente en negrita */
+}

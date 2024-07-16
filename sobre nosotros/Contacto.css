@@ -662,7 +662,7 @@ textarea::placeholder {
         height: 50px; /* Altura fija de 50px para el footer */
     }
     .contenedor__seccion--dentro {
-        width: auto; /* Ancho máximo del contenido dentro del fondo */
+        width: 100%; /* Ancho máximo del contenido dentro del fondo */
         height: 1500px; /* Altura del contenido */
         padding: 20px; /* Ajuste de padding para separación interna */
         background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con opacidad */
@@ -693,6 +693,7 @@ textarea::placeholder {
     }
     .contenedor__fondo {
         height: 400px; /* Altura del contenedor */
+        min-width: auto;
     }
     .contenedor__fondo--contacto{
         background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
