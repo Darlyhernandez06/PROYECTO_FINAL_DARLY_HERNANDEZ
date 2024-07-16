@@ -677,7 +677,7 @@ textarea::placeholder {
         flex-wrap: wrap; /* Permite que los elementos se envuelvan */
     }
     .titulo__seccion{
-        font-size: 50px; /* Tamaño de fuente de 50px */
+        font-size: 40px; /* Tamaño de fuente de 50px */
     }
     .titulo{
         font-size: 20px; /* Tamaño de fuente de 20px */
