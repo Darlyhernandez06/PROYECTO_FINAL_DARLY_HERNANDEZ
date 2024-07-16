@@ -204,6 +204,7 @@ li .dropdown-item:active {
 
 .contenedor__fondo--secundario {
     background: url('../imagenes/fondo informacion.svg') no-repeat center/cover; /* Imagen de fondo ajustada */
+    height: 1200px; /* Altura deseada del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
@@ -219,6 +220,7 @@ li .dropdown-item:active {
 .contenedor__titulo-texto {
     background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
     width: 1600px; /* Ancho del contenedor */
+    height: 800px; /* Altura del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
@@ -241,13 +243,12 @@ li .dropdown-item:active {
 
 /*PARTE DE LA SECCION CON INFORMACION*/
 
-
 .contenedor__fondo--terciario {
-    margin-top: 40px;
     background-color: #EFF7FD; /* Color de fondo */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centra contenido horizontalmente */
     align-items: center; /* Centra contenido verticalmente */
+    height: 1200px; /* Altura deseada del contenedor */
 }
 
 .contenedor__dentro--terciario {

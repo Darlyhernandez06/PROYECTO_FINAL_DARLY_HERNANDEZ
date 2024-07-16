@@ -45,7 +45,7 @@ body {
     text-align: start; /* Alinear al inicio (izquierda) */
     color: var(--color-secundario); /* Color del texto usando una variable de CSS */
     font-weight: bold; /* Texto en negrita */
-    margin-left: 300px; /* Margen izquierdo específico */
+    margin-left: 180px; /* Margen izquierdo específico */
     padding-top: 200px; /* Relleno superior */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
@@ -64,19 +64,62 @@ body {
     text-align: start; /* Alinear al inicio (izquierda) */
     color: var(--color-secundario); /* Color del texto usando una variable de CSS */
     font-weight: bold; /* Texto en negrita */
-    margin-left: 300px; /* Margen izquierdo específico */
+    margin-left: 180px; /* Margen izquierdo específico */
     margin-top: 200px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
 /* linea separadora */
 .contenedor__linea {
-    width: 1320px; /* Ajusta el ancho de la línea */
-    height: 3px; /* Ajusta el grosor de la línea */
+    width: 1540px; /* Ajusta el ancho de la línea */
+    height: 4px; /* Ajusta el grosor de la línea */
     background-color: var(--color-terciario); /* Color de la línea */
     margin: 20px auto; /* Espaciado superior e inferior, centrar horizontalmente */
     margin-top: 50px; /* Separación superior adicional */
 }
+
+.contenedor__informacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor__dentro {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 1300px;
+    height: 150px;
+    background-color: var(--color-texto-principal);
+    border-top: 5px solid #A00B0B; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    gap: 30px;
+    padding: var(--padding);
+    margin-top: 100px;
+}
+
+.contenedor__informacion--imagen {
+    width: 70px;             /* Ancho del círculo */
+    height: 70px;            /* Alto del círculo */
+    border-radius: 50%;       /* Hace que sea un círculo */
+    background-color: #A00B0B; /* Color de fondo */
+    display: flex;            /* Para centrar la imagen */
+    justify-content: center;
+    align-items: center;
+    position: relative;       /* Para el posicionamiento de la imagen */
+    overflow: hidden;         /* Oculta desbordamiento */
+}
+
+.contenedor__informacion--imagen img {
+    width: 50%;              /* Ajusta el tamaño de la imagen */
+    height: auto;            /* Mantiene la proporción */
+    position: absolute;       /* Posicionamiento absoluto */
+}
+
+.texto {
+    margin-top: -100px;
+}
+
 
 /* boton para regresar a la tienda */
 .boton__regresar {
@@ -128,24 +171,62 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
 }
 
 .form__group {
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
 .form__label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.form__input, .textarea {
-    width: 600px;
-    height: auto;
+.form__input {
+    width: 600px; /* Ancho calculado con margen */
+    min-height: 50px; /* Altura mínima */
     padding: 10px;
-    border: 2px solid var(--color-secundario);
+    border: 3px solid var(--color-terciario);
     border-radius: 4px;
+}
+
+.form__input:focus {
+    /* Estilos para cuando los campos de correo electrónico y contraseña están enfocados */
+    outline: none; /* Sin contorno */
+}
+
+.form__input:hover {
+    /* Estilos para cuando el mouse está sobre los campos de entrada */
+    border: 3px solid var(--color-acento-1); /* Borde sólido con color de acento 1 */
+}
+
+.form__input:active {
+    /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
+    border: 3px solid var(--color-secundario); /* Borde sólido con color secundario */
+}
+
+.textarea {
+    width: 600px; /* Ancho calculado con margen */
+    min-height: 160px; /* Altura mínima */
+    padding: 10px;
+    border: 3px solid var(--color-terciario);
+    border-radius: 4px;
+}
+
+.textarea:focus {
+    /* Estilos para cuando los campos de correo electrónico y contraseña están enfocados */
+    outline: none; /* Sin contorno */
+}
+
+.textarea:hover {
+    /* Estilos para cuando el mouse está sobre los campos de entrada */
+    border: 3px solid var(--color-acento-1); /* Borde sólido con color de acento 1 */
+}
+
+.textarea:active {
+    /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
+    border: 3px solid var(--color-secundario); /* Borde sólido con color secundario */
 }
 
 /* Estilos para el pie de página */
@@ -164,4 +245,33 @@ body {
     color: var(--color-fondo-principal); /* Color del texto */
     text-align: center; /* Alinea el texto al centro */
     font-weight: bold; /* Fuente en negrita */
+}
+
+
+/*RESPONSIVE*/
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+/* linea separadora */
+.contenedor__linea {
+    width: 90%; /* Ajusta el ancho de la línea */
+}
+
+/* Título principal */
+.contenedor__titulo {
+    margin-left: 38px; /* Margen izquierdo específico */
+}
+  
+/* Subtítulo */
+.contenedor__subtitulo{
+    margin-left: 38px; /* Margen izquierdo específico */
+}
+
+}
+
+/*RESPONSIVE*/
+
+/* Media query para pantallas pequeñas como móviles */
+@media (min-width: 300px) and (max-width: 767px) {
+
 }
