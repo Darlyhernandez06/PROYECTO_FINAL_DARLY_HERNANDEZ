@@ -553,7 +553,7 @@ li .dropdown-item:active {
         width: 100px; /* Ancho del contenedor */
     }
     .contenedor__titulo-texto {
-        width: auto; /* Ancho del contenedor */
+        width: 350px; /* Ancho del contenedor */
         height: auto; /* Altura del contenedor */
         flex-direction: column; /* Dirección de columna */
         gap:30px; /* Espacio entre elementos */
@@ -570,7 +570,7 @@ li .dropdown-item:active {
         text-align: start; /* Coloca el texto al inicio del contenedor */
     }
     .contenedor__titulotexto--terciario {
-        width: auto; /* Ancho del contenedor */
+        width: 350px; /* Ancho del contenedor */
         height: auto; /* Altura del contenedor */
         flex-direction: column; /* Dirección de columna */
         gap:50px; /* Espacio entre elementos */

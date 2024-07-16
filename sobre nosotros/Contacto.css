@@ -662,7 +662,7 @@ textarea::placeholder {
         height: 50px; /* Altura fija de 50px para el footer */
     }
     .contenedor__seccion--dentro {
-        width: 370px; /* Ancho máximo del contenido dentro del fondo */
+        width: auto; /* Ancho máximo del contenido dentro del fondo */
         height: 1500px; /* Altura del contenido */
         padding: 20px; /* Ajuste de padding para separación interna */
         background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con opacidad */
