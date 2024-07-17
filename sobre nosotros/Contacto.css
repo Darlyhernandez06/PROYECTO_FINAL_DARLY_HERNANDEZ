@@ -217,7 +217,7 @@ li .dropdown-item:active {
     padding: 20px; /* Ajuste de padding para separación interna */
     gap: 50px; /* Espacio entre elementos */
     margin-top: 120px; /* Separación superior */
-    background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con opacidad */
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo negro con opacidad */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
     margin-top: -20px; /* Ajuste adicional de la separación superior */
 }
@@ -226,7 +226,7 @@ li .dropdown-item:active {
     text-align: center; /* Centrar el texto */
     font-size: 64px; /* Tamaño de la fuente */
     color: var(--color-acento-2); /* Color del texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Sombra del texto */
     margin-top: 50px; /* Separación superior */
 }
 
@@ -271,7 +271,7 @@ li .dropdown-item:active {
 
 .contenedor__linea {
     width: 1000px; /* Ajusta el ancho de la línea */
-    height: 3px; /* Ajusta el grosor de la línea */
+    height: 5px; /* Ajusta el grosor de la línea */
     background-color: var(--color-acento-2); /* Color de la línea */
     margin: 20px auto; /* Espaciado superior e inferior, centrar horizontalmente */
     margin-top: 50px; /* Separación superior adicional */
@@ -605,8 +605,6 @@ textarea::placeholder {
         width: 750px; /* Ancho máximo del contenido dentro del fondo */
         height: 1300px; /* Altura del contenido */
         padding: 20px; /* Ajuste de padding para separación interna */
-        background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con opacidad */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
     }
     .contenedor__linea{
         width: 90%; /* Ancho del contenedor */
@@ -665,8 +663,6 @@ textarea::placeholder {
         width: 100%; /* Ancho máximo del contenido dentro del fondo */
         height: 1500px; /* Altura del contenido */
         padding: 20px; /* Ajuste de padding para separación interna */
-        background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con opacidad */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
     }
     .contenedor__contacto {
         display: flex; /* Establece el contenedor como flex */
