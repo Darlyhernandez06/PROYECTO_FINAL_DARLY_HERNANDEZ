@@ -219,14 +219,14 @@ li .dropdown-item:active {
 
 .contenedor__titulo-texto {
     background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
-    width: 1500px; /* Ancho del contenedor */
+    width: 100%; /* Ancho del contenedor */
     height: 800px; /* Altura del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
     padding: var(--padding); /* Padding usando una variable CSS */
-    gap: 150px; /* Espacio entre elementos */
+    gap: 50px; /* Espacio entre elementos */
 }
 
 .contenedor__titulo--secundario {
@@ -261,7 +261,7 @@ li .dropdown-item:active {
 
 .contenedor__titulotexto--terciario {
     background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
-    width: 1500px; /* Ancho del contenedor */
+    width: 100%; /* Ancho del contenedor */
     height: 900px; /* Altura del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centra contenido horizontalmente */
@@ -441,6 +441,21 @@ li .dropdown-item:active {
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
     font-size: 15px; /* Tamaño de fuente de 15px */
+}
+
+
+/*RESPONSIVE*/
+
+/* Media query para portátiles */
+@media (min-width: 769px) and (max-width: 1300px) {
+    .contenedor__fondo--secundario{
+        background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background-repeat: no-repeat; /* No repetir el fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+        height: 1200px; /* Altura fija de 800px */
+        padding: 0px; /* Relleno interno */
+        margin-top: 20px; /* Margen superior */
+    }
 }
 
 /*RESPONSIVE*/

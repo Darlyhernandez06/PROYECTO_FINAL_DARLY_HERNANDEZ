@@ -550,6 +550,20 @@ textarea::placeholder {
 
 /*RESPONSIVE*/
 
+/* Media query para portátiles */
+@media (min-width: 769px) and (max-width: 1300px) {
+    .contenedor__fondo--contacto{
+        background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background-repeat: no-repeat; /* No repetir el fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+        height: 1600px; /* Altura fija de 800px */
+        padding: 0px; /* Relleno interno */
+        margin-top: 20px; /* Margen superior */
+    }
+}
+
+/*RESPONSIVE*/
+
 /* Media query para tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
     .esconder {

@@ -681,6 +681,15 @@ li .dropdown-item:active {
 
 /*RESPONSIVE*/
 
+/* Media query para portátiles */
+@media (min-width: 769px) and (max-width: 1300px) {
+    .boton__continuar--link, .contenedor__titulo, .contenedor__subtitulo, .contenedor__descripcion {
+        margin-left: 60px; /* Margen izquierdo específico */
+    }
+}
+
+/*RESPONSIVE*/
+
 /* Media query para tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
     .esconder {
