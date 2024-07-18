@@ -169,7 +169,7 @@ li .dropdown-item:active {
 }
 
 .contenedor__titulo {
-    text-align: start; /* Alinear al inicio (izquierda) */
+    text-align: start; /* Alinear al inicio */
     color: var(--color-fondo-principal); /* Color del texto usando una variable de CSS */
     font-weight: bold; /* Texto en negrita */
     font-size: 60px; /* Tamaño de fuente */
@@ -179,7 +179,7 @@ li .dropdown-item:active {
 }
 
 .contenedor__subtitulo {
-    text-align: start; /* Alinear al inicio (izquierda) */
+    text-align: start; /* Alinear al inicio */
     color: var(--color-fondo-principal); /* Color del fondo principal */
     font-weight: bold; /* Texto en negrita */
     font-size: 25px; /* Tamaño de fuente */
@@ -189,7 +189,7 @@ li .dropdown-item:active {
 }
 
 .contenedor__descripcion {
-    text-align: start; /* Alinear al inicio (izquierda) */
+    text-align: start; /* Alinear al inicio */
     color: var(--color-fondo-principal); /* Color del fondo principal */
     font-size: 17px; /* Tamaño de fuente */
     margin-left: 300px; /* Margen izquierdo específico */
@@ -503,7 +503,7 @@ li .dropdown-item:active {
     justify-content: center; /* Centra horizontalmente las tarjetas */
     align-items: center; /* Centra verticalmente las tarjetas */
     gap: 100px; /* Espacio entre las tarjetas */
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
 }
 
 .card__texto {

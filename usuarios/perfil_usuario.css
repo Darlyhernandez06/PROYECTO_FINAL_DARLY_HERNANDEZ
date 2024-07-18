@@ -39,8 +39,8 @@ body {
 
 /* Título principal */
 .contenedor__titulo{
-    display: flex;
-    gap: 20px;
+    display: flex; /* Contenedor flexible */
+    gap: 20px; /* Espacio entre los elementos */
     font-size: 64px; /* Tamaño de fuente grande */
     text-align: start; /* Alinear al inicio (izquierda) */
     color: var(--color-secundario); /* Color del texto usando una variable de CSS */
@@ -53,8 +53,8 @@ body {
 /* texto */
 .contenedor__texto{
     font-size: 20px; /* Tamaño de fuente medio */
-    margin-top: 50px;
-    text-align: center;
+    margin-top: 50px; /* Margen superior específico */
+    text-align: center; /* Alinear el texto al centro */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
 }
 
@@ -65,7 +65,7 @@ body {
     color: var(--color-secundario); /* Color del texto usando una variable de CSS */
     font-weight: bold; /* Texto en negrita */
     margin-left: 180px; /* Margen izquierdo específico */
-    margin-top: 200px;
+    margin-top: 200px; /* Margen superior específico */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
 
@@ -75,27 +75,27 @@ body {
     height: 4px; /* Ajusta el grosor de la línea */
     background-color: var(--color-terciario); /* Color de la línea */
     margin: 20px auto; /* Espaciado superior e inferior, centrar horizontalmente */
-    margin-top: 50px; /* Separación superior adicional */
+    margin-top: 50px; /* Margen superior específico */
 }
 
 .contenedor__informacion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
 .contenedor__dentro {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 1300px;
-    height: 150px;
-    background-color: var(--color-texto-principal);
+    display: flex; /* Contenedor flexible */
+    justify-content: start; /* Alinear al inicio */
+    align-items: center; /* Centra verticalmente */
+    width: 1300px; /* Ancho fijo del contenedor */
+    height: 150px; /* Altura fija del contenedor */
+    background-color: var(--color-texto-principal); /* Color de fondo */
     border-top: 5px solid #A00B0B; 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
-    gap: 30px;
-    padding: var(--padding);
-    margin-top: 100px;
+    gap: 30px; /* Espacio entre elementos */
+    padding: var(--padding); /* Espaciado interno */
+    margin-top: 100px; /* Margen superior específico */
 }
 
 .contenedor__informacion--imagen {
@@ -104,8 +104,8 @@ body {
     border-radius: 50%;       /* Hace que sea un círculo */
     background-color: #A00B0B; /* Color de fondo */
     display: flex;            /* Para centrar la imagen */
-    justify-content: center;
-    align-items: center;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
     position: relative;       /* Para el posicionamiento de la imagen */
     overflow: hidden;         /* Oculta desbordamiento */
 }
@@ -117,7 +117,7 @@ body {
 }
 
 .texto {
-    margin-top: -100px;
+    margin-top: -100px;  /* Margen superior específico */
 }
 
 
@@ -160,33 +160,28 @@ body {
 /* ESTILOS PARA LA SEGUNDA SECCION */
 
 .form__contenedor {
-    margin-top: 150px;
-}
-
-.formulario {
-    flex: 1;
-    margin: 10px; /* Reducir el margen horizontal */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 150px; /* Margen superior específico */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
 .form__group {
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Margen inferior específico */
 }
 
 .form__label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+    display: block; /* establece que un elemento ocupará todo el espacio disponible por defecto y el siguiente elemento a este se situará por debajo */
+    margin-bottom: 10px; /* Margen inferior específico */
+    font-weight: bold; /* Texto en negrita */
 }
 
 .form__input {
-    width: 600px; /* Ancho calculado con margen */
+    width: 100%; /* Ancho */
     min-height: 50px; /* Altura mínima */
-    padding: 10px;
-    border: 3px solid var(--color-terciario);
-    border-radius: 4px;
+    padding: 10px; /* Espaciado interno */
+    border: 3px solid var(--color-terciario); /* borde */
+    border-radius: 4px; /* Bordes redondeados */
 }
 
 .form__input:focus {
@@ -207,9 +202,9 @@ body {
 .textarea {
     width: 600px; /* Ancho calculado con margen */
     min-height: 160px; /* Altura mínima */
-    padding: 10px;
+    padding: 10px; /* Espaciado interno */
     border: 3px solid var(--color-terciario);
-    border-radius: 4px;
+    border-radius: 4px; /* Bordes redondeados */
 }
 
 .textarea:focus {
@@ -285,28 +280,96 @@ body {
 
 /*RESPONSIVE*/
 
+/* Media query para portátiles */
+@media (min-width: 769px) and (max-width: 1300px) {
+    .contenedor__linea {
+        width: 90%; /* Ajusta el ancho de la línea */
+    }
+    .contenedor__titulo, .contenedor__subtitulo {
+        margin-left: 70px; /* Margen izquierdo específico */
+    }
+    .contenedor__dentro{
+        width: 1000px; /* Ancho */
+        height: 150px; /* Altura */
+    }
+}
+
+
+/*RESPONSIVE*/
+
 /* Media query para tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-/* linea separadora */
-.contenedor__linea {
-    width: 90%; /* Ajusta el ancho de la línea */
-}
-
-/* Título principal */
-.contenedor__titulo {
-    margin-left: 38px; /* Margen izquierdo específico */
-}
-  
-/* Subtítulo */
-.contenedor__subtitulo{
-    margin-left: 38px; /* Margen izquierdo específico */
-}
-
+    .contenedor__linea {
+        width: 90%; /* Ancho de la linea */
+    }
+    
+    .contenedor__titulo, .contenedor__subtitulo {
+        margin-left: 38px; /* Margen izquierdo específico */
+    }
+    
+    .contenedor__dentro{
+        width: 650px; /* Ancho */
+        height: 150px; /* Altura */
+    }
 }
 
 /*RESPONSIVE*/
 
 /* Media query para pantallas pequeñas como móviles */
 @media (min-width: 300px) and (max-width: 767px) {
+    .contenedor__linea {
+        width: 80%; /* Ancho de la linea */
+    }
 
+    .contenedor__titulo {
+       margin-left: 10px; /* Margen izquierdo específico */
+       text-align: center; /* Alinear el texto al centro */
+       display: flex; /* Contenedor flexible */
+       flex-direction: column; /* dirrecion en columna */
+       position: relative;
+    }
+    .contenedor__titulo img {
+        width: 60px; /* Ancho */
+        margin-left: 310px; /* Margen izquierdo específico */
+        margin-top: 90px; /* Margen superior */
+        position: absolute;
+    }
+
+    .contenedor__subtitulo{
+        margin-left: 10px; /* Margen izquierdo específico */
+        text-align: center /* Alinear el texto al centro */
+    }
+
+    .contenedor__texto{
+        font-size: 16px; /* tamaño de la fuente */
+        padding: 0 10px;
+    }
+
+    .contenedor__dentro{
+        width: 280px; /* Ancho */
+        height: 150px; /* Altura */
+    }
+
+    .contenedor__informacion--imagen {
+        width: 100px;             /* Ancho del círculo */
+        height: 40px;            /* Alto del círculo */
+    }
+    
+    .contenedor__informacion--imagen img {
+        width: 50%;              /* Ajusta el tamaño de la imagen */
+    }
+
+    .contenedor__informacion--texto{
+        text-align: start; /* Alinear al inicio */
+    }
+
+    .form__input {
+        width: 100%; /* Ancho automático para ajustar al contenido */
+        min-height: 40px; /* Altura mínima reducida para móviles */
+    }
+
+    .textarea {
+        width: 100%; /* Ancho automático para ajustar al contenido */
+        min-height: 150px; /* Altura mínima reducida para móviles */
+    }
 }
