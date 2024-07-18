@@ -38,7 +38,7 @@ body {
 /*PARTE DEL MENU DE NAVEGACION*/
 
 .navbar {
-    max-width: 100vw;
+    width: 100vw;
     display: flex;                          /* Mostrar como flexbox */
     align-items: center;                    /* Centrar elementos verticalmente */
     justify-content: space-between;         /* Espacio entre elementos */
@@ -177,7 +177,7 @@ li .dropdown-item:active {
     margin: 0 auto; /* Centrar el contenido horizontalmente */
     padding: 20px; /* Ajuste de padding para separación interna */
     gap: 50px; /* Espacio entre elementos */
-    margin-top: 50px; /* Separación superior */
+    margin-top: 120px; /* Separación superior */
     background: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
 }
@@ -219,8 +219,7 @@ li .dropdown-item:active {
 
 .contenedor__titulo-texto {
     background-color: var(--color-texto-principal); /* Color de fondo usando una variable CSS */
-    width: 1600px; /* Ancho del contenedor */
-    height: 800px; /* Altura del contenedor */
+    width: 100%; /* Ancho del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
@@ -237,6 +236,7 @@ li .dropdown-item:active {
 }
 
 .contenedor__texto--seccion {
+    width: 100%;
     font-size: 18px; /* Tamaño de fuente del texto */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
 }
@@ -405,6 +405,28 @@ li .dropdown-item:active {
     text-align: center; /* Alinear texto al centro */
     font-weight: bold; /* Peso de la fuente */
     font-size: 15px; /* Tamaño de fuente de 15px */
+}
+
+/*RESPONSIVE*/
+
+/* Media query para portátiles */
+@media (min-width: 769px) and (max-width: 1300px) {
+    .contenedor__fondo--secundario{
+        background: url("../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background-repeat: no-repeat; /* No repetir el fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+        height: 1200px; /* Altura fija de 800px */
+        padding: 0px; /* Relleno interno */
+        margin-top: 20px; /* Margen superior */
+    }
+    .contenedor__titulo-texto {
+        width: 1200px; /* Ancho del contenedor */
+        height: auto; /* Altura del contenedor */
+    }
+    .contenedor__fondo--terciario{
+        margin-top: 0; /* Margen superior */
+        height: 1500px; /* Altura del contenedor */
+    }
 }
 
 /*RESPONSIVE*/

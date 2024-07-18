@@ -160,9 +160,7 @@ body {
 /* ESTILOS PARA LA SEGUNDA SECCION */
 
 .form__contenedor {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px; /* Ajusta el padding según tus preferencias */
+    margin-top: 150px;
 }
 
 .formulario {
@@ -227,6 +225,43 @@ body {
 .textarea:active {
     /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
     border: 3px solid var(--color-secundario); /* Borde sólido con color secundario */
+}
+
+/* boton para actualizar perfil */
+.boton__actualizar {
+    margin-top: 50px; /* Margen superior específico */
+    margin-bottom: -50px; /* Margen inferior específico */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+.boton__actualizar-link{
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-terciario); /* Color de fondo terciario */
+    color: var(--color-fondo-principal); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    border-radius: 15px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    padding: 10px 20px; /* Relleno interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinear el texto en el centro */
+}
+
+.boton__actualizar-link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
+}
+
+.boton__actualizar-link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
 }
 
 /* Estilos para el pie de página */

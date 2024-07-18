@@ -28,11 +28,10 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../imagenes/fondo de ingresar.svg'); /* Imagen de fondo */
+    background: url('../imagenes/fondo\ perfil\ usuario\ .svg'); /* Imagen de fondo */
     background-repeat: no-repeat;   /* La imagen de fondo no se repite */
     background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     font-family: 'MiFuente';        /* Fuente personalizada */
-    background-position: center;    /* Centra la imagen de fondo */
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/

@@ -33,7 +33,7 @@
                 <ul class="navbar-nav d-flex gap-5">
                     <!-- Elementos del menú -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a> <!-- Enlace "Inicio" activo -->
+                        <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a> <!-- Enlace "Inicio" activo -->
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,7 +92,7 @@
         </div>
         <!-- Primer producto -->
         <div class="contenedor__verduras--principal01">
-            <div class="contenedor__producto">
+            <div class="contenedor__producto" id="producto1">
                 <!-- Contenedor de la imagen del producto -->
                 <div class="contenedor__imagen">
                     <img src="../imagenes/Yuca.jpg" alt="Imagen de producto">
@@ -104,9 +104,9 @@
                     <p class="precio__producto"><strong>$1.900</strong></p>
                     <!-- Contenedor de botones para control de cantidad -->
                     <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
                         <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
                     </div>
                     <!-- Botón para añadir producto -->
                     <div class="boton-añadir">
@@ -127,7 +127,7 @@
                 </div>
             </div>
             <!-- Segundo producto -->
-            <div class="contenedor__producto">
+            <div class="contenedor__producto" id="producto2">
                 <!-- Contenedor de la imagen del producto -->
                 <div class="contenedor__imagen">
                     <img src="../imagenes/arracacha.jpg" alt="Imagen de producto">
@@ -139,9 +139,9 @@
                     <p class="precio__producto"><strong>$1.900</strong></p>
                     <!-- Contenedor de botones para control de cantidad -->
                     <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
                         <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
                     </div>
                     <!-- Botón para añadir producto -->
                     <div class="boton-añadir">
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <!-- Tercer producto -->
-            <div class="contenedor__producto">
+            <div class="contenedor__producto" id="producto3">
                 <!-- Contenedor de la imagen del producto -->
                 <div class="contenedor__imagen">
                     <img src="../imagenes/papa_criolla.jpg" alt="Imagen de producto">
@@ -173,9 +173,9 @@
                     <p class="precio__producto"><strong>$3.800</strong></p>
                     <!-- Contenedor de botones para control de cantidad -->
                     <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
                         <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
                     </div>
                     <!-- Botón para añadir producto -->
                     <div class="boton-añadir">
@@ -197,7 +197,7 @@
         </div>
         <div class="contenedor__verduras--principal02">
             <!-- Cuarto producto -->
-            <div class="contenedor__producto">
+            <div class="contenedor__producto" id="producto4">
                 <!-- Contenedor de la imagen del producto -->
                 <div class="contenedor__imagen">
                     <img src="../imagenes/lechuga_batavia.jpg" alt="Imagen de producto">
@@ -209,9 +209,9 @@
                     <p class="precio__producto"><strong>$2.500</strong></p>
                     <!-- Contenedor de botones para control de cantidad -->
                     <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
                         <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
                     </div>
                     <!-- Botón para añadir producto -->
                     <div class="boton-añadir">
@@ -232,7 +232,7 @@
                 </div>
             </div>
             <!-- Quinto producto -->
-            <div class="contenedor__producto">
+            <div class="contenedor__producto" id="producto5">
                 <!-- Contenedor de la imagen del producto -->
                 <div class="contenedor__imagen">
                     <img src="../imagenes/Lechuga_Crespa.jpg" alt="Imagen de producto">
@@ -244,9 +244,9 @@
                     <p class="precio__producto"><strong>$1.600</strong></p>
                     <!-- Contenedor de botones para control de cantidad -->
                     <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
                         <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
                     </div>
                     <!-- Botón para añadir producto -->
                     <div class="boton-añadir">
@@ -266,7 +266,7 @@
                 </div>
             </div>
             <!-- Sexto producto -->
-            <div class="contenedor__producto">
+            <div class="contenedor__producto" id="producto6">
                 <!-- Contenedor de la imagen del producto -->
                 <div class="contenedor__imagen">
                     <img src="../imagenes/cilantro.jpg" alt="Imagen de producto">
@@ -278,9 +278,9 @@
                     <p class="precio__producto"><strong>$3.000</strong></p>
                     <!-- Contenedor de botones para control de cantidad -->
                     <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="decreaseQuantity()">-</span>
+                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
                         <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="increaseQuantity()">+</span>
+                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
                     </div>
                     <!-- Botón para añadir producto -->
                     <div class="boton-añadir">
@@ -307,6 +307,18 @@
     <footer class="footer">
         <p class="footer__parrafo">@Megapaquetes</p>
     </footer>
+
+    <!-- Script para incremento y decremento de la cantida de los productos -->
+    <script>
+        function changeQuantity(element, change) {
+            let input = element.parentElement.querySelector('.input__cantidad');
+            let currentValue = parseInt(input.value);
+            let newValue = currentValue + change;
+            if (newValue > 0) {
+                input.value = newValue;
+            }
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- Bootstrap Bundle JS desde CDN -->
 </body>
