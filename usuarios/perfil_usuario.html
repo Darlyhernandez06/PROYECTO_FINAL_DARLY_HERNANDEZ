@@ -4,7 +4,7 @@
     <!-- Metadatos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡BIENVENIDOS A MEGAPAQUETES!</title>
+    <title>¡BIENVENIDO USUARIO!</title>
     <!-- Enlace al archivo CSS para estilos -->
     <link rel="stylesheet" href="perfil_usuario.css">
     <!-- Favicon para el navegador -->
@@ -14,25 +14,31 @@
     <!-- Sección principal del perfil del usuario -->
     <section class="contenedor__principal--usuario">
         <div class="contenedor__principal">
+            <!-- Contenedor del título -->
             <div class="contenedor__titulo">
                 <p><strong>Bienvenido, usuario</strong></p>
                 <img src="../imagenes/Group 146.svg" alt="logo">
             </div>
+            <!-- Línea separadora -->
             <div class="contenedor__linea"></div>
+            <!-- Contenedor del texto descriptivo -->
             <div class="contenedor__texto">
-                <p>Aqui podras ver tus pedidos, editar tu perfil y realizar nuevas compras.</p>
+                <p>Aquí podrás ver tus pedidos, editar tu perfil y realizar nuevas compras.</p>
             </div>
+            <!-- Subtítulo de la sección de pedidos -->
             <div class="contenedor__subtitulo">
                 <p><strong>Mis pedidos</strong></p>
             </div>
             <!-- Línea separadora -->
             <div class="contenedor__linea"></div>
-            <!--  -->
+            <!-- Contenedor de información de pedidos -->
             <div class="contenedor__informacion">
                 <div class="contenedor__dentro">
+                    <!-- Imagen dentro del contenedor de información -->
                     <div class="contenedor__informacion--imagen">
                         <img src="../imagenes/logo ningun pedido.svg" alt="logo">
                     </div>
+                    <!-- Texto dentro del contenedor de información -->
                     <div class="contenedor__informacion--texto">
                         <p><strong>No se ha realizado ningún pedido todavía.</strong></p>
                     </div>
@@ -41,18 +47,20 @@
         </div>
     </section>
 
-    <!-- Boton para regresar a la tienda -->
+    <!-- Botón para regresar a la tienda -->
     <div class="boton__regresar">
         <a href="../index.html" class="boton__regresar--link">Volver a la tienda</a>
     </div>
 
+    <!-- Sección secundaria del perfil del usuario -->
     <section class="contenedor__secundario--usuario">
+        <!-- Subtítulo de la sección de perfil -->
         <div class="contenedor__subtitulo">
             <p class="texto"><strong>Perfil</strong></p>
         </div>
         <!-- Línea separadora -->
         <div class="contenedor__linea"></div>
-        <!-- Formulario de inicio de sesión -->
+        <!-- Formulario de edición de perfil -->
         <div class="form__contenedor">
             <div class="formulario">
                 <form action="#" method="POST" class="from__principal">
@@ -74,12 +82,12 @@
                     <!-- Campo del teléfono -->
                     <div class="form__group">
                         <label class="form__label" for="telefono">Teléfono</label>
-                        <input class="form__input" type="tel" id="telefono" name="telefono" required> 
+                        <input class="form__input" type="tel" id="telefono" name="telefono" required>
                     </div>
                     <!-- Campo de la dirección -->
                     <div class="form__group">
-                        <label class="form__label" for="dirección">Dirección</label>
-                        <input class="form__input" type="text" id="dirección" name="dirección" required>
+                        <label class="form__label" for="direccion">Dirección</label>
+                        <input class="form__input" type="text" id="direccion" name="direccion" required>
                     </div>
                     <!-- Campo de la descripción -->
                     <div class="form__group d-flex flex-column">
@@ -96,7 +104,7 @@
         </div>
     </section>
 
-    <!-- Boton para actualizar perfil -->
+    <!-- Botón para actualizar perfil -->
     <div class="boton__actualizar">
         <a href="#" class="boton__actualizar-link">Actualizar perfil</a>
     </div>

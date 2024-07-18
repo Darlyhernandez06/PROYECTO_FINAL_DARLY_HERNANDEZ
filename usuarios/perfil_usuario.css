@@ -322,18 +322,19 @@ body {
     }
 
     .contenedor__titulo {
-       margin-left: 10px; /* Margen izquierdo específico */
-       text-align: center; /* Alinear el texto al centro */
-       display: flex; /* Contenedor flexible */
-       flex-direction: column; /* dirrecion en columna */
-       position: relative;
+        margin-left: 10px; /* Margen izquierdo específico */
+        text-align: center; /* Alinear el texto al centro */
+        display: flex; /* Contenedor flexible */
+        flex-direction: column; /* Dirección en columna */
+        position: relative; /* Posicionamiento relativo: permite posicionar hijos con `position: absolute` en relación a este contenedor */
     }
+    
     .contenedor__titulo img {
         width: 60px; /* Ancho */
         margin-left: 310px; /* Margen izquierdo específico */
         margin-top: 90px; /* Margen superior */
-        position: absolute;
-    }
+        position: absolute; /* Posicionamiento absoluto: se posiciona en relación al contenedor padre con `position: relative` */
+    }    
 
     .contenedor__subtitulo{
         margin-left: 10px; /* Margen izquierdo específico */
