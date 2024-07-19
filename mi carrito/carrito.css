@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    background: url('../imagenes/'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    font-family: 'MiFuente';                  /* Fuente personalizada */
+}
+
+/* ESTILOS PARA LA PRIMERA SECCION */
+
+/* Título principal */
+.contenedor__titulo{
+    gap: 20px; /* Espacio entre los elementos */
+    font-size: 64px; /* Tamaño de fuente grande */
+    text-align: center; /* Alinear al inicio (izquierda) */
+    color: var(--color-secundario); /* Color del texto usando una variable de CSS */
+    font-weight: bold; /* Texto en negrita */
+    padding-top: 200px; /* Relleno superior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+/* linea separadora */
+.contenedor__linea {
+    width: 1540px; /* Ajusta el ancho de la línea */
+    height: 4px; /* Ajusta el grosor de la línea */
+    background-color: var(--color-terciario); /* Color de la línea */
+    margin: 20px auto; /* Espaciado superior e inferior, centrar horizontalmente */
+    margin-top: 50px; /* Margen superior específico */
+}
+
+.contenedor__informacion {
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.contenedor__dentro {
+    display: flex; /* Contenedor flexible */
+    justify-content: start; /* Alinear al inicio */
+    align-items: center; /* Centra verticalmente */
+    width: 1300px; /* Ancho fijo del contenedor */
+    height: 150px; /* Altura fija del contenedor */
+    background-color: var(--color-texto-principal); /* Color de fondo */
+    border-top: 5px solid #A00B0B; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    gap: 30px; /* Espacio entre elementos */
+    padding: var(--padding); /* Espaciado interno */
+    margin-top: 100px; /* Margen superior específico */
+}
+
+.contenedor__informacion--imagen {
+    width: 70px;             /* Ancho del círculo */
+    height: 70px;            /* Alto del círculo */
+    border-radius: 50%;       /* Hace que sea un círculo */
+    background-color: #A00B0B; /* Color de fondo */
+    display: flex;            /* Para centrar la imagen */
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    position: relative;       /* Para el posicionamiento de la imagen */
+    overflow: hidden;         /* Oculta desbordamiento */
+}
+
+.contenedor__informacion--imagen img {
+    width: 50%;              /* Ajusta el tamaño de la imagen */
+    height: auto;            /* Mantiene la proporción */
+    position: absolute;       /* Posicionamiento absoluto */
+}
+
+.texto {
+    margin-top: -100px;  /* Margen superior específico */
+}
+
+/* boton para regresar a la tienda */
+.boton__regresar {
+    margin-top: 100px; /* Margen superior específico */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+.boton__regresar--link{
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-terciario); /* Color de fondo terciario */
+    color: var(--color-fondo-principal); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    border-radius: 15px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    padding: 10px 20px; /* Relleno interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinear el texto en el centro */
+}
+
+.boton__regresar--link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
+}
+
+.boton__regresar--link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    width: 100%; /* Ancho completo */
+    height: 104px; /* Altura del pie de página */
+    background-color: var(--color-primario); /* Color de fondo */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 200px; /* Margen superior */
+}
+
+/* Estilos para el texto dentro del pie de página */
+.footer__parrafo {
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-align: center; /* Alinea el texto al centro */
+    font-weight: bold; /* Fuente en negrita */
+}
