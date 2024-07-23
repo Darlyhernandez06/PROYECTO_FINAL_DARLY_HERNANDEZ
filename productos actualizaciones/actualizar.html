@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡ACTUALIZAR PRODUCTO!</title>
+    <!-- Enlace al archivo CSS para estilos -->
+    <link rel="stylesheet" href="actualizar.css">
+    <!-- Favicon para el navegador -->
+    <link rel="icon" type="image/svg" href="../imagenes/logo.svg">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Barra de navegación -->
+    
+    <!-- Contenedor principal con título y línea decorativa -->
+    <div class="contenedor__principal">
+        <p class="titulo__principal">Gestión de Productos</p>
+        <div class="contenedor__linea"></div>
+    </div>
+
+    <!-- Formulario para actualizar producto con estilo de Bootstrap y margen superior -->
+    <div class="borde container mt-5 bg-white p-5 text-center">
+        <h2 class="titulo mb-4">Actualizar Producto</h2>
+        <form id="update-product-form" class="px-5">
+            <!-- Campo oculto para almacenar el índice del producto -->
+            <input type="hidden" id="product-index">
+            <!-- Campo para el nombre del producto -->
+            <div class="form-group">
+                <label class= "form__label" for="product-name">Nombre del Producto</label>
+                <input class= "form__input" type="text" class="form-control" id="product-name" placeholder="Ingrese el nombre del producto" required>
+            </div>
+             <!-- Campo para la descripción del producto -->
+            <div class="form-group">
+                <label class= "form__label" for="product-description">Descripción</label>
+                <textarea class= "form__input" class="form-control" id="product-description" rows="3" placeholder="Ingrese la descripción del producto" required></textarea>
+            </div>
+            <!-- Campo para el precio del producto -->
+            <div class="form-group">
+                <label class= "form__label" for="product-price">Precio</label>
+                <input class= "form__input" type="number" class="form-control" id="product-price" placeholder="Ingrese el precio del producto" required>
+            </div>
+             <!-- Campo para la URL de la imagen del producto -->
+            <div class="form-group">
+                <label class= "form__label" for="product-img">Imagen</label>
+                <input class= "form__input" type="text" class="form-control" id="productImage" placeholder="URL de la imagen del producto" required>
+            </div>
+            <!-- Campo para seleccionar la categoría del producto -->
+            <div class="form-group">
+                <label class= "form__label" for="categorias">Categorias</label>
+                <select class= "form__input" id="categorias"> 
+                    <option value="0">Seleccionar la Categoria...</option>
+                    <option value="1">Verduras</option>
+                    <option value="2">Frutas</option>
+                    <option value="3">Tuberculos/Hortalizas</option>
+                </select>
+            </div>
+            <!-- Botón para actualizar el producto -->
+            <div class="boton__actualizar">
+                <a href="#" class="boton__actualizar--link" style="text-decoration: none;">Actualizar Producto</a>
+            </div>
+        </form>
+    </div>
+    <!-- Botón para regresar a la página anterior -->
+    <div class="boton__regresar">
+        <a href="#" class="boton__regresar--link" style="text-decoration: none;">Regresar</a>
+    </div>
+
+    <!-- JavaScript de Bootstrap y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+    <!-- JavaScript para actualizar el producto -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Referencias a los elementos del formulario
+            const updateForm = document.querySelector('#update-product-form');
+            const productIndex = document.querySelector('#product-index');
+            const productName = document.querySelector('#product-name');
+            const productDescription = document.querySelector('#product-description');
+            const productPrice = document.querySelector('#product-price');
+            const productQuantity = document.querySelector('#product-quantity');
+
+            // Obtener el índice del producto a actualizar desde la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const index = urlParams.get('index');
+
+            // Si el índice existe, cargar los datos del producto desde el almacenamiento local
+            if (index !== null) {
+                const products = JSON.parse(localStorage.getItem('products')) || [];
+                const product = products[index];
+
+                // Si el producto existe, llenar el formulario con sus datos
+                if (product) {
+                    productIndex.value = index;
+                    productName.value = product.name;
+                    productDescription.value = product.description;
+                    productPrice.value = product.price;
+                    productQuantity.value = product.quantity;
+                }
+            }
+
+            // Manejar el evento de envío del formulario
+            updateForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const products = JSON.parse(localStorage.getItem('products')) || [];
+
+                // Crear un objeto con los datos actualizados del producto
+                const updatedProduct = {
+                    name: productName.value,
+                    description: productDescription.value,
+                    price: productPrice.value,
+                    quantity: productQuantity.value,
+                };
+
+                // Actualizar el producto en la lista y guardar en el almacenamiento local
+                const index = productIndex.value;
+                products[index] = updatedProduct;
+
+                // Redirigir a la página de lista de productos después de actualizar
+                localStorage.setItem('products', JSON.stringify(products));
+                window.location.href = 'listar.html'; // Redirigir a la lista de productos después de actualizar
+            });
+        });
+    </script>
+</body>
+</html>
