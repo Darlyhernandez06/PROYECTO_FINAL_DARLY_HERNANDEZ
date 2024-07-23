@@ -160,6 +160,18 @@ li .dropdown-item:active {
     border: none;                            /* Elimina el borde */
 }
 
+.arrow {
+    position: absolute; /* Posiciona el elemento de forma absoluta dentro de su contenedor */
+    width: 11px; /* Ancho fija del contenedor */
+    height: 11px; /* Altura fija del contenedor */
+    top: -5.5px; /* Ajusta la posición vertical */
+    left: 32px;  /* Ajusta la posición horizontal */
+    background-color: var(--color-acento-1);
+    transform: rotate(45deg); /* Rota el elemento 45 grados para formar una flecha */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el elemento */
+    z-index: -1; /* Define el índice z del elemento, colocándolo detrás de otros elementos con z-index positivo */
+}
+
 /* PARTE DE LA PRIMER SECCION EL FORMULARIO DE RESTABLECER LA CONTRASEÑA*/
 
 /* Estilos para la sección de restablecer contraseña */
