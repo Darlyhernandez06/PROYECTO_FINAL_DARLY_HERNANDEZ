@@ -533,6 +533,14 @@ textarea::placeholder {
     font-size: 15px; /* Tamaño de la fuente */
 }
 
+.error {
+    border: solid 2px #bd0003;
+}
+
+.correcto {
+    border: solid 2px #5ccb5f;
+}
+
 /*RESPONSIVE*/
 
 /* Media query para portátiles */
