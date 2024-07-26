@@ -14,6 +14,97 @@
 <body>
 
     <!-- Barra de navegación -->
+    <nav class="negrita navbar navbar-expand-lg p-4">
+        <div class="container-fluid d-flex">
+            <!-- Logo -->
+            <img src="../../imagenes/logo.svg" alt="logo">
+            <div class="px-4">
+                <a class="nav-link active" href="../../index.html">MEGAPAQUETES</a>
+                <div class="esconder">
+                    <!-- Contenido escondido -->
+                </div>
+            </div>
+            <!-- Botón para mostrar el menú en pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenedor del menú desplegable -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex gap-5 justify-content-center align-items-center">
+                    <!-- Elementos del menú -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../../index.html">Inicio</a>
+                      </li>
+                      <!-- Elemento de menú con dropdown -->
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Megamenu
+                        </a>
+                        <!-- Menú desplegable -->
+                        <ul class="dropdown-menu bg-success text-light">
+                          <li class="px-2">MEGAPAQUETES</li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item text-light" href="../productos/verduras_productos.html">Verduras</a></li>
+                          <li><a class="dropdown-item text-light" href="../productos/frutas_productos.html">Frutas</a></li>
+                          <li><a class="dropdown-item text-light" href="../productos/tubérculos_hortalizas_productos.html">Tubérculos/Hortalizas</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Ofertas</a>
+                      </li>
+                      <!-- Elemento de menú con dropdown -->
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Sobre Nosotros
+                        </a>
+                        <!-- Menú desplegable -->
+                        <ul class="dropdown-menu bg-success text-light">
+                          <li class="px-2">MEGAPAQUETES</li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item text-light" href="../sobre nosotros/sobre nosotros.html">Sobre Nosotros</a></li>
+                          <li><a class="dropdown-item text-light" href="../sobre nosotros/Contacto.html">Contacto</a></li>
+                          <li><a class="dropdown-item text-light" href="../sobre nosotros/Politicas.html">Politicas(Terminos y Condiciones)</a></li>
+                        </ul>
+                      </li>
+                    <div class="d-flex gap-5 botones">
+                        <a href="#" class="desplegable d-flex align-items-center justify-content-center gap-2 nav-link" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="dark" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                            <h5 id="loggedInUserName"></h5>
+                        </a>
+                    </div>
+                </ul>
+                
+            </div>
+            
+        </div>
+        
+    </nav>
+
+    <div class="menu_perfil">
+        <div class="contenido">
+            <a href="listar.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="dark" class="bi bi-x-lg img-salir" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </a>
+            <div class="opciones">
+                <a href="" class="nav-link color">
+                    <h3>Megapaquetes</h3>
+                   </a> 
+                   <a class="nav-link color" href="listar.html">Gestion de productos</a>
+                   <a class="nav-link color" href="../usuarios/listar.html">Gestion de usuario</a>
+                   <a class="nav-link color" href="#">Gestion de pedidos</a>
+
+                    <a class="nav-link color" href="../../usuarios/perfil_usuario.html">Perfil</a>
+                    <a class="nav-link color" href="../../index.html">Cerrar Sesion</a>
+            </div>
+           
+        </div>
+    </div>
+
 
     <!-- Contenedor principal con título y línea decorativa -->
     <div class="contenedor__principal">
@@ -102,6 +193,18 @@
         if (loggedInUserName) {
             document.getElementById('loggedInUserName').textContent = loggedInUserName.nombres+' '+loggedInUserName.apellidos;
         }
+
+        const salir = document.querySelector('.img-salir');
+        const menu = document.querySelector('.menu_perfil');
+        const desplegable = document.querySelector('.desplegable');
+
+        desplegable.addEventListener('click', () => {
+            menu.classList.add('estilos');
+        });
+
+        salir.addEventListener('click', () => {
+            menu.style.display = 'none';
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- Bootstrap Bundle JS desde CDN -->
