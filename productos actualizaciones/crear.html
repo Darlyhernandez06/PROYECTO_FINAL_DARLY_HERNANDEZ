@@ -23,32 +23,32 @@
 
     <!-- Formulario para actualizar producto con estilo de Bootstrap y margen superior -->
     <div class="borde container mt-5 bg-white p-5 text-center">
-        <h2 class="titulo mb-4">Crear Producto</h2>
+        <h2 class="mb-5 pb-5 text-center titulo">Crear Producto</h2>
         <form id="update-product-form" class="px-5">
             <!-- Campo oculto para almacenar el índice del producto -->
             <input type="hidden" id="product-index">
             <!-- Campo para el nombre del producto -->
-            <div class="form-group">
+            <div class="pb-4 form-group">
                 <label class= "form__label" for="product-name">Nombre del Producto</label>
                 <input class= "form__input" type="text" class="form-control" id="product-name" placeholder="Ingrese el nombre del producto" required>
             </div>
              <!-- Campo para la descripción del producto -->
-            <div class="form-group">
+            <div class="pb-4 form-group">
                 <label class= "form__label" for="product-description">Descripción</label>
                 <textarea class= "form__input" class="form-control" id="product-description" rows="3" placeholder="Ingrese la descripción del producto" required></textarea>
             </div>
             <!-- Campo para el precio del producto -->
-            <div class="form-group">
+            <div class="pb-4 form-group">
                 <label class= "form__label" for="product-price">Precio</label>
                 <input class= "form__input" type="number" class="form-control" id="product-price" placeholder="Ingrese el precio del producto" required>
             </div>
              <!-- Campo para la URL de la imagen del producto -->
-            <div class="form-group">
+            <div class="pb-4 form-group">
                 <label class= "form__label" for="product-img">Imagen</label>
                 <input class= "form__input" type="text" class="form-control" id="productImage" placeholder="URL de la imagen del producto" required>
             </div>
             <!-- Campo para seleccionar la categoría del producto -->
-            <div class="form-group">
+            <div class="pb-4 form-group">
                 <label class= "form__label" for="categorias">Categorias</label>
                 <select class= "form__input" id="categorias"> 
                     <option value="0">Seleccionar la Categoria...</option>
@@ -64,7 +64,7 @@
         </form>
     </div>
     <!-- Botón para regresar a la página anterior -->
-    <div class="boton__regresar">
+    <div class="boton__regresar pb-5">
         <a href="../productos actualizaciones/listar.html" class="boton__regresar--link" style="text-decoration: none;">Regresar</a>
     </div>
 

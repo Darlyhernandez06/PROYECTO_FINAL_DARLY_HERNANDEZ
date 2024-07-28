@@ -28,7 +28,7 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../imagenes/fondo de actualizar1.svg'); /* Imagen de fondo */
+    background: url('../imagenes/fondo crear.svg'); /* Imagen de fondo */
     background-repeat: no-repeat;   /* La imagen de fondo no se repite */
     background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     font-family: 'MiFuente';        /* Fuente personalizada */
@@ -36,7 +36,6 @@ body {
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/
-
 
 /*PARTE DE LA SECCION PRINCIPAL */
 
