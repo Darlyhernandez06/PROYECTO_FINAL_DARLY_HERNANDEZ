@@ -35,9 +35,6 @@ body {
     background-position: center;    /* Centra la imagen de fondo */
 }
 
-/*PARTE DEL MENU DE NAVEGACION*/
-
-
 /*PARTE DE LA SECCION PRINCIPAL */
 
 /* Estilo para el borde de un contenedor */
@@ -155,6 +152,10 @@ body {
 
 /* Media query para portátiles */
 @media (min-width: 769px) and (max-width: 1300px) {
+    body {
+        background: url('../imagenes/fondo de crear1.svg') no-repeat; /* imagen de fondo */
+        background-size: cover;  /* La imagen de fondo cubre toda la pantalla */
+    }
     .contenedor__linea{
         width: 95%; /* Ancho del contenedor */
     }
@@ -164,6 +165,10 @@ body {
 
 /* Media query para tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background: url('../imagenes/fondo de crear1.svg') no-repeat; /* imagen de fondo */
+        background-size: cover;  /* La imagen de fondo cubre toda la pantalla */
+    }
     .contenedor__linea{
         width: 95%; /* Ancho del contenedor */
     }
@@ -173,6 +178,10 @@ body {
 
 /* Media query para pantallas pequeñas como móviles */
 @media (min-width: 300px) and (max-width: 767px) {
+    body {
+        background: url('../imagenes/fondo de crear1.svg') no-repeat; /* imagen de fondo */
+        background-size: cover;  /* La imagen de fondo cubre toda la pantalla */
+    }
     .contenedor__linea{
         width: 90%; /* Ancho del contenedor */
     }
