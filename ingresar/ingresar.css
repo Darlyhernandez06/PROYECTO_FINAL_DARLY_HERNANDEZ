@@ -711,3 +711,12 @@ li .dropdown-item:active {
         height: 50px; /* Altura fija de 50px para el footer */
     }
 }
+
+.form__input.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    display: none;
+}
