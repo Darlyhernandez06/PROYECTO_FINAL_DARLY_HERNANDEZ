@@ -126,3 +126,13 @@ document.addEventListener("keyup", (e) => {
 // - toLowerCase(): Método de cadena que convierte todos los caracteres de una cadena a minúsculas. Se usa para normalizar el texto para comparaciones insensibles a mayúsculas/minúsculas.
 
 // - appendChild(): Método que añade un nuevo nodo al final de la lista de hijos de un nodo padre en el DOM. Se utiliza para agregar dinámicamente elementos al documento.
+
+// - getAttribute: Obtiene el valor de un atributo especificado de un elemento.
+
+// - textContent: Devuelve o establece el contenido textual de un elemento.
+
+// - innerHTML: Devuelve o establece el contenido HTML de un elemento.
+
+// - includes: Determina si una cadena contiene otra cadena, devolviendo `true` o `false`.
+
+// - toLowerCase: Convierte una cadena a minúsculas.

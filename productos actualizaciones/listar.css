@@ -296,7 +296,7 @@ li .dropdown-item:active {
 /*RESPONSIVE*/
 
 /* Media query para tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1299px) {
     body {
         background: url('../imagenes/fondo de la pagina principal.svg') no-repeat center center fixed; /* imagen de fondo */
         background-size: cover;  /* La imagen de fondo cubre toda la pantalla */

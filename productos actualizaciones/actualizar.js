@@ -46,3 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'listar.html'; // Redirigir a la lista de productos después de actualizar
     });
 });
+
+// - setItem: Almacena un valor en `localStorage` usando una clave específica.
+
+// - stringify: Convierte un objeto JavaScript en una cadena JSON.
+
+// - getItem: Recupera un valor almacenado en `localStorage` usando una clave específica.
+
+// - JSON.parse: Convierte una cadena JSON en un objeto JavaScript.
+
+// URLSearchParams es una interfaz de la API de JavaScript para manejar parámetros de búsqueda en URLs. Permite crear, obtener, modificar y eliminar estos 
+// parámetros de manera eficiente. Aquí hay un resumen de los métodos más comunes y su uso:
+
+// append(name, value): Añade un nuevo parámetro.
+// et(name): Obtiene el valor de un parámetro.
+// set(name, value): Establece o actualiza el valor de un parámetro.
+// delete(name): Elimina un parámetro.
+// has(name): Verifica si un parámetro existe.
+// toString(): Convierte los parámetros en una cadena de consulta.
