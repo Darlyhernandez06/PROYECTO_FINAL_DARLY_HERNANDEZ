@@ -1,72 +1,148 @@
-// Espera a que el contenido del documento HTML esté completamente cargado antes de ejecutar el código
-document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona el formulario de creación de cuenta utilizando la clase 'create-account-form'
-    const form = document.querySelector('.create-account-form');
-  
-    // Añade un event listener para el evento 'submit' en el formulario
-    form.addEventListener('submit', (event) => {
-        // Previene el comportamiento predeterminado del formulario (que es enviar una solicitud de formulario)
-        event.preventDefault();
-  
-        // Captura los datos introducidos en los campos del formulario
-        const nombres = document.querySelector('#nombres').value;
-        const apellidos = document.querySelector('#apellidos').value;
-        const correo = document.querySelector('#correo').value;
-        const telefono = document.querySelector('#telefono').value;
-        const direccion = document.querySelector('#direccion').value;
-        const contraseña = document.querySelector('#contraseña').value;
-        const confirmarContraseña = document.querySelector('#confirmar__contraseña').value;
-        const descripcion = document.querySelector('#descripcion').value;
-  
-        // Verifica que las contraseñas ingresadas coincidan
-        if (contraseña !== confirmarContraseña) {
-            // Muestra una alerta si las contraseñas no coinciden
-            alert('Las contraseñas no coinciden');
-            // Termina la ejecución del código si las contraseñas no coinciden
-            return;
-        }
-  
-        // Crea un objeto de usuario con los datos del formulario
-        const user = {
-            nombres,
-            apellidos,
-            correo,
-            telefono,
-            direccion,
-            contraseña,
-            descripcion
-        };
-  
-        // Obtiene la lista de usuarios del almacenamiento local (localStorage)
-        let users = JSON.parse(localStorage.getItem('users'));
-  
-        // Si la lista de usuarios no existe o no es un arreglo, inicialízala como un arreglo vacío
-        if (!Array.isArray(users)) {
-            users = [];
-        } // Array.isArray(users): Verifica si users es un arreglo.
-        // !Array.isArray(users): Si users no es un arreglo (es false), la condición es true.
-        // users = [];: Inicializa users como un arreglo vacío si no es un arreglo.
-  
-        // Añade el nuevo usuario al arreglo de usuarios
-        users.push(user);
-  
-        // Guarda el arreglo actualizado de usuarios en el almacenamiento local
-        localStorage.setItem('users', JSON.stringify(users));
-  
-        // Limpia los campos del formulario para que esté listo para la próxima entrada
-        form.reset();
-  
-        // Muestra una alerta indicando que el usuario ha sido creado exitosamente
-        alert('Usuario creado exitosamente');
+// IMPORTANCIONES
+import correoelectronico from "../modulos/modulo_correo.js";
+import sololetras from "../modulos/modulo_sololetras.js";
+import solonumeros from "../modulos/modulo_solonumeros.js";
+import is_valid from "../modulos/modulo_validacion.js";
+import remover from "../modulos/modulo_remover.js";
+import validarContraseña from '../modulos/modulo_contraseña.js';
+
+// VARIABLES
+
+// Selecciona el primer formulario (<form>) en el documento HTML. Lo asigna a la variable $formulario
+const $formulario = document.querySelector("form");
+
+// Captura los datos introducidos en los campos del formulario
+const nombres = document.querySelector('#nombres');
+const apellidos = document.querySelector('#apellidos');
+const correo = document.querySelector('#correo');
+const telefono = document.querySelector('#telefono');
+const direccion = document.querySelector('#direccion');
+const contraseña = document.querySelector('#contraseña');
+const confirmarContraseña = document.querySelector('#confirmar__contraseña');
+const descripcion = document.querySelector('#descripcion');
+
+//  Se añade un listener al formulario que llama a la función validar cuando se intenta enviar el formulario.
+$formulario.addEventListener("submit", (event) => {
+    let response = is_valid(event, "form [required]");
+    // para hacer las peticiones 
+    // En lugar de pasar la ruta al recurso que deseas solicitar a la llamada del método fetch(), puedes crear un objeto de petición
+    // capturar todos los atributos
+
+    const data = {
+        nombres: nombres.value,
+        apellidos: apellidos.value,
+        correo: correo.value,
+        telefono: telefono.value,
+        direccion: direccion.value,
+        contraseña: contraseña.value,
+        confirmarContraseña: confirmarContraseña.value,
+        descripcion: descripcion.value,
+    }
+    if (response) {
+        fetch('http://localhost:3000/user', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        })
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data);
+            nombres.value = "";
+            apellidos.value = "";
+            correo.value = "";
+            telefono.value = "";
+            direccion.value = "";
+            contraseña.value = "";
+            confirmarContraseña.value = "";
+            descripcion.value = "";
+
+            nombres.classList.remove("correcto");
+            apellidos.classList.remove("correcto");
+            correo.classList.remove("correcto");
+            telefono.classList.remove("correcto");
+            direccion.classList.remove("correcto");
+            contraseña.classList.remove("correcto");
+            confirmarContraseña.classList.remove("correcto");
+            descripcion.classList.remove("correcto");
+
+            alert("Señor usuario tus datos fueron enviados exitosamente");
+        })
+        .catch(error => {
+            alert("Señor usuario tus datos no fueron enviados");
+            console.error("error")
+        })
+        .finally(() => {
+            document.querySelector("#boton").disabled = false; // Habilitar el boton
+        });
+        document.querySelector("#boton").disabled = true; // Desabilitar el boton
+    }
+});
+
+// GET se utiliza para obtener un recurso especifico del servidor
+// POST se utiliza para crear un nuevo recurso en el servidor
+// PUT se utiliza para actualizar un recurso exitente en el servidor
+// DELETE se utiliza para eliminar un resurso especifico del servidor 
+
+// keydown -- cuando ecribo tecla por tecla 
+// keypress -- cuando la presiono
+// keyup -- cuando la oprimo 
+
+// Se añade un listener para el evento keyup en cada uno de los campos. Cuando se suelta una tecla, se llama a la función remover para verificar el estado del campo.
+[nombres, apellidos, correo, telefono, direccion, contraseña, confirmarContraseña, descripcion].forEach(input => {
+    input.addEventListener("keyup", () => {
+        remover(input);
     });
 });
 
-// - findIndex: Encuentra el índice del primer elemento en un array que cumple con una condición dada.
+// Confirmación de contraseña
+confirmarContraseña.addEventListener("blur", () => {
+    // Verifica que las contraseñas ingresadas coincidan
+    if (contraseña.value === confirmarContraseña.value) {
+        // Elimina la clase error si las contraseñas coinciden
+        contraseña.classList.remove("error");
+        confirmarContraseña.classList.remove("error");
+        // añade la clase correcto 
+        contraseña.classList.add("correcto");
+        confirmarContraseña.classList.add("correcto");
+    } else {
+        // Muestra una alerta si las contraseñas no coinciden
+        alert('Las contraseñas no coinciden');
+        // Agrega la clase error a los campos de contraseña
+        contraseña.classList.add("error");
+        confirmarContraseña.classList.add("error");
+        // elimina la clase correcto si estaba presente
+        contraseña.classList.remove("correcto");
+        confirmarContraseña.classList.remove("correcto");
+    }
+});
 
-// - setItem: Almacena un valor en `localStorage` usando una clave específica.
 
-// - stringify: Convierte un objeto JavaScript en una cadena JSON.
+// Validaciones específicas
 
-// - getItem: Recupera un valor almacenado en `localStorage` usando una clave específica.
+// Validación del telefono
+telefono.addEventListener("keypress", solonumeros);
 
-// - JSON.parse: Convierte una cadena JSON en un objeto JavaScript.
+// Validación del nombre 
+nombres.addEventListener("keypress", (event) => {
+    sololetras(event, nombres);
+});
+
+// Validación del apellido
+apellidos.addEventListener("keypress", (event) => {
+    sololetras(event, apellidos);
+});
+
+// Validación del correo electrónico
+correo.addEventListener("blur", (event) => {
+    correoelectronico(event, correo);
+});
+
+// Validación de la contraseña
+contraseña.addEventListener("blur", (event) => {
+    validarContraseña(event, contraseña);
+});
+
+// P@ssw0rd1
+// darlyhernadez0624@gmail.com
