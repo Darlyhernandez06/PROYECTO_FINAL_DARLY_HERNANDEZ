@@ -53,9 +53,7 @@
                         <a class="nav-link active" href="#">Ofertas</a> <!-- Enlace "Ofertas" activo -->
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sobre Nosotros <!-- Enlace "Sobre Nosotros" activo -->
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sobre Nosotros <!-- Enlace "Sobre Nosotros" activo --></a>
                         <!-- Menú desplegable -->
                         <ul class="dropdown-menu bg-success text-light">
                             <li class="px-2">MEGAPAQUETES</li>
@@ -73,254 +71,41 @@
                             </svg>
                         </a>
                     </li>
-                    <!-- Botones de acción -->
                     <div class="d-flex gap-5 botones">
-                        <a href="../ingresar/ingresar.html" class="btn btn-light button d-flex align-items-center" type="submit">Iniciar Sesion</a>
-                        <a href="../crear nueva cuenta/crear cuenta.html" class="btn btn-light button d-flex align-items-center" type="submit">Registrarse</a>
+                        <a href="../../usuarios/perfil_usuario.html" class="d-flex align-items-center justify-content-center gap-2 nav-link" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="dark" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                            <h5 id="loggedInUserName"></h5>
+                        </a>
                     </div>
                 </ul>
             </div>
         </div>
     </nav>
 
-     <!-- Seccion de los productos -->
-     <section class="contenedor__productos--seccion">
-        <div class="contenedor__parrafos">
-            <h1 class="titulo__parrafos"><strong>Compra tus Frutas y Verduras Aquí</strong></h1>
-            <h3 class="subtitulo__parrafos"><strong>Tubérculos de Excelente y Hortalizas Frescas</strong></h3>
-            <p class="parrafo__parrafos">Nuestros Tuberculos y Hortalizas se entregan cuidadosamente seleccionada de acuerdo a tus preferencias. <br>
-                “¡Cofresemos juntos los mejores Tuberculos y Hortalizas para una vida mas saludable y deliciosa!
-            </p>
-        </div>
-        <!-- Primer producto -->
-        <div class="contenedor__verduras--principal01">
-            <div class="contenedor__producto" id="producto1">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/Yuca.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Tuberculos</p>
-                    <h3 class="titulo__producto"><strong>Yuca (500 Gramos)</strong></h3>
-                    <p class="precio__producto"><strong>$1.900</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Yuca:</strong> La yuca es una raíz <br>
-                                tuberculosa originaria de América <br>
-                                del Sur. Es un alimento versátil que <br>
-                                se puede cocinar de diferentes <br>
-                                maneras y tiene un sabor suave y <br>
-                                ligeramente dulce.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Contenedor principal -->
+    <div class="content">
+        <!-- Seccion de los productos -->
+        <section class="contenedor__productos--seccion">
+            <div class="contenedor__parrafos">
+                <h1 class="titulo__parrafos"><strong>Compra tus Frutas y Verduras Aquí</strong></h1>
+                <h3 class="subtitulo__parrafos"><strong>Tubérculos de Excelente y Hortalizas Frescas</strong></h3>
+                <p class="parrafo__parrafos">Nuestros Tuberculos y Hortalizas se entregan cuidadosamente seleccionada de acuerdo a tus preferencias. <br>
+                    “¡Cofresemos juntos los mejores Tuberculos y Hortalizas para una vida mas saludable y deliciosa!
+                </p>
             </div>
-            <!-- Segundo producto -->
-            <div class="contenedor__producto" id="producto2">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/arracacha.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Tuberculos</p>
-                    <h3 class="titulo__producto"><strong>Arracacha (500 Gramos)</strong></h3>
-                    <p class="precio__producto"><strong>$1.900</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                     <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Arracacha:</strong> La arracacha es una raíz <br>
-                                similar a la zanahoria, pero de color <br>
-                                blanco. Es originaria de los Andes y <br>
-                                se utiliza principalmente en la cocina <br>
-                                latinoamericana. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Tercer producto -->
-            <div class="contenedor__producto" id="producto3">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/papa_criolla.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Tuberculos</p>
-                    <h3 class="titulo__producto"><strong>Papa Criolla (500 Gramos)</strong></h3>
-                    <p class="precio__producto"><strong>$3.800</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Papa Criolla:</strong> La papa criolla es una <br>
-                                variedad de papa pequeña <br>
-                                originaria de América Latina. Tiene <br>
-                                una piel amarilla y una textura <br>
-                                firme. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contenedor__verduras--principal02">
-            <!-- Cuarto producto -->
-            <div class="contenedor__producto" id="producto4">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/lechuga_batavia.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Hortalizas</p>
-                    <h3 class="titulo__producto"><strong>Lechuga Batavia (Unidad)</strong></h3>
-                    <p class="precio__producto"><strong>$2.500</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Lechuga Batavia:</strong> La lechuga <br>
-                                batavia es una variedad de lechuga <br>
-                                de hojas suaves y rizadas. Tiene un <br>
-                                sabor ligeramente dulce y se utiliza <br>
-                                comúnmente en ensaladas y otras <br>
-                                preparaciones frescas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Quinto producto -->
-            <div class="contenedor__producto" id="producto5">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/Lechuga_Crespa.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Hortalizas</p>
-                    <h3 class="titulo__producto"><strong>Lechuga Crespa Verde (Unidad)</strong></h3>
-                    <p class="precio__producto"><strong>$1.600</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Lechuga Crespa Verde:</strong> La lechuga <br>
-                                crespa verde, también conocida <br>
-                                como lechuga rizada, es una <br>
-                                variedad de lechuga con hojas <br>
-                                onduladas y rizadas de color verde.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sexto producto -->
-            <div class="contenedor__producto" id="producto6">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/cilantro.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Hortalizas</p>
-                    <h3 class="titulo__producto"><strong>Cilantro (250 Gramos)</strong></h3>
-                    <p class="precio__producto"><strong>$3.000</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Cilantro:</strong> El cilantro es una hierba <br>
-                                aromática muy utilizada en la cocina <br>
-                                latina y asiática. Tiene un sabor <br>
-                                distintivo y refrescante, y se utiliza <br>
-                                tanto las hojas como las semillas en <br>
-                                diversos platos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            
+            <section class="contenedor__productos--seccion" id="productList"></section>
+        
+        </section>
+    </div>
 
     <!-- Pie de página -->
     <footer class="footer">
         <p class="footer__parrafo">@Megapaquetes</p>
     </footer>
-
-    <!-- Script para incremento y decremento de la cantida de los productos -->
-    <script>
-        function changeQuantity(element, change) {
-            let input = element.parentElement.querySelector('.input__cantidad');
-            let currentValue = parseInt(input.value);
-            let newValue = currentValue + change;
-            if (newValue > 0) {
-                input.value = newValue;
-            }
-        }
-    </script>
 
     <!-- JavaScript de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 

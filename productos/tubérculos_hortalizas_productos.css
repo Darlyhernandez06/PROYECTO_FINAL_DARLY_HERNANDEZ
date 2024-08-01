@@ -27,12 +27,20 @@
 }
 
 /* Estilos generales del cuerpo del documento */
+html, body {
+    height: 100%; /* Asegura que el body ocupe toda la altura disponible */
+    margin: 0; /* Elimina los márgenes predeterminados */
+}
+
 body {
-    background: url('../imagenes/fondo de productos1.svg'); /* Imagen de fondo */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
+    background: url('../imagenes/fondo de productos.svg'); /* Imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    font-family: 'MiFuente';                  /* Fuente personalizada */
+    font-family: 'MiFuente'; /* Fuente personalizada */
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/
@@ -175,6 +183,11 @@ li .dropdown-item:active {
 }
 
 /*PARTE DEL LOS PRODUCTOS*/
+
+/* El contenedor principal ocupa el espacio disponible */
+.content {
+    flex: 1; /* Permite que el contenido ocupe el espacio restante */
+}
 
 /* Contenedor de los párrafos principales */
 .contenedor__parrafos {
@@ -401,7 +414,6 @@ li .dropdown-item:active {
     display: flex; /* Utiliza Flexbox */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    margin-top: 200px; /* Margen superior */
 }
 
 /* Estilos para el texto dentro del pie de página */

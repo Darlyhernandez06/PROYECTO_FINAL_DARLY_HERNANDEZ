@@ -311,6 +311,20 @@ li .dropdown-item:active {
     margin-bottom: 30px; /* Margen inferior */
 }
 
+/* Contenedor de imagen del producto */
+.contenedor__imagen {
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+  
+/* Imagen del producto */
+.contenedor__imagen img {
+    width: 150%; /* Ancho mayor al contenedor */
+    border: 6px solid var(--color-terciario); /* Borde sólido */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
 /* Contenedor de la cantidad de productos */
 .contenedor__cantidad {
     display: flex; /* Utiliza Flexbox */

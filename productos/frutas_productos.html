@@ -53,9 +53,7 @@
                         <a class="nav-link active" href="#">Ofertas</a> <!-- Enlace "Ofertas" activo -->
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sobre Nosotros <!-- Enlace "Sobre Nosotros" activo -->
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sobre Nosotros <!-- Enlace "Sobre Nosotros" activo --></a>
                         <!-- Menú desplegable -->
                         <ul class="dropdown-menu bg-success text-light">
                             <li class="px-2">MEGAPAQUETES</li>
@@ -73,257 +71,40 @@
                             </svg>
                         </a>
                     </li>
-                    <!-- Botones de acción -->
                     <div class="d-flex gap-5 botones">
-                        <a href="../ingresar/ingresar.html" class="btn btn-light button d-flex align-items-center" type="submit">Iniciar Sesion</a>
-                        <a href="../crear nueva cuenta/crear cuenta.html" class="btn btn-light button d-flex align-items-center" type="submit">Registrarse</a>
+                        <a href="../../usuarios/perfil_usuario.html" class="d-flex align-items-center justify-content-center gap-2 nav-link" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="dark" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                            <h5 id="loggedInUserName"></h5>
+                        </a>
                     </div>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Seccion de los productos -->
-    <section class="contenedor__productos--seccion">
-        <div class="contenedor__parrafos">
-            <h1 class="titulo__parrafos"><strong>Compra tus Frutas y Verduras Aquí</strong></h1>
-            <h3 class="subtitulo__parrafos"><strong>Frutas Frescas</strong></h3>
-            <p class="parrafo__parrafos">Nuestras Frutas se entregan cuidadosamente seleccionada de acuerdo a tus preferencias. <br> 
-                “¡Cofresemos juntos las mejores frutas para una vida mas saludable y deliciosa!
-            </p>
-        </div>
-        <!-- Primer producto -->
-        <div class="contenedor__verduras--principal01">
-            <div class="contenedor__producto" id="1">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/Aguacate.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Frutas</p>
-                    <h3 class="titulo__producto"><strong>Aguacate (Unidad)</strong></h3>
-                    <p class="precio__producto"><strong>$5.900</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Aguacate:</strong> Rico y cremoso, el <br>
-                                aguacate es conocido por ser una <br>
-                                excelente fuente de grasas <br>
-                                saludables. Su sabor suave y su <br>
-                                textura mantecosa lo convierten en <br>
-                                un ingrediente versátil.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Contenedor principal -->
+    <div class="content">
+        <!-- Sección de los productos -->
+        <section class="contenedor__productos--seccion">
+            <div class="contenedor__parrafos">
+                <h1 class="titulo__parrafos"><strong>Compra tus Frutas y Verduras Aquí</strong></h1>
+                <h3 class="subtitulo__parrafos"><strong>Frutas Frescas</strong></h3>
+                <p class="parrafo__parrafos">Nuestras Frutas se entregan cuidadosamente seleccionada de acuerdo a tus preferencias. <br> 
+                    “¡Cofresemos juntos las mejores frutas para una vida mas saludable y deliciosa!
+                </p>
             </div>
-            <!-- Segundo producto -->
-            <div class="contenedor__producto" id="2">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/Banano.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Frutas</p>
-                    <h3 class="titulo__producto"><strong>Banano (Unidad)</strong></h3>
-                    <p class="precio__producto"><strong>$750</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Banano:</strong> Dulce y lleno de nutrientes, el <br>
-                                banano es una fruta popular y versátil. <br>
-                                Su suave textura y sabor ligeramente <br>
-                                cremoso lo convierten en un snack <br>
-                                saludable por sí solo, o en un <br>
-                                ingrediente delicioso para batidos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Tercer producto -->
-            <div class="contenedor__producto" id="3">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/fresa.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Frutas</p>
-                    <h3 class="titulo__producto"><strong>Fresa (500 Gramos)</strong></h3>
-                    <p class="precio__producto"><strong>$12.500</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Fresa:</strong> Jugosa y llena de sabor, la <br>
-                                fresa es una fruta deliciosa que se <br>
-                                puede disfrutar tanto fresca como <br>
-                                en platos dulces. Su dulzura natural <br>
-                                hace que sea perfecta para <br>
-                                ensaladas de frutas, batidos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contenedor__verduras--principal02">
-            <!-- Cuarto producto -->
-            <div class="contenedor__producto" id="4">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/manzana-roja.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Frutas</p>
-                    <h3 class="titulo__producto"><strong>Manzana Roja (Unidad)</strong></h3>
-                    <p class="precio__producto"><strong>$2.300</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Manzana Roja: </strong> Crispante y <br>
-                                refrescante, la manzana roja es una <br>
-                                fruta clásica con un equilibrio <br>
-                                perfecto entre dulzura y acidez. Se <br>
-                                puede disfrutar sola como snack, en <br>
-                                ensaladas, tartas, compotas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Quinto producto -->
-            <div class="contenedor__producto" id="5">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/naranja.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Frutas</p>
-                    <h3 class="titulo__producto"><strong>Naranja (Unidad)</strong></h3>
-                    <p class="precio__producto"><strong>$800</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Naranja:</strong> La naranja es una fruta cítrica <br>
-                                que destaca por su sabor jugoso y <br>
-                                refrescante. Es conocida por ser una <br>
-                                excelente fuente de vitamina C, que <br>
-                                fortalece el sistema inmunológico y <br>
-                                ayuda a prevenir resfriados.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sexto producto -->
-            <div class="contenedor__producto" id="6">
-                <!-- Contenedor de la imagen del producto -->
-                <div class="contenedor__imagen">
-                    <img src="../imagenes/piña.jpg" alt="Imagen de producto">
-                </div>
-                <!-- Información del producto -->
-                <div class="informacion__producto">
-                    <p class="texto__producto">Frutas</p>
-                    <h3 class="titulo__producto"><strong>Piña (Unidad)</strong></h3>
-                    <p class="precio__producto"><strong>$9.000</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" id="inputCantidad" class="input__cantidad" value="1" readonly>
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
-                    <!-- Contenedor para la descripcion del producto -->
-                    <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
-                            <p><strong>Piña:</strong> La piña es una fruta tropical <br>
-                                con un sabor dulce y ligeramente <br>
-                                ácido. Se caracteriza por su pulpa <br>
-                                jugosa y su textura fibrosa. La piña <br>
-                                es una excelente fuente de <br>
-                                vitamina C y manganeso.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+            <section class="contenedor__productos--seccion" id="productList"></section>
+        </section>
+    </div>
 
     <!-- Pie de página -->
     <footer class="footer">
         <p class="footer__parrafo">@Megapaquetes</p>
     </footer>
-
-    <!-- Script para incremento y decremento de la cantida de los productos -->
-    <script>
-        function changeQuantity(element, change) {
-            let input = element.parentElement.querySelector('.input__cantidad');
-            let currentValue = parseInt(input.value);
-            let newValue = currentValue + change;
-            if (newValue > 0) {
-                input.value = newValue;
-            }
-        }
-    </script>
 
     <!-- JavaScript de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 

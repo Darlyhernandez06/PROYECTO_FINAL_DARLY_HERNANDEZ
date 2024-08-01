@@ -7,8 +7,9 @@ document.querySelector('#create-product-form').addEventListener('submit', (event
     const name = document.querySelector('#product-name').value;
     const description = document.querySelector('#product-description').value;
     const price = document.querySelector('#product-price').value;
+    const quantity = document.querySelector("#product-quantity").value;
     const productImage = document.querySelector('#productImage').value;
-    const productCategory = document.querySelector("#categorias").value;
+    const productCategory = document.querySelector("#productCategory").value;
 
     // Obtiene los productos almacenados en localStorage o una lista vacía si no existen
     const products = JSON.parse(localStorage.getItem('products')) || [];
@@ -18,6 +19,7 @@ document.querySelector('#create-product-form').addEventListener('submit', (event
         name,
         description,
         price,
+        quantity,
         productImage,
         productCategory, 
     });
@@ -26,7 +28,7 @@ document.querySelector('#create-product-form').addEventListener('submit', (event
     localStorage.setItem('products', JSON.stringify(products));
 
     // Redirige a la página 'listar.html' después de crear el producto
-    window.location.href = '../productos actualizaciones/listar.html';
+    window.location.href = 'listar.html';
 });
 
 // - setItem: Almacena un valor en `localStorage` usando una clave específica.

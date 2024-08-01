@@ -3,7 +3,7 @@ function loadProducts() {
   // Obtener los productos del localStorage o inicializar un array vacío si no hay productos
   const products = JSON.parse(localStorage.getItem("products")) || [];
   // Obtener el contenedor donde se mostrarán los productos
-  const productList = document.getElementById("productList");
+  const productList = document.querySelector("#productList");
 
   // Iterar sobre cada producto
   products.forEach((product) => {
