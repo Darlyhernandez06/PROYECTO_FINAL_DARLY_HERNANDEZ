@@ -39,7 +39,7 @@ $formulario.addEventListener("submit", (event) => {
         descripcion: descripcion.value,
     }
     if (response) {
-        fetch('http://localhost:3000/user', {
+        fetch('http://localhost:3000/users', {
           method: 'POST',
           body: JSON.stringify(data),
           headers: {

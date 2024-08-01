@@ -107,21 +107,21 @@
     </div>
     <!-- Formulario de crear nueva cuenta -->
     <div class="formulario">
-      <form action="#" method="" class="create-account-form">
+      <form class="create-account-form" novalidate>
         <!-- Campo del nombre completo -->
         <div class="formulario__grupo">
           <label class="form__label" for="nombres">Nombres</label>
-          <input class="form__input" ype="text" id="nombres" name="nombres" placeholder="Ingresa tus nombres"required>
+          <input class="form__input" type="text" id="nombres" name="nombres" autocomplete="off" placeholder="Ingresa tus nombres"required>
         </div>
         <!-- Campo de los apellidos -->
         <div class="formulario__grupo">
           <label class="form__label" for="apellidos">Apellidos</label>
-          <input class="form__input" type="text" id="apellidos" name="apellidos" placeholder="Ingresa tus apellidos" required>
+          <input class="form__input" type="text" id="apellidos" name="apellidos" autocomplete="off" placeholder="Ingresa tus apellidos" required>
         </div>
         <!-- Campo del correo -->
         <div class="formulario__grupo">
           <label class="form__label" for="correo">Correo</label>
-          <input class="form__input" type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+          <input class="form__input" type="email" id="correo" name="correo" autocomplete="off" placeholder="Ingresa tu correo" required>
         </div>
         <!-- Campo del teléfono -->
         <div class="formulario__grupo">
@@ -131,26 +131,26 @@
         <!-- Campo de la dirección -->
         <div class="formulario__grupo">
           <label class="form__label" for="direccion">Dirección</label>
-          <input class="form__input" type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirreccion" required>
+          <input class="form__input" type="text" id="direccion" name="direccion" autocomplete="off" placeholder="Ingresa tu dirreccion" required>
         </div>
         <!-- Campo de la contraseña -->
         <div class="form-group">
           <div class="formulario__grupo">
             <label class="form__label" for="contraseña">Contraseña</label>
             <div class="confirmar__seccion--input">
-              <input class="form__input" type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
+              <input class="form__input" type="password" id="contraseña" name="contraseña" autocomplete="off" placeholder="Ingresa tu contraseña" required>
               <button type="button" class="confirmar__seccion--iconboton">
                 <img class="confirmar__seccion--icon" src="../imagenes/eye.svg" alt="Mostrar contraseña">
               </button>
             </div>
           </div>
-          <input class="form__input" type="password" id="confirmar__contraseña" name="confirmar__contraseña" placeholder="Confirmar contraseña" required>
+          <input class="form__input" type="password" id="confirmar__contraseña" name="confirmar__contraseña" autocomplete="off" placeholder="Confirmar contraseña" required>
         </div>
 
         <!-- Campo de la descripción -->
         <div class="formulario__grupo d-flex flex-column">
           <label class="form__label" for="descripcion">Descripción</label>
-          <textarea class="textarea" id="descripcion" name=descripcion rows="4" placeholder="Escribe brevemente....."
+          <textarea class="textarea" id="descripcion" name=descripcion rows="4" autocomplete="off" placeholder="Escribe brevemente....."
             required></textarea>
         </div>
         <!-- Botón de enviar -->
