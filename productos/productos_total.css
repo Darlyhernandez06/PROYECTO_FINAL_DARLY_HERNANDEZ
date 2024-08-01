@@ -364,19 +364,13 @@ li .dropdown-item:active {
 
 /* Estilo del botón al pasar el ratón por encima */
 .boton__cantidad:hover {
-    background-color: var(
-      --color-acento-1
-    ); /* Color de fondo al pasar el ratón por encima */
-    color: var(
-      --color-texto-principal
-    ); /* Color del texto al pasar el ratón por encima */
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-texto-principal); /* Color del texto al pasar el ratón por encima */
 }
 
 /* Estilo del botón al hacer clic */
 .boton__cantidad:active {
-    background-color: var(
-      --color-secundario
-    ); /* Color de fondo al hacer clic */
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
     color: var(--color-texto-principal); /* Color del texto al hacer clic */
 }
 
@@ -438,19 +432,13 @@ li .dropdown-item:active {
 
 /* Estilo del enlace al pasar el ratón por encima */
 .boton__añadir--link:hover {
-    background-color: var(
-      --color-acento-1
-    ); /* Color de fondo al pasar el ratón por encima */
-    color: var(
-      --color-fondo-principal
-    ); /* Color del texto al pasar el ratón por encima */
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
 }
 
 /* Estilo del enlace al hacer clic */
 .boton__añadir--link:active {
-    background-color: var(
-      --color-secundario
-    ); /* Color de fondo al hacer clic */
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
     color: var(--color-fondo-principal); /* Color del texto al hacer clic */
 }
 
