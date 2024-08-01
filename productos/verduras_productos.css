@@ -189,7 +189,6 @@ li .dropdown-item:active {
     flex: 1; /* Permite que el contenido ocupe el espacio restante */
 }
 
-
 /* Contenedor de los párrafos principales */
 .contenedor__parrafos {
     display: flex; /* Utiliza Flexbox */
