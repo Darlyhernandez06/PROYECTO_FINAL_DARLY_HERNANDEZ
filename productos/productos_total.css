@@ -258,7 +258,35 @@ li .dropdown-item:active {
     font-size: 40px; /* Tamaño de fuente de 40px */
 }
 
-/*PARTE DE LA SECCION PRINCIPAL */
+/*PARTE DEL LOS PRODUCTOS*/
+
+/* Contenedor de los párrafos principales */
+.contenedor__parrafos {
+    display: flex; /* Utiliza Flexbox */
+    flex-direction: column; /* Dirección en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    gap: 30px; /* Espacio entre elementos */
+}
+  
+/* Título principal */
+.titulo__parrafos {
+    font-size: 64px; /* Tamaño de fuente grande */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+    margin-top: 100px; /* Margen superior */
+}
+  
+/* Subtítulo */
+.subtitulo__parrafos {
+    font-size: 32px; /* Tamaño de fuente medio */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+  
+/* Párrafo descriptivo */
+.parrafo__parrafos {
+    font-size: 16px; /* Tamaño de fuente pequeño */
+}
 
 /* Contenedor de productos en la sección */
 .contenedor__productos--seccion {
@@ -277,46 +305,6 @@ li .dropdown-item:active {
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
 }
-
-/* Imagen del producto */
-.contenedor__imagen img {
-    width: 150%; /* Ancho mayor al contenedor */
-    border: 6px solid var(--color-terciario); /* Borde sólido */
-    border-radius: 10px; /* Bordes redondeados */
-}
-
-/* Información del producto */
-.informacion__producto {
-    margin-top: 30px; /* Margen superior */
-    text-align: center; /* Alinea el texto al centro */
-}
-
-/* Texto adicional del producto */
-.texto__producto {
-    font-size: 16px; /* Tamaño de fuente */
-    margin-bottom: 5px; /* Margen inferior */
-}
-
-/* Título del producto */
-.titulo__producto {
-    color: var(--color-acento-2); /* Color del texto */
-    font-size: 18px; /* Tamaño de fuente */
-    margin-bottom: 5px; /* Margen inferior */
-}
-
-/* Precio del producto */
-.precio__producto {
-    color: var(--color-terciario); /* Color del texto */
-    font-size: 18px; /* Tamaño de fuente */
-    margin-bottom: 30px; /* Margen inferior */
-}
-
-/* Contenedor de imagen del producto */
-.contenedor__imagen {
-    display: flex; /* Utiliza Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-}
   
 /* Imagen del producto */
 .contenedor__imagen img {
@@ -324,7 +312,33 @@ li .dropdown-item:active {
     border: 6px solid var(--color-terciario); /* Borde sólido */
     border-radius: 10px; /* Bordes redondeados */
 }
-
+  
+/* Información del producto */
+.informacion__producto {
+    margin-top: 30px; /* Margen superior */
+    text-align: center; /* Alinea el texto al centro */
+}
+  
+/* Texto adicional del producto */
+.texto__producto {
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Margen inferior */
+}
+  
+/* Título del producto */
+.titulo__producto {
+    color: var(--color-acento-2); /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Margen inferior */
+}
+  
+/* Precio del producto */
+.precio__producto {
+    color: var(--color-terciario); /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 30px; /* Margen inferior */
+}
+  
 /* Contenedor de la cantidad de productos */
 .contenedor__cantidad {
     display: flex; /* Utiliza Flexbox */
@@ -336,7 +350,7 @@ li .dropdown-item:active {
     gap: 20px; /* Espacio entre elementos */
     margin-bottom: 50px; /* Margen inferior */
 }
-
+  
 /* Input para la cantidad de productos */
 .input__cantidad {
     width: 100px; /* Ancho fijo */
@@ -346,7 +360,7 @@ li .dropdown-item:active {
     border: 1px solid #ccc; /* Borde sólido */
     padding: 5px; /* Relleno */
 }
-
+  
 /* Botón para aumentar la cantidad */
 .boton__cantidad {
     background-color: var(--color-terciario); /* Color de fondo */
@@ -361,22 +375,22 @@ li .dropdown-item:active {
     border-radius: 5px; /* Bordes redondeados */
     padding: 12px 17px; /* Relleno */
 }
-
+  
 /* Estilo del botón al pasar el ratón por encima */
 .boton__cantidad:hover {
     background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
     color: var(--color-texto-principal); /* Color del texto al pasar el ratón por encima */
 }
-
+  
 /* Estilo del botón al hacer clic */
 .boton__cantidad:active {
     background-color: var(--color-secundario); /* Color de fondo al hacer clic */
     color: var(--color-texto-principal); /* Color del texto al hacer clic */
 }
-
+  
 /* Botón para disminuir la cantidad */
 .boton__cantidad01 {
-    background-color: #fd0000; /* Color de fondo */
+    background-color: #FD0000; /* Color de fondo */
     color: #fff; /* Color del texto */
     border: none; /* Sin borde */
     padding: 10px; /* Relleno */
@@ -388,28 +402,26 @@ li .dropdown-item:active {
     border-radius: 5px; /* Bordes redondeados */
     padding: 12px 20px; /* Relleno */
 }
-
+  
 /* Estilo del botón al pasar el ratón por encima */
-  .boton__cantidad01:hover {
-    background-color: #ca0202; /* Color de fondo al pasar el ratón por encima */
-    color: var(
-      --color-texto-principal
-    ); /* Color del texto al pasar el ratón por encima */
+.boton__cantidad01:hover {
+    background-color: #CA0202; /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-texto-principal); /* Color del texto al pasar el ratón por encima */
 }
-
+  
 /* Estilo del botón al hacer clic */
 .boton__cantidad01:active {
-    background-color: #8d0303; /* Color de fondo al hacer clic */
+    background-color: #8D0303; /* Color de fondo al hacer clic */
     color: var(--color-texto-principal); /* Color del texto al hacer clic */
 }
-
+  
 /* Contenedor del botón de añadir */
 .boton-añadir {
     display: flex; /* Utiliza Flexbox */
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
 }
-
+  
 /* Enlace del botón de añadir */
 .boton__añadir--link {
     width: 100%; /* Ancho completo */
@@ -429,26 +441,26 @@ li .dropdown-item:active {
     text-align: center; /* Alinea el texto al centro */
     margin-bottom: 50px; /* Margen inferior */
 }
-
+  
 /* Estilo del enlace al pasar el ratón por encima */
 .boton__añadir--link:hover {
     background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
     color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
 }
-
+  
 /* Estilo del enlace al hacer clic */
 .boton__añadir--link:active {
     background-color: var(--color-secundario); /* Color de fondo al hacer clic */
     color: var(--color-fondo-principal); /* Color del texto al hacer clic */
 }
-
+  
 /* Contenedor de la descripción del producto */
 .producto__descripcion {
     display: flex; /* Utiliza Flexbox */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     width: 100%; /* Ancho completo */
-    height: 200px; /* Altura fija */
+    height: 150px; /* Altura fija */
     background-color: var(--color-texto-principal); /* Color de fondo */
     border: 1px solid var(--color-fondo-principal); /* Borde sólido */
     padding: 10px; /* Relleno */

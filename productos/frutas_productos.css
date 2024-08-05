@@ -27,14 +27,8 @@
 }
 
 /* Estilos generales del cuerpo del documento */
-html, body {
-    height: 100%; /* Asegura que el body ocupe toda la altura disponible */
-    margin: 0; /* Elimina los márgenes predeterminados */
-}
 
 body {
-    display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
     min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
     background: url('../imagenes/fondo de productos.svg'); /* Imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
@@ -185,12 +179,6 @@ li .dropdown-item:active {
 /*PARTE DEL LOS PRODUCTOS*/
 
 /* Contenedor de los párrafos principales */
-
-/* El contenedor principal ocupa el espacio disponible */
-.content {
-    flex: 1; /* Permite que el contenido ocupe el espacio restante */
-}
-
 .contenedor__parrafos {
     display: flex; /* Utiliza Flexbox */
     flex-direction: column; /* Dirección en columna */
@@ -217,29 +205,18 @@ li .dropdown-item:active {
 .parrafo__parrafos {
     font-size: 16px; /* Tamaño de fuente pequeño */
 }
-  
-/* Contenedor principal de productos - Fila 1 */
-.contenedor__verduras--principal01 {
-    width: 100%; /* Ancho completo */
-    display: flex; /* Utiliza Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    gap: 100px; /* Espacio entre elementos */
-    margin-top: 100px; /* Margen superior */
+
+/* Contenedor de productos en la sección */
+.contenedor__productos--seccion {
+    width: 100%; /* Ancho total del contenedor */
+    display: flex; /* Utiliza Flexbox para la disposición de los elementos hijos */
+    flex-wrap: wrap; /* Permite que los elementos hijos se envuelvan en múltiples filas */
+    align-items: center; /* Alinea los elementos hijos verticalmente en el centro del contenedor */
+    justify-content: center; /* Alinea los elementos hijos horizontalmente en el centro del contenedor */
+    gap: 100px; /* Espacio entre los elementos hijos */
+    padding: 50px; /* Espaciado interno del contenedor */
 }
-  
-/* Contenedor principal de productos - Fila 2 */
-.contenedor__verduras--principal02 {
-    width: 100%; /* Ancho completo */
-    display: flex; /* Utiliza Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    gap: 100px; /* Espacio entre elementos */
-    margin-top: 100px; /* Margen superior */
-}
-  
+
 /* Contenedor de imagen del producto */
 .contenedor__imagen {
     display: flex; /* Utiliza Flexbox */
@@ -401,7 +378,7 @@ li .dropdown-item:active {
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     width: 100%; /* Ancho completo */
-    height: 200px; /* Altura fija */
+    height: 150px; /* Altura fija */
     background-color: var(--color-texto-principal); /* Color de fondo */
     border: 1px solid var(--color-fondo-principal); /* Borde sólido */
     padding: 10px; /* Relleno */

@@ -182,12 +182,7 @@ li .dropdown-item:active {
     z-index: -1; /* Define el índice z del elemento, colocándolo detrás de otros elementos con z-index positivo */
 }
 
-/*PARTE DE LOS PRODUCTOS*/
-
-/* El contenedor principal ocupa el espacio disponible */
-.content {
-    flex: 1; /* Permite que el contenido ocupe el espacio restante */
-}
+/*PARTE DEL LOS PRODUCTOS*/
 
 /* Contenedor de los párrafos principales */
 .contenedor__parrafos {
@@ -216,29 +211,18 @@ li .dropdown-item:active {
 .parrafo__parrafos {
     font-size: 16px; /* Tamaño de fuente pequeño */
 }
-  
-/* Contenedor principal de productos - Fila 1 */
-.contenedor__verduras--principal01 {
-    width: 100%; /* Ancho completo */
-    display: flex; /* Utiliza Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    gap: 100px; /* Espacio entre elementos */
-    margin-top: 100px; /* Margen superior */
+
+/* Contenedor de productos en la sección */
+.contenedor__productos--seccion {
+    width: 100%; /* Ancho total del contenedor */
+    display: flex; /* Utiliza Flexbox para la disposición de los elementos hijos */
+    flex-wrap: wrap; /* Permite que los elementos hijos se envuelvan en múltiples filas */
+    align-items: center; /* Alinea los elementos hijos verticalmente en el centro del contenedor */
+    justify-content: center; /* Alinea los elementos hijos horizontalmente en el centro del contenedor */
+    gap: 100px; /* Espacio entre los elementos hijos */
+    padding: 50px; /* Espaciado interno del contenedor */
 }
-  
-/* Contenedor principal de productos - Fila 2 */
-.contenedor__verduras--principal02 {
-    width: 100%; /* Ancho completo */
-    display: flex; /* Utiliza Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    gap: 100px; /* Espacio entre elementos */
-    margin-top: 100px; /* Margen superior */
-}
-  
+
 /* Contenedor de imagen del producto */
 .contenedor__imagen {
     display: flex; /* Utiliza Flexbox */
@@ -400,7 +384,7 @@ li .dropdown-item:active {
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     width: 100%; /* Ancho completo */
-    height: 200px; /* Altura fija */
+    height: 150px; /* Altura fija */
     background-color: var(--color-texto-principal); /* Color de fondo */
     border: 1px solid var(--color-fondo-principal); /* Borde sólido */
     padding: 10px; /* Relleno */
