@@ -275,12 +275,11 @@ li .dropdown-item:active {
 
 textarea {
     display: block; /* Bloque de visualización */
-    width: 600px; /* Ancho calculado con margen */
+    width: 100%;; /* Ancho calculado con margen */
     min-height: 60px; /* Altura mínima */
     padding: var(--paddin-button); /* Padding */
     border: 1px solid #ccc; /* Borde */
     margin: 10px auto; /* Margen automático */
-    margin-bottom: 80px; /* Margen inferior */
     outline: none; /* Sin contorno */
 }
 
@@ -539,6 +538,13 @@ textarea::placeholder {
 
 .correcto {
     border: solid 2px #5ccb5f;
+}
+
+.error-message {
+    color: #bd0003;
+    font-size: 16px;
+    margin-top: -25px;
+    margin-left: 4px;
 }
 
 /*RESPONSIVE*/

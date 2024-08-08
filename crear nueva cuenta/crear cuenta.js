@@ -5,6 +5,7 @@ import solonumeros from "../modulos/modulo_solonumeros.js";
 import is_valid from "../modulos/modulo_validacion.js";
 import remover from "../modulos/modulo_remover.js";
 import validarContraseña from '../modulos/modulo_contraseña.js';
+import validarDescripcion from "../modulos/modulo_descripcion.js";
 
 // VARIABLES
 
@@ -20,6 +21,7 @@ const direccion = document.querySelector('#direccion');
 const contraseña = document.querySelector('#contraseña');
 const confirmarContraseña = document.querySelector('#confirmar__contraseña');
 const descripcion = document.querySelector('#descripcion');
+const confirmarError = document.getElementById("confirmar-error");
 
 //  Se añade un listener al formulario que llama a la función validar cuando se intenta enviar el formulario.
 $formulario.addEventListener("submit", (event) => {
@@ -91,30 +93,31 @@ $formulario.addEventListener("submit", (event) => {
 
 // Se añade un listener para el evento keyup en cada uno de los campos. Cuando se suelta una tecla, se llama a la función remover para verificar el estado del campo.
 [nombres, apellidos, correo, telefono, direccion, contraseña, confirmarContraseña, descripcion].forEach(input => {
-    input.addEventListener("keyup", () => {
+    input.addEventListener("blur", () => {
         remover(input);
     });
 });
 
-// Confirmación de contraseña
+// Validar la confirmación de contraseña
 confirmarContraseña.addEventListener("blur", () => {
-    // Verifica que las contraseñas ingresadas coincidan
     if (contraseña.value === confirmarContraseña.value) {
         // Elimina la clase error si las contraseñas coinciden
         contraseña.classList.remove("error");
         confirmarContraseña.classList.remove("error");
-        // añade la clase correcto 
+        // Añade la clase correcto
         contraseña.classList.add("correcto");
         confirmarContraseña.classList.add("correcto");
+        // Limpia el mensaje de error
+        confirmarError.textContent = '';
     } else {
-        // Muestra una alerta si las contraseñas no coinciden
-        alert('Las contraseñas no coinciden');
         // Agrega la clase error a los campos de contraseña
         contraseña.classList.add("error");
         confirmarContraseña.classList.add("error");
-        // elimina la clase correcto si estaba presente
+        // Elimina la clase correcto si estaba presente
         contraseña.classList.remove("correcto");
         confirmarContraseña.classList.remove("correcto");
+        // Muestra el mensaje de error
+        confirmarError.textContent = 'Las contraseñas no coinciden';
     }
 });
 
@@ -122,7 +125,9 @@ confirmarContraseña.addEventListener("blur", () => {
 // Validaciones específicas
 
 // Validación del telefono
-telefono.addEventListener("keypress", solonumeros);
+telefono.addEventListener("keypress", (event) => {
+    solonumeros(event, telefono);
+});
 
 // Validación del nombre 
 nombres.addEventListener("keypress", (event) => {
@@ -142,6 +147,11 @@ correo.addEventListener("blur", (event) => {
 // Validación de la contraseña
 contraseña.addEventListener("blur", (event) => {
     validarContraseña(event, contraseña);
+});
+
+// Validacion de la descripcion
+descripcion.addEventListener("blur", (event) => {
+    validarDescripcion(event, descripcion);
 });
 
 // P@ssw0rd1

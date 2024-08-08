@@ -112,21 +112,25 @@
         <div class="formulario__grupo">
           <label class="form__label" for="nombres">Nombres</label>
           <input class="form__input" type="text" id="nombres" name="nombres" autocomplete="off" placeholder="Ingresa tus nombres"required>
+          <span id="nombres-error" class="error-message"></span>
         </div>
         <!-- Campo de los apellidos -->
         <div class="formulario__grupo">
           <label class="form__label" for="apellidos">Apellidos</label>
           <input class="form__input" type="text" id="apellidos" name="apellidos" autocomplete="off" placeholder="Ingresa tus apellidos" required>
+          <span id="apellidos-error" class="error-message"></span>
         </div>
         <!-- Campo del correo -->
         <div class="formulario__grupo">
           <label class="form__label" for="correo">Correo</label>
           <input class="form__input" type="email" id="correo" name="correo" autocomplete="off" placeholder="Ingresa tu correo" required>
+          <span id="correo-error" class="error-message"></span>
         </div>
         <!-- Campo del teléfono -->
         <div class="formulario__grupo">
           <label class="form__label" for="telefono">Teléfono</label>
           <input class="form__input" type="tel" id="telefono" name="telefono" placeholder="Ingresa tu telefono" required>
+          <span id="telefono-error" class="error-message"></span>
         </div>
         <!-- Campo de la dirección -->
         <div class="formulario__grupo">
@@ -145,14 +149,17 @@
             </div>
           </div>
           <input class="form__input" type="password" id="confirmar__contraseña" name="confirmar__contraseña" autocomplete="off" placeholder="Confirmar contraseña" required>
+          <span id="contraseña-error" class="error-message"></span>
+          <span id="confirmar-error" class="error-message"></span>
         </div>
 
         <!-- Campo de la descripción -->
         <div class="formulario__grupo d-flex flex-column">
           <label class="form__label" for="descripcion">Descripción</label>
-          <textarea class="textarea" id="descripcion" name=descripcion rows="4" autocomplete="off" placeholder="Escribe brevemente....."
-            required></textarea>
+          <textarea class="textarea" id="descripcion" name=descripcion rows="4" autocomplete="off" placeholder="Escribe brevemente....."required></textarea>
+          <span id="descripcion-error" class="error-message"></span>
         </div>
+        <br><br>
         <!-- Botón de enviar -->
         <div class="form__boton--contenedor gap-2">
           <a href="../ingresar/ingresar.html" class="boton__boton--submit01" style="text-decoration: none;">Regresar</a>
