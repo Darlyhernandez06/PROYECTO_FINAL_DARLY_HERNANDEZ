@@ -105,22 +105,22 @@
         </div>
         <!-- Formulario de inicio de sesión -->
         <div class="formulario">
-            <form action="#" method="POST" class="from__principal">
+            <form class="from__principal" novalidate>
                 <!-- Campo para el correo electrónico -->
                 <div class="formulario__grupo">
-                    <label class="form__label" for="username">Correo</label>
-                    <input class="form__input" type="email" id="username" name="username" placeholder="Ingresa tu correo" required>
-                    <p class="error-message" id="email-error">Por favor, ingresa un correo válido.</p>
+                    <label class="form__label" for="correo">Correo</label>
+                    <input class="form__input" type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+                    <span id="correo-error" class="error-message"></span>
                 </div>
                 <!-- Campo para la contraseña -->
                 <div class="formulario__grupo">
                     <label class="form__label" for="contraseña">Contraseña</label>
                     <input class="form__input" type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
-                    <p class="error-message" id="password-error">La contraseña debe tener al menos 8 caracteres.</p>
+                    <span id="contraseña-error" class="error-message"></span>
                 </div>
                 <!-- Botón para iniciar seccion -->
                 <div class="form__boton--contendor">
-                    <button class="boton__boton--submit" type="submit">Iniciar Sesión</button>
+                    <button id="boton" class="boton__boton--submit" type="submit">Iniciar Sesión</button>
                 </div>
                 <!-- Texto para opciones de inicio de sesión alternativas -->
                 <div class="form__alternativa">
@@ -214,6 +214,6 @@
     <!-- JavaScript de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script src="ingresar.js"></script>
+    <script src="ingresar.js" type="module"></script>
 </body>
 </html>

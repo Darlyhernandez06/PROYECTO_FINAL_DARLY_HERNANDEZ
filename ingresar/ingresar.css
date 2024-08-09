@@ -577,6 +577,21 @@ li .dropdown-item:active {
     font-size: 15px; /* Tamaño de la fuente */
 }
 
+.error {
+    border: solid 2px #bd0003;
+}
+
+.correcto {
+    border: solid 2px #5ccb5f;
+}
+
+.error-message {
+    color: #bd0003;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 4px;
+}
+
 /*RESPONSIVE*/
 
 /* Media query para portátiles */
@@ -710,13 +725,4 @@ li .dropdown-item:active {
     .footer{
         height: 50px; /* Altura fija de 50px para el footer */
     }
-}
-
-.form__input.error {
-    border-color: red;
-}
-
-.error-message {
-    color: red;
-    display: none;
 }

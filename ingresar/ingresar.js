@@ -1,75 +1,82 @@
-// Selecciona el formulario de inicio de sesión
-const loginForm = document.querySelector('.from__principal');
+// IMPORTANCIONES
+import correoelectronico from "../modulos/modulo_correo.js";
+import validarContraseña from '../modulos/modulo_contraseña.js';
+import is_valid from "../modulos/modulo_validacion.js";
+import remover from "../modulos/modulo_remover.js";
 
-// Agrega un manejador de evento para cuando el formulario se envíe
-loginForm.addEventListener('submit', (event) => {
+// VARIABLES
+
+// Selecciona el primer formulario (<form>) en el documento HTML. Lo asigna a la variable $formulario
+const $formulario = document.querySelector("form");
+
+// Captura los datos introducidos en los campos del formulario
+const correo = document.querySelector('#correo');
+const contraseña = document.querySelector('#contraseña');
+
+$formulario.addEventListener("submit", (event) => {
     event.preventDefault(); // Previene el envío del formulario para manejarlo con JavaScript
 
-    // Obtiene el valor del correo electrónico y la contraseña del formulario
-    const correo = document.querySelector('#username').value;
-    const contraseña = document.querySelector('#contraseña').value;
+    let response = is_valid(event, "form [required]");
 
-    // Obtiene la lista de usuarios del local storage o inicializa como un arreglo vacío si no existe
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    if (response) {
+        // Crea un objeto de datos con la información del formulario
+        const data = {
+            correo: correo.value,
+            contraseña: contraseña.value
+        };
 
-    // Busca un usuario que coincida con el correo y la contraseña proporcionados
-    const user = users.find(user => user.correo === correo && user.contraseña === contraseña);
+        // Realiza una solicitud POST al servidor
+        fetch('http://localhost:3000/users', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(response => response.json())
+        .then(result => {
+            // Verifica si la autenticación fue exitosa
+            if (result.success) {
+                // Guarda el usuario autenticado en el localStorage
+                localStorage.setItem('loggedInUser', JSON.stringify(result.user));
 
-    // Si no se encuentra un usuario, muestra un mensaje de error y detiene la ejecución
-    if (!user) {
-        alert('Credenciales incorrectas');
-        return;
-    }
-
-    // Guarda el usuario autenticado en el local storage
-    localStorage.setItem('loggedInUser', JSON.stringify(user));
-
-    // Redirige a diferentes páginas según las credenciales del usuario
-    if (correo === 'admin@gmail.com' && contraseña === '123') {
-        window.location.href = '../admin/productos/listar.html'; // Página para admin
-    } else {
-        window.location.href = '../productos/frutas_productos.html'; // Página para clientes
-    }
-});
-
-// Agrega un manejador de evento para cuando el contenido de la página se haya cargado completamente
-document.addEventListener('DOMContentLoaded', function() {
-    // Selecciona el formulario y los campos de correo electrónico y contraseña
-    const form = document.querySelector('.from__principal');
-    const email = document.querySelector('#username');
-    const password = document.querySelector('#contraseña');
-
-    // Agrega un manejador de evento para cuando el formulario se envíe
-    form.addEventListener('submit', function(event) {
-        let valid = true; // Variable para controlar si el formulario es válido
-
-        // Resetea los mensajes de error y los estilos de los campos
-        email.classList.remove('error');
-        password.classList.remove('error');
-        document.querySelectorAll('.error-message').forEach(function(element) {
-            element.style.display = 'none';
-            email.style.border='green solid 2px'; // Resetea el estilo del borde del correo electrónico
+                // Redirige a la página correspondiente
+                if (result.user.correo === 'admin@gmail.com') {
+                    window.location.href = '../admin/productos/listar.html'; // Página para admin
+                } else {
+                    window.location.href = '../productos/frutas_productos.html'; // Página para clientes
+                }
+            } else {
+                alert('Credenciales incorrectas');
+            }
+        })
+        .catch(error => {
+            alert('Ocurrió un error al intentar iniciar sesión');
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            document.querySelector("#boton").disabled = false; // Habilitar el botón
         });
 
-        // Valida el correo electrónico utilizando una expresión regular
-        if (!validateEmail(email.value)) {
-            email.classList.add('error'); // Agrega una clase de error si el correo es inválido
-            document.querySelector('#email-error').style.display = 'block'; // Muestra el mensaje de error
-        }
-
-        // Valida que la contraseña tenga al menos 8 caracteres
-        if (password.value.length < 8) {
-            password.classList.add('error'); // Agrega una clase de error si la contraseña es corta
-            document.querySelector('#password-error').style.display = 'block'; // Muestra el mensaje de error
-        }
-    });
-
-    // Función para validar el correo electrónico utilizando una expresión regular
-    function validateEmail(email) {
-        const re = /^[\w-._+]+@[\w-._+]+(\.[a-zA-Z]{2,4}){1,2}$/; // Expresión regular para validar correos electrónicos
-        return re.test(String(email).toLowerCase()); // Retorna true si el correo es válido, false en caso contrario
+        document.querySelector("#boton").disabled = true; // Deshabilitar el botón
     }
 });
 
-// - find: Método para buscar un elemento en un array que cumpla con una condición dada.
-// - String.toLowerCase(): Método para convertir todos los caracteres de una cadena a minúsculas.
+// Se añade un listener para el evento keyup en cada uno de los campos. Cuando se suelta una tecla, se llama a la función remover para verificar el estado del campo.
+[correo, contraseña].forEach(input => {
+    input.addEventListener("blur", () => {
+        remover(input);
+    });
+});
+
+// Validación del correo electrónico
+correo.addEventListener("blur", (event) => {
+    correoelectronico(event, correo);
+});
+
+// Validación de la contraseña
+contraseña.addEventListener("blur", (event) => {
+    validarContraseña(event, contraseña);
+});
+
+
