@@ -1,0 +1,598 @@
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('../../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    background: url('../../imagenes/fondo de perfil usuario.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+    font-family: 'MiFuente';        /* Fuente personalizada */
+    background-position: center;    /* Centra la imagen de fondo */
+}
+
+/*PARTE DEL MENU DE NAVEGACION*/
+
+.navbar {
+    max-width: 100vw;
+    display: flex;                          /* Mostrar como flexbox */
+    align-items: center;                    /* Centrar elementos verticalmente */
+    justify-content: space-between;         /* Espacio entre elementos */
+    background-color: var(--color-primario); /* Color de fondo */
+    padding: 18px 30px;                     /* Padding interno */
+    flex-wrap: wrap;                        /* Permitir envolver elementos en pantalla pequeña */
+}
+
+.negrita {
+    font-weight: bold;  /* Define el texto en negrita */
+    font-size: 16px;    /* Establece el tamaño de la fuente a 16 píxeles */
+}
+
+.navbar__logo img {
+    height: 40px; /* Altura del logo */
+}
+
+.navbar__contenedor {
+    display: flex;                         /* Mostrar como flexbox */
+    flex-direction: column;                /* Dirección de columna para el contenido */
+    color: var(--color-fondo-principal);   /* Color de texto */
+}
+
+.navbar__title {
+    font-size: 16px; /* Tamaño del título */
+}
+
+.navbar__subtitle {
+    font-size: 11px; /* Tamaño del subtítulo */
+}
+
+.navbar__link,
+.menu__toggle {
+    color: var(--color-fondo-principal); /* Color del enlace */
+    padding: 14px 20px; /* Padding del enlace */
+    font-size: 16px; /* Tamaño de fuente del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.nav-link:hover,
+.menu__toggle:hover {
+    color: var(--color-acento-1); /* Color al pasar el mouse */
+}
+
+.navbar__link:active,
+.menu__toggle:active {
+    color: var(--color-secundario);         /* Color al hacer clic */
+    text-decoration: underline solid;       /* Subrayado sólido al hacer clic */
+}
+
+/* Menú desplegable */
+.menu {
+    position: relative;                     /* Posición relativa */
+    display: inline-block;                  /* Mostrar como bloque en línea */
+}
+
+.menu__container {
+    display: none;                          /* Ocultar contenedor por defecto */
+    position: absolute;                     /* Posición absoluta */
+    top: 100%;                              /* Alinear en la parte inferior del elemento padre */
+    left: 0;                                /* Alinear a la izquierda */
+    background-color: var(--color-secundario); /* Color de fondo del menú */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1;                             /* Índice de apilamiento */
+    text-align: left;                       /* Alinear texto a la izquierda */
+}
+
+.menu__container h2 {
+    color: var(--color-texto-principal); /* Color del título */
+    margin: 10px; /* Margen */
+}
+
+.menu__link {
+    color: var(--color-texto-principal); /* Color del enlace */
+    padding: 12px 16px; /* Padding del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    display: block; /* Bloque de visualización */
+}
+
+.menu__link:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+}
+
+.menu__link:active {
+    background-color: var(--color-acento-2); /* Color de fondo al hacer clic */
+}
+
+.menu__toggle:hover + .menu__container,
+.menu__container:hover {
+    display: block; /* Mostrar menú al pasar el mouse */
+}
+
+.menu__vector {
+    margin: 10px; /* Margen */
+}
+
+.menu__heading {
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para el menú desplegable */
+
+li .dropdown-item:hover {
+    background-color: var(--color-primario);  /* Color de fondo al pasar el mouse */
+}
+
+li .dropdown-item:active {
+    background-color: var(--color-resaltado); /* Color de fondo al hacer clic */
+}
+
+/* Estilos para los botones */
+
+.btn.btn-light.button.d-flex.align-items-center:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+    border: none;                            /* Elimina el borde */
+}
+
+.btn.btn-light.button.d-flex.align-items-center:active {
+    background-color: var(--color-acento-1); /* Color de fondo al hacer clic */
+    border: none;                            /* Elimina el borde */
+}
+
+.arrow {
+    position: absolute; /* Posiciona el elemento de forma absoluta dentro de su contenedor */
+    width: 11px; /* Ancho fija del contenedor */
+    height: 11px; /* Altura fija del contenedor */
+    top: -5.5px; /* Ajusta la posición vertical */
+    left: 32px;  /* Ajusta la posición horizontal */
+    background-color: var(--color-acento-1);
+    transform: rotate(45deg); /* Rota el elemento 45 grados para formar una flecha */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el elemento */
+    z-index: -1; /* Define el índice z del elemento, colocándolo detrás de otros elementos con z-index positivo */
+}
+
+/* Oculta el menú de perfil inicialmente */
+.menu_perfil {
+    display: none; 
+}
+  
+/* Estilos para centrar el contenido y aplicar animación */
+.estilos {
+    display: flex; /* Utiliza flexbox para el diseño */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    position: absolute; /* Posiciona el elemento de manera absoluta */
+    top: 0; /* Posiciona el elemento en la parte superior */
+    left: 0; /* Posiciona el elemento en el lado izquierdo */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 100%; /* Ocupa toda la altura disponible */
+    animation: animation .5s ease forwards; /* Aplica animación de opacidad */
+}
+  
+/* Animación para cambiar la opacidad de 0 a 1 */
+@keyframes animation {
+    from {
+        opacity: 0; /* Inicia con opacidad 0 */
+    }
+    to {
+        opacity: 1; /* Termina con opacidad 1 */
+    }
+}
+  
+/* Estilos y animación para los enlaces dentro de .opciones */
+.opciones > a {
+    animation: texto 1s ease forwards; /* Aplica animación de desplazamiento */
+    margin-bottom: 30px; /* Añade espacio entre los enlaces */
+}
+
+.opciones > a:hover {
+    color: var(--color-primario); /* Color al pasar el mouse */
+}
+
+.opciones > a:active {
+    color: var(--color-acento-1);         /* Color al hacer clic */
+    text-decoration: underline solid;       /* Subrayado sólido al hacer clic */
+}
+  
+/* Animación para desplazar el texto de abajo hacia arriba */
+@keyframes texto {
+    from {
+        transform: translateY(15px); /* Inicia con el texto desplazado 15px hacia abajo */
+    }
+    to {
+        transform: translateY(0px); /* Termina con el texto en su posición original */
+    }
+}
+  
+/* Estilos para el contenedor principal */
+.contenido {
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: 50vh; /* Ocupa la mitad de la altura de la ventana */
+    background-color: var(--color-secundario); /* Color de fondo */
+    display: flex; /* Utiliza flexbox para el diseño */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    flex-direction: column; /* Alinea los elementos en columna */
+    text-align: center; /* Centra el texto */
+    color: var(--color-texto-principal); /* Color del texto */
+}
+  
+/* Estilos para la imagen de salir */
+.img-salir {
+    width: 50px; /* Ancho de la imagen */
+    height: 50px; /* Altura de la imagen */
+    position: absolute; /* Posición absoluta */
+    right: 5%; /* Alineada 5% desde la derecha */
+    top: 30%; /* Alineada 30% desde la parte superior */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+    background-color: var(--color-texto-principal); /* Color de fondo de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para el encabezado dentro de .nav-link */
+.nav-link h3 {
+    margin-top: 50px; /* Espacio superior de 50px */
+    font-size: 40px; /* Tamaño de fuente de 40px */
+}
+
+/* ESTILOS PARA LA PRIMERA SECCION */
+
+/* Título principal */
+.contenedor__titulo{
+    display: flex; /* Contenedor flexible */
+    gap: 20px; /* Espacio entre los elementos */
+    font-size: 64px; /* Tamaño de fuente grande */
+    text-align: start; /* Alinear al inicio (izquierda) */
+    color: var(--color-secundario); /* Color del texto usando una variable de CSS */
+    font-weight: bold; /* Texto en negrita */
+    margin-left: 180px; /* Margen izquierdo específico */
+    padding-top: 200px; /* Relleno superior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+  
+/* texto */
+.contenedor__texto{
+    font-size: 20px; /* Tamaño de fuente medio */
+    margin-top: 50px; /* Margen superior específico */
+    text-align: center; /* Alinear el texto al centro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+
+/* Subtítulo */
+.contenedor__subtitulo{
+    font-size: 40px; /* Tamaño de fuente medio */
+    text-align: start; /* Alinear al inicio (izquierda) */
+    color: var(--color-secundario); /* Color del texto usando una variable de CSS */
+    font-weight: bold; /* Texto en negrita */
+    margin-left: 180px; /* Margen izquierdo específico */
+    margin-top: 200px; /* Margen superior específico */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+/* linea separadora */
+.contenedor__linea {
+    width: 1540px; /* Ajusta el ancho de la línea */
+    height: 4px; /* Ajusta el grosor de la línea */
+    background-color: var(--color-terciario); /* Color de la línea */
+    margin: 20px auto; /* Espaciado superior e inferior, centrar horizontalmente */
+    margin-top: 50px; /* Margen superior específico */
+}
+
+.contenedor__informacion {
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.contenedor__dentro {
+    display: flex; /* Contenedor flexible */
+    justify-content: start; /* Alinear al inicio */
+    align-items: center; /* Centra verticalmente */
+    width: 1300px; /* Ancho fijo del contenedor */
+    height: 150px; /* Altura fija del contenedor */
+    background-color: var(--color-texto-principal); /* Color de fondo */
+    border-top: 5px solid #A00B0B; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    gap: 30px; /* Espacio entre elementos */
+    padding: var(--padding); /* Espaciado interno */
+    margin-top: 100px; /* Margen superior específico */
+}
+
+.contenedor__informacion--imagen {
+    width: 70px;             /* Ancho del círculo */
+    height: 70px;            /* Alto del círculo */
+    border-radius: 50%;       /* Hace que sea un círculo */
+    background-color: #A00B0B; /* Color de fondo */
+    display: flex;            /* Para centrar la imagen */
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    position: relative;       /* Para el posicionamiento de la imagen */
+    overflow: hidden;         /* Oculta desbordamiento */
+}
+
+.contenedor__informacion--imagen img {
+    width: 50%;              /* Ajusta el tamaño de la imagen */
+    height: auto;            /* Mantiene la proporción */
+    position: absolute;       /* Posicionamiento absoluto */
+}
+
+.texto {
+    margin-top: -100px;  /* Margen superior específico */
+}
+
+
+/* boton para regresar a la tienda */
+.boton__regresar {
+    margin-top: 100px; /* Margen superior específico */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+.boton__regresar--link{
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-terciario); /* Color de fondo terciario */
+    color: var(--color-fondo-principal); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    border-radius: 15px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    padding: 10px 20px; /* Relleno interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinear el texto en el centro */
+}
+
+.boton__regresar--link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
+}
+
+.boton__regresar--link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
+}
+
+/* ESTILOS PARA LA SEGUNDA SECCION */
+
+.form__contenedor {
+    margin-top: 150px; /* Margen superior específico */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.form__group {
+    margin-bottom: 50px; /* Margen inferior específico */
+}
+
+.form__label {
+    display: block; /* establece que un elemento ocupará todo el espacio disponible por defecto y el siguiente elemento a este se situará por debajo */
+    margin-bottom: 10px; /* Margen inferior específico */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.form__input {
+    width: 100%; /* Ancho */
+    min-height: 50px; /* Altura mínima */
+    padding: 10px; /* Espaciado interno */
+    border: 3px solid var(--color-terciario); /* borde */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.form__input:focus {
+    /* Estilos para cuando los campos de correo electrónico y contraseña están enfocados */
+    outline: none; /* Sin contorno */
+}
+
+.form__input:hover {
+    /* Estilos para cuando el mouse está sobre los campos de entrada */
+    border: 3px solid var(--color-acento-1); /* Borde sólido con color de acento 1 */
+}
+
+.form__input:active {
+    /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
+    border: 3px solid var(--color-secundario); /* Borde sólido con color secundario */
+}
+
+.textarea {
+    width: 600px; /* Ancho calculado con margen */
+    min-height: 160px; /* Altura mínima */
+    padding: 10px; /* Espaciado interno */
+    border: 3px solid var(--color-terciario);
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.textarea:focus {
+    /* Estilos para cuando los campos de correo electrónico y contraseña están enfocados */
+    outline: none; /* Sin contorno */
+}
+
+.textarea:hover {
+    /* Estilos para cuando el mouse está sobre los campos de entrada */
+    border: 3px solid var(--color-acento-1); /* Borde sólido con color de acento 1 */
+}
+
+.textarea:active {
+    /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
+    border: 3px solid var(--color-secundario); /* Borde sólido con color secundario */
+}
+
+/* boton para actualizar perfil */
+.boton__actualizar {
+    margin-top: 50px; /* Margen superior específico */
+    margin-bottom: -50px; /* Margen inferior específico */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+.boton__actualizar-link{
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-terciario); /* Color de fondo terciario */
+    color: var(--color-fondo-principal); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    border-radius: 15px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    padding: 10px 20px; /* Relleno interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinear el texto en el centro */
+}
+
+.boton__actualizar-link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
+}
+
+.boton__actualizar-link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    width: 100%; /* Ancho completo */
+    height: 104px; /* Altura del pie de página */
+    background-color: var(--color-primario); /* Color de fondo */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 200px; /* Margen superior */
+}
+
+/* Estilos para el texto dentro del pie de página */
+.footer__parrafo {
+    color: var(--color-fondo-principal); /* Color del texto */
+    text-align: center; /* Alinea el texto al centro */
+    font-weight: bold; /* Fuente en negrita */
+}
+
+
+/*RESPONSIVE*/
+
+/* Media query para portátiles */
+@media (min-width: 769px) and (max-width: 1300px) {
+    .contenedor__linea {
+        width: 90%; /* Ajusta el ancho de la línea */
+    }
+    .contenedor__titulo, .contenedor__subtitulo {
+        margin-left: 70px; /* Margen izquierdo específico */
+    }
+    .contenedor__dentro{
+        width: 1000px; /* Ancho */
+        height: 150px; /* Altura */
+    }
+}
+
+
+/*RESPONSIVE*/
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .contenedor__linea {
+        width: 90%; /* Ancho de la linea */
+    }
+    
+    .contenedor__titulo, .contenedor__subtitulo {
+        margin-left: 38px; /* Margen izquierdo específico */
+    }
+    
+    .contenedor__dentro{
+        width: 650px; /* Ancho */
+        height: 150px; /* Altura */
+    }
+}
+
+/*RESPONSIVE*/
+
+/* Media query para pantallas pequeñas como móviles */
+@media (min-width: 300px) and (max-width: 767px) {
+    .contenedor__linea {
+        width: 80%; /* Ancho de la linea */
+    }
+
+    .contenedor__titulo {
+        font-size: 40px; /* tamaño de la fuente */
+        margin-left: 40px; /* Margen izquierdo específico */
+        text-align: start; /* Alinear al inicio */
+        position: relative; /* Posicionamiento relativo: permite posicionar hijos con `position: absolute` en relación a este contenedor */
+    }
+    
+    .contenedor__titulo img {
+        width: 60px; /* Ancho */
+        margin-left: 150px; /* Margen izquierdo específico */
+        margin-top: 42px; /* Margen superior */
+        position: absolute; /* Posicionamiento absoluto: se posiciona en relación al contenedor padre con `position: relative` */
+    }    
+
+    .contenedor__subtitulo{
+        margin-left: 40px; /* Margen izquierdo específico */
+        text-align: start; /* Alinear al inicio */
+    }
+
+    .contenedor__texto{
+        font-size: 16px; /* tamaño de la fuente */
+        padding: 0 10px; /* Relleno (padding) horizontal de 10px, sin relleno vertical */
+    }
+
+    .contenedor__dentro{
+        width: 280px; /* Ancho */
+        height: 150px; /* Altura */
+    }
+
+    .contenedor__informacion--imagen {
+        width: 100px;             /* Ancho del círculo */
+        height: 40px;            /* Alto del círculo */
+    }
+    
+    .contenedor__informacion--imagen img {
+        width: 50%;              /* Ajusta el tamaño de la imagen */
+    }
+
+    .contenedor__informacion--texto{
+        text-align: start; /* Alinear al inicio */
+    }
+
+    .form__input {
+        width: 100%; /* Ancho automático para ajustar al contenido */
+        min-height: 40px; /* Altura mínima reducida para móviles */
+    }
+
+    .textarea {
+        width: 100%; /* Ancho automático para ajustar al contenido */
+        min-height: 150px; /* Altura mínima reducida para móviles */
+    }
+}
