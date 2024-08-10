@@ -114,27 +114,40 @@
     <div class="container mt-5 text-center">
         <a href="../productos actualizaciones/crear.html" class="btn btn-success w-100 mb-2">Crear Producto</a>
         <!-- Tabla responsive para listar productos -->
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Acciones</th>
+
+        <div class="tabla_contenedor ">
+            <table>
+                <thead>
+                    <tr class="borde1">
+                        <th class="borde1">Nombre</th>
+                        <th class="borde1">Descripción</th>
+                        <th class="borde1">Precio</th>
+                        <th class="borde1" >Cantidad</th>
+                        <th class="borde1">Imagen</th>
+                        <th class="borde1">Categoria</th>
+                        <th class="borde1">Acciones</th>
                     </tr>
                 </thead>
-                <tbody id="product-table-body" class="table-light">
-                    <!-- Las filas de los productos se agregarán aquí mediante JavaScript -->
+                <tbody>
                 </tbody>
             </table>
         </div>
+        
+        <template id="template">
+            <tr class="borde1">
+                <td class="borde1 nombre"></td>
+                <td class="borde1 descripción"></td>
+                <td class="borde1 precio"></td>
+                <td class="borde1 cantidad"></td>
+                <td class="borde1 imagen"></td>
+                <td class="borde1 categoria"></td>
+            </tr>
+        </template>        
     </div>
 
     <!-- JavaScript de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script src="listar.js"></script>
+    <script src="listar.js" type="module"></script>
 </body>
 </html>

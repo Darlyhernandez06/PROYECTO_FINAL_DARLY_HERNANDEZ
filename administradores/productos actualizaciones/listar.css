@@ -284,6 +284,26 @@ li .dropdown-item:active {
     margin-top: 10px; /* Separación superior adicional */
 }
 
+table {
+    width: 100%; /* La tabla ocupará el 100% del ancho del contenedor padre */
+    border-collapse: collapse; /* Combina los bordes adyacentes de las celdas en un solo borde */
+}
+
+th, td {
+    padding: 10px; /* Añade un espacio de 10px alrededor del contenido de cada celda */
+    text-align: center; /* Centra el texto dentro de las celdas */
+    background-color: var(--color-texto-principal); /* Establece el color de fondo de las celdas usando una variable CSS */
+}
+
+th {
+    background-color: var(--color-primario); /* Establece el color de fondo para las celdas de encabezado usando una variable CSS */
+}
+
+.borde1 {
+    border: 2px solid var(--color-secundario); /* Añade un borde sólido de 2px alrededor del elemento con el color definido en la variable CSS */
+}
+
+
 /*RESPONSIVE*/
 
 /* Media query para portátiles */
