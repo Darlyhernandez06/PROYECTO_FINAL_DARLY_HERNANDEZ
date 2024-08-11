@@ -760,6 +760,31 @@ li .dropdown-item:active {
     margin-right: -10px; /* Margen derecho negativo */
 }
 
+/*ESTILOS PARA EL CARRITO CUENTA*/
+#cuenta_carrito {
+    background-color: var(--color-terciario);
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 25px;
+    height: 25px; 
+    text-align: center;
+    position: absolute;
+    font-size: 20px;
+    margin-left: 17px;
+}
+
+.carrito {
+    position: relative;
+    margin-top: -18px;
+}
+.teto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ESTILOS PARA EL PIE DE PAGINA*/
 .footer {
     height: 140px; /* Altura */

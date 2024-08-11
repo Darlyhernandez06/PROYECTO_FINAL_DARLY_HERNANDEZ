@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
-    src: url('../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+    src: url('../../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
 }
 
 /* Estilos globales para todos los elementos */
@@ -27,7 +27,7 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../imagenes/'); /* Imagen de fondo */
+    background: url('../../imagenes/'); /* Imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
