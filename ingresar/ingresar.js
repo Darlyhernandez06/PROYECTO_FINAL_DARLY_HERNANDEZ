@@ -23,15 +23,19 @@ $formulario.addEventListener("submit", (event) => {
       .then(users => {
         const user = users.find(user => user.correo === data.correo && user.contraseña === data.contraseña);
         if (user) {
-          if (user.correo === 'Megapaquetesalego12@gmail.com') {
-            alert('Login exitoso como administrador');
-            localStorage.setItem('userName', 'Administrador');
-            window.location.href = '../administradores/pagina_principal.html';
-          } else {
-            alert('Login exitoso');
-            localStorage.setItem('usercliente', 'Cliente');
-            window.location.href = '../usuarios/pagina_principal.html';
-          }
+          if (user) {
+            if (user.correo === 'Megapaquetesalego12@gmail.com') {
+                alert('Login exitoso como administrador');
+                localStorage.setItem('userName', user.nombres + ' ' + user.apellidos); 
+                localStorage.setItem('userType', 'Administrador');
+                window.location.href = '../administradores/pagina_principal.html';
+            } else {
+                alert('Login exitoso');
+                localStorage.setItem('userName', user.nombres + ' ' + user.apellidos); 
+                localStorage.setItem('userType', 'Cliente');
+                window.location.href = '../usuarios/pagina_principal.html';
+            }
+          }        
         } else {
           alert('Correo o contraseña incorrectos');
         }

@@ -1,11 +1,14 @@
-// Obtener el nombre de usuario del almacenamiento local
-const usercliente = localStorage.getItem('usercliente');
+// Obtener el nombre completo y el tipo de usuario del almacenamiento local
+const userName = localStorage.getItem('userName');
+const userType = localStorage.getItem('userType');
 
 // Si hay un nombre de usuario almacenado, actualizar el contenido del elemento HTML con ese nombre
-if (usercliente) {
-    document.querySelector('#loggedInUserNamecliente').innerHTML = usercliente;
+if (userName) {
+    document.querySelector('#loggedInUserNamecliente').innerHTML = `
+        <strong>${userName}</strong><br>
+        <small>${userType}</small>
+    `;
 }
-
 // Obtener los elementos para la gestión del menú de perfil
 const salir = document.querySelector('.img-salir'); // Botón para salir
 const menu = document.querySelector('.menu_perfil'); // Menú de perfil

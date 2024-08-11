@@ -6,4 +6,10 @@ const solicitud = async () => {
     return respuesta;
 }
 
+export const solicitud_usuarios = async () => {
+    let solicitar = await fetch(`${URL}/users`);
+    let respuesta = await solicitar.json()
+    return respuesta;
+}
+
 export default solicitud;

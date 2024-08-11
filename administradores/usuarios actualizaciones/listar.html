@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡VERDURAS FRESCAS!</title>
+    <title>¡LISTAR USUARIOS!</title>
     <!-- Enlace al archivo CSS para estilos -->
-    <link rel="stylesheet" href="verduras_productos.css">
+    <link rel="stylesheet" href="listar.css">
     <!-- Favicon para el navegador -->
     <link rel="icon" type="image/svg" href="../../imagenes/logo.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
 </head>
 <body>
 
-    <!-- Barra de navegación -->
+        <!-- Barra de navegación -->
     <nav class="negrita navbar navbar-expand-lg p-4">
         <div class="container-fluid d-flex">
             <!-- Logo -->
@@ -84,7 +84,7 @@
 
     <div class="menu_perfil">
         <div class="contenido">
-            <a href="verduras_productos.html">
+            <a href="listar.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="dark" class="bi bi-x-lg img-salir" viewBox="0 0 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                 </svg>
@@ -102,30 +102,53 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Contenedor principal con título y línea decorativa -->
+    <div class="contenedor__principal">
+        <p class="titulo__principal">Gestion de Usuarios</p>
+        <div class="contenedor__linea"></div>
+    </div>
     
+    <!-- Contenedor para la tabla de productos -->
+    <div class="container mt-5 text-center">
+        <!-- Tabla de listar los usuarios -->
 
-    <!-- Seccion de los productos -->
-    <section class="contenedor__productos--seccion">
-        <div class="contenedor__parrafos">
-            <h1 class="titulo__parrafos"><strong>Compra tus Frutas y Verduras Aquí</strong></h1>
-            <h3 class="subtitulo__parrafos"><strong>Verduras Frescas</strong></h3>
-            <p class="parrafo__parrafos">Nuestras Verduras se entregan cuidadosamente seleccionada de acuerdo a tuspreferencias. <br>
-                “¡Ofresemos juntos las mejores verduras para una vida mas saludable y deliciosa!
-            </p>
+        <div class="tabla_contenedor ">
+            <table>
+                <thead>
+                    <tr class="borde1">
+                        <th class="borde1">Nombres</th>
+                        <th class="borde1">Apellidos</th>
+                        <th class="borde1">Correo</th>
+                        <th class="borde1">Teléfono</th>
+                        <th class="borde1">Dirección</th>
+                        <th class="borde1">Descripción</th>
+                        <th class="borde1">Rol</th>
+                        <th class="borde1">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-                
-        <section class="contenedor__productos--seccion" id="productList"></section>
-            
-    </section>
-
-    <!-- Pie de página -->
-    <footer class="footer">
-        <p class="footer__parrafo">@Megapaquetes</p>
-    </footer>
+        
+        <template id="template">
+            <tr class="borde1">
+                <td class="borde1 nombres"></td>
+                <td class="borde1 apellidos"></td>
+                <td class="borde1 correo"></td>
+                <td class="borde1 teléfono"></td>
+                <td class="borde1 dirección"></td>
+                <td class="borde1 descripción"></td>
+                <td class="borde1 rol"></td>
+            </tr>
+        </template>               
+    </div>
 
     <!-- JavaScript de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script src="verduras_productos.js" type="module"></script>
+    <script src="listar.js" type="module"></script>
 </body>
 </html>

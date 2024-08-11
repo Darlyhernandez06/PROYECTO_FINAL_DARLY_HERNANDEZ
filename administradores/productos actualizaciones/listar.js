@@ -1,4 +1,4 @@
-// IMPORTANCIONES
+// IMPORTACIONES
 import solicitud from "../../modulos/solicitud.js";
 
 // Variables
@@ -17,7 +17,7 @@ const listarProductos = async () => {
         const data = await solicitud("productos");
 
         // Procesar cada producto y llenar el template
-        data.forEach(element => {
+        data.forEach((element, index) => {
             // Llenar los datos del producto en el template clonado
             $template.querySelector('.nombre').textContent = element.nombre;
             $template.querySelector('.descripción').textContent = element.descripción;
@@ -25,6 +25,13 @@ const listarProductos = async () => {
             $template.querySelector('.cantidad').textContent = element.cantidad;
             $template.querySelector('.imagen').textContent = element.imagen;
             $template.querySelector('.categoria').textContent = element.categoria;
+
+            // Actualizar los enlaces con el índice del producto
+            const editLink = $template.querySelector('.edit-product');
+            const deleteLink = $template.querySelector('.delete-product');
+
+            editLink.href = `../../administradores/productos actualizaciones/actualizar.html`;
+            deleteLink.dataset.index = index;
 
             // Clonar el contenido del template para usarlo
             const clone = document.importNode($template, true);
@@ -44,7 +51,6 @@ const listarProductos = async () => {
 listarProductos();
 
 
-
 // Manejar clic en botones de eliminación de productos
 document.querySelectorAll('.delete-product').forEach(button => {
     button.addEventListener('click', (event) => {
@@ -62,12 +68,20 @@ document.querySelectorAll('.delete-product').forEach(button => {
     });
 });
 
-// Obtener el nombre de usuario del almacenamiento local
+// Obtener el nombre completo del usuario almacenado en localStorage
 const userName = localStorage.getItem('userName');
 
-// Si hay un nombre de usuario almacenado, actualizar el contenido del elemento HTML con ese nombre
+// Obtener el tipo de usuario almacenado en localStorage (por ejemplo, Administrador o Cliente)
+const userType = localStorage.getItem('userType');
+
+// Verificar si hay un nombre de usuario almacenado en localStorage
 if (userName) {
-    document.querySelector('#loggedInUserName').innerHTML = userName;
+    // Si hay un nombre de usuario almacenado, actualizar el contenido del elemento HTML con ese nombre
+    // Mostrar el nombre completo en negrita y el tipo de usuario en una línea separada
+    document.querySelector('#loggedInUserName').innerHTML = `
+        <strong>${userName}</strong><br>
+        <small>${userType}</small>
+    `;
 }
 
 // Obtener los elementos para la gestión del menú de perfil
@@ -100,3 +114,5 @@ salir.addEventListener('click', () => {
 // - textContent: Devuelve o establece el contenido textual de un elemento.
 
 // - El método splice(): en JavaScript se utiliza para modificar el contenido de un array mediante la eliminación, reemplazo o adición de elementos.
+
+
