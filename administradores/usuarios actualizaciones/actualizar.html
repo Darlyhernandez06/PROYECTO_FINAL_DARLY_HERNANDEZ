@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página que se muestra en la pestaña del navegador -->
+    <title>¡ACTUALIZAR ESTADO DE USUARIO!</title>
+    <!-- Vincula la hoja de estilos CSS externa para los estilos de la página -->
+    <link rel="stylesheet" href="actualizar.css">
+    <!-- Define el favicon del navegador, que es el ícono que se muestra en la pestaña -->
+    <link rel="icon" type="image/svg" href="../../imagenes/logo.svg">
+</head>
+<body>
+    <!-- Contenedor principal para el contenido de la página -->
+    <div class="container">
+        <!-- Encabezado principal de la página -->
+        <h1>Actualizar Estado de Usuario</h1>
+        <!-- Formulario para actualizar el estado del usuario -->
+        <form id="update-form">
+            <!-- Grupo de formulario para agrupar el campo y su etiqueta -->
+            <div class="form-group">
+                 <!-- Etiqueta para el campo de selección del estado de cuenta -->
+                <label for="estado_cuenta">Estado de Cuenta:</label>
+                <!-- Campo de selección para elegir el estado del usuario -->
+                <select id="estado_cuenta" name="estado_cuenta">
+                    <!-- Opción para el estado activo -->
+                    <option value="activo">Activo</option>
+                    <!-- Opción para el estado suspendido -->
+                    <option value="suspendido">Suspendido</option>
+                </select>
+            </div>
+            <!-- Botón de envío del formulario para actualizar el estado del usuario -->
+            <button type="submit">Actualizar</button>
+        </form>
+        <a href="listar.html" class="back-link">Volver a la lista de usuarios</a>
+        <!-- Enlace para volver a la página de lista de usuarios -->
+    </div>
+    <script src="actualizar.js" type="module"></script>
+    <!-- Vincula el archivo JavaScript externo que contiene la lógica de actualización, usando el tipo de módulo -->
+</body>
+</html>

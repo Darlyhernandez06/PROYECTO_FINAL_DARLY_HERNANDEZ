@@ -1,0 +1,112 @@
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('../../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones (nota: probablemente un error tipográfico, debería ser `--padding-button`) */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    background: url('../../imagenes/fondo listar.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+    font-family: 'MiFuente';        /* Fuente personalizada */
+    background-position: center;    /* Centra la imagen de fondo */
+}
+
+/* Estilo del contenedor principal */
+.container {
+    max-width: 600px;               /* Ancho máximo del contenedor */
+    margin: 50px auto;              /* Margen automático a los lados y 50px arriba y abajo */
+    padding: 20px;                  /* Espacio interno de 20px alrededor del contenido */
+    background-color: var(--color-texto-principal); /* Color de fondo del contenedor usando la variable CSS */
+    border-radius: 8px;             /* Bordes redondeados de 8px */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra alrededor del contenedor */
+}
+
+/* Estilo del encabezado */
+h1 {
+    font-size: 24px;                /* Tamaño de la fuente del encabezado */
+    color: green;                   /* Color del texto del encabezado */
+    margin-bottom: 20px;            /* Margen inferior de 20px */
+    text-align: center;             /* Centra el texto del encabezado */
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;                  /* Utiliza flexbox para el diseño del formulario */
+    flex-direction: column;         /* Organiza los elementos del formulario en una columna */
+    gap: 15px;                      /* Espacio de 15px entre los elementos del formulario */
+}
+
+/* Estilo del grupo de formulario */
+.form-group {
+    display: flex;                  /* Utiliza flexbox para el diseño del grupo de formulario */
+    flex-direction: column;         /* Organiza los elementos del grupo en una columna */
+}
+
+/* Estilo de las etiquetas del formulario */
+label {
+    font-weight: bold;              /* Estilo de fuente en negrita para las etiquetas */
+    margin-bottom: 5px;             /* Margen inferior de 5px para las etiquetas */
+}
+
+/* Estilo del campo de selección */
+select {
+    padding: 10px;                  /* Espacio interno de 10px alrededor del contenido del campo de selección */
+    font-size: 16px;                /* Tamaño de la fuente del campo de selección */
+    border-radius: 4px;             /* Bordes redondeados de 4px */
+    border: 1px solid #ddd;         /* Borde de 1px sólido de color gris claro */
+    outline: none;                  /* Elimina el borde de enfoque predeterminado del campo de selección */
+}
+
+/* Estilo del botón de envío */
+button {
+    padding: 10px;                  /* Espacio interno de 10px alrededor del contenido del botón */
+    font-size: 16px;                /* Tamaño de la fuente del botón */
+    border: none;                   /* Elimina el borde del botón */
+    border-radius: 4px;             /* Bordes redondeados de 4px */
+    background-color: green;        /* Color de fondo del botón */
+    color: #fff;                    /* Color del texto del botón */
+    cursor: pointer;                /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo del botón */
+}
+
+/* Cambio de color del botón en hover */
+button:hover {
+    background-color: green;        /* Cambia el color de fondo del botón al pasar el ratón (mantiene el mismo color) */
+}
+
+/* Estilo del enlace de volver */
+.back-link {
+    display: block;                 /* Hace que el enlace ocupe toda la línea */
+    text-align: center;             /* Centra el texto del enlace */
+    margin-top: 20px;               /* Margen superior de 20px */
+    color: green;                   /* Color del texto del enlace */
+    text-decoration: none;          /* Elimina el subrayado del enlace */
+}
+
+.back-link:hover {
+    text-decoration: underline;     /* Subraya el enlace al pasar el ratón */
+}

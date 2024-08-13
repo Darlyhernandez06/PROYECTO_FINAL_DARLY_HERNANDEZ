@@ -39,6 +39,9 @@ $formulario.addEventListener("submit", (event) => {
         contraseña: contraseña.value,
         confirmarContraseña: confirmarContraseña.value,
         descripcion: descripcion.value,
+        rol: "cliente",
+        estado_cuenta: "activo",
+
     }
     if (response) {
         fetch('http://localhost:3000/users', {

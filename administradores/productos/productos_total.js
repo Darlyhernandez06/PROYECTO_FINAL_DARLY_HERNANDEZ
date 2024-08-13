@@ -37,19 +37,9 @@ async function loadProducts() {
                     <h3 class="titulo__producto"><strong>${productName}</strong></h3>
                     <p class="precio__producto"><strong>$${productPrice}</strong></p>
                     <p class="precio__producto"><strong>Stock: ${productQuantity}</strong></p>
-                    <!-- Contenedor de botones para control de cantidad -->
-                    <div class="contenedor__cantidad">
-                        <span class="boton__cantidad01" onclick="changeQuantity(this, -1)">-</span>
-                        <input type="text" class="input__cantidad" value="${1}" readonly max="${productQuantity}">
-                        <span class="boton__cantidad" onclick="changeQuantity(this, 1)">+</span>
-                    </div>
-                    <!-- Botón para añadir producto -->
-                    <div class="boton-añadir">
-                        <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                    </div>
                     <!-- Contenedor para la descripción del producto -->
                     <div class="producto__descripcion--contenedor">
-                        <div class="producto__descripcion">
+                        <div class="producto__descripcion w-100">
                             <p><strong>${productName}:</strong> ${productDescription}</p>
                         </div>
                     </div>
@@ -65,20 +55,6 @@ async function loadProducts() {
 
 // Ejecutar loadProducts cuando el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", loadProducts);
-
-// Función para cambiar la cantidad de productos
-function changeQuantity(element, change) {
-  // Obtener el campo de entrada y sus valores actuales y máximos
-  let input = element.parentElement.querySelector(".input__cantidad");
-  let currentValue = parseInt(input.value);
-  let maxValue = parseInt(input.getAttribute("max"));
-  let newValue = currentValue + change;
-
-  // Asegurarse de que la nueva cantidad sea válida
-  if (newValue > 0 && (isNaN(maxValue) || newValue <= maxValue)) {
-      input.value = newValue;
-  }
-}
 
 // Evento para el filtro de búsqueda
 document.addEventListener("keyup", (e) => {

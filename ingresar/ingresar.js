@@ -21,7 +21,7 @@ $formulario.addEventListener("submit", (event) => {
     fetch('http://localhost:3000/users')
       .then(response => response.json())
       .then(users => {
-        const user = users.find(user => user.correo === data.correo && user.contraseña === data.contraseña);
+        const user = users.find(user => user.correo === data.correo && user.contraseña === data.contraseña && user.estado_cuenta === 'activo');
         if (user) {
           if (user) {
             if (user.correo === 'Megapaquetesalego12@gmail.com') {

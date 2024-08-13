@@ -1,4 +1,4 @@
-// IMPORTACIONES
+// IMPORTANCIONES
 import solicitud from "../../modulos/solicitud.js";
 
 // Variables
@@ -17,7 +17,7 @@ const listarProductos = async () => {
         const data = await solicitud("productos");
 
         // Procesar cada producto y llenar el template
-        data.forEach((element, index) => {
+        data.forEach((element) => {
             // Llenar los datos del producto en el template clonado
             $template.querySelector('.nombre').textContent = element.nombre;
             $template.querySelector('.descripción').textContent = element.descripción;
@@ -26,12 +26,12 @@ const listarProductos = async () => {
             $template.querySelector('.imagen').textContent = element.imagen;
             $template.querySelector('.categoria').textContent = element.categoria;
 
-            // Actualizar los enlaces con el índice del producto
+            // Actualizar los enlaces con el id del producto
             const editLink = $template.querySelector('.edit-product');
             const deleteLink = $template.querySelector('.delete-product');
 
-            editLink.href = `../../administradores/productos actualizaciones/actualizar.html`;
-            deleteLink.dataset.index = index;
+            editLink.href = `../../administradores/productos actualizaciones/actualizar.html?id=${element.id}`;
+            deleteLink.setAttribute('data-id', element.id);
 
             // Clonar el contenido del template para usarlo
             const clone = document.importNode($template, true);
@@ -42,31 +42,45 @@ const listarProductos = async () => {
 
         // Agregar el fragmento al tbody
         tbody.appendChild($fragmento);
+
+         // Agregar evento de eliminación a los botones
+         document.querySelectorAll('.delete-product').forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                const productId = event.currentTarget.getAttribute('data-id');
+                eliminarProducto(productId);
+            });
+        });
     } catch (error) {
         console.error('Error al listar productos:', error);
     }
 };
 
+// Función para eliminar un producto
+const eliminarProducto = async (productId) => {
+    if (!confirm('¿Estás seguro de que deseas eliminar este producto?')) return;
+
+    try {
+        const response = await fetch(`http://localhost:3000/productos/${productId}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            alert('Producto eliminado exitosamente');
+            // Actualizar la tabla después de eliminar
+            document.querySelector("tbody").innerHTML = '';
+            await listarProductos(); // Llamar de nuevo para actualizar la lista
+        } else {
+            alert('Error al eliminar el producto. Intenta de nuevo.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un problema con la eliminación del producto. Verifica tu conexión e intenta de nuevo.');
+    }
+};
+
 // Ejecutar la función para listar productos al cargar el script
 listarProductos();
-
-
-// Manejar clic en botones de eliminación de productos
-document.querySelectorAll('.delete-product').forEach(button => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        // Obtener el índice del producto a eliminar
-        const index = event.currentTarget.getAttribute('data-index');
-        // Obtener productos desde localStorage
-        const products = JSON.parse(localStorage.getItem('products')) || [];
-        // Eliminar el producto del array
-        products.splice(index, 1);
-        // Guardar el array actualizado en localStorage
-        localStorage.setItem('products', JSON.stringify(products));
-        // Recargar la página para reflejar los cambios
-        window.location.reload();
-    });
-});
 
 // Obtener el nombre completo del usuario almacenado en localStorage
 const userName = localStorage.getItem('userName');
@@ -96,7 +110,7 @@ desplegable.addEventListener('click', () => {
 
 // Ocultar el menú de perfil cuando se hace clic en el botón salir
 salir.addEventListener('click', () => {
-    menu.style.display = 'none'; // Ocultar el menú cambiando su estilo
+    menu.classList.remove('estilos'); // Quitar la clase que muestra el menú
 });
 
 

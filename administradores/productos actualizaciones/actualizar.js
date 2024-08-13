@@ -1,51 +1,78 @@
+// Obtener el ID del producto de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Referencias a los elementos del formulario
-    const updateForm = document.querySelector('#update-product-form');
-    const productIndex = document.querySelector('#product-index');
-    const productName = document.querySelector('#product-name');
-    const productDescription = document.querySelector('#product-description');
-    const productPrice = document.querySelector('#product-price');
+// Obtener los elementos del formulario
+const form = document.querySelector('#update-product-form');
+const inputId = document.querySelector('#product-id');
+const inputNombre = document.querySelector('#product-name');
+const inputDescripcion = document.querySelector('#product-description');
+const inputPrecio = document.querySelector('#product-price');
+const inputImagen = document.querySelector('#product-img');
+const inputCategoria = document.querySelector('#categorias');
+const inputCantidad = document.querySelector('#product-quantity');
 
-    // Obtener el índice del producto a actualizar desde la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const index = urlParams.get('index');
-
-    // Si el índice existe, cargar los datos del producto desde el almacenamiento local
-    if (index !== null) {
-        const products = JSON.parse(localStorage.getItem('products')) || [];
-        const product = products[index];
-
-        // Si el producto existe, llenar el formulario con sus datos
-        if (product) {
-            productIndex.value = index;
-            productName.value = product.name;
-            productDescription.value = product.description;
-            productPrice.value = product.price;
+// Cargar datos del producto y llenar el formulario
+const loadProductData = async () => {
+    try {
+        const response = await fetch(`http://localhost:3000/productos/${productId}`);
+        if (response.ok) {
+            const product = await response.json();
+            inputId.value = product.id;
+            inputNombre.value = product.nombre;
+            inputDescripcion.value = product.descripción;
+            inputPrecio.value = product.precio;
+            inputCantidad.value = product.cantidad;
+            inputImagen.value = product.imagen;
+            inputCategoria.value = product.categoria;
+        } else {
+            alert('Error al cargar los datos del producto.');
         }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un problema al cargar los datos del producto.');
     }
+};
 
-    // Manejar el evento de envío del formulario
-    updateForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const products = JSON.parse(localStorage.getItem('products')) || [];
+// Actualizar el producto
+const updateProduct = async (event) => {
+    event.preventDefault();
 
-        // Crear un objeto con los datos actualizados del producto
-        const updatedProduct = {
-            name: productName.value,
-            description: productDescription.value,
-            price: productPrice.value,
-        };
+    const updatedProduct = {
+        nombre: inputNombre.value,
+        descripción: inputDescripcion.value,
+        precio: inputPrecio.value,
+        cantidad: inputCantidad.value,
+        imagen: inputImagen.value,
+        categoria: inputCategoria.value
+    };
 
-        // Actualizar el producto en la lista y guardar en el almacenamiento local
-        const index = productIndex.value;
-        products[index] = updatedProduct;
+    try {
+        const response = await fetch(`http://localhost:3000/productos/${productId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedProduct)
+        });
 
-        // Redirigir a la página de lista de productos después de actualizar
-        localStorage.setItem('products', JSON.stringify(products));
-        window.location.href = 'listar.html'; // Redirigir a la lista de productos después de actualizar
-    });
-});
+        if (response.ok) {
+            alert('Producto actualizado exitosamente');
+            window.location.href = 'listar.html'; // Redirigir a la lista de productos
+        } else {
+            alert('Error al actualizar el producto. Intenta de nuevo.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un problema con la actualización del producto. Verifica tu conexión e intenta de nuevo.');
+    }
+};
+
+// Cargar datos del producto al cargar la página
+document.addEventListener('DOMContentLoaded', loadProductData);
+
+// Manejar el envío del formulario
+form.addEventListener('submit', updateProduct);
 
 // - setItem: Almacena un valor en `localStorage` usando una clave específica.
 

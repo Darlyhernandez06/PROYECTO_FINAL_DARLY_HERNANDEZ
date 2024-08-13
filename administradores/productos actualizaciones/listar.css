@@ -28,7 +28,7 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../../imagenes/fondo listar.svg'); /* Imagen de fondo */
+    background: url('../../imagenes/fondo de productos.svg'); /* Imagen de fondo */
     background-repeat: no-repeat;   /* La imagen de fondo no se repite */
     background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     font-family: 'MiFuente';        /* Fuente personalizada */
@@ -284,9 +284,11 @@ li .dropdown-item:active {
     margin-top: 10px; /* Separación superior adicional */
 }
 
+/* Estilo base para la tabla */
 table {
     width: 100%; /* La tabla ocupará el 100% del ancho del contenedor padre */
     border-collapse: collapse; /* Combina los bordes adyacentes de las celdas en un solo borde */
+    
 }
 
 th, td {
@@ -301,6 +303,16 @@ th {
 
 .borde1 {
     border: 2px solid var(--color-secundario); /* Añade un borde sólido de 2px alrededor del elemento con el color definido en la variable CSS */
+}
+
+/* Contenedor de tabla responsivo */
+.tabla_contenedor {
+    overflow-x: auto; /* Añade una barra de desplazamiento horizontal si el contenido desborda el contenedor */
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
+}
+
+tr {
+    background-color: var(--color-texto-principal); /* Establece el color de fondo */
 }
 
 
@@ -318,11 +330,16 @@ th {
 /* Media query para tablets */
 @media (min-width: 768px) and (max-width: 1299px) {
     body {
-        background: url('../../imagenes/fondo de la pagina principal.svg') no-repeat center center fixed; /* imagen de fondo */
-        background-size: cover;  /* La imagen de fondo cubre toda la pantalla */
+        background: url('../../imagenes/fondo de productos.svg'); /* Imagen de fondo */
+        background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+        background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+        background-position: center;    /* Centra la imagen de fondo */
     }
     .contenedor__linea{
         width: 95%; /* Ancho del contenedor */
+    }
+    table {
+        font-size: 14px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
     }
 }
 
@@ -331,8 +348,10 @@ th {
 /* Media query para pantallas pequeñas como móviles */
 @media (min-width: 300px) and (max-width: 767px) {
     body {
-        background: url('../../imagenes/fondo de la pagina principal.svg') no-repeat center center fixed; /* imagen de fondo */
-        background-size: cover;  /* La imagen de fondo cubre toda la pantalla */
+        background: url('../../imagenes/fondo de productos.svg'); /* Imagen de fondo */
+        background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+        background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+        background-position: center;    /* Centra la imagen de fondo */
     }
     .contenedor__linea{
         width: 90%; /* Ancho del contenedor */
@@ -340,5 +359,11 @@ th {
 
     .titulo__principal{
         font-size: 50px; /* Tamaño de la letra */
+    }
+    table {
+        font-size: 12px; /* Reduce aún más el tamaño de la fuente en pantallas muy pequeñas */
+    }
+    th, td {
+        padding: 5px; /* Reduce el espacio alrededor del contenido de las celdas */
     }
 }

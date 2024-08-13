@@ -24,7 +24,7 @@ async function loadProducts() {
             const category = product.categoria || "...";
 
             // Filtrar los productos según la categoría (en este caso, solo se muestran los productos de la categoría "Fruta")
-            if (category === "Fruta") {
+            if (category === "Frutas") {
                 // Crear un nuevo contenedor para el producto
                 const productElement = document.createElement("div");
                 productElement.classList.add("contenedor__producto");
@@ -42,16 +42,6 @@ async function loadProducts() {
                         <h3 class="titulo__producto"><strong>${productName}</strong></h3>
                         <p class="precio__producto"><strong>$${productPrice}</strong></p>
                         <p class="precio__producto"><strong>Stock: ${productQuantity}</strong></p>
-                        <!-- Contenedor de botones para controlar la cantidad del producto -->
-                        <div class="contenedor__cantidad">
-                            <span class="boton__cantidad01">-</span>
-                            <input type="text" class="input__cantidad" value="${1}" readonly max="${productQuantity}">
-                            <span class="boton__cantidad">+</span>
-                        </div>
-                        <!-- Botón para añadir el producto al carrito -->
-                        <div class="boton-añadir">
-                            <a class="boton__añadir--link" style="text-decoration: none;">Añadir al carrito</a>
-                        </div>
                         <!-- Contenedor para la descripción del producto -->
                         <div class="producto__descripcion--contenedor">
                             <div class="producto__descripcion">
@@ -73,36 +63,19 @@ async function loadProducts() {
 // Llamar a la función loadProducts cuando el contenido del DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", loadProducts);
 
-
-// Función para cambiar la cantidad del producto
-function changeQuantity(element, change) {
-  // Obtener el campo de entrada que muestra la cantidad del producto
-  let input = element.parentElement.querySelector(".input__cantidad");
-  let currentValue = parseInt(input.value); // Valor actual de la cantidad
-  let maxValue = parseInt(input.getAttribute("max")); // Valor máximo permitido para la cantidad
-  let newValue = currentValue + change; // Nuevo valor calculado para la cantidad
-
-  // Actualizar el valor si es válido (es decir, mayor que 0 y no supera el valor máximo permitido)
-  if (newValue > 0 && (isNaN(maxValue) || newValue <= maxValue)) {
-    input.value = newValue;
-  }
-}
-
-// Filtrar los productos en función del texto ingresado en el campo de búsqueda
+// Evento para el filtro de búsqueda
 document.addEventListener("keyup", (e) => {
-  // Verificar si el campo de búsqueda está siendo utilizado
+  // Comprobar si el evento proviene del campo de búsqueda
   if (e.target.matches(".search")) {
-      // Limpiar el campo de búsqueda si se presiona la tecla Escape
+      // Si se presiona "Escape", limpiar el campo de búsqueda
       if (e.key === "Escape") e.target.value = "";
-
-      // Iterar sobre todos los elementos con la clase "producto"
+      // Filtrar productos según el texto de búsqueda
       document.querySelectorAll(".producto").forEach((producto) => {
-          // Comparar el texto del producto con el valor de búsqueda (ignorando mayúsculas/minúsculas)
           producto.textContent
-            .toLowerCase()
-            .includes(e.target.value.toLowerCase())
-            ? producto.classList.remove("filtro") // Mostrar producto si coincide con la búsqueda
-            : producto.classList.add("filtro"); // Ocultar producto si no coincide con la búsqueda operacion ternaria
+              .toLowerCase()
+              .includes(e.target.value.toLowerCase())
+              ? producto.classList.remove("filtro")
+              : producto.classList.add("filtro");
       });
   }
 });
