@@ -486,6 +486,12 @@ li .dropdown-item:active {
     display: flex; /* Utiliza flexbox para el diseño del contenedor */
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
+    transition: 200ms; /* Transición suave */
+}
+
+.contenedor__imagen:hover {
+    transform: translateY(-10px); /* Desplazamiento hacia arriba al pasar el cursor */
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
 }
 
 .contenedor__imagen img {

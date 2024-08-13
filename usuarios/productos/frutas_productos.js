@@ -24,7 +24,7 @@ async function loadProducts() {
             const productQuantity = product.cantidad || 1; // Valor predeterminado de cantidad
 
             // Filtrar los productos según la categoría (en este caso, solo se muestran los productos de la categoría "Verdura")
-            if (category === "Verduras") {
+            if (category === "Frutas") {
                 // Crear un nuevo contenedor para el producto
                 const productElement = document.createElement("div");
                 productElement.classList.add("contenedor__producto");
@@ -119,4 +119,3 @@ desplegable.addEventListener('click', () => {
 salir.addEventListener('click', () => {
     menu.style.display = 'none'; // Ocultar el menú cambiando su estilo
 });
-

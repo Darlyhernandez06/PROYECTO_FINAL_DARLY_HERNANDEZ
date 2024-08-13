@@ -120,7 +120,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Sección secundaria del perfil del administrador -->
     <section class="contenedor__secundario--usuario">
         <!-- Subtítulo de la sección de perfil -->
@@ -158,15 +158,30 @@
                         <label class="form__label" for="direccion">Dirección</label>
                         <input class="form__input" type="text" id="direccion" name="direccion" required>
                     </div>
+                    <!-- Campo de la contraseña -->
+                    <div class="form__group">
+                        <label class="form__label" for="contraseña">Contraseña</label>
+                        <input class="form__input" type="password" id="contraseña" name="contraseña" required>
+                    </div>
+                     <!-- Campo de confirmar contraseña -->
+                     <div class="form__group">
+                        <label class="form__label" for="confirmarContraseña">Confirmar Contraseña</label>
+                        <input class="form__input" type="password" id="confirmarContraseña" name="confirmarContraseña" required>
+                    </div>
                     <!-- Campo de la descripción -->
                     <div class="form__group d-flex flex-column">
                         <label class="form__label" for="descripcion">Descripción</label>
                         <textarea class="textarea" id="descripcion" name="descripcion" rows="4" required></textarea>
                     </div>
-                    <!-- Campo de la fecha de registro -->
+                    <!-- Campo del rol -->
                     <div class="form__group">
-                        <label class="form__label" for="fecha-registro">Fecha de Registro</label>
-                        <input class="form__input" type="date" id="fecha-registro" name="fecha-registro" required>
+                        <label class="form__label" for="rol">Rol</label>
+                        <input class="form__input" type="text" id="rol" name="rol" required>
+                    </div>
+                    <!-- Campo del estado de la cuenta -->
+                    <div class="form__group">
+                        <label class="form__label" for="estado_cuenta">Estado cuenta</label>
+                        <input class="form__input" type="text" id="estado_cuenta" name="estado_cuenta" required>
                     </div>
                 </form>
             </div>

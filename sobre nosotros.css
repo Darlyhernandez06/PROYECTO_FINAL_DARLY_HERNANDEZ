@@ -1,7 +1,7 @@
 /* Definición de la fuente personalizada */
 @font-face {
     font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
-    src: url('../../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+    src: url('imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
 }
 
 /* Estilos globales para todos los elementos */
@@ -28,7 +28,7 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../../imagenes/fondo aguacate.svg'); /* Imagen de fondo */
+    background: url('imagenes/fondo aguacate.svg'); /* Imagen de fondo */
     background-repeat: no-repeat;   /* La imagen de fondo no se repite */
     background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     font-family: 'MiFuente';        /* Fuente personalizada */
@@ -174,90 +174,6 @@ li .dropdown-item:active {
     z-index: -1; /* Define el índice z del elemento, colocándolo detrás de otros elementos con z-index positivo */
 }
 
-/* Oculta el menú de perfil inicialmente */
-.menu_perfil {
-    display: none; 
-}
-  
-/* Estilos para centrar el contenido y aplicar animación */
-.estilos {
-    display: flex; /* Utiliza flexbox para el diseño */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    position: absolute; /* Posiciona el elemento de manera absoluta */
-    top: 0; /* Posiciona el elemento en la parte superior */
-    left: 0; /* Posiciona el elemento en el lado izquierdo */
-    width: 100%; /* Ocupa todo el ancho disponible */
-    height: 100%; /* Ocupa toda la altura disponible */
-    animation: animation .5s ease forwards; /* Aplica animación de opacidad */
-}
-  
-/* Animación para cambiar la opacidad de 0 a 1 */
-@keyframes animation {
-    from {
-        opacity: 0; /* Inicia con opacidad 0 */
-    }
-    to {
-        opacity: 1; /* Termina con opacidad 1 */
-    }
-}
-  
-/* Estilos y animación para los enlaces dentro de .opciones */
-.opciones > a {
-    animation: texto 1s ease forwards; /* Aplica animación de desplazamiento */
-    margin-bottom: 30px; /* Añade espacio entre los enlaces */
-}
-
-.opciones > a:hover {
-    color: var(--color-primario); /* Color al pasar el mouse */
-}
-
-.opciones > a:active {
-    color: var(--color-acento-1);         /* Color al hacer clic */
-    text-decoration: underline solid;       /* Subrayado sólido al hacer clic */
-}
-  
-/* Animación para desplazar el texto de abajo hacia arriba */
-@keyframes texto {
-    from {
-        transform: translateY(15px); /* Inicia con el texto desplazado 15px hacia abajo */
-    }
-    to {
-        transform: translateY(0px); /* Termina con el texto en su posición original */
-    }
-}
-  
-/* Estilos para el contenedor principal */
-.contenido {
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    height: 50vh; /* Ocupa la mitad de la altura de la ventana */
-    background-color: var(--color-secundario); /* Color de fondo */
-    display: flex; /* Utiliza flexbox para el diseño */
-    align-items: center; /* Centra el contenido verticalmente */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    flex-direction: column; /* Alinea los elementos en columna */
-    text-align: center; /* Centra el texto */
-    color: var(--color-texto-principal); /* Color del texto */
-}
-  
-/* Estilos para la imagen de salir */
-.img-salir {
-    width: 50px; /* Ancho de la imagen */
-    height: 50px; /* Altura de la imagen */
-    position: absolute; /* Posición absoluta */
-    right: 5%; /* Alineada 5% desde la derecha */
-    top: 30%; /* Alineada 30% desde la parte superior */
-    cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
-    background-color: var(--color-texto-principal); /* Color de fondo de la imagen */
-    border-radius: 10px; /* Bordes redondeados */
-}
-
-/* Estilos para el encabezado dentro de .nav-link */
-.nav-link h3 {
-    margin-top: 50px; /* Espacio superior de 50px */
-    font-size: 40px; /* Tamaño de fuente de 40px */
-}
-
 /*PARTE DE LA SECCION PRINCIPAL DE LA PAGINA*/
 
 .contenedor__fondo {
@@ -298,8 +214,8 @@ li .dropdown-item:active {
 /*PARTE DE LA SECCION CON INFORMACION DEL NEGOCIO*/
 
 .contenedor__fondo--secundario {
-    background: url('../../imagenes/fondo informacion.svg') no-repeat center/cover; /* Imagen de fondo ajustada */
-    height: 1100px; /* Altura deseada del contenedor */
+    background: url('imagenes/fondo informacion.svg') no-repeat center/cover; /* Imagen de fondo ajustada */
+    height: 1200px; /* Altura deseada del contenedor */
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
@@ -344,7 +260,7 @@ li .dropdown-item:active {
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centra contenido horizontalmente */
     align-items: center; /* Centra contenido verticalmente */
-    height: 1200px; /* Altura deseada del contenedor */
+    height: 1300px; /* Altura deseada del contenedor */
 }
 
 .contenedor__dentro--terciario {
@@ -522,7 +438,7 @@ li .dropdown-item:active {
 /* ESTILOS PARA EL PIE DE PAGINA*/
 .footer {
     height: 140px; /* Altura */
-    background: url('../../imagenes/footer.svg'); /* Imagen de fondo */
+    background: url('imagenes/footer.svg'); /* Imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -544,7 +460,7 @@ li .dropdown-item:active {
 /* Media query para portátiles */
 @media (min-width: 769px) and (max-width: 1300px) {
     .contenedor__fondo--secundario{
-        background: url("../../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background: url("imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
         background-repeat: no-repeat; /* No repetir el fondo */
         background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
         height: 1200px; /* Altura fija de 800px */
@@ -617,7 +533,7 @@ li .dropdown-item:active {
         height: 100px; /* Altura fija de 100px para el footer */
     }
     .contenedor__fondo--secundario{
-        background: url("../../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background: url("imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
         background-repeat: no-repeat; /* No repetir el fondo */
         background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
         height: 1200px; /* Altura fija de 800px */
@@ -709,7 +625,7 @@ li .dropdown-item:active {
         height: 50px; /* Altura fija de 50px para el footer */
     }
     .contenedor__fondo--secundario{
-        background: url("../../imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
+        background: url("imagenes/fondo\ de\ la\ pagina\ principal.svg"); /* Imagen de fondo */
         background-repeat: no-repeat; /* No repetir el fondo */
         background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
         height: 900px; /* Altura fija de 900px */
