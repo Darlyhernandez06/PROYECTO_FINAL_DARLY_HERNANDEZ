@@ -297,13 +297,32 @@ li .dropdown-item:active {
 
 /* Contenedor de productos en la sección */
 .contenedor__productos--seccion {
-    width: 100%; /* Ancho total del contenedor */
-    display: flex; /* Utiliza Flexbox para la disposición de los elementos hijos */
-    flex-wrap: wrap; /* Permite que los elementos hijos se envuelvan en múltiples filas */
-    align-items: center; /* Alinea los elementos hijos verticalmente en el centro del contenedor */
-    justify-content: center; /* Alinea los elementos hijos horizontalmente en el centro del contenedor */
-    gap: 100px; /* Espacio entre los elementos hijos */
-    padding: 50px; /* Espaciado interno del contenedor */
+    display: flex; /* Disposición flexible */
+    flex-wrap: wrap; /* Permite que los productos se envuelvan */
+    gap: 1rem; /* Espacio entre productos */
+    justify-content: center; /* Centra los productos */
+    padding: 1rem; /* Espacio interior */
+}
+
+.contenedor__producto {
+    display: flex; /* Disposición flexible */
+    flex-direction: column; /* Contenido en columna */
+    align-items: center; /* Alinea contenido al centro */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 1rem; /* Espacio interior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 100%; /* Ancho máximo */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluye borde y padding en el ancho */
+    margin: 0.5rem; /* Margen exterior */
+    background-color: white; /* Fondo blanco */
+    transition: 200ms; /* Transición suave */
+}
+
+.contenedor__producto:hover {
+    transform: translateY(-10px); /* Desplazamiento hacia arriba al pasar el cursor */
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
 }
 
 /* Contenedor de imagen del producto */
@@ -311,25 +330,20 @@ li .dropdown-item:active {
     display: flex; /* Utiliza Flexbox */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    transition: 200ms;
-}
-
-.contenedor__imagen:hover {
-    translate: 0 -10px;
-    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
 }
   
 /* Imagen del producto */
 .contenedor__imagen img {
-    width: 150%; /* Ancho mayor al contenedor */
-    border: 6px solid var(--color-terciario); /* Borde sólido */
-    border-radius: 10px; /* Bordes redondeados */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    border-radius: 8px; /* Esquinas redondeadas en la imagen */
+    border: 6px solid var(--color-terciario); /* Borde sólido de 6px con el color terciario */
 }
   
 /* Información del producto */
 .informacion__producto {
-    margin-top: 30px; /* Margen superior */
-    text-align: center; /* Alinea el texto al centro */
+    padding: 0.5rem; /* Añade un espacio de 0.5rem alrededor del contenido */
+    text-align: center; /* Alinea el texto al centro del contenedor */
 }
   
 /* Texto adicional del producto */
@@ -469,14 +483,18 @@ li .dropdown-item:active {
   
 /* Contenedor de la descripción del producto */
 .producto__descripcion {
-    display: flex; /* Utiliza Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    width: 100%; /* Ancho completo */
-    height: 150px; /* Altura fija */
-    background-color: var(--color-texto-principal); /* Color de fondo */
-    border: 1px solid var(--color-fondo-principal); /* Borde sólido */
-    padding: 10px; /* Relleno */
+    background-color: var(--color-texto-principal); /* Color de fondo del contenedor de la descripción */
+    border: 1px solid var(--color-fondo-principal); /* Borde sólido del contenedor*/
+    padding: 10px; /* Espacio interno de 10px alrededor del contenido dentro del contenedor */
+    text-align: center; /* Alinea el texto al centro dentro del contenedor */
+    margin-top: 0.5rem; /* Espacio de 0.5rem arriba del contenedor */
+    overflow-wrap: break-word; /* Permite que las palabras largas se rompan para evitar desbordamientos */
+}
+
+.producto__descripcion p {
+    margin: 0; /* Elimina el margen por defecto del párrafo dentro del contenedor */
+    word-break: break-word; /* Rompe las palabras largas para evitar desbordamientos */
+    overflow-wrap: break-word; /* Permite que las palabras largas se rompan para ajustarse al contenedor */
 }
 
 /* Estilos para el pie de página */
@@ -494,4 +512,27 @@ li .dropdown-item:active {
     color: var(--color-fondo-principal); /* Color del texto */
     text-align: center; /* Alinea el texto al centro */
     font-weight: bold; /* Fuente en negrita */
+}
+
+/* Responsividad */
+
+/* Dos productos por fila en pantallas ≥576px */
+@media (min-width: 576px) {
+    .contenedor__producto {
+        max-width: calc(50% - 1rem); /* Establece el ancho máximo al 50% del contenedor menos 1rem de espacio para el gap */
+    }
+}
+
+/* Tres productos por fila en pantallas ≥768px */
+@media (min-width: 768px) {
+    .contenedor__producto {
+        max-width: calc(33.333% - 1rem); /* Calcula el ancho máximo */
+    }
+}
+
+/* Cuatro productos por fila en pantallas ≥992px */
+@media (min-width: 992px) {
+    .contenedor__producto {
+        max-width: calc(25% - 1rem); /* Calcula el ancho máximo */
+    }
 }
