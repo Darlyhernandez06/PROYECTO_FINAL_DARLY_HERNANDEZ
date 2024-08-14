@@ -133,32 +133,37 @@
                     </div>
                     <!-- Formulario para enviar mensaje -->
                     <div class="formulario">
-                        <form action="#" method="" class="create-account-form">
+                        <form class="create-account-form" novalidate>
                             <!-- Campo del nombre completo -->
                             <div class="formulario__grupo">
                                 <label class="form__label" for="nombres">Nombres</label>
                                 <input class="form__input" type="text" id="nombres" name="nombres" placeholder="Ingresa tus nombres" required>
+                                <span id="nombres-error" class="error-message"></span>
                             </div>
                             <!-- Campo del correo -->
                             <div class="formulario__grupo">
                                 <label class="form__label" for="correo">Correo</label>
                                 <input class="form__input" type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+                                <span id="correo-error" class="error-message"></span>
                             </div>
                             <!-- Campo del teléfono -->
                             <div class="formulario__grupo">
                                 <label class="form__label" for="telefono">Teléfono</label>
                                 <input class="form__input" type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+                                <span id="telefono-error" class="error-message"></span>
                             </div>
                             <!-- Campo de la descripción -->
                             <div class="formulario__grupo d-flex flex-column">
                                 <label class="form__label" for="descripcion">Descripción</label>
                                 <textarea class="textarea" id="descripcion" name="descripcion" rows="4" placeholder="Escribe brevemente..." required></textarea>
+                                <span id="descripcion-error" class="error-message"></span>
+                            </div>
+                            <br>
+                            <!-- Botón para enviar el mensaje -->
+                            <div class="formulario__boton--contenedor">
+                                <button id="boton" class="boton__boton--submit" type="submit" style="text-decoration: none;">Enviar Mensaje</button>
                             </div>
                         </form>
-                    </div>
-                    <!-- Botón para enviar el mensaje -->
-                    <div class="formulario__boton--contenedor">
-                        <a href="#" class="boton__boton--submit">Enviar Mensaje</a>
                     </div>
                 </div>
             </div>
@@ -227,7 +232,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- Bootstrap Bundle JS desde CDN -->
-
-    <script src="sobre nosotros.js"></script>
+    
+    <script src="Contacto.js" type="module"></script>
 </body>
 </html>
