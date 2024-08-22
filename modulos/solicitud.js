@@ -6,6 +6,12 @@ const solicitud = async () => {
     return respuesta;
 }
 
+export const productos_destacados = async () => {
+    let solicitar = await fetch(`${URL}/productos_destacados`);
+    let respuesta = await solicitar.json()
+    return respuesta;
+}
+
 export const solicitud_usuarios = async () => {
     let solicitar = await fetch(`${URL}/users`);
     let respuesta = await solicitar.json()

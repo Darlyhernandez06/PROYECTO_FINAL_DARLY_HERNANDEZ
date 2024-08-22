@@ -22,6 +22,7 @@ const listarUsuarios = async () => {
         // Procesar cada usuario y llenar el template
         data.forEach((element) => {
             // Llenar los datos del usuario en el template clonado
+            $template.querySelector('.id').textContent = element.id || '';
             $template.querySelector('.nombres').textContent = element.nombres || '';
             $template.querySelector('.apellidos').textContent = element.apellidos || '';
             $template.querySelector('.correo').textContent = element.correo || '';

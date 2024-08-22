@@ -50,9 +50,6 @@ async function productos() {
 // Llamar a la función productos cuando el contenido del DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", productos);
 
-// Llamar a la función loadProducts cuando el contenido del DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", loadProducts);
-
 // Evento para el filtro de búsqueda
 document.addEventListener("keyup", (e) => {
   // Comprobar si el evento proviene del campo de búsqueda

@@ -98,7 +98,7 @@ async function productos() {
                         }
 
                         alert("Producto agregado al carrito exitosamente");
-
+                        location.reload();
                     } catch (error) {
                         console.error("Error:", error);
                         alert("Ocurrió un error al agregar el producto al carrito.");

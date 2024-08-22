@@ -111,6 +111,8 @@ body {
     display: flex; /* Usar flexbox para centrar el texto */
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
+    flex-direction: column;
+    gap: 20px;
 }
 
 .boton__regresar--link{
@@ -159,71 +161,80 @@ body {
     font-weight: bold; /* Fuente en negrita */
 }
 
-
-
-
-a{
+/* Estilo para enlaces, cambiando el cursor a un puntero cuando el mouse está sobre ellos */
+a {
     cursor: pointer;
 }
 
-.total{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+/* Estilo para el contenedor que agrupa elementos con la clase 'total' */
+.total {
+    display: flex; /* Utiliza Flexbox para el diseño */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra los elementos a lo largo del eje principal (vertical) */
+    align-items: center; /* Centra los elementos a lo largo del eje transversal (horizontal) */
+    padding: 20px; /* Añade un espaciado interno de 20px */
 }
+
+/* Estilo para el contenedor que agrupa productos, con clase 'contenedor__productos' */
 .contenedor__productos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
+    display: flex; /* Utiliza Flexbox para el diseño */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra los elementos a lo largo del eje principal (vertical) */
+    align-items: center; /* Centra los elementos a lo largo del eje transversal (horizontal) */
+    gap: 20px; /* Añade un espacio de 20px entre los elementos hijos */
+    margin-top: 20px; /* Añade un margen superior de 20px */
 }
 
+/* Estilo para cada producto, con clase 'producto' */
 .producto {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 50%;
-    background-color: var(--color-texto-principal);
+    display: flex; /* Utiliza Flexbox para el diseño */
+    align-items: center; /* Alinea los elementos en el centro a lo largo del eje transversal (horizontal) */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
+    padding: 10px; /* Añade un espaciado interno de 10px */
+    border: 1px solid #ddd; /* Añade un borde de 1px sólido de color gris claro */
+    border-radius: 5px; /* Redondea las esquinas del borde con un radio de 5px */
+    width: 50%; /* Establece el ancho del producto a 50% del contenedor padre */
+    background-color: var(--color-texto-principal); /* Establece el color de fondo usando una variable CSS */
 }
 
+/* Estilo para la imagen del producto, con clase 'producto__imagen' */
 .producto__imagen img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px;
+    width: 100px; /* Establece el ancho de la imagen a 100px */
+    height: 100px; /* Establece la altura de la imagen a 100px */
+    object-fit: cover; /* Asegura que la imagen cubra el área asignada sin distorsionarse */
+    border-radius: 5px; /* Redondea las esquinas de la imagen con un radio de 5px */
 }
 
+/* Estilo para los detalles del producto, con clase 'producto__detalles' */
 .producto__detalles {
-    flex: 1;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    flex: 1; /* Permite que el contenedor se expanda para llenar el espacio disponible */
+    margin-left: 20px; /* Añade un margen izquierdo de 20px */
+    display: flex; /* Utiliza Flexbox para el diseño */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    gap: 5px; /* Añade un espacio de 5px entre los elementos hijos */
 }
 
+/* Estilo para el nombre del producto, con clase 'producto__nombre' */
 .producto__nombre {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 18px; /* Establece el tamaño de la fuente a 18px */
+    font-weight: bold; /* Hace el texto en negrita */
 }
 
+/* Estilo para el precio y cantidad del producto, con clases 'producto__precio' y 'producto__cantidad' */
 .producto__precio, .producto__cantidad {
-    font-size: 16px;
+    font-size: 16px; /* Establece el tamaño de la fuente a 16px */
 }
 
+/* Estilo para el contenedor de información con texto, con clase 'contenedor__informacion--texto' */
 .contenedor__informacion--texto {
-    font-size: 18px;
-    text-align: center;
-    color: #555;
+    font-size: 18px; /* Establece el tamaño de la fuente a 18px */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    color: #555; /* Establece el color del texto a un gris oscuro */
 }
 
+/* Estilo para la imagen dentro del contenedor de información, con clase 'contenedor__informacion--imagen' */
 .contenedor__informacion--imagen img {
-    width: 150px;
-    height: auto;
+    width: 150px; /* Establece el ancho de la imagen a 150px */
+    height: auto; /* Ajusta la altura de la imagen automáticamente para mantener la proporción */
 }
+

@@ -127,10 +127,6 @@
                     beneficios saludables que ofrecemos!. Compra hoy y recibe mañana (Lunes a Sabado)
                 </p>
             </div>
-            <!-- Boton para seguir mirando la pagina -->
-            <div class="boton__continuar">
-                <a href="#" class="boton__continuar--link">Continuar</a>
-            </div>
             <!-- Contenedor de la sección adentro -->
             <div class="contenedor__secundario">
                 <!-- Contenedor del subtítulo y párrafo -->
@@ -231,44 +227,25 @@
                 completamente gratuito. <br>
                 Esto te permite disfrutar de nuestros productos sin preocuparte por los costos adicionales de envío. <!-- Promoción de envío gratuito --></p>
             </div>
-            <div class="productos__destacados--contenedor">
-                <div class="primer__producto">
+
+            <template id="productTemplate">
+                <div class="producto">
                     <!-- Contenedor de la imagen del producto -->
                     <div class="contenedor__imagen">
-                        <img src="../imagenes/Aguacate.jpg" alt="Imagen de producto">
+                        <img src="" alt="Imagen de producto">
                     </div>
                     <!-- Información del producto -->
                     <div class="informacion__producto">
-                        <p class="texto__producto">Frutas</p>
-                        <h3 class="titulo__producto"><strong>Aguacate (Unidad)</strong></h3>
-                        <p class="precio__producto"><strong>$5.900</strong></p>
+                        <p class="texto__producto"></p>
+                        <h3 class="titulo__producto"><strong></strong></h3>
+                        <p class="precio__producto"><strong></strong></p>
                     </div>
                 </div>
-                <div class="segundo__producto">
-                    <!-- Contenedor de la imagen del producto -->
-                    <div class="contenedor__imagen">
-                        <img src="../imagenes/Zanahoria.jpg"alt="Imagen de producto">
-                    </div>
-                    <!-- Información del producto -->
-                    <div class="informacion__producto">
-                        <p class="texto__producto">Verduras</p>
-                        <h3 class="titulo__producto"><strong>Zanahoria (500 Gramos)</strong></h3>
-                        <p class="precio__producto"><strong>$1.900</strong></p>
-                    </div>
-                </div>
-                <div class="tercer__producto">
-                    <!-- Contenedor de la imagen del producto -->
-                    <div class="contenedor__imagen">
-                        <img src="../imagenes/papa_criolla.jpg" alt="Imagen de producto">
-                    </div>
-                    <!-- Información del producto -->
-                    <div class="informacion__producto">
-                        <p class="texto__producto">Tubérculos/Hortalizas</p>
-                        <h3 class="titulo__producto"><strong>Papa Criolla (500 Gramos)</strong></h3>
-                        <p class="precio__producto"><strong>$3.800</strong></p>                   
-                    </div>
-                </div>
-            </div>    
+            </template>
+            
+            <div class="productos__destacados--contenedor" id="productosContenedor">
+                <!-- Los productos se agregarán aquí dinámicamente -->
+            </div>  
         </div>
     </section>
     
