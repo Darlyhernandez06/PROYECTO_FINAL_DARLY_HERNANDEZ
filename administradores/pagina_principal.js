@@ -1,3 +1,39 @@
+async function cargarProductos() {
+    try {
+        const response = await fetch('http://localhost:3000/productos'); // Ajusta la URL a tu API
+
+        const productos = await response.json();
+        const productosContenedor = document.querySelector("#productosContenedor");
+        const productTemplate = document.querySelector("#productTemplate");
+
+        productosContenedor.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos productos
+
+        // Limita el número de productos a mostrar (en este caso, 3)
+        const productosDestacados = productos.slice(0, 3);
+
+        productosDestacados.forEach(producto => {
+            const clone = document.importNode(productTemplate.content, true);
+
+            // Rellena el contenido del template con los datos del producto
+            // Establecer la imagen del producto
+            const imgElement = clone.querySelector(".contenedor__imagen img");
+            imgElement.src = producto.imagen; // Usa la ruta de la imagen desde el JSON
+            imgElement.alt = `Imagen de ${producto.nombre}`; // Texto alternativo
+            
+            clone.querySelector(".texto__producto").textContent = producto.categoria;
+            clone.querySelector(".titulo__producto strong").textContent = producto.nombre;
+            clone.querySelector(".precio__producto strong").textContent = `$${producto.precio}`;
+
+            // Añadir el producto al contenedor
+            productosContenedor.appendChild(clone);
+        });
+    } catch (error) {
+        console.error('Error al cargar los productos:', error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", cargarProductos);
+
 // Obtener el nombre completo del usuario almacenado en localStorage
 const userName = localStorage.getItem('userName');
 
