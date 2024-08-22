@@ -2,19 +2,20 @@
 import solicitud from "../../modulos/solicitud.js";
 
 // Función para cargar los productos desde la API y mostrarlos en la página
-async function loadProducts() {
+async function productos() {
     try {
         // Obtener los productos de la API
-        const products = await solicitud("productos");
+        const productos = await solicitud("productos");
 
         // Obtener el elemento del DOM donde se mostrarán los productos
         const productList = document.querySelector("#productList");
 
-        // Limpiar el contenedor antes de llenarlo con nuevos datos
-        productList.innerHTML = '';
+        // Obtener el template y su contenido
+        const productTemplate = document.querySelector("#productTemplate");
+        const templateContent = productTemplate.content;
 
         // Iterar sobre cada producto en la lista
-        products.forEach((product) => {
+        productos.forEach((product) => {
             // Asignar valores predeterminados para las propiedades del producto si no están definidos
             const productImage = product.imagen || "...";
             const productName = product.nombre || "...";
@@ -25,31 +26,17 @@ async function loadProducts() {
 
             // Filtrar los productos según la categoría (en este caso, solo se muestran los productos de la categoría "Fruta")
             if (category === "Frutas") {
-                // Crear un nuevo contenedor para el producto
-                const productElement = document.createElement("div");
-                productElement.classList.add("contenedor__producto");
-                productElement.classList.add("producto");
+                // Clonar el contenido del template
+                const productElement = document.importNode(templateContent, true);
 
-                // Rellenar el contenedor con la información del producto usando una plantilla de cadena (template literal)
-                productElement.innerHTML = `
-                    <!-- Contenedor de la imagen del producto -->
-                    <div class="contenedor__imagen">
-                        <img src="${productImage}" alt="Imagen de producto">
-                    </div>
-                    <!-- Información del producto -->
-                    <div class="informacion__producto">
-                        <p class="texto__producto">${category}</p>
-                        <h3 class="titulo__producto"><strong>${productName}</strong></h3>
-                        <p class="precio__producto"><strong>$${productPrice}</strong></p>
-                        <p class="precio__producto"><strong>Stock: ${productQuantity}</strong></p>
-                        <!-- Contenedor para la descripción del producto -->
-                        <div class="producto__descripcion--contenedor">
-                            <div class="producto__descripcion">
-                                <p><strong>${productName}:</strong> ${productDescription}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                // Asignar los valores del producto al template clonado
+                productElement.querySelector(".contenedor__imagen img").src = productImage;
+                productElement.querySelector(".texto__producto").textContent = category;
+                productElement.querySelector(".titulo__producto strong").textContent = productName;
+                productElement.querySelector(".precio__producto--price").textContent = `$${productPrice}`;
+                productElement.querySelector(".precio__producto--stock").textContent = `Stock: ${productQuantity}`;
+                productElement.querySelector(".producto__descripcion p").innerHTML = `<strong>${productName}:</strong> ${productDescription}`;
+
 
                 // Añadir el nuevo contenedor del producto al elemento productList en el DOM
                 productList.appendChild(productElement);
@@ -60,8 +47,8 @@ async function loadProducts() {
     }
 }
 
-// Llamar a la función loadProducts cuando el contenido del DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", loadProducts);
+// Llamar a la función productos cuando el contenido del DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", productos);
 
 // Evento para el filtro de búsqueda
 document.addEventListener("keyup", (e) => {

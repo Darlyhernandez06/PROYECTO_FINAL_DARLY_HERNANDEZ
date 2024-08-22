@@ -33,6 +33,7 @@ $formulario.addEventListener("submit", (event) => {
                 alert('Login exitoso');
                 localStorage.setItem('userName', user.nombres + ' ' + user.apellidos); 
                 localStorage.setItem('userType', 'Cliente');
+                localStorage.setItem('userId', user.id);
                 window.location.href = '../usuarios/pagina_principal.html';
             }
           }        

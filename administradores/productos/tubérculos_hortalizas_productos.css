@@ -382,6 +382,11 @@ li .dropdown-item:active {
     overflow-wrap: break-word; /* Permite que las palabras largas se rompan para ajustarse al contenedor */
 }
 
+.precio__producto--stock {
+    color: var(--color-acento-2); /* Color del texto */
+    font-weight: bold; /* color en negrita el texto */
+    font-size: 18px; /* Tamaño de fuente */
+}
 
 /* Estilos para el pie de página */
 .footer {

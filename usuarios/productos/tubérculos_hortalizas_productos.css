@@ -364,6 +364,7 @@ li .dropdown-item:active {
     color: var(--color-terciario); /* Color del texto */
     font-size: 18px; /* Tamaño de fuente */
     margin-bottom: 30px; /* Margen inferior */
+    font-weight: bold; /* negrita el texto */
 }
   
 /* Contenedor de la cantidad de productos */

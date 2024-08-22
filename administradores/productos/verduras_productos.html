@@ -113,10 +113,33 @@
                 “¡Ofresemos juntos las mejores verduras para una vida mas saludable y deliciosa!
             </p>
         </div>
-                
+
+        <!-- Contenedor de productos -->
         <section class="contenedor__productos--seccion" id="productList"></section>
             
     </section>
+    
+    <!-- Template para productos -->
+    <template id="productTemplate">
+        <div class="contenedor__producto producto">
+            <div class="contenedor__imagen">
+                <img src="" alt="Imagen de producto">
+            </div>
+            <!-- Información del producto -->
+            <div class="informacion__producto">
+                <p class="texto__producto"></p>
+                <h3 class="titulo__producto"><strong></strong></h3>
+                <p class="precio__producto--price"><strong></strong></p>
+                <p class="precio__producto--stock"><strong></strong></p>
+                <!-- Contenedor para la descripción del producto -->
+                <div class="producto__descripcion--contenedor">
+                    <div class="producto__descripcion">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
 
     <!-- Pie de página -->
     <footer class="footer">

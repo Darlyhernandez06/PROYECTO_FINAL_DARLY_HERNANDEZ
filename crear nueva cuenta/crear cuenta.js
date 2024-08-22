@@ -53,7 +53,6 @@ $formulario.addEventListener("submit", (event) => {
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
             nombres.value = "";
             apellidos.value = "";
             correo.value = "";

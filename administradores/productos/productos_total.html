@@ -107,7 +107,30 @@
         <input class="form-control me-2 search border border-success" type="search" placeholder="Search" aria-label="Search"/>
     </form>
     
+    <!-- Contenedor de productos -->
     <section class="contenedor__productos--seccion" id="productList"></section>
+
+    <!-- Template para productos -->
+    <template id="productTemplate">
+        <div class="contenedor__producto producto">
+            <div class="contenedor__imagen">
+                <img src="" alt="Imagen de producto">
+            </div>
+            <!-- Información del producto -->
+            <div class="informacion__producto">
+                <p class="texto__producto"></p>
+                <h3 class="titulo__producto"><strong></strong></h3>
+                <p class="precio__producto--price"><strong></strong></p>
+                <p class="precio__producto--stock"><strong></strong></p>
+                <!-- Contenedor para la descripción del producto -->
+                <div class="producto__descripcion--contenedor">
+                    <div class="producto__descripcion w-100">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
     
     <!-- JavaScript de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
