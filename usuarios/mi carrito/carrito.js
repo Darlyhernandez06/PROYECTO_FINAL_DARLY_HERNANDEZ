@@ -93,45 +93,22 @@ document.addEventListener("DOMContentLoaded", Carrito);
 
 
 // Función para generar y descargar un PDF con la factura
-function generarPDF() {
-    // Crear un array para almacenar los productos obtenidos del DOM
-    const productos = [];
-    // Seleccionar todos los elementos de producto en el DOM
-    const productosDOM = document.querySelectorAll("#carritoProductos .producto");
-
-    // Iterar sobre cada elemento de producto en el DOM
-    productosDOM.forEach((productoDOM) => {
-        // Obtener el nombre, precio y cantidad del producto desde el DOM
-        const nombre = productoDOM.querySelector(".producto__nombre").textContent;
-        const precio = parseFloat(productoDOM.querySelector(".producto__precio").textContent.replace("Precio: $", ""));
-        const cantidad = parseInt(productoDOM.querySelector(".producto__cantidad").textContent.replace("Cantidad: ", ""));
-        // Agregar los datos del producto al array
-        productos.push({ nombre, precio, cantidad });
-    });
-
-    // Calcular el total de los productos
-    const total = productos.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
-
-    // Crear una nueva instancia de jsPDF
+function generarPDF(factura) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({
         format: 'letter' // Configurar el tamaño del documento a carta
     });
 
-    // Definir las rutas de las imágenes a incluir en el PDF
     const logo = "../../imagenes/logo.png"; // Ruta de la imagen del logo
     const fondo = "../../imagenes/fondo.jpg"; // Ruta de la imagen de fondo
 
-    // Añadir las imágenes al PDF
     doc.addImage(fondo, 'JPG', 0, 0, 260, 280); // Imagen de fondo
     doc.addImage(logo, 'PNG', 98, 6, 20, 20); // Imagen del logo
 
-    // Configurar el título del documento
     doc.setFontSize(26);
     doc.setTextColor("#ff9933"); // Color del texto para el título
     doc.text("FACTURA", 20, 40); // Añadir el texto del título
 
-    // Añadir la información del negocio y de la factura
     doc.setFontSize(12);
     doc.setTextColor("#000000");
     doc.text("Megapaquetes", 20, 60); // Nombre del negocio
@@ -139,7 +116,7 @@ function generarPDF() {
     doc.text("3187800946 - Megapaquetesalego12@gmail.com", 20, 80); // Contacto del negocio
 
     doc.text("DATE: " + new Date().toLocaleDateString(), 150, 60); // Fecha de la factura
-    doc.text("Factura# 004513", 150, 70); // Número de la factura
+    doc.text(`Factura# ${factura.numero}`, 150, 70); // Número de la factura
 
     // Crear la tabla de productos
     let y = 100; // Posición vertical inicial para la tabla
@@ -150,12 +127,10 @@ function generarPDF() {
     doc.text("Cantidad", 130, y); // Columna de cantidad
     doc.text("Total", 160, y); // Columna de total
 
-    // Dibujar una línea divisora
     doc.setDrawColor(0, 0, 0);
     doc.line(20, y + 5, 180, y + 5);
 
-    // Iterar sobre los productos para mostrarlos en la tabla del PDF
-    productos.forEach((producto, index) => {
+    factura.productos.forEach((producto) => {
         y += 20; // Mover hacia abajo para la siguiente fila
         doc.text(producto.nombre, 20, y); // Descripción del producto
         doc.text(`$${producto.precio.toFixed(2)}`, 100, y); // Precio del producto
@@ -163,36 +138,89 @@ function generarPDF() {
         doc.text(`$${(producto.precio * producto.cantidad).toFixed(2)}`, 160, y); // Total del producto
     });
 
-    // Calcular y mostrar subtotales y totales
     y += 20; // Mover hacia abajo para los subtotales
     doc.setFontSize(12);
     doc.setTextColor("#000000");
     doc.text("Subtotal: ", 130, y); // Subtotal
-    doc.text(`$${total.toFixed(2)}`, 160, y); // Valor del subtotal
+    doc.text(`$${factura.subtotal.toFixed(2)}`, 160, y); // Valor del subtotal
 
     y += 10; // Mover hacia abajo para el IVA
     doc.text("IVA: ", 130, y); // IVA
-    const iva = total * 0.19; // Calcular el IVA (19%)
-    doc.text(`$${iva.toFixed(2)}`, 160, y); // Valor del IVA
+    doc.text(`$${factura.iva.toFixed(2)}`, 160, y); // Valor del IVA
 
     y += 10; // Mover hacia abajo para el costo de envío
     doc.text("Envio: ", 130, y); // Costo de envío
-    const envio = 15000; // Valor del envío
-    doc.text(`$${envio.toFixed(2)}`, 160, y); // Valor del envío
+    doc.text(`$${factura.envio.toFixed(2)}`, 160, y); // Valor del envío
 
     y += 10; // Mover hacia abajo para el total final
     doc.setFontSize(14);
     doc.setTextColor("#ff9933");
     doc.text("Total: ", 130, y); // Total final
-    doc.text(`$${(total + iva + envio).toFixed(2)}`, 160, y); // Valor del total final
+    doc.text(`$${(factura.total).toFixed(2)}`, 160, y); // Valor del total final
 
-    // Descargar el PDF con el nombre 'factura.pdf'
     doc.save("factura.pdf");
 }
 
-// Vincular la función generarPDF al clic en el botón de "Finalizar Compra"
+// Función para guardar la factura en el servidor
+async function guardarFactura(factura) {
+    const userId = localStorage.getItem('userId');
+
+    try {
+        const response = await fetch('http://localhost:3000/factura', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ...factura,
+                userId: userId // Incluir el ID del usuario en el cuerpo de la solicitud
+            })
+        });
+        const result = await response.json();
+        console.log('Factura guardada exitosamente:', result);
+    } catch (error) {
+        console.error('Error al guardar la factura:', error);
+    }
+}
+
+// Función para obtener los datos de la factura y luego generar y guardar la factura
+async function generarYGuardarFactura() {
+    // Crear un array para almacenar los productos obtenidos del DOM
+    const productos = [];
+    const productosDOM = document.querySelectorAll("#carritoProductos .producto");
+
+    productosDOM.forEach((productoDOM) => {
+        const nombre = productoDOM.querySelector(".producto__nombre").textContent;
+        const precio = parseFloat(productoDOM.querySelector(".producto__precio").textContent.replace("Precio: $", ""));
+        const cantidad = parseInt(productoDOM.querySelector(".producto__cantidad").textContent.replace("Cantidad: ", ""));
+        productos.push({ nombre, precio, cantidad });
+    });
+
+    const subtotal = productos.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
+    const iva = subtotal * 0.19; // Calcular el IVA (19%)
+    const envio = 15000; // Valor del envío
+    const total = subtotal + iva + envio;
+
+    const factura = {
+        numero: "004513", 
+        fecha: new Date().toLocaleDateString(),
+        subtotal: subtotal,
+        iva: iva,
+        envio: envio,
+        total: total,
+        productos: productos,
+        estado_factura: "Pendiente" 
+    };
+
+    // Guardar la factura en el servidor
+    await guardarFactura(factura);
+
+    // Generar y descargar el PDF
+    generarPDF(factura);
+}
+
+// Vincular la función generarYGuardarFactura al clic en el botón de "Finalizar Compra"
 document.querySelector("#botonFinalizarCompra").addEventListener("click", (event) => {
     event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-    generarPDF(); // Llamar a la función para generar y descargar el PDF
+    generarYGuardarFactura(); // Llamar a la función para generar y guardar la factura
 });
-

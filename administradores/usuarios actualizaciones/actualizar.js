@@ -1,11 +1,11 @@
-import { solicitud_usuarios } from "../../modulos/solicitud.js"; // Asegúrate de ajustar la ruta si es necesario
+import { solicitud_usuarios } from "../../modulos/solicitud.js"; 
 
 // Obtener el ID del usuario de la URL
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('id');
 
-const form = document.getElementById('update-form');
-const estadoCuentaSelect = document.getElementById('estado_cuenta');
+const form = document.querySelector('#update-form');
+const estadoCuentaSelect = document.querySelector('#estado_cuenta');
 
 // Función para cargar los datos del usuario y llenar el formulario
 const cargarDatosUsuario = async () => {

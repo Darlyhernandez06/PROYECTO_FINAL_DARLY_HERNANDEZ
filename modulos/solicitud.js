@@ -24,4 +24,10 @@ export const carrito = async () => {
     return respuesta;
 }
 
+export const factura = async () => {
+    let solicitar = await fetch(`${URL}/factura`);
+    let respuesta = await solicitar.json()
+    return respuesta;
+}
+
 export default solicitud;

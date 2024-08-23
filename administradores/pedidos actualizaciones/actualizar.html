@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página que se muestra en la pestaña del navegador -->
+    <title>¡ACTUALIZAR ESTADO DE PEDIDO!</title>
+    <!-- Vincula la hoja de estilos CSS externa para los estilos de la página -->
+    <link rel="stylesheet" href="actualizar.css">
+    <!-- Define el favicon del navegador, que es el ícono que se muestra en la pestaña -->
+    <link rel="icon" type="image/svg" href="../../imagenes/logo.svg">
+</head>
+<body>
+    <!-- Contenedor principal para el contenido de la página -->
+    <div class="container">
+        <!-- Encabezado principal de la página -->
+        <h1>Actualizar Estado de pedido</h1>
+        <!-- Formulario para actualizar el estado del pedido -->
+        <form id="update-pedido-form">
+            <input type="hidden" id="pedido-id" value="">
+            <!-- Grupo de formulario para agrupar el campo y su etiqueta -->
+            <div class="form-group">
+                 <!-- Etiqueta para el campo de selección del estado de cuenta -->
+                <label for="estado_factura">Estado de Pedido:</label>
+                <!-- Campo de selección para elegir el estado del pedido -->
+                <select id="estado_factura" name="estado_factura">
+                    <!-- Opción para el estado pendiente -->
+                    <option value="pendiente">Pendiente</option>
+                    <!-- Opción para el estado procesando -->
+                    <option value="procesando">Procesando</option>
+                    <!-- Opción para el estado completado -->
+                    <option value="completado">Completado</option>
+                    <!-- Opción para el estado cancelado -->
+                    <option value="cancelado">Cancelado</option>
+                </select>
+            </div>
+            <!-- Botón de envío del formulario para actualizar el estado del pedido -->
+            <button type="submit">Actualizar</button>
+        </form>
+        <a href="listar.html" class="back-link">Volver a la lista de pedidos</a>
+        <!-- Enlace para volver a la página de lista de pedido -->
+    </div>
+    <script src="actualizar.js" type="module"></script>
+    <!-- Vincula el archivo JavaScript externo que contiene la lógica de actualización, usando el tipo de módulo -->
+</body>
+</html>

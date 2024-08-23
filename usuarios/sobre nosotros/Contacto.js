@@ -92,3 +92,26 @@ correo.addEventListener("blur", (event) => {
 descripcion.addEventListener("blur", (event) => {
     validarDescripcion(event, descripcion);
 });
+
+// Función para actualizar el contador del carrito en la interfaz
+async function actualizarContadorCarrito() {
+    try {
+        // Obtener el userId desde localStorage
+        const userId = localStorage.getItem('userId');
+
+        // Obtener los productos actuales en el carrito para ese usuario
+        const response = await fetch(`http://localhost:3000/carrito?userId=${userId}`);
+        const carrito = await response.json();
+
+        // Contar el número total de productos en el carrito
+        const totalProductos = carrito.length; // Contar la cantidad de productos en el carrito
+
+        // Actualizar el contador en el HTML
+        document.querySelector("#cuenta_carrito").textContent = totalProductos;
+    } catch (error) {
+        console.error("Error al actualizar el contador del carrito:", error);
+    }
+}
+
+// Llama a la función para actualizar el contador del carrito cuando la página se carga
+document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
