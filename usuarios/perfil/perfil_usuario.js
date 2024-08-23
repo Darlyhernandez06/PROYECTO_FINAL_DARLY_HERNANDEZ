@@ -46,7 +46,7 @@ const cargarPerfil = async () => {
       document.querySelector("#estado_cuenta").value = loggedInUser.estado_cuenta || '';
 
       // Mostrar el nombre completo y el rol del usuario en la interfaz
-      document.querySelector("#loggedInUserName").innerHTML = `
+      document.querySelector("#loggedInUserNamecliente").innerHTML = `
         <strong>${loggedInUser.nombres || ''} ${loggedInUser.apellidos || ''}</strong><br>
         <small>${loggedInUser.rol || ''}</small>
       `;
@@ -95,7 +95,7 @@ document.querySelector(".boton__actualizar-link").addEventListener("click", asyn
     // Verificar si la solicitud fue exitosa
     if (response.ok) {
       // Actualizar la interfaz con los datos del usuario actualizado
-      document.querySelector("#loggedInUserName").innerHTML = `
+      document.querySelector("#loggedInUserNamecliente").innerHTML = `
         <strong>${updatedUser.nombres || ''} ${updatedUser.apellidos || ''}</strong><br>
         <small>${updatedUser.rol || ''}</small>
       `;
