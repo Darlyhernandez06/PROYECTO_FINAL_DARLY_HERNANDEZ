@@ -122,24 +122,28 @@
             <div class="contenedor__texto">
                 <p>Aquí podrás ver tus pedidos, editar tu perfil y realizar nuevas compras.</p>
             </div>
-            <!-- Subtítulo de la sección de pedidos -->
-            <div class="contenedor__subtitulo">
-                <p><strong>Mis pedidos</strong></p>
-            </div>
-            <!-- Línea separadora -->
-            <div class="contenedor__linea"></div>
             <!-- Contenedor de información de pedidos -->
             <div class="contenedor__informacion">
-                <div class="contenedor__dentro">
+                <div class="contenedor__dentro" id="noPedidos">
                     <!-- Imagen dentro del contenedor de información -->
                     <div class="contenedor__informacion--imagen">
-                        <img src="../../imagenes/logo ningun pedido.svg" alt="logo">
+                        <img src="../../imagenes/logo ningun pedido.svg" alt="logo" id="noPedidosImg">
                     </div>
                     <!-- Texto dentro del contenedor de información -->
                     <div class="contenedor__informacion--texto">
-                        <p><strong>No se ha realizado ningún pedido todavía.</strong></p>
+                        <p><strong id="noPedidosTexto">No se ha realizado ningún pedido todavía.</strong></p>
                     </div>
                 </div>
+                <!-- Contenedor para las facturas -->
+                <template class="contenedor__facturas" id="facturasContenedor">
+                    <div class="factura-item">
+                        <h4 class="factura-id"></h4>
+                        <p class="fecha"></p>
+                        <p class="estado"></p>
+                        <p class="total"></p>
+                        <p class="productos"></p>
+                    </div>
+                </template>
             </div>
         </div>
     </section>
@@ -232,3 +236,4 @@
     <script src="perfil_usuario.js" type="module"></script>
 </body>
 </html>
+

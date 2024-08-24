@@ -321,6 +321,7 @@ li .dropdown-item:active {
     margin-top: 100px; /* Margen superior específico */
 }
 
+
 .contenedor__informacion--imagen {
     width: 70px;             /* Ancho del círculo */
     height: 70px;            /* Alto del círculo */
@@ -525,6 +526,23 @@ li .dropdown-item:active {
     display: flex; /* Flexbox */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
+}
+
+.factura-item {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 5px; /* Esquinas redondeadas */
+    margin-bottom: 10px; /* Espacio debajo del elemento */
+    background-color: var(--color-texto-principal); /* Fondo con variable de color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.factura-item h4 {
+    margin-top: 0; /* Sin margen superior */
+}
+
+.factura-item p {
+    margin: 5px 0; /* Margen vertical uniforme */
 }
 
 /*RESPONSIVE*/

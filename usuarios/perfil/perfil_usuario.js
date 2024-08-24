@@ -163,3 +163,78 @@ async function actualizarContadorCarrito() {
 
 // Llama a la función para actualizar el contador del carrito cuando la página se carga
 document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
+
+
+
+// Función para cargar las facturas y mostrarlas en la vista
+const cargarFacturas = async () => {
+  try {
+    // Obtener las facturas desde el servidor
+    const response = await fetch('http://localhost:3000/factura');
+    const facturas = await response.json();
+
+    // Obtener el ID del usuario desde localStorage
+    const userId = localStorage.getItem('userId');
+
+    // Filtrar las facturas para obtener solo las del usuario actual
+    const facturasFiltradas = facturas.filter(factura => factura.userId === userId);
+
+    // Seleccionar el contenedor para las facturas
+    const facturasContenedor = document.querySelector('#facturasContenedor');
+    const noPedidos = document.querySelector('#noPedidos');
+    const template = facturasContenedor.content;
+
+    // Si no hay facturas, mostrar el mensaje correspondiente
+    if (facturasFiltradas.length === 0) {
+      noPedidos.style.display = 'flex';
+      return;
+    }
+
+    noPedidos.style.display = 'none';
+
+    // Limpiar cualquier contenido previo en el contenedor
+    const facturasFragment = document.createDocumentFragment();
+
+    // Recorrer cada factura y crear un elemento basado en el template
+    facturasFiltradas.forEach(factura => {
+    // Clonar el contenido del template
+    const facturaElement = document.importNode(template, true);
+
+    // Función para convertir la fecha del formato dd/mm/yyyy a yyyy-mm-dd
+    const convertirFecha = (fechaStr) => {
+    const [day, month, year] = fechaStr.split('/');
+    return `${year}-${month}-${day}`;
+  };
+
+    // Función para formatear la fecha como dd/mm/yyyy
+    const formatearFecha = (fechaStr) => {
+      const [year, month, day] = fechaStr.split('-');
+      return `${day}/${month}/${year}`;
+    };
+
+    // Procesar la lista de productos
+    const productos = factura.productos.map(p => `${p.nombre} (${p.cantidad})`).join(', ');
+    const fechaConvertida = convertirFecha(factura.fecha);
+    const fechaFormateada = formatearFecha(fechaConvertida);
+
+    // Rellenar los datos de la factura
+    facturaElement.querySelector('.factura-id').innerHTML = `Factura ID: ${factura.id}`;
+    facturaElement.querySelector('.fecha').innerHTML = `<strong>Fecha:</strong> ${fechaFormateada}`;
+    facturaElement.querySelector('.estado').innerHTML = `<strong>Estado:</strong>  ${factura.estado_factura}`;
+    facturaElement.querySelector('.total').innerHTML = `<strong>Total:</strong>  $${factura.total.toFixed(2)}`;
+    facturaElement.querySelector('.productos').innerHTML = `<strong>Productos:</strong>  ${productos}`;
+
+    // Añadir el elemento al fragmento de facturas
+    facturasFragment.appendChild(facturaElement);
+    });
+
+    // Insertar el fragmento con todas las facturas en el contenedor
+    facturasContenedor.parentNode.appendChild(facturasFragment);
+
+  } catch (error) {
+      console.error('Error al cargar las facturas:', error);
+  }
+};
+
+// Llamar a la función cuando el documento esté completamente cargado
+document.addEventListener('DOMContentLoaded', cargarFacturas);

@@ -64,7 +64,6 @@ async function Carrito() {
                 button.addEventListener('click', async (e) => {
                     // Obtener el ID del producto desde el atributo data-id del botón clicado
                     const productId = e.currentTarget.getAttribute('data-id');
-                    const userId = localStorage.getItem('userId');
 
                     try {
                         // Realizar una solicitud para eliminar el producto del carrito en el servidor
@@ -185,6 +184,8 @@ async function guardarFactura(factura) {
 
 // Función para obtener los datos de la factura y luego generar y guardar la factura
 async function generarYGuardarFactura() {
+
+
     // Crear un array para almacenar los productos obtenidos del DOM
     const productos = [];
     const productosDOM = document.querySelectorAll("#carritoProductos .producto");
@@ -202,7 +203,7 @@ async function generarYGuardarFactura() {
     const total = subtotal + iva + envio;
 
     const factura = {
-        numero: "004513", 
+        numero : String(Math.floor(Math.random() * 900000) + 100000), // Genera un número entre 100000 y 999999 
         fecha: new Date().toLocaleDateString(),
         subtotal: subtotal,
         iva: iva,
@@ -215,6 +216,9 @@ async function generarYGuardarFactura() {
     // Guardar la factura en el servidor
     await guardarFactura(factura);
 
+    // Eliminar todos los productos del carrito del usuario
+    await eliminarTodosLosProductosDelCarrito();    
+
     // Generar y descargar el PDF
     generarPDF(factura);
 }
@@ -224,3 +228,29 @@ document.querySelector("#botonFinalizarCompra").addEventListener("click", (event
     event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
     generarYGuardarFactura(); // Llamar a la función para generar y guardar la factura
 });
+
+
+// Función para eliminar todos los productos del carrito del usuario
+async function eliminarTodosLosProductosDelCarrito() {
+    const userId = localStorage.getItem('userId');
+
+    try {
+        // Realizar una solicitud para obtener los productos del carrito del usuario
+        const response = await fetch(`http://localhost:3000/carrito?userId=${userId}`);
+        const productos = await response.json();
+
+        // Eliminar cada producto del carrito
+        const deleteRequests = productos.map(producto => 
+            fetch(`http://localhost:3000/carrito/${producto.id}`, {
+                method: 'DELETE',
+            })
+        );
+
+        // Esperar que todas las solicitudes de eliminación se completen
+        await Promise.all(deleteRequests);
+        console.log('Todos los productos del carrito han sido eliminados.');
+        location.reload();
+    } catch (error) {
+        console.error('Error al eliminar los productos del carrito:', error);
+    }
+}

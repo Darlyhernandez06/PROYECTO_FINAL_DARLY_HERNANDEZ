@@ -1,79 +1,81 @@
 // Función para obtener el nombre del cliente basado en el userId
 async function obtenerNombreCliente(userId) {
     try {
-        const response = await fetch('http://localhost:3000/users'); // Ajusta la URL según tu servidor
-        const clientes = await response.json();
-
-        const cliente = clientes.find(cliente => cliente.id === userId);
-        return cliente ? cliente.nombres : 'Nombre no disponible';
+        const response = await fetch('http://localhost:3000/users'); // Asegúrate de que esta URL es correcta
+        if (!response.ok) throw new Error('Error al obtener la lista de usuarios');
         
+        const clientes = await response.json();
+        
+        // Verifica la estructura de los datos recibidos
+        console.log('Datos de clientes:', clientes);
+        
+        // Convertir userId a string si es necesario
+        const cliente = clientes.find(cliente => String(cliente.id) === String(userId));
+        
+        // Verifica el cliente encontrado
+        console.log('Cliente encontrado:', cliente);
+        
+        return cliente ? cliente.nombres : 'Nombre no disponible';
     } catch (error) {
         console.error('Error al obtener el nombre del cliente:', error);
         return 'Nombre no disponible';
     }
 }
 
-// Función para cargar los pedidos desde el servidor y mostrarlos en la tabla
-async function cargarPedidos() {
+// Función para cargar las facturas desde el servidor y mostrarlas en la tabla
+const cargarFacturas = async () => {
     try {
-        // Obtener los pedidos desde el servidor
-        const response = await fetch('http://localhost:3000/factura'); // Ajusta la URL según tu servidor
-        const pedidos = await response.json();
+        // Obtener las facturas desde el servidor
+        const response = await fetch('http://localhost:3000/factura');
+        if (!response.ok) throw new Error('Error al cargar las facturas');
+        const facturas = await response.json();
+
+        // Obtener los nombres de los clientes para todas las facturas
+        const clientesPromises = facturas.map(factura => obtenerNombreCliente(factura.userId));
+        const nombresClientes = await Promise.all(clientesPromises);
 
         // Seleccionar el tbody donde se agregarán las filas
         const tbody = document.querySelector('tbody');
-
-        // Limpiar el contenido actual del tbody
-        tbody.innerHTML = '';
+        tbody.innerHTML = ''; // Limpiar el contenido actual
 
         // Seleccionar el template para las filas de la tabla
         const template = document.querySelector('#template');
 
-        // Iterar sobre cada pedido
-        for (const pedido of pedidos) {
-            // Obtener el nombre del cliente
-            const nombreCliente = await obtenerNombreCliente(pedido.userId);
+        // Iterar sobre cada factura
+        for (let i = 0; i < facturas.length; i++) {
+            const factura = facturas[i];
+            const nombreCliente = nombresClientes[i]; // Obtener el nombre del cliente correspondiente
 
             // Clonar el contenido del template
             const clone = document.importNode(template.content, true);
 
-            // Rellenar el contenido del template con los datos del pedido
-            clone.querySelector('.id').textContent = pedido.id;
-            clone.querySelector('.cliente').textContent = `(ID: ${pedido.userId}) ${nombreCliente}`;
-            clone.querySelector('.fecha').textContent = pedido.fecha;
-            clone.querySelector('.numero').textContent = pedido.numero; 
-            clone.querySelector('.total').textContent = `$${pedido.total.toFixed(2)}`;
-            clone.querySelector('.productos').textContent = pedido.productos.map(p => `${p.nombre} (${p.cantidad})`).join(', '); // Muestra productos
-            clone.querySelector('.estado').textContent = pedido.estado_factura;
+            // Rellenar el contenido del template con los datos de la factura
+            clone.querySelector('.id').textContent = factura.id;
+            clone.querySelector('.estado').textContent = factura.estado_factura;
+            clone.querySelector('.numero').textContent = factura.numero || 'N/A';
+            clone.querySelector('.fecha').textContent = factura.fecha || 'N/A';
+            clone.querySelector('.total').textContent = `$${factura.total ? factura.total.toFixed(2) : 'N/A'}`;
 
-            // Seleccionar el botón de editar y asignarle un evento de clic
-            const editButton = clone.querySelector('.edit-pedido');
-            editButton.setAttribute('data-id', pedido.id); // Establecer el ID del pedido en el atributo data-id
+            // Mostrar productos con cantidad
+            const productos = factura.productos.map(p => `${p.nombre} (${p.cantidad})`).join(', ');
+            clone.querySelector('.productos').textContent = productos;
 
-            // Añadir el pedido clonado al tbody
+            // Mostrar el nombre del cliente
+            clone.querySelector('.cliente').textContent = nombreCliente;
+
+            // Configurar el enlace para editar la factura
+            clone.querySelector('.edit-factura').href = `actualizar.html?id=${factura.id}`;
+
+            // Añadir la factura clonado al tbody
             tbody.appendChild(clone);
         }
-
-        // Agregar evento a los botones de editar
-        document.querySelectorAll('.edit-pedido').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const pedidoId = e.currentTarget.getAttribute('data-id');
-                // Aquí puedes agregar la lógica para editar el pedido
-                console.log(`Editar pedido con ID: ${pedidoId}`);
-                // Por ejemplo, redirigir a una página de edición
-                // window.location.href = `/editar-pedido.html?id=${pedidoId}`;
-            });
-        });
-
     } catch (error) {
-        console.error('Error al cargar los pedidos:', error);
+        console.error('Error al cargar las facturas:', error);
     }
-}
+};
 
-// Llamar a la función cargarPedidos cuando el documento esté completamente cargado
-document.addEventListener('DOMContentLoaded', cargarPedidos);
-
-
+// Llamar a la función cargarFacturas cuando el documento esté completamente cargado
+document.addEventListener('DOMContentLoaded', cargarFacturas);
 
 // Obtener el nombre completo del usuario almacenado en localStorage
 const userName = localStorage.getItem('userName');
