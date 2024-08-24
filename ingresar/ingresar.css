@@ -28,7 +28,7 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../imagenes/fondo de iniciar sesion.svg'); /* Imagen de fondo */
+    background: url('../imagenes/fondo ingresar.svg'); /* Imagen de fondo */
     background-repeat: no-repeat;   /* La imagen de fondo no se repite */
     background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     font-family: 'MiFuente';        /* Fuente personalizada */
@@ -249,17 +249,17 @@ li .dropdown-item:active {
     text-align: center; /* Alinear al centro */
     color: var(--color-acento-2); /* Color de acento 2 */
     font-weight: bold; /* Texto en negrita */
-    font-size: 16px; /* Tamaño de fuente */
+    font-size: 20px; /* Tamaño de fuente */
 }
 
 .restablecer__contraseña {
     /* Estilos del enlace para recuperar contraseña */
     text-align: center; /* Alinear al centro */
-    color: var(--color-texto-principal); /* Color de texto principal */
     font-weight: bold; /* Texto en negrita */
     margin-bottom: 30px; /* Espacio inferior de 30 píxeles */
     font-size: 16px; /* Tamaño de fuente */
     padding: var(--padding); /* Espaciado interno definido por la variable --padding */
+    font-size: 20px; /* Tamaño de fuente */
 }
 
 .form__label {

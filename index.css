@@ -177,7 +177,7 @@ li .dropdown-item:active {
     background-repeat: no-repeat; /* No repetir el fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen dentro del contenedor */
-    height: 1800px; /* Altura fija del contenedor */
+    height: 1650px; /* Altura fija del contenedor */
 }
 
 .contenedor__titulo {
@@ -310,6 +310,14 @@ li .dropdown-item:active {
     height: 200px; /* Altura de la imagen */
     overflow: hidden; /* Oculta cualquier contenido que se desborde */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transición para el color de fondo, sombra y transformación */
+}
+
+/* Estilo de transición al pasar el ratón */
+.imagen1:hover, .imagen2:hover, .imagen3:hover {
+    background-color: rgba(0, 102, 51, 0.7); /* Color de fondo al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más prominente al pasar el ratón */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del elemento al pasar el ratón */
 }
 
 .contenedor__imagen1, .contenedor__imagen2, .contenedor__imagen3 {
@@ -462,7 +470,7 @@ li .dropdown-item:active {
     margin-top: 50px; /* Margen superior específico */
 }
 
-.boton__comprar--link{
+.boton__comprar--link, .boton--link{
     width: 100%; /* Ancho del 100% del contenedor padre */
     max-width: 200px; /* Ancho máximo */
     min-height: 50px; /* Altura mínima */
@@ -488,6 +496,20 @@ li .dropdown-item:active {
 }
 
 .boton__comprar--link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color de texto al hacer clic */
+}
+
+.boton--link {
+    background-color: var(--color-primario); /* Color de fondo principal */
+}
+
+.boton--link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el cursor */
+    color: var(--color-fondo-principal); /* Color de texto al pasar el cursor */
+}
+
+.boton--link:active {
     background-color: var(--color-secundario); /* Color de fondo al hacer clic */
     color: var(--color-fondo-principal); /* Color de texto al hacer clic */
 }
@@ -540,6 +562,11 @@ li .dropdown-item:active {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     font-size: 16px; /* Tamaño de fuente */
     margin-bottom: 50px; /* Margen inferior específico */
+    transition: transform 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+.card__texto:hover {
+    transform: scale(1.05); /* Escala ligeramente la tarjeta al pasar el ratón */
 }
 
 .card__pie {

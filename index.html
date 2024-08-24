@@ -35,22 +35,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">Inicio</a> 
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Megamenu <!-- Enlace del megamenu activo -->
-                        </a>
-                        <!-- Menú desplegable -->
-                        <ul class="dropdown-menu bg-success text-light">
-                            <li class="px-2">MEGAPAQUETES</li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-light" href="verduras_productos.html">Verduras</a></li>
-                            <li><a class="dropdown-item text-light" href="frutas_productos.html">Frutas</a></li>
-                            <li><a class="dropdown-item text-light" href="tubérculos_hortalizas_productos.html">Tubérculos/Hortalizas</a></li>
-                            <div class="arrow"></div>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="productos.html">Productos</a> <!-- Enlace "Productos" activo -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Ofertas</a> <!-- Enlace "Ofertas" activo -->
+                        <a class="nav-link active" href="ofertas.html">Ofertas</a> <!-- Enlace "Ofertas" activo -->
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -95,10 +84,6 @@
                     encontraras productos frescos, cultivados con amor y respeto por la naturaleza, ¡Disfruta de la calidad y <br> 
                     beneficios saludables que ofrecemos!. Compra hoy y recibe mañana (Lunes a Sabado)
                 </p>
-            </div>
-            <!-- Boton para seguir mirando la pagina -->
-            <div class="boton__continuar">
-                <a href="#" class="boton__continuar--link">Continuar</a>
             </div>
             <!-- Contenedor de la sección adentro -->
             <div class="contenedor__secundario">
@@ -200,44 +185,29 @@
                 completamente gratuito. <br>
                 Esto te permite disfrutar de nuestros productos sin preocuparte por los costos adicionales de envío. <!-- Promoción de envío gratuito --></p>
             </div>
-            <div class="productos__destacados--contenedor">
-                <div class="primer__producto">
+
+            <template id="productTemplate">
+                <div class="producto">
                     <!-- Contenedor de la imagen del producto -->
                     <div class="contenedor__imagen">
-                        <img src="imagenes/Aguacate.jpg" alt="Imagen de producto">
+                        <img src="" alt="Imagen de producto">
                     </div>
                     <!-- Información del producto -->
                     <div class="informacion__producto">
-                        <p class="texto__producto">Frutas</p>
-                        <h3 class="titulo__producto"><strong>Aguacate (Unidad)</strong></h3>
-                        <p class="precio__producto"><strong>$5.900</strong></p>
+                        <p class="texto__producto"></p>
+                        <h3 class="titulo__producto"><strong></strong></h3>
+                        <p class="precio__producto"><strong></strong></p>
+                    </div>
+                    <div class="boton__comprar">
+                        <a href="productos.html" class="boton--link" style="margin-bottom: 30px;">Ver mas</a>
                     </div>
                 </div>
-                <div class="segundo__producto">
-                    <!-- Contenedor de la imagen del producto -->
-                    <div class="contenedor__imagen">
-                        <img src="imagenes/Zanahoria.jpg"alt="Imagen de producto">
-                    </div>
-                    <!-- Información del producto -->
-                    <div class="informacion__producto">
-                        <p class="texto__producto">Verduras</p>
-                        <h3 class="titulo__producto"><strong>Zanahoria (500 Gramos)</strong></h3>
-                        <p class="precio__producto"><strong>$1.900</strong></p>
-                    </div>
-                </div>
-                <div class="tercer__producto">
-                    <!-- Contenedor de la imagen del producto -->
-                    <div class="contenedor__imagen">
-                        <img src="imagenes/papa_criolla.jpg" alt="Imagen de producto">
-                    </div>
-                    <!-- Información del producto -->
-                    <div class="informacion__producto">
-                        <p class="texto__producto">Tubérculos/Hortalizas</p>
-                        <h3 class="titulo__producto"><strong>Papa Criolla (500 Gramos)</strong></h3>
-                        <p class="precio__producto"><strong>$3.800</strong></p>                   
-                    </div>
-                </div>
-            </div>    
+            </template>
+            
+            <div class="productos__destacados--contenedor" id="productosContenedor">
+                <!-- Los productos se agregarán aquí dinámicamente -->
+            </div> 
+             
         </div>
     </section>
     

@@ -1,0 +1,493 @@
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    background: url('imagenes/fondo de productos.svg'); /* Imagen de fondo */
+    background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+    background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+    font-family: 'MiFuente';        /* Fuente personalizada */
+    background-position: center;    /* Centra la imagen de fondo */
+}
+
+/*PARTE DEL MENU DE NAVEGACION*/
+
+.navbar {
+    max-width: 100vw;
+    display: flex;                          /* Mostrar como flexbox */
+    align-items: center;                    /* Centrar elementos verticalmente */
+    justify-content: space-between;         /* Espacio entre elementos */
+    background-color: var(--color-primario); /* Color de fondo */
+    padding: 18px 30px;                     /* Padding interno */
+    flex-wrap: wrap;                        /* Permitir envolver elementos en pantalla pequeña */
+}
+
+.negrita {
+    font-weight: bold;  /* Define el texto en negrita */
+    font-size: 16px;    /* Establece el tamaño de la fuente a 16 píxeles */
+}
+
+.navbar__logo img {
+    height: 40px; /* Altura del logo */
+}
+
+.navbar__contenedor {
+    display: flex;                         /* Mostrar como flexbox */
+    flex-direction: column;                /* Dirección de columna para el contenido */
+    color: var(--color-fondo-principal);   /* Color de texto */
+}
+
+.navbar__title {
+    font-size: 16px; /* Tamaño del título */
+}
+
+.navbar__subtitle {
+    font-size: 11px; /* Tamaño del subtítulo */
+}
+
+.navbar__link,
+.menu__toggle {
+    color: var(--color-fondo-principal); /* Color del enlace */
+    padding: 14px 20px; /* Padding del enlace */
+    font-size: 16px; /* Tamaño de fuente del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.nav-link:hover,
+.menu__toggle:hover {
+    color: var(--color-acento-1); /* Color al pasar el mouse */
+}
+
+.navbar__link:active,
+.menu__toggle:active {
+    color: var(--color-secundario);         /* Color al hacer clic */
+    text-decoration: underline solid;       /* Subrayado sólido al hacer clic */
+}
+
+/* Menú desplegable */
+.menu {
+    position: relative;                     /* Posición relativa */
+    display: inline-block;                  /* Mostrar como bloque en línea */
+}
+
+.menu__container {
+    display: none;                          /* Ocultar contenedor por defecto */
+    position: absolute;                     /* Posición absoluta */
+    top: 100%;                              /* Alinear en la parte inferior del elemento padre */
+    left: 0;                                /* Alinear a la izquierda */
+    background-color: var(--color-secundario); /* Color de fondo del menú */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1;                             /* Índice de apilamiento */
+    text-align: left;                       /* Alinear texto a la izquierda */
+}
+
+.menu__container h2 {
+    color: var(--color-texto-principal); /* Color del título */
+    margin: 10px; /* Margen */
+}
+
+.menu__link {
+    color: var(--color-texto-principal); /* Color del enlace */
+    padding: 12px 16px; /* Padding del enlace */
+    text-decoration: none; /* Sin decoración de texto */
+    display: block; /* Bloque de visualización */
+}
+
+.menu__link:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+}
+
+.menu__link:active {
+    background-color: var(--color-acento-2); /* Color de fondo al hacer clic */
+}
+
+.menu__toggle:hover + .menu__container,
+.menu__container:hover {
+    display: block; /* Mostrar menú al pasar el mouse */
+}
+
+.menu__vector {
+    margin: 10px; /* Margen */
+}
+
+.menu__heading {
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para el menú desplegable */
+
+li .dropdown-item:hover {
+    background-color: var(--color-primario);  /* Color de fondo al pasar el mouse */
+}
+
+li .dropdown-item:active {
+    background-color: var(--color-resaltado); /* Color de fondo al hacer clic */
+}
+
+/* Estilos para los botones */
+
+.btn.btn-light.button.d-flex.align-items-center:hover {
+    background-color: var(--color-terciario); /* Color de fondo al pasar el mouse */
+    border: none;                            /* Elimina el borde */
+}
+
+.btn.btn-light.button.d-flex.align-items-center:active {
+    background-color: var(--color-acento-1); /* Color de fondo al hacer clic */
+    border: none;                            /* Elimina el borde */
+}
+
+.arrow {
+    position: absolute; /* Posiciona el elemento de forma absoluta dentro de su contenedor */
+    width: 11px; /* Ancho fija del contenedor */
+    height: 11px; /* Altura fija del contenedor */
+    top: -5.5px; /* Ajusta la posición vertical */
+    left: 32px;  /* Ajusta la posición horizontal */
+    background-color: var(--color-acento-1);
+    transform: rotate(45deg); /* Rota el elemento 45 grados para formar una flecha */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el elemento */
+    z-index: -1; /* Define el índice z del elemento, colocándolo detrás de otros elementos con z-index positivo */
+}
+
+/*PARTE DEL LOS PRODUCTOS*/
+
+/* Contenedor de los párrafos principales */
+.contenedor__parrafos {
+    display: flex; /* Utiliza Flexbox */
+    flex-direction: column; /* Dirección en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    gap: 30px; /* Espacio entre elementos */
+}
+  
+/* Título principal */
+.titulo__parrafos {
+    font-size: 64px; /* Tamaño de fuente grande */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+    margin-top: 100px; /* Margen superior */
+}
+  
+/* Subtítulo */
+.subtitulo__parrafos {
+    font-size: 32px; /* Tamaño de fuente medio */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+  
+/* Párrafo descriptivo */
+.parrafo__parrafos {
+    font-size: 16px; /* Tamaño de fuente pequeño */
+}
+
+/* Contenedor de productos en la sección */
+.contenedor__productos--seccion {
+    display: flex; /* Disposición flexible */
+    flex-wrap: wrap; /* Permite que los productos se envuelvan */
+    gap: 1rem; /* Espacio entre productos */
+    justify-content: center; /* Centra los productos */
+    padding: 1rem; /* Espacio interior */
+}
+
+.contenedor__producto {
+    display: flex; /* Disposición flexible */
+    flex-direction: column; /* Contenido en columna */
+    align-items: center; /* Alinea contenido al centro */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 1rem; /* Espacio interior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 100%; /* Ancho máximo */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluye borde y padding en el ancho */
+    margin: 0.5rem; /* Margen exterior */
+    background-color: white; /* Fondo blanco */
+    transition: 200ms; /* Transición suave */
+}
+
+.contenedor__producto:hover {
+    transform: translateY(-10px); /* Desplazamiento hacia arriba al pasar el cursor */
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Contenedor de imagen del producto */
+.contenedor__imagen {
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+  
+/* Imagen del producto */
+.contenedor__imagen img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    border-radius: 8px; /* Esquinas redondeadas en la imagen */
+    border: 6px solid var(--color-terciario); /* Borde sólido de 6px con el color terciario */
+}
+  
+/* Información del producto */
+.informacion__producto {
+    padding: 0.5rem; /* Añade un espacio de 0.5rem alrededor del contenido */
+    text-align: center; /* Alinea el texto al centro del contenedor */
+}
+  
+/* Texto adicional del producto */
+.texto__producto {
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Margen inferior */
+}
+  
+/* Título del producto */
+.titulo__producto {
+    color: var(--color-acento-2); /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Margen inferior */
+}
+  
+/* Precio del producto */
+.precio__producto {
+    color: var(--color-terciario); /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 30px; /* Margen inferior */
+    font-weight: bold; /* negrita el texto */
+}
+  
+/* Contenedor de la cantidad de productos */
+.contenedor__cantidad {
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 120px; /* Ancho fijo */
+    margin: 0 auto; /* Margen automático */
+    font-size: 18px; /* Tamaño de fuente */
+    gap: 20px; /* Espacio entre elementos */
+    margin-bottom: 50px; /* Margen inferior */
+}
+  
+/* Input para la cantidad de productos */
+.input__cantidad {
+    width: 100px; /* Ancho fijo */
+    height: 50px; /* Altura fija */
+    text-align: center; /* Alinea el texto al centro */
+    font-size: 18px; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde sólido */
+    padding: 5px; /* Relleno */
+}
+  
+/* Botón para aumentar la cantidad */
+.boton__cantidad {
+    background-color: var(--color-terciario); /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno */
+    cursor: pointer; /* Cursor en forma de mano */
+    font-size: 20px; /* Tamaño de fuente */
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 12px 17px; /* Relleno */
+}
+  
+/* Estilo del botón al pasar el ratón por encima */
+.boton__cantidad:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-texto-principal); /* Color del texto al pasar el ratón por encima */
+}
+  
+/* Estilo del botón al hacer clic */
+.boton__cantidad:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-texto-principal); /* Color del texto al hacer clic */
+}
+  
+/* Botón para disminuir la cantidad */
+.boton__cantidad01 {
+    background-color: #FD0000; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno */
+    cursor: pointer; /* Cursor en forma de mano */
+    font-size: 20px; /* Tamaño de fuente */
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 12px 20px; /* Relleno */
+}
+  
+/* Estilo del botón al pasar el ratón por encima */
+.boton__cantidad01:hover {
+    background-color: #CA0202; /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-texto-principal); /* Color del texto al pasar el ratón por encima */
+}
+  
+/* Estilo del botón al hacer clic */
+.boton__cantidad01:active {
+    background-color: #8D0303; /* Color de fondo al hacer clic */
+    color: var(--color-texto-principal); /* Color del texto al hacer clic */
+}
+  
+/* Contenedor del botón de añadir */
+.boton-añadir {
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+  
+/* Enlace del botón de añadir */
+.boton__añadir--link {
+    width: 100%; /* Ancho completo */
+    max-width: 200px; /* Ancho máximo */
+    min-height: 50px; /* Altura mínima */
+    background-color: var(--color-terciario); /* Color de fondo terciario */
+    color: var(--color-fondo-principal); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor en forma de mano */
+    border-radius: 15px; /* Bordes redondeados */
+    display: flex; /* Utiliza Flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    box-sizing: border-box; /* Incluir el borde en el cálculo del tamaño total */
+    padding: 10px 20px; /* Relleno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 50px; /* Margen inferior */
+}
+  
+/* Estilo del enlace al pasar el ratón por encima */
+.boton__añadir--link:hover {
+    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
+    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
+}
+  
+/* Estilo del enlace al hacer clic */
+.boton__añadir--link:active {
+    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
+    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
+}
+  
+/* Contenedor de la descripción del producto */
+.producto__descripcion {
+    background-color: var(--color-texto-principal); /* Color de fondo del contenedor de la descripción */
+    border: 1px solid var(--color-fondo-principal); /* Borde sólido del contenedor*/
+    padding: 10px; /* Espacio interno de 10px alrededor del contenido dentro del contenedor */
+    text-align: center; /* Alinea el texto al centro dentro del contenedor */
+    margin-top: 0.5rem; /* Espacio de 0.5rem arriba del contenedor */
+    overflow-wrap: break-word; /* Permite que las palabras largas se rompan para evitar desbordamientos */
+}
+
+.producto__descripcion p {
+    margin: 0; /* Elimina el margen por defecto del párrafo dentro del contenedor */
+    word-break: break-word; /* Rompe las palabras largas para evitar desbordamientos */
+    overflow-wrap: break-word; /* Permite que las palabras largas se rompan para ajustarse al contenedor */
+}
+
+/* Estilos para el contenedor del carrito */
+#cuenta_carrito {
+    background-color: var(--color-terciario); /* Color de fondo */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 25px; /* Ancho */
+    height: 25px; /* Altura */
+    text-align: center; /* Centra el texto */
+    position: absolute; /* Posicionamiento absoluto */
+    font-size: 20px; /* Tamaño de fuente */
+    margin-left: 17px; /* Margen izquierdo */
+}
+
+/* Estilos para el contenedor del carrito */
+.carrito {
+    position: relative; /* Posicionamiento relativo */
+    margin-top: -18px; /* Ajusta margen superior */
+}
+
+/* Estilos para el contenedor de los elementos internos */
+.teto {
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    width: 100%; /* Ancho completo */
+    height: 104px; /* Altura del pie de página */
+    background-color: var(--color-primario); /* Color de fondo */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Clase para ocultar productos que no coinciden con la búsqueda */
+.filtro {
+    /* Establece que los elementos con esta clase no se mostrarán en la página */
+    display: none;
+}
+
+/* Estilos para el pie de página */
+.footer {
+    width: 100%; /* Ancho completo del pie de página */
+    height: 104px; /* Altura fija del pie de página */
+    background-color: var(--color-primario); /* Color de fondo del pie de página */
+    display: flex; /* Utiliza Flexbox para el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-top: 100px; /* Espacio superior del pie de página */
+}
+
+/* Estilos para el texto dentro del pie de página */
+.footer__parrafo {
+    color: var(--color-fondo-principal); /* Color del texto del pie de página */
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Fuente en negrita */
+}
+
+/* Responsividad */
+
+/* Dos productos por fila en pantallas ≥576px */
+@media (min-width: 576px) {
+    .contenedor__producto {
+        max-width: calc(50% - 1rem); /* Establece el ancho máximo al 50% del contenedor menos 1rem de espacio para el gap */
+    }
+}
+
+/* Tres productos por fila en pantallas ≥768px */
+@media (min-width: 768px) {
+    .contenedor__producto {
+        max-width: calc(33.333% - 1rem); /* Calcula el ancho máximo */
+    }
+}
+
+/* Cuatro productos por fila en pantallas ≥992px */
+@media (min-width: 992px) {
+    .contenedor__producto {
+        max-width: calc(25% - 1rem); /* Calcula el ancho máximo */
+    }
+}
