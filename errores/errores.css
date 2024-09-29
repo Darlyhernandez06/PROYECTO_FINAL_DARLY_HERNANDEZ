@@ -1,0 +1,78 @@
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'MiFuente';  /* Nombre de la fuente personalizada */
+    src: url('../imagenes/Ubuntu-Regular.ttf') format('truetype'); /* Ruta de la fuente personalizada en formato truetype */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;            /* Eliminar margen en todos los elementos */
+    padding: 0;           /* Eliminar padding en todos los elementos */
+    box-sizing: border-box; /* Incluir bordes y padding en el cálculo del tamaño */
+}
+
+/* Variables CSS para colores y medidas */
+:root {
+    --color-fondo-principal: #000000;     /* Color de fondo principal */
+    --color-texto-principal: #ffffff;     /* Color de texto principal */
+    --color-primario: #99E89D;            /* Color primario */
+    --color-secundario: #006633;          /* Color secundario */
+    --color-terciario: #4DA768;           /* Color terciario */
+    --color-acento-1: #26874E;            /* Color de acento 1 */
+    --color-acento-2: #257236;            /* Color de acento 2 */
+    --color-resaltado: #3BC975;           /* Color de resaltado */
+    --padding: 30px;                      /* Padding común */
+    --paddin-button: 10px;                /* Padding para botones */
+    --margin-top: 30px;                   /* Margen superior */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+    font-family: 'MiFuente';        /* Fuente personalizada */
+}
+
+/* Estilo para el contenedor del botón y título */
+.button_contenedor {
+    display: flex;                        /* Usa Flexbox para alinear los elementos hijos */
+    flex-direction: column;              /* Organiza los elementos en una columna */
+    justify-content: center;              /* Centra horizontalmente los elementos hijos en el contenedor */
+    align-items: center;                  /* Centra verticalmente los elementos hijos en el contenedor */
+    height: 100vh;                        /* Ocupa toda la altura de la ventana del navegador */
+    background: url('../imagenes/fondo de productos.svg'); /* Establece una imagen de fondo para el contenedor */
+    background-repeat: no-repeat;         /* Evita que la imagen de fondo se repita */
+    background-size: cover;               /* Asegura que la imagen de fondo cubra toda la pantalla */
+    background-position: center;          /* Centra la imagen de fondo en el contenedor */
+    gap: 50px;
+}
+            
+/* Estilo para el botón */
+.btn-custom {
+    display: inline-block;                /* Permite que el botón se comporte como un elemento en línea con capacidad de bloquear */
+    padding: 15px 30px;                   /* Añade espacio interno alrededor del texto del botón (15px vertical, 30px horizontal) */
+    font-size: 1.25rem;                   /* Establece el tamaño de la fuente del botón en 1.25 veces el tamaño de fuente base */
+    font-weight: bold;                    /* Pone el texto del botón en negrita */
+    color: #ffffff;                       /* Establece el color del texto del botón en blanco */
+    background-color: #006633;            /* Establece el color de fondo del botón en verde oscuro */
+    border: none;                         /* Elimina el borde del botón */
+    border-radius: 5px;                  /* Redondea las esquinas del botón con un radio de 5px */
+    text-align: center;                   /* Centra el texto dentro del botón */
+    text-decoration: none;                /* Elimina el subrayado del texto del botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza las transiciones de color de fondo y transformación */
+}
+            
+.btn-custom:hover {
+    background-color: #4DA768;            /* Cambia el color de fondo del botón a verde más claro cuando el ratón pasa sobre él */
+    transform: scale(1.05);               /* Aumenta ligeramente el tamaño del botón cuando el ratón pasa sobre él */
+}
+            
+.btn-custom:focus {
+    outline: none;                        /* Elimina el borde que aparece al enfocar el botón (opcional para accesibilidad) */
+}
+
+.contenedor__titulo {
+    text-align: center;                   /* Centra el texto del título horizontalmente */
+    color: var(--color-fondo-principal); /* Color del texto usando una variable de CSS */
+    font-weight: bold;                    /* Texto en negrita */
+    font-size: 60px;                      /* Tamaño de fuente del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto para mejorar la legibilidad */
+}
