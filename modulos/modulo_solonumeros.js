@@ -1,7 +1,7 @@
 // Validar solo números con límite de 10 dígitos
 const solonumeros = (event, elemento) => {
     // Obtener el elemento donde se mostrará el mensaje de error
-    const telefono = document.getElementById('telefono-error');
+    const telefono = document.querySelector('#telefono-error');
 
     // Verificar si la tecla presionada es un número
     // Las teclas numéricas tienen códigos de 48 a 57 en el teclado

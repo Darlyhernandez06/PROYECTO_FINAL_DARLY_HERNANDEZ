@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", async function() {
             // Si el producto existe, rellena los campos del formulario con la información del producto
             if (producto) {
                 // Establece el valor del campo de nombre del producto en el formulario
-                document.querySelector('#nombre').value = producto.nombre;
+                document.querySelector('#product-name').value = producto.nombre;
                 // Establece el valor del campo de precio del producto en el formulario
-                document.querySelector('#precio').value = producto.precio;
+                document.querySelector('#product-price').value = producto.precio;
                 // Establece el valor del campo de imagen del producto en el formulario
-                document.querySelector('#imagen').value = producto.imagen;
+                document.querySelector('#productImage').value = producto.imagen;
 
                 // Asegúrate de que el valor de la categoría esté en el elemento <select> del formulario
-                const selectCategorias = document.querySelector('#categoria');
+                const selectCategorias = document.querySelector('#productCategory');
                 selectCategorias.value = producto.categoria;
 
                 // Si el valor de la categoría no se encuentra en las opciones del <select>

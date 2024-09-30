@@ -27,28 +27,32 @@
             <input type="hidden" id="product-id">
             <!-- Campo para el nombre del producto -->
             <div class="pb-4 form-group">
-                <label class="form__label" for="nombre">Nombre del Producto</label>
-                <input class="form__input" class="form-control" type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del producto" required>
+                <label class="form__label" for="product-name">Nombre del Producto</label>
+                <input class="form__input" class="form-control" type="text" id="product-name" name="product-name" placeholder="Ingrese el nombre del producto" required>
+                <span id="error_nombre_producto" class="error-message"></span>
             </div>
             <!-- Campo para el precio del producto -->
             <div class="pb-4 form-group">
-                <label class= "form__label" for="precio">Precio</label>
-                <input class= "form__input" type="number" class="form-control" id="precio" name="precio" placeholder="Ingrese el precio del producto" required>
+                <label class= "form__label" for="product-price">Precio</label>
+                <input class= "form__input" type="number" class="form-control" id="product-price" name="product-price" placeholder="Ingrese el precio del producto" required>
+                <span id="error_precio_producto" class="error-message"></span>
             </div>
              <!-- Campo para la URL de la imagen del producto -->
             <div class="pb-4 form-group">
-                <label class="form__label" for="imagen">Imagen</label>
-                <input class="form__input" class="form-control" type="text" id="imagen" name="imagen" placeholder="URL de la imagen del producto" required>
+                <label class="form__label" for="productImage">Imagen</label>
+                <input class="form__input" class="form-control" type="text" id="productImage" name="productImage" placeholder="URL de la imagen del producto" required>
+                <span id="error_imagen_producto" class="error-message"></span>
             </div>
             <!-- Campo para seleccionar la categoría del producto -->
             <div class="pb-4 form-group">
-                <label class="form__label" for="categoria">Categorías</label>
-                <select class="form__input" class="form-control" id="categoria" name="categoria"> 
-                    <option value="0">Seleccionar la Categoría...</option>
+                <label class="form__label" for="productCategory">Categorías</label>
+                <select id="productCategory" class= "form__input" class="form-control" required>  
+                    <option value="">Seleccionar la Categoría...</option>
                     <option value="Verduras">Verduras</option>
                     <option value="Frutas">Frutas</option>
                     <option value="Tubérculos/Hortalizas">Tubérculos/Hortalizas</option>
                 </select>
+                <span id="error_select_producto" class="error-message"></span>
             </div>            
             <!-- Botón para actualizar el producto -->
             <div class="boton__actualizar">
@@ -62,5 +66,6 @@
     </div>
 
     <script src="editar_productos.js"></script>
+    <script src="validaciones.js" type="module"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // Función para validar el correo electrónico en tiempo real
 const correoelectronico = (event, elemento) => {
     // Seleccionar el elemento HTML donde se mostrará el mensaje de error
-    const correoError = document.getElementById('correo-error'); // Obtener el elemento con el ID 'correo-error', que se usa para mostrar el mensaje de error del correo electrónico
+    const correoError = document.querySelector('#correo-error'); // Obtener el elemento con el ID 'correo-error', que se usa para mostrar el mensaje de error del correo electrónico
     
     // Expresión regular para validar el formato del correo electrónico
     // - `^` al inicio asegura que la coincidencia comience desde el inicio de la cadena.
@@ -35,7 +35,7 @@ const correoelectronico = (event, elemento) => {
 };
 
 // Obtener el elemento HTML del campo de correo electrónico
-const correoElemento = document.getElementById('correo'); // Obtener el elemento con el ID 'correo', que es el campo de entrada para el correo electrónico
+const correoElemento = document.querySelector('#correo'); // Obtener el elemento con el ID 'correo', que es el campo de entrada para el correo electrónico
 
 // Agregar un evento de entrada (input) al campo de correo electrónico para validar en tiempo real
 correoElemento.addEventListener('input', (event) => correoelectronico(event, correoElemento)); // Escuchar el evento 'input' en el campo de correo electrónico y llamar a la función 

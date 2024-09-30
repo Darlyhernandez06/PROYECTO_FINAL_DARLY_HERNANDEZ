@@ -1,3 +1,6 @@
+// IMPORTACIONES
+import is_valid from "../productos actualizaciones/modulos_validaciones/modulo_validacion.js"; // Importa el modulo de la validaciones de los campos
+
 document.addEventListener('DOMContentLoaded', () => {
     // Seleccionar el formulario por su ID
     const form = document.querySelector('#create-product-form');
@@ -12,8 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault(); // Prevenir el envío del formulario por defecto
         
-        // Capturar los datos del formulario
-        const formData = {
+        // Validar los campos del formulario antes de permitir el envío
+        const valid = is_valid(event, "form [required]");
+        
+        if (!valid) {
+            // Si la validación falla, prevenimos el envío y redirigimos a la página de error
+            event.preventDefault();
+            alert("Por favor, corrige los campos con errores.");
+            window.location.href = "../../errores/error2.html";
+            return false;  // Asegura que el envío se detenga
+        }
+        
+        try {
+            boton.disabled = true; // Deshabilitar el botón mientras se envía el formulario
+            
+            // Capturar los datos del formulario
+            const formData = {
             nombre: document.querySelector('#product-name').value,
             descripción: document.querySelector('#product-description').value,
             precio: document.querySelector('#product-price').value,
@@ -21,11 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: document.querySelector('#productImage').value,
             categoria: document.querySelector('#productCategory').value,
             estado: 'activo' // Establecer el estado predeterminado como 'activo'
-        };
-        
-        try {
-            boton.disabled = true; // Deshabilitar el botón mientras se envía el formulario
-            
+            };
+
             // Enviar los datos al servidor
             const response = await fetch('http://localhost:3000/productos', {
                 method: 'POST',

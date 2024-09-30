@@ -8,8 +8,8 @@ const inputId = document.querySelector('#product-id');
 const inputNombre = document.querySelector('#product-name');
 const inputDescripcion = document.querySelector('#product-description');
 const inputPrecio = document.querySelector('#product-price');
-const inputImagen = document.querySelector('#product-img');
-const inputCategoria = document.querySelector('#categorias');
+const inputImagen = document.querySelector('#productImage');
+const inputCategoria = document.querySelector('#productCategory');
 const inputCantidad = document.querySelector('#product-quantity');
 
 // Cargar datos del producto y llenar el formulario

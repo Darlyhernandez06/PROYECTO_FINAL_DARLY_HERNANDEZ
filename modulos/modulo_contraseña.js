@@ -35,7 +35,7 @@ const validarContraseña = (event, elemento) => {
 };
 
 // Obtener el elemento HTML del campo de contraseña por su ID
-const contraseñaElemento = document.getElementById('contraseña'); // ID del campo de contraseña
+const contraseñaElemento = document.querySelector('#contraseña'); // ID del campo de contraseña
 
 // Agregar un evento de entrada (input) al campo de contraseña para validar en tiempo real
 contraseñaElemento.addEventListener('input', (event) => validarContraseña(event, contraseñaElemento));
