@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡PRODUCTOS TOTAL!</title>
+    <title>¡LISTAR PRODUCTOS!</title>
     <!-- Enlace al archivo CSS para estilos -->
-    <link rel="stylesheet" href="productos_total.css">
+    <link rel="stylesheet" href="listar.css">
     <!-- Favicon para el navegador -->
     <link rel="icon" type="image/svg" href="../../imagenes/logo.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
 </head>
 <body>
 
-    <!-- Barra de navegación -->
+        <!-- Barra de navegación -->
     <nav class="negrita navbar navbar-expand-lg p-4">
         <div class="container-fluid d-flex">
             <!-- Logo -->
@@ -85,7 +85,7 @@
 
     <div class="menu_perfil">
         <div class="contenido">
-            <a href="productos_total.html">
+            <a href="papelera.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="dark" class="bi bi-x-lg img-salir" viewBox="0 0 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                 </svg>
@@ -104,54 +104,74 @@
         </div>
     </div>
 
-    <!-- Sección de los productos -->
-    <section class="contenedor__productos--seccion">
-        <!-- Contenedor para los textos de introducción a la sección de productos -->
-        <div class="contenedor__parrafos">
-            <!-- Título principal de la sección con énfasis en el texto -->
-            <h1 class="titulo__parrafos"><strong>Compra Aquí elige entre una variedad</strong></h1>
-            <!-- Subtítulo de la sección que describe los tipos de productos disponibles -->
-            <h3 class="subtitulo__parrafos"><strong>de frutas, verduras, tubérculos/hortalizas frescas</strong></h3>
-            <!-- Párrafo descriptivo sobre la calidad de los productos y el servicio de entrega -->
-            <p class="parrafo__parrafos">Nuestros productos se entregan cuidadosamente seleccionados de acuerdo a tus preferencias. <br> 
-                “¡Cofresemos juntos los mejores productos para una vida más saludable y deliciosa!
-            </p>
-        </div>
-    </section>
 
-    <form class="d-flex align-items-center p-5" role="search"> 
-        <input class="form-control me-2 search border border-success" type="search" placeholder="Search" aria-label="Search"/>
-    </form>
+    <!-- Contenedor principal con título y línea decorativa -->
+    <div class="contenedor__principal">
+        <p class="titulo__principal">Papelera</p>
+        <div class="contenedor__linea"></div>
+    </div>
     
-    <!-- Contenedor de productos -->
-    <section class="contenedor__productos--seccion" id="productList"></section>
+    <!-- Contenedor para la tabla de productos -->
+    <div class="container mt-5 text-center">
+    <!-- Tabla de listar los productos -->
 
-    <!-- Template para productos -->
-    <template id="productTemplate">
-        <div class="contenedor__producto producto">
-            <div class="contenedor__imagen">
-                <img src="" alt="Imagen de producto">
-            </div>
-            <!-- Información del producto -->
-            <div class="informacion__producto">
-                <p class="texto__producto"></p>
-                <h3 class="titulo__producto"><strong></strong></h3>
-                <p class="precio__producto--price"><strong></strong></p>
-                <p class="precio__producto--stock"><strong></strong></p>
-                <!-- Contenedor para la descripción del producto -->
-                <div class="producto__descripcion--contenedor">
-                    <div class="producto__descripcion w-100">
-                        <p></p>
-                    </div>
-                </div>
-            </div>
+        <div class="tabla_contenedor">
+            <table>
+                <thead>
+                    <tr class="borde1">
+                        <th class="borde1">Id</th>
+                        <th class="borde1">Nombre</th>
+                        <th class="borde1">Descripción</th>
+                        <th class="borde1">Precio</th>
+                        <th class="borde1">Cantidad</th>
+                        <th class="borde1">Imagen</th>
+                        <th class="borde1">Categoria</th>
+                        <th class="borde1">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-    </template>
-    
+        
+        <template id="template">
+            <tr class="borde1">
+                <td class="borde1 id"></td>
+                <td class="borde1 nombre"></td>
+                <td class="borde1 descripción"></td>
+                <td class="borde1 precio"></td>
+                <td class="borde1 cantidad"></td>
+                <td class="borde1 imagen"></td>
+                <td class="borde1 categoria"></td>
+                <!-- Nueva celda para los botones -->
+                <!-- Opciones de acciones para el producto (restablecer o eliminar) -->
+                <td class="d-flex align-items-center justify-content-center">
+                    <!-- Enlace para restablecer el producto desde la papelera -->
+                    <a href="#" class="restablecer-producto1"  style="margin-top: 20px;">
+                        <!-- Icono SVG de restablecer -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="orange" viewBox="0 0 24 24">
+                            <path d="M12 1a11 11 0 0 1 11 11h-2a9 9 0 1 0-2.64 6.36L17 15h7v7l-2.64-2.64A11 11 0 1 1 12 1z"/>
+                        </svg>
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </a>
+                        
+                    <!-- Enlace para eliminar definitivamente el producto -->
+                    <a href="#" class="delete-product1" style="margin-top: 20px;">
+                        <!-- Icono SVG de eliminar -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                        </svg> 
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </td>
+            </tr>
+        </template>               
+    </div>
+
     <!-- JavaScript de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-    <script src="productos_total.js" type="module"></script>
 
+    <script src="papelera.js" type="module"></script>
 </body>
 </html>

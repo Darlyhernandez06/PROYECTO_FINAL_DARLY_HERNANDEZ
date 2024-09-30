@@ -25,7 +25,7 @@ async function productos() {
             const category = product.categoria || "...";
 
             // Filtrar los productos según la categoría (en este caso, solo se muestran los productos de la categoría "Fruta")
-            if (category === "Frutas") {
+            if (category === "Frutas" && product.estado === 'activo') {
                 // Clonar el contenido del template
                 const productElement = document.importNode(templateContent, true);
 

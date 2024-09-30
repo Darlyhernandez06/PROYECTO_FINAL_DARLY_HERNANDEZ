@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: document.querySelector('#product-price').value,
             cantidad: document.querySelector('#product-quantity').value,
             imagen: document.querySelector('#productImage').value,
-            categoria: document.querySelector('#productCategory').value
+            categoria: document.querySelector('#productCategory').value,
+            estado: 'activo' // Establecer el estado predeterminado como 'activo'
         };
         
         try {

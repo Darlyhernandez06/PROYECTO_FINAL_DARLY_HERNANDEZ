@@ -24,8 +24,8 @@ async function productos() {
             const productDescription = product.descripción || "...";
             const category = product.categoria || "...";
 
-            // Filtrar los productos según la categoría (en este caso, solo se muestran los productos de la categoría "Tubérculos")
-            if (category === "Tubérculos") {
+            // Filtrar los productos según la categoría (en este caso, solo se muestran los productos de la categoría "Tuberculos/Hortalizas")
+            if (category === "Tuberculos/Hortalizas" && product.estado === 'activo') { // Verifica si el producto está activo) {
                 // Clonar el contenido del template
                 const productElement = document.importNode(templateContent, true);
 

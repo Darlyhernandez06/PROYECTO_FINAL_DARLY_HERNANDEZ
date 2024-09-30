@@ -34,27 +34,28 @@
                     <!-- Elementos del menú -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../pagina_principal.html">Inicio</a>
-                      </li>
-                      <!-- Elemento de menú con dropdown -->
-                      <li class="nav-item dropdown">
+                    </li>
+                    <!-- Elemento de menú con dropdown -->
+                    <li class="nav-item dropdown"> <!-- Elemento de la lista de navegación que contiene un dropdown -->
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Megamenu
+                            Megamenu <!-- Texto visible del dropdown -->
                         </a>
                         <!-- Menú desplegable -->
-                        <ul class="dropdown-menu bg-success text-light">
-                          <li class="px-2">MEGAPAQUETES</li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-light" href="../../administradores/productos/verduras_productos.html">Verduras</a></li>
-                          <li><a class="dropdown-item text-light" href="../../administradores/productos/frutas_productos.html">Frutas</a></li>
-                          <li><a class="dropdown-item text-light" href="../../administradores/productos/tubérculos_hortalizas_productos.html">Tubérculos/Hortalizas</a></li>
-                          <div class="arrow"></div>
+                        <ul class="dropdown-menu bg-success text-light"> <!-- Lista del menú desplegable con fondo verde y texto claro -->
+                            <li class="px-2">MEGAPAQUETES</li> <!-- Elemento del menú desplegable con padding horizontal -->
+                            <li><hr class="dropdown-divider"></li> <!-- Línea divisoria en el dropdown -->
+                            <li><a class="dropdown-item text-light" href="../../administradores/productos/productos_total.html">Catálogo Completo de Productos</a></li> <!-- Enlace a catálogo completo de productos -->
+                            <li><a class="dropdown-item text-light" href="../../administradores/productos/verduras_productos.html">Verduras</a></li> <!-- Enlace a la categoría de verduras -->
+                            <li><a class="dropdown-item text-light" href="../../administradores/productos/frutas_productos.html">Frutas</a></li> <!-- Enlace a la categoría de frutas -->
+                            <li><a class="dropdown-item text-light" href="../../administradores/productos/tubérculos_hortalizas_productos.html">Tubérculos/Hortalizas</a></li> <!-- Enlace a la categoría de tubérculos y hortalizas -->
+                            <div class="arrow"></div> <!-- Flecha para indicar el dropdown -->
                         </ul>
-                      </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="../../administradores/ofertas/ofertas.html">Ofertas</a>
-                      </li>
-                      <!-- Elemento de menú con dropdown -->
-                      <li class="nav-item dropdown">
+                    </li>
+                    <!-- Elemento de menú con dropdown -->
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Sobre Nosotros
                         </a>
@@ -67,7 +68,7 @@
                           <li><a class="dropdown-item text-light" href="../../administradores/sobre nosotros/Politicas.html">Politicas(Terminos y Condiciones)</a></li>
                           <div class="arrow"></div>
                         </ul>
-                      </li>
+                    </li>
                     <div class="d-flex gap-5 botones">
                         <a href="#" class="desplegable d-flex align-items-center justify-content-center gap-2 nav-link" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="dark" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -109,6 +110,20 @@
         <p class="titulo__principal">Gestión de Productos</p>
         <div class="contenedor__linea"></div>
     </div>
+
+    <!-- Segundo contenedor principal para el boton de la papelera productos -->
+    <div class="contenedor__principal">
+        <!-- Enlace a la acción de listar productos en la papelera, con un icono de papelera de reciclaje -->
+        <a href="../productos actualizaciones/papelera.html" class="delete-product2">
+            <!-- SVG del icono de papelera en color rojo, con tamaño de 32x32 px y margen a la izquierda -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-trash" viewBox="0 0 16 16" style="margin-left: 950px">
+                <!-- Definición del icono en dos trazos (path) que forman la imagen de la papelera -->
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+            </svg>
+            <i class="bi bi-trash"></i>
+        </a>
+    </div>
     
     <!-- Contenedor para la tabla de productos -->
     <div class="container mt-5 text-center">
@@ -119,6 +134,7 @@
             <table>
                 <thead>
                     <tr class="borde1">
+                        <th class="borde1">Id</th>
                         <th class="borde1">Nombre</th>
                         <th class="borde1">Descripción</th>
                         <th class="borde1">Precio</th>
@@ -135,6 +151,7 @@
         
         <template id="template">
             <tr class="borde1">
+                <td class="borde1 id"></td>
                 <td class="borde1 nombre"></td>
                 <td class="borde1 descripción"></td>
                 <td class="borde1 precio"></td>
@@ -150,12 +167,15 @@
                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                         </svg>    
                     </a>
-                    <!-- Enlace para eliminar el producto -->
-                    <a href="#" class="delete-product delete-product" style="margin-top: 20px;">
+                    <!-- Enlace para enviar el producto a la papelera -->
+                    <a href="#" class="papelera-product" style="margin-top: 20px;" >
+                        <!-- SVG del icono de papelera en color rojo -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-trash" viewBox="0 0 16 16">
+                            <!-- Definición del icono de papelera -->
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                        </svg> 
+                        </svg>
+                        <i class="bi bi-trash"></i>
                     </a>
                 </td>
             </tr>

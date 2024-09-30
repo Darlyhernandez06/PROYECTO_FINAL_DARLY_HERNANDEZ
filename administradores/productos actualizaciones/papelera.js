@@ -10,15 +10,17 @@ const $template = document.querySelector("#template").content;
 // FRAGMENTOS
 const $fragmento = document.createDocumentFragment();
 
-// LISTAR LOS PRODUCTOS
-const listarProductos = async () => {
+const listarProductosPapelera = async () => {
     try {
-        // Obtener los datos de productos
+        // Obtener los datos de productos desde el servidor
         const data = await solicitud("productos");
 
-        // Procesar cada producto y llenar el template
+        // Limpiar el contenido previo del tbody (importante para evitar duplicados)
+        tbody.innerHTML = '';
+
+        // Filtrar y procesar solo los productos que están en la papelera
         data.forEach((element) => {
-            if (element.estado === 'activo') { // Verifica si el producto está activo
+            if (element.estado === 'papelera') {  // Filtrar productos en la papelera
                 // Llenar los datos del producto en el template clonado
                 $template.querySelector('.id').textContent = element.id;
                 $template.querySelector('.nombre').textContent = element.nombre;
@@ -29,11 +31,11 @@ const listarProductos = async () => {
                 $template.querySelector('.categoria').textContent = element.categoria;
 
                 // Actualizar los enlaces con el id del producto
-                const editLink = $template.querySelector('.edit-product');
-                const papeleraLink = $template.querySelector('.papelera-product');
+                const restablecerLink = $template.querySelector('.restablecer-producto1');
+                const eliminarLink = $template.querySelector('.delete-product1');
 
-                editLink.href = `../../administradores/productos actualizaciones/actualizar.html?id=${element.id}`;
-                papeleraLink.setAttribute('data-id', element.id);
+                restablecerLink.setAttribute('data-id', element.id);
+                eliminarLink.setAttribute('data-id', element.id);
 
                 // Clonar el contenido del template para usarlo
                 const clone = document.importNode($template, true);
@@ -43,25 +45,35 @@ const listarProductos = async () => {
             }
         });
 
-        // Agregar el fragmento al tbody
+        // Agregar el fragmento al tbody después de procesar todos los productos
         tbody.appendChild($fragmento);
 
         // Agregar evento de envío a la papelera a los botones
-        document.querySelectorAll('.papelera-product').forEach(button => {
+        document.querySelectorAll('.restablecer-producto1').forEach(button => {
             button.addEventListener('click', (event) => {
                 event.preventDefault();
                 const productId = event.currentTarget.getAttribute('data-id');
-                enviarProductoAPapelera(productId); // Mover producto a la papelera
+                restablcerProducto(productId); // restablecer producto
             });
         });
+
+        // Agregar evento de envío a la papelera a los botones
+        document.querySelectorAll('.delete-product1').forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                const productId = event.currentTarget.getAttribute('data-id');
+                eliminarProducto(productId); // eliminar producto de manera definitiva
+            });
+        });
+
     } catch (error) {
-        console.error('Error al listar productos:', error);
+        console.error('Error al listar productos en la papelera:', error);
     }
 };
 
-// Función para enviar el producto a la papelera
-const enviarProductoAPapelera = async (productId) => {
-    if (!confirm('¿Estás seguro de que deseas enviar este producto a la papelera?')) return;
+// Función para restablecer un producto
+const restablcerProducto = async (productId) => {
+    if (!confirm('¿Estás seguro de que deseas restablecer este producto?')) return;
 
     try {
         const response = await fetch(`http://localhost:3000/productos/${productId}`, {
@@ -69,26 +81,50 @@ const enviarProductoAPapelera = async (productId) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ estado: 'papelera' }), // Cambiamos el estado a "papelera"
+            body: JSON.stringify({ estado: 'activo' }), // Cambiamos el estado a "papelera"
         });
 
         if (response.ok) {
-            alert('Producto enviado a la papelera exitosamente');
+            alert('Producto restablecido exitosamente');
             // Actualizar la tabla después de enviar a la papelera
             document.querySelector("tbody").innerHTML = '';
-            await listarProductos(); // Llamar de nuevo para actualizar la lista
-            window.location.href = "papelera.html";
+            await listarProductosPapelera(); // Llamar de nuevo para actualizar la lista
+            window.location.href = "listar.html";
         } else {
-            alert('Error al enviar el producto a la papelera. Intenta de nuevo.');
+            alert('Error al restablecer el producto. Intenta de nuevo.');
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un problema con la acción de enviar el producto a la papelera. Verifica tu conexión e intenta de nuevo.');
+        alert('Hubo un problema con la acción de restablecer el producto. Verifica tu conexión e intenta de nuevo.');
+    }
+}
+
+// Función para eliminar un producto
+const eliminarProducto = async (productId) => {
+    if (!confirm('¿Estás seguro de que deseas eliminar este producto?')) return;
+
+    try {
+        const response = await fetch(`http://localhost:3000/productos/${productId}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            alert('Producto eliminado exitosamente');
+            // Actualizar la tabla después de eliminar
+            document.querySelector("tbody").innerHTML = '';
+            await listarProductosPapelera(); // Llamar de nuevo para actualizar la lista
+        } else {
+            alert('Error al eliminar el producto. Intenta de nuevo.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un problema con la eliminación del producto. Verifica tu conexión e intenta de nuevo.');
     }
 };
 
-// Ejecutar la función para listar productos al cargar el script
-listarProductos();
+// Ejecutar la función para listar productos en la papelera al cargar la página
+listarProductosPapelera();
+
 
 // Obtener el nombre completo del usuario almacenado en localStorage
 const userName = localStorage.getItem('userName');
@@ -120,20 +156,3 @@ desplegable.addEventListener('click', () => {
 salir.addEventListener('click', () => {
     menu.classList.remove('estilos'); // Quitar la clase que muestra el menú
 });
-
-
-// -menu.style.display: es una propiedad en JavaScript que se utiliza para acceder y modificar la forma en que un elemento HTML se 
-// muestra en la página web. Está relacionada con la propiedad CSS display del elemento.
-
-// - setItem: Almacena un valor en `localStorage` usando una clave específica.
-
-// - stringify: Convierte un objeto JavaScript en una cadena JSON.
-
-// - getItem: Recupera un valor almacenado en `localStorage` usando una clave específica.
-
-// - JSON.parse: Convierte una cadena JSON en un objeto JavaScript.
-
-// - textContent: Devuelve o establece el contenido textual de un elemento.
-
-// - El método splice(): en JavaScript se utiliza para modificar el contenido de un array mediante la eliminación, reemplazo o adición de elementos.
-

@@ -16,30 +16,32 @@ async function productos() {
 
         // Iterar sobre cada producto en la lista
         productos.forEach((product) => {
-            // Asignar valores predeterminados para las propiedades del producto si no están definidos
-            const productImage = product.imagen || "...";
-            const productName = product.nombre || "...";
-            const productPrice = product.precio || "...";
-            const productQuantity = product.cantidad || "...";
-            const productDescription = product.descripción || "...";
-            const category = product.categoria || "...";
+            // Filtrar productos que están activos
+            if (product.estado === 'activo') {
+                // Asignar valores predeterminados para las propiedades del producto si no están definidos
+                const productImage = product.imagen || "...";
+                const productName = product.nombre || "...";
+                const productPrice = product.precio || "...";
+                const productQuantity = product.cantidad || "...";
+                const productDescription = product.descripción || "...";
+                const category = product.categoria || "...";
+                
+                // Clonar el contenido del template
+                const productElement = document.importNode(templateContent, true);
 
-            // Clonar el contenido del template
-            const productElement = document.importNode(templateContent, true);
-
-            // Asignar los valores del producto al template clonado
-            productElement.querySelector(".contenedor__imagen img").src = productImage;
-            productElement.querySelector(".texto__producto").textContent = category;
-            productElement.querySelector(".titulo__producto strong").textContent = productName;
-            productElement.querySelector(".precio__producto--price").textContent = `$${productPrice}`;
-            productElement.querySelector(".precio__producto--stock").textContent = `Stock: ${productQuantity}`;
-            productElement.querySelector(".producto__descripcion p").innerHTML = `<strong>${productName}:</strong> ${productDescription}`;
-
-
-            // Añadir el nuevo contenedor del producto al elemento productList en el DOM
-            productList.appendChild(productElement);
-
+                // Asignar los valores del producto al template clonado
+                productElement.querySelector(".contenedor__imagen img").src = productImage;
+                productElement.querySelector(".texto__producto").textContent = category;
+                productElement.querySelector(".titulo__producto strong").textContent = productName;
+                productElement.querySelector(".precio__producto--price").textContent = `$${productPrice}`;
+                productElement.querySelector(".precio__producto--stock").textContent = `Stock: ${productQuantity}`;
+                productElement.querySelector(".producto__descripcion p").innerHTML = `<strong>${productName}:</strong> ${productDescription}`;
+                
+                // Añadir el nuevo contenedor del producto al elemento productList en el DOM
+                productList.appendChild(productElement);
+            }
         });
+
     } catch (error) {
         console.error('Error al cargar los productos:', error);
     }

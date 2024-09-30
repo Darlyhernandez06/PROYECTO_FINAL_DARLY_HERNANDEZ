@@ -2,10 +2,24 @@
 import { solicitud_usuarios } from "../../modulos/solicitud.js";
 
 // Deshabilitar estado de cuenta, rol, contraseña, confirmarcontraseña
-document.querySelector("#contraseña").disabled = true;
-document.querySelector("#confirmarContraseña").disabled = true;
-document.querySelector("#estado_cuenta").disabled = true;
-document.querySelector("#rol").disabled = true;
+// Se asegura de que el contenido del documento HTML esté completamente cargado antes de ejecutar el código dentro de la función.
+document.addEventListener("DOMContentLoaded", function() {
+
+  // Deshabilita el campo de entrada con el id 'nombre_usuarios' para que no se pueda editar.
+  document.querySelector("#nombres").disabled = true;
+
+  // Deshabilita el campo de entrada con el id 'apellido_usuarios' para que no se pueda editar.
+  document.querySelector("#apellidos").disabled = true;
+
+  // Deshabilita el campo de entrada con el id 'id_rol_usuarios_fk' para que no se pueda editar (clave foránea para el rol del usuario).
+  document.querySelector("#rol").disabled = true;
+
+  // Deshabilita el campo de entrada con el id 'estado_cuenta_usuarios' para que no se pueda editar (probablemente el estado activo/inactivo de la cuenta del usuario).
+  document.querySelector("#estado_cuenta").disabled = true;
+
+  // Deshabilita el campo de entrada con el id 'correo_elec_usuarios' para que no se pueda editar (correo electrónico del usuario).
+  document.querySelector("#correo").disabled = true;
+});
 
 // Variable para almacenar el ID del usuario logueado
 let loggedInUserId = null;
@@ -39,8 +53,6 @@ const cargarPerfil = async () => {
       document.querySelector("#correo").value = loggedInUser.correo || '';
       document.querySelector("#telefono").value = loggedInUser.telefono || '';
       document.querySelector("#direccion").value = loggedInUser.direccion || '';
-      document.querySelector("#contraseña").value = loggedInUser.contraseña || '';
-      document.querySelector("#confirmarContraseña").value = loggedInUser.confirmarContraseña || '';
       document.querySelector("#descripcion").value = loggedInUser.descripcion || '';
       document.querySelector("#rol").value = loggedInUser.rol || '';
       document.querySelector("#estado_cuenta").value = loggedInUser.estado_cuenta || '';
@@ -64,16 +76,9 @@ document.querySelector(".boton__actualizar-link").addEventListener("click", asyn
   
   // Crear un objeto con los datos actualizados del usuario a partir de los valores del formulario
   const updatedUser = {
-    nombres: document.querySelector("#nombres").value,
-    apellidos: document.querySelector("#apellidos").value,
-    correo: document.querySelector("#correo").value,
     telefono: document.querySelector("#telefono").value,
     direccion: document.querySelector("#direccion").value,
-    contraseña: document.querySelector("#contraseña").value,
-    confirmarContraseña: document.querySelector("#confirmarContraseña").value,
     descripcion: document.querySelector("#descripcion").value,
-    rol: document.querySelector("#rol").value,
-    estado_cuenta: document.querySelector("#estado_cuenta").value,
   };
 
   try {

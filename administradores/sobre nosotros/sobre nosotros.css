@@ -310,6 +310,11 @@ li .dropdown-item:active {
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
     padding: 20px; /* Ajuste de padding para separación interna */
+    transition: transform 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+.contenedor__dentro--secundario:hover {
+    transform: scale(1.05); /* Escala ligeramente la tarjeta al pasar el ratón */
 }
 
 .contenedor__titulo-texto {
@@ -352,6 +357,11 @@ li .dropdown-item:active {
     justify-content: center; /* Centra contenido horizontalmente */
     align-items: center; /* Centra contenido verticalmente */
     padding: 20px; /* Ajuste de padding para separación interna */
+    transition: transform 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+.contenedor__dentro--terciario:hover {
+    transform: scale(1.05); /* Escala ligeramente la tarjeta al pasar el ratón */
 }
 
 .contenedor__titulotexto--terciario {

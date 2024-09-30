@@ -321,6 +321,11 @@ li .dropdown-item:active {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del contenedor */
     padding: var(--padding); /* Padding usando una variable CSS */
     gap: 150px; /* Espacio entre elementos */
+    transition: transform 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+.contenedor__titulo-texto:hover {
+    transform: scale(1.05); /* Escala ligeramente la tarjeta al pasar el ratón */
 }
 
 .contenedor__titulo--seccion{

@@ -30,7 +30,7 @@ $formulario.addEventListener("submit", (event) => {
                 localStorage.setItem('userType', 'Administrador');
                 window.location.href = '../administradores/pagina_principal.html';
             } else {
-                alert('Login exitoso');
+                alert('Login exitoso como cliente');
                 localStorage.setItem('userName', user.nombres + ' ' + user.apellidos); 
                 localStorage.setItem('userType', 'Cliente');
                 localStorage.setItem('userId', user.id);

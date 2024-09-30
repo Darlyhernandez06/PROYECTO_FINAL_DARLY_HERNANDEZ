@@ -54,7 +54,7 @@ const cargarFacturas = async () => {
             clone.querySelector('.estado').textContent = factura.estado_factura;
             clone.querySelector('.numero').textContent = factura.numero || 'N/A';
             clone.querySelector('.fecha').textContent = factura.fecha || 'N/A';
-            clone.querySelector('.total').textContent = `$${factura.total ? factura.total.toFixed(2) : 'N/A'}`;
+            clone.querySelector('.total').textContent = `$${factura.total ? factura.total.toFixed(0) : 'N/A'}`;
 
             // Mostrar productos con cantidad
             const productos = factura.productos.map(p => `${p.nombre} (${p.cantidad})`).join(', ');
