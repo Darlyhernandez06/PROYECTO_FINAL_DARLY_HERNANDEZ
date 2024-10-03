@@ -16,6 +16,8 @@ async function productos() {
 
         // Iterar sobre cada producto en la lista
         productos.forEach((product) => {
+            // Filtrar productos que están activos
+            if (product.estado === 'activo') {
             // Asignar valores predeterminados para las propiedades del producto si no están definidos
             const productImage = product.imagen || "...";
             const productName = product.nombre || "...";
@@ -36,6 +38,8 @@ async function productos() {
 
             // Añadir el nuevo contenedor del producto al elemento productList en el DOM
             productList.appendChild(productElement);
+
+            }
 
         });
     } catch (error) {

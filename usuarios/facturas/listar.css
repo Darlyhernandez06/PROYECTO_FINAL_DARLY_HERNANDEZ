@@ -28,11 +28,32 @@
 
 /* Estilos generales del cuerpo del documento */
 body {
-    background: url('../../imagenes/fondo de perfil.svg'); /* Imagen de fondo */
+    background: url('../../imagenes/fondo de productos.svg'); /* Imagen de fondo */
     background-repeat: no-repeat;   /* La imagen de fondo no se repite */
     background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     font-family: 'MiFuente';        /* Fuente personalizada */
     background-position: center;    /* Centra la imagen de fondo */
+}
+
+/* Estilos para el contenedor del carrito */
+#cuenta_carrito {
+    background-color: var(--color-terciario); /* Color de fondo */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 25px; /* Ancho */
+    height: 25px; /* Altura */
+    text-align: center; /* Centra el texto */
+    position: absolute; /* Posicionamiento absoluto */
+    font-size: 20px; /* Tamaño de fuente */
+    margin-left: 17px; /* Margen izquierdo */
+}
+
+/* Estilos para el contenedor del carrito */
+.carrito {
+    position: relative; /* Posicionamiento relativo */
+    margin-top: -18px; /* Ajusta margen superior */
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/
@@ -258,47 +279,61 @@ li .dropdown-item:active {
     font-size: 40px; /* Tamaño de fuente de 40px */
 }
 
-/* ESTILOS PARA LA PRIMERA SECCION */
+/*PARTE DE LA SECCION PRINCIPAL */
 
-/* Título principal */
-.contenedor__titulo{
-    display: flex; /* Contenedor flexible */
-    gap: 20px; /* Espacio entre los elementos */
-    font-size: 64px; /* Tamaño de fuente grande */
-    text-align: start; /* Alinear al inicio (izquierda) */
-    color: var(--color-secundario); /* Color del texto usando una variable de CSS */
+/* Estilo para el borde de un contenedor */
+.borde {
+    border: 4px solid var(--color-terciario); /* Borde sólido con color terciario */
+}
+
+/* Estilo para el título principal */
+.titulo__principal {
+    color: var(--color-acento-2); /* Color de acento 2 */
     font-weight: bold; /* Texto en negrita */
-    margin-left: 180px; /* Margen izquierdo específico */
-    padding-top: 200px; /* Relleno superior */
+    text-align: center; /* Alineación centrada */
+    font-size: 60px; /* Tamaño de fuente */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
-}
-  
-/* texto */
-.contenedor__texto{
-    font-size: 20px; /* Tamaño de fuente medio */
-    margin-top: 50px; /* Margen superior específico */
-    text-align: center; /* Alinear el texto al centro */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+    margin-top: 100px; /* Margen superior */
 }
 
-/* Subtítulo */
-.contenedor__subtitulo{
-    font-size: 40px; /* Tamaño de fuente medio */
-    text-align: start; /* Alinear al inicio (izquierda) */
-    color: var(--color-secundario); /* Color del texto usando una variable de CSS */
-    font-weight: bold; /* Texto en negrita */
-    margin-left: 180px; /* Margen izquierdo específico */
-    margin-top: 200px; /* Margen superior específico */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
-}
-
-/* linea separadora */
+/* Línea separadora */
 .contenedor__linea {
-    width: 1540px; /* Ajusta el ancho de la línea */
-    height: 4px; /* Ajusta el grosor de la línea */
+    width: 1320px; /* Ancho de la línea */
+    height: 3px; /* Grosor de la línea */
     background-color: var(--color-terciario); /* Color de la línea */
     margin: 20px auto; /* Espaciado superior e inferior, centrar horizontalmente */
-    margin-top: 50px; /* Margen superior específico */
+    margin-top: 10px; /* Separación superior adicional */
+}
+
+/* Estilo base para la tabla */
+table {
+    width: 100%; /* La tabla ocupará el 100% del ancho del contenedor padre */
+    border-collapse: collapse; /* Combina los bordes adyacentes de las celdas en un solo borde */
+    
+}
+
+th, td {
+    padding: 10px; /* Añade un espacio de 10px alrededor del contenido de cada celda */
+    text-align: center; /* Centra el texto dentro de las celdas */
+    background-color: var(--color-texto-principal); /* Establece el color de fondo de las celdas usando una variable CSS */
+}
+
+th {
+    background-color: var(--color-primario); /* Establece el color de fondo para las celdas de encabezado usando una variable CSS */
+}
+
+.borde1 {
+    border: 2px solid var(--color-secundario); /* Añade un borde sólido de 2px alrededor del elemento con el color definido en la variable CSS */
+}
+
+/* Contenedor de tabla responsivo */
+.tabla_contenedor {
+    overflow-x: auto; /* Añade una barra de desplazamiento horizontal si el contenido desborda el contenedor */
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
+}
+
+tr {
+    background-color: var(--color-texto-principal); /* Establece el color de fondo */
 }
 
 .contenedor__informacion {
@@ -344,239 +379,31 @@ li .dropdown-item:active {
     margin-top: -100px;  /* Margen superior específico */
 }
 
-/* boton para regresar a la tienda */
-.boton__regresar {
-    margin-top: 100px; /* Margen superior específico */
-    display: flex; /* Usar flexbox para centrar el texto */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-}
-
-.boton__regresar--link{
-    width: 100%; /* Ancho del 100% del contenedor padre */
-    max-width: 200px; /* Ancho máximo */
-    min-height: 50px; /* Altura mínima */
-    background-color: var(--color-terciario); /* Color de fondo terciario */
-    color: var(--color-fondo-principal); /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
-    border-radius: 15px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    display: flex; /* Usar flexbox para centrar el texto */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    padding: 10px 20px; /* Relleno interno */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center; /* Alinear el texto en el centro */
-}
-
-.boton__regresar--link:hover {
-    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
-    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
-}
-
-.boton__regresar--link:active {
-    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
-    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
-}
-
-/* ESTILOS PARA LA SEGUNDA SECCION */
-
-.form__contenedor {
-    margin-top: 150px; /* Margen superior específico */
-    display: flex; /* Contenedor flexible */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-}
-
-.form__group {
-    margin-bottom: 50px; /* Margen inferior específico */
-}
-
-.form__label {
-    display: block; /* establece que un elemento ocupará todo el espacio disponible por defecto y el siguiente elemento a este se situará por debajo */
-    margin-bottom: 10px; /* Margen inferior específico */
-    font-weight: bold; /* Texto en negrita */
-}
-
-.form__input {
-    width: 100%; /* Ancho */
-    min-height: 50px; /* Altura mínima */
-    padding: 10px; /* Espaciado interno */
-    border: 3px solid var(--color-terciario); /* borde */
-    border-radius: 4px; /* Bordes redondeados */
-}
-
-.form__input:focus {
-    /* Estilos para cuando los campos de correo electrónico y contraseña están enfocados */
-    outline: none; /* Sin contorno */
-}
-
-.form__input:hover {
-    /* Estilos para cuando el mouse está sobre los campos de entrada */
-    border: 3px solid var(--color-acento-1); /* Borde sólido con color de acento 1 */
-}
-
-.form__input:active {
-    /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
-    border: 3px solid var(--color-secundario); /* Borde sólido con color secundario */
-}
-
-.textarea {
-    width: 600px; /* Ancho calculado con margen */
-    min-height: 160px; /* Altura mínima */
-    padding: 10px; /* Espaciado interno */
-    border: 3px solid var(--color-terciario);
-    border-radius: 4px; /* Bordes redondeados */
-}
-
-.textarea:focus {
-    /* Estilos para cuando los campos de correo electrónico y contraseña están enfocados */
-    outline: none; /* Sin contorno */
-}
-
-.textarea:hover {
-    /* Estilos para cuando el mouse está sobre los campos de entrada */
-    border: 3px solid var(--color-acento-1); /* Borde sólido con color de acento 1 */
-}
-
-.textarea:active {
-    /* Estilos para cuando los campos de entrada están activos (haciendo clic) */
-    border: 3px solid var(--color-secundario); /* Borde sólido con color secundario */
-}
-
-/* boton para actualizar perfil */
-.boton__actualizar {
-    margin-top: 50px; /* Margen superior específico */
-    margin-bottom: -50px; /* Margen inferior específico */
-    display: flex; /* Usar flexbox para centrar el texto */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-}
-
-.boton__actualizar-link{
-    width: 100%; /* Ancho del 100% del contenedor padre */
-    max-width: 200px; /* Ancho máximo */
-    min-height: 50px; /* Altura mínima */
-    background-color: var(--color-terciario); /* Color de fondo terciario */
-    color: var(--color-fondo-principal); /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
-    border-radius: 15px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    display: flex; /* Usar flexbox para centrar el texto */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    padding: 10px 20px; /* Relleno interno */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center; /* Alinear el texto en el centro */
-}
-
-.boton__actualizar-link:hover {
-    background-color: var(--color-acento-1); /* Color de fondo al pasar el ratón por encima */
-    color: var(--color-fondo-principal); /* Color del texto al pasar el ratón por encima */
-}
-
-.boton__actualizar-link:active {
-    background-color: var(--color-secundario); /* Color de fondo al hacer clic */
-    color: var(--color-fondo-principal); /* Color del texto al hacer clic */
-}
-
-/* Estilos para el pie de página */
-.footer {
-    width: 100%; /* Ancho completo */
-    height: 104px; /* Altura del pie de página */
-    background-color: var(--color-primario); /* Color de fondo */
-    display: flex; /* Utiliza Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    margin-top: 200px; /* Margen superior */
-}
-
-/* Estilos para el texto dentro del pie de página */
-.footer__parrafo {
-    color: var(--color-fondo-principal); /* Color del texto */
-    text-align: center; /* Alinea el texto al centro */
-    font-weight: bold; /* Fuente en negrita */
-}
-
-/* Estilos para el contenedor del carrito */
-#cuenta_carrito {
-    background-color: var(--color-terciario); /* Color de fondo */
-    border-radius: 50%; /* Forma circular */
-    display: flex; /* Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    width: 25px; /* Ancho */
-    height: 25px; /* Altura */
-    text-align: center; /* Centra el texto */
-    position: absolute; /* Posicionamiento absoluto */
-    font-size: 20px; /* Tamaño de fuente */
-    margin-left: 17px; /* Margen izquierdo */
-}
-
-/* Estilos para el contenedor del carrito */
-.carrito {
-    position: relative; /* Posicionamiento relativo */
-    margin-top: -18px; /* Ajusta margen superior */
-}
-
-/* Estilos para el contenedor de los elementos internos */
-.teto {
-    display: flex; /* Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-}
-
-.factura-item {
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ddd; /* Borde gris claro */
-    border-radius: 5px; /* Esquinas redondeadas */
-    margin-bottom: 10px; /* Espacio debajo del elemento */
-    background-color: var(--color-texto-principal); /* Fondo con variable de color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.factura-item h4 {
-    margin-top: 0; /* Sin margen superior */
-}
-
-.factura-item p {
-    margin: 5px 0; /* Margen vertical uniforme */
-}
 
 /*RESPONSIVE*/
 
 /* Media query para portátiles */
 @media (min-width: 769px) and (max-width: 1300px) {
-    .contenedor__linea {
-        width: 90%; /* Ajusta el ancho de la línea */
-    }
-    .contenedor__titulo, .contenedor__subtitulo {
-        margin-left: 70px; /* Margen izquierdo específico */
-    }
-    .contenedor__dentro{
-        width: 1000px; /* Ancho */
-        height: 150px; /* Altura */
+    .contenedor__linea{
+        width: 95%; /* Ancho del contenedor */
     }
 }
-
 
 /*RESPONSIVE*/
 
 /* Media query para tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .contenedor__linea {
-        width: 90%; /* Ancho de la linea */
+@media (min-width: 768px) and (max-width: 1299px) {
+    body {
+        background: url('../../imagenes/fondo de productos.svg'); /* Imagen de fondo */
+        background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+        background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+        background-position: center;    /* Centra la imagen de fondo */
     }
-    
-    .contenedor__titulo, .contenedor__subtitulo {
-        margin-left: 38px; /* Margen izquierdo específico */
+    .contenedor__linea{
+        width: 95%; /* Ancho del contenedor */
     }
-    
-    .contenedor__dentro{
-        width: 650px; /* Ancho */
-        height: 150px; /* Altura */
+    table {
+        font-size: 14px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
     }
 }
 
@@ -584,59 +411,24 @@ li .dropdown-item:active {
 
 /* Media query para pantallas pequeñas como móviles */
 @media (min-width: 300px) and (max-width: 767px) {
-    .contenedor__linea {
-        width: 80%; /* Ancho de la linea */
+    body {
+        background: url('../../imagenes/fondo de productos.svg'); /* Imagen de fondo */
+        background-repeat: no-repeat;   /* La imagen de fondo no se repite */
+        background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
+        background-position: center;    /* Centra la imagen de fondo */
+    }
+    .contenedor__linea{
+        width: 90%; /* Ancho del contenedor */
     }
 
-    .contenedor__titulo {
-        font-size: 40px; /* tamaño de la fuente */
-        margin-left: 40px; /* Margen izquierdo específico */
-        text-align: start; /* Alinear al inicio */
-        position: relative; /* Posicionamiento relativo: permite posicionar hijos con `position: absolute` en relación a este contenedor */
+    .titulo__principal{
+        font-size: 50px; /* Tamaño de la letra */
     }
-    
-    .contenedor__titulo img {
-        width: 60px; /* Ancho */
-        margin-left: 150px; /* Margen izquierdo específico */
-        margin-top: 42px; /* Margen superior */
-        position: absolute; /* Posicionamiento absoluto: se posiciona en relación al contenedor padre con `position: relative` */
-    }    
-
-    .contenedor__subtitulo{
-        margin-left: 40px; /* Margen izquierdo específico */
-        text-align: start; /* Alinear al inicio */
+    table {
+        font-size: 12px; /* Reduce aún más el tamaño de la fuente en pantallas muy pequeñas */
     }
-
-    .contenedor__texto{
-        font-size: 16px; /* tamaño de la fuente */
-        padding: 0 10px; /* Relleno (padding) horizontal de 10px, sin relleno vertical */
-    }
-
-    .contenedor__dentro{
-        width: 280px; /* Ancho */
-        height: 150px; /* Altura */
-    }
-
-    .contenedor__informacion--imagen {
-        width: 100px;             /* Ancho del círculo */
-        height: 40px;            /* Alto del círculo */
-    }
-    
-    .contenedor__informacion--imagen img {
-        width: 50%;              /* Ajusta el tamaño de la imagen */
-    }
-
-    .contenedor__informacion--texto{
-        text-align: start; /* Alinear al inicio */
-    }
-
-    .form__input {
-        width: 100%; /* Ancho automático para ajustar al contenido */
-        min-height: 40px; /* Altura mínima reducida para móviles */
-    }
-
-    .textarea {
-        width: 100%; /* Ancho automático para ajustar al contenido */
-        min-height: 150px; /* Altura mínima reducida para móviles */
+    th, td {
+        padding: 5px; /* Reduce el espacio alrededor del contenido de las celdas */
     }
 }
+

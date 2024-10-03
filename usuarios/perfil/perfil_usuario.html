@@ -54,6 +54,9 @@
                       <li class="nav-item">
                         <a class="nav-link active" href="../../usuarios/ofertas/ofertas.html">Ofertas</a>
                       </li>
+                      <li class="nav-item"> <!-- Elemento de la lista de navegación -->
+                        <a class="nav-link active" aria-current="page" href="../../usuarios/facturas/listar.html">Pedidos</a>
+                      </li>
                       <!-- Elemento de menú con dropdown -->
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -122,28 +125,6 @@
             <div class="contenedor__texto">
                 <p>Aquí podrás ver tus pedidos, editar tu perfil y realizar nuevas compras.</p>
             </div>
-            <!-- Contenedor de información de pedidos -->
-            <div class="contenedor__informacion">
-                <div class="contenedor__dentro" id="noPedidos">
-                    <!-- Imagen dentro del contenedor de información -->
-                    <div class="contenedor__informacion--imagen">
-                        <img src="../../imagenes/logo ningun pedido.svg" alt="logo" id="noPedidosImg">
-                    </div>
-                    <!-- Texto dentro del contenedor de información -->
-                    <div class="contenedor__informacion--texto">
-                        <p><strong id="noPedidosTexto">No se ha realizado ningún pedido todavía.</strong></p>
-                    </div>
-                </div>
-                <!-- Contenedor para las facturas -->
-                <template class="contenedor__facturas" id="facturasContenedor">
-                    <div class="factura-item">
-                        <h4 class="factura-id"></h4>
-                        <p class="fecha"></p>
-                        <p class="estado"></p>
-                        <p class="total"></p>
-                        <p class="productos"></p>
-                    </div>
-                </template>
             </div>
         </div>
     </section>
@@ -189,16 +170,6 @@
                     <div class="form__group">
                         <label class="form__label" for="direccion">Dirección</label>
                         <input class="form__input" type="text" id="direccion" name="direccion" required>
-                    </div>
-                    <!-- Campo de la contraseña -->
-                    <div class="form__group">
-                        <label class="form__label" for="contraseña">Contraseña</label>
-                        <input class="form__input" type="password" id="contraseña" name="contraseña" required>
-                    </div>
-                     <!-- Campo de confirmar contraseña -->
-                     <div class="form__group">
-                        <label class="form__label" for="confirmarContraseña">Confirmar Contraseña</label>
-                        <input class="form__input" type="password" id="confirmarContraseña" name="confirmarContraseña" required>
                     </div>
                     <!-- Campo de la descripción -->
                     <div class="form__group d-flex flex-column">

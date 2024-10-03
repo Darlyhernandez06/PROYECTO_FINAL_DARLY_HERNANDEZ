@@ -129,6 +129,7 @@
                         <th class="borde1">Rol</th>
                         <th class="borde1">Estado cuenta</th>
                         <th class="borde1">Acciones</th>
+                        <th class="borde1">Restablecer contraseña</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -156,6 +157,15 @@
                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                         </svg>
                     </a>
+                    <!-- Enlace para restablecer contraseña del el usuario -->
+                    <td class="borde1" class="d-flex align-items-center justify-content-center">
+                        <a href="restablecer la contraseña/restablecer.html?id=${element.id}" class="restablecer-user restablecer" style="margin-top: 20px;">
+                            <!-- Icono SVG de restablecer -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="orange" viewBox="0 0 24 24">
+                                <path d="M12 1a11 11 0 0 1 11 11h-2a9 9 0 1 0-2.64 6.36L17 15h7v7l-2.64-2.64A11 11 0 1 1 12 1z"/>
+                            </svg>
+                        </a>
+                    </td>
                 </td>
             </tr>
         </template>               

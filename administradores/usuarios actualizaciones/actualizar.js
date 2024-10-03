@@ -30,7 +30,7 @@ const actualizarEstadoUsuario = async (event) => {
     try {
         const estadoCuenta = estadoCuentaSelect.value;
 
-        const response = await fetch(`http://localhost:3000/users/${userId}`, { // Ajusta la URL según tu estructura
+        const response = await fetch(`http://localhost:3000/users/${userId}`, { 
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

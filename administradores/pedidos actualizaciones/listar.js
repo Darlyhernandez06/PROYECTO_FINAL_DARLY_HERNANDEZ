@@ -1,7 +1,7 @@
 // Función para obtener el nombre del cliente basado en el userId
 async function obtenerNombreCliente(userId) {
     try {
-        const response = await fetch('http://localhost:3000/users'); // Asegúrate de que esta URL es correcta
+        const response = await fetch('http://localhost:3000/users'); 
         if (!response.ok) throw new Error('Error al obtener la lista de usuarios');
         
         const clientes = await response.json();

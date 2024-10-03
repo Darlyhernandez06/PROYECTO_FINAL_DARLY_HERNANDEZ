@@ -24,7 +24,7 @@ async function productos() {
             const productQuantity = product.cantidad || 1;
             const userId = localStorage.getItem('userId');
 
-            if (category === "Frutas") {
+            if (category === "Frutas" && product.estado === 'activo') {
                 // Clonar el contenido del template
                 const productElement = document.importNode(templateContent, true);
                 

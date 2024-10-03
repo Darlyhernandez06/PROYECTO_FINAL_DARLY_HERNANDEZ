@@ -32,8 +32,11 @@ const listarUsuarios = async () => {
             $template.querySelector('.rol').textContent = element.rol || '';
             $template.querySelector('.estado-cuenta').textContent = element.estado_cuenta || '';
 
-            // Agregar enlaces de edición y eliminación
+            // Agregar enlaces de edición 
             $template.querySelector('.edit-user').setAttribute('href', `actualizar.html?id=${element.id}`);
+
+            // Agregar enlaces de restablecer
+            $template.querySelector('.restablecer-user').setAttribute('href', `restablecer la contraseña/restablecer.html?id=${element.id}`);
 
             // Clonar el contenido del template para usarlo
             const clone = document.importNode($template, true);

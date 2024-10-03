@@ -44,13 +44,24 @@ $formulario.addEventListener("submit", (event) => {
 
     }
     if (response) {
-        fetch('http://localhost:3000/users', {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
-        })
+        // Primero, verificar si el correo ya está registrado
+        fetch(`http://localhost:3000/users?correo=${(correo.value)}`)
+            .then((response) => response.json())
+            .then((usuarios) => {
+                // Si el array de usuarios devuelto no está vacío, significa que el correo ya está en uso
+                if (usuarios.length > 0) {
+                    window.location.href = "../errores/correo.html"; // Redirige a la página de error
+                } else {
+                    // Si el correo no está en uso, proceder a crear el nuevo usuario
+                    return fetch('http://localhost:3000/users', {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8',
+                        },
+                    });
+                }
+            })
         .then((response) => response.json())
         .then(data => {
             nombres.value = "";
