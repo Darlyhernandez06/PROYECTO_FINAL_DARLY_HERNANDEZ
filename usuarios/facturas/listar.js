@@ -1,3 +1,5 @@
+import { generarPDF } from '../../descargar_factura.js';
+
 // Obtener el nombre completo y el tipo de usuario del almacenamiento local
 const userName = localStorage.getItem('userName');
 const userType = localStorage.getItem('userType');
@@ -87,9 +89,16 @@ const cargarFacturas = async () => {
             facturaElement.querySelector('.productos').innerText = productos; // Mostrar productos
             facturaElement.querySelector('.estado').innerText = factura.estado_factura; // Mostrar estado
 
+            const linkDescargar = facturaElement.querySelector('.factura');
+            linkDescargar.addEventListener('click', function(event) {
+                event.preventDefault();
+                generarPDF(factura);
+            });
+
             // Añadir el elemento al contenedor de facturas
             contenedorFacturas.appendChild(facturaElement);
         });
+
     } catch (error) {
         console.error('Error al cargar las facturas:', error);
     }

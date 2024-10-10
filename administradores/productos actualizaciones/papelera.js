@@ -32,10 +32,8 @@ const listarProductosPapelera = async () => {
 
                 // Actualizar los enlaces con el id del producto
                 const restablecerLink = $template.querySelector('.restablecer-producto1');
-                const eliminarLink = $template.querySelector('.delete-product1');
 
                 restablecerLink.setAttribute('data-id', element.id);
-                eliminarLink.setAttribute('data-id', element.id);
 
                 // Clonar el contenido del template para usarlo
                 const clone = document.importNode($template, true);
@@ -61,8 +59,6 @@ const listarProductosPapelera = async () => {
         document.querySelectorAll('.delete-product1').forEach(button => {
             button.addEventListener('click', (event) => {
                 event.preventDefault();
-                const productId = event.currentTarget.getAttribute('data-id');
-                eliminarProducto(productId); // eliminar producto de manera definitiva
             });
         });
 
@@ -98,29 +94,6 @@ const restablcerProducto = async (productId) => {
         alert('Hubo un problema con la acción de restablecer el producto. Verifica tu conexión e intenta de nuevo.');
     }
 }
-
-// Función para eliminar un producto
-const eliminarProducto = async (productId) => {
-    if (!confirm('¿Estás seguro de que deseas eliminar este producto?')) return;
-
-    try {
-        const response = await fetch(`http://localhost:3000/productos/${productId}`, {
-            method: 'DELETE',
-        });
-
-        if (response.ok) {
-            alert('Producto eliminado exitosamente');
-            // Actualizar la tabla después de eliminar
-            document.querySelector("tbody").innerHTML = '';
-            await listarProductosPapelera(); // Llamar de nuevo para actualizar la lista
-        } else {
-            alert('Error al eliminar el producto. Intenta de nuevo.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Hubo un problema con la eliminación del producto. Verifica tu conexión e intenta de nuevo.');
-    }
-};
 
 // Ejecutar la función para listar productos en la papelera al cargar la página
 listarProductosPapelera();

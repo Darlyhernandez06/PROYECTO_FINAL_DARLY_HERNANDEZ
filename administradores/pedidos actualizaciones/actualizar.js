@@ -1,3 +1,42 @@
+// IMPORTANCIONES
+import solicitud, { enviar } from "../../modulos/solicitud.js";
+
+// Función para actualizar el stock de los productos en el servidor
+async function actualizarStock(productosVendidos) {
+    try {
+        // Obtener el stock actual de los productos desde el servidor
+        const productosStock = await solicitud("productos");
+        console.log('Productos en stock:', productosStock);
+
+        // Actualizar las cantidades en el stock
+        for (const productoVendido of productosVendidos) {
+            const productoEnStock = productosStock.find(producto => producto.nombre === productoVendido.nombre);
+            if (productoEnStock) {
+                console.log('Actualizando cantidad de:', productoEnStock.nombre);
+                console.log('Cantidad anterior:', productoEnStock.cantidad);
+
+                productoEnStock.cantidad += productoVendido.cantidad;
+                console.log('Cantidad nueva:', productoEnStock.cantidad);
+
+                // Crear opciones para enviar la actualización individual del producto
+                const opciones = {
+                    method: 'PUT',
+                    body: JSON.stringify(productoEnStock), // Enviar solo el producto actualizado
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                };
+
+                // Utilizar la función enviar con el ID del producto
+                const respuesta = await enviar(`productos/${productoEnStock.id}`, opciones);
+                console.log('Respuesta del servidor para', productoEnStock.nombre, ':', respuesta);
+            }
+        }
+    } catch (error) {
+        console.error('Error al actualizar el stock:', error);
+    }
+}
+
 // Función para actualizar el estado de la factura
 const actualizarEstadoFactura = async (e) => {
     e.preventDefault(); // Prevenir la recarga de la página
@@ -6,7 +45,12 @@ const actualizarEstadoFactura = async (e) => {
     const pedidoId = new URLSearchParams(window.location.search).get('id');
 
     try {
-        const response = await fetch(`http://localhost:3000/factura/${pedidoId}`, {
+        // Primero, obtén la factura actual para saber qué productos se vendieron
+        const responseFactura = await fetch(`http://localhost:3000/factura/${pedidoId}`);
+        const factura = await responseFactura.json();
+
+        // Actualiza el estado de la factura
+        const responseActualizar = await fetch(`http://localhost:3000/factura/${pedidoId}`, {
             method: 'PATCH', // Usar PATCH para actualizar parcialmente
             headers: {
                 'Content-Type': 'application/json'
@@ -14,8 +58,15 @@ const actualizarEstadoFactura = async (e) => {
             body: JSON.stringify({ estado_factura: estadoFacturaSelect })
         });
 
-        if (response.ok) {
+        if (responseActualizar.ok) {
             alert('Estado del pedido actualizado correctamente.');
+
+            // Si el estado de la factura es "Cancelado", actualiza el stock
+            if (estadoFacturaSelect === "Su pedido ha sido cancelado.") {
+                await actualizarStock(factura.productos);
+                alert('Stock actualizado correctamente debido a la cancelación.');
+            }
+
             // Redirigir de vuelta a la lista de facturas
             window.location.href = 'listar.html';
         } else {

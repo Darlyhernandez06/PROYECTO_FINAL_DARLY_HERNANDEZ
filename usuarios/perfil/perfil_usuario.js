@@ -1,5 +1,5 @@
-// Importa la función solicitud_usuarios desde un módulo para hacer solicitudes al servidor
-import { solicitud_usuarios } from "../../modulos/solicitud.js";
+// IMPORTANCIONES
+import solicitud, { enviar } from "../../modulos/solicitud.js";
 
 // Deshabilitar estado de cuenta, rol, contraseña, confirmarcontraseña
 // Se asegura de que el contenido del documento HTML esté completamente cargado antes de ejecutar el código dentro de la función.
@@ -28,10 +28,10 @@ let loggedInUserId = null;
 const cargarPerfil = async () => {
   try {
     // Obtener la lista de usuarios desde el servidor
-    const users = await solicitud_usuarios("users");
+    const users = await solicitud("users");
 
     // Traer el correo electrónico del usuario logueado desde la lista de usuarios
-    const loggedInUserCorreo = users.find(user => user.rol === 'Cliente').correo;
+    const loggedInUserCorreo = users.find(user => user.rol === 'cliente').correo;
 
     // Verificar si se obtuvo el correo electrónico del usuario logueado
     if (!loggedInUserCorreo) {
@@ -74,11 +74,16 @@ const cargarPerfil = async () => {
 document.querySelector(".boton__actualizar-link").addEventListener("click", async (event) => {
   event.preventDefault();
   
-  // Crear un objeto con los datos actualizados del usuario a partir de los valores del formulario
+  // Crear un objeto con los datos del usuario a partir de los valores del formulario, incluidos los campos deshabilitados
   const updatedUser = {
+    nombres: document.querySelector("#nombres").value,
+    apellidos: document.querySelector("#apellidos").value,
+    correo: document.querySelector("#correo").value,
     telefono: document.querySelector("#telefono").value,
     direccion: document.querySelector("#direccion").value,
     descripcion: document.querySelector("#descripcion").value,
+    rol: document.querySelector("#rol").value,
+    estado_cuenta: document.querySelector("#estado_cuenta").value,
   };
 
   try {
@@ -99,12 +104,6 @@ document.querySelector(".boton__actualizar-link").addEventListener("click", asyn
     
     // Verificar si la solicitud fue exitosa
     if (response.ok) {
-      // Actualizar la interfaz con los datos del usuario actualizado
-      document.querySelector("#loggedInUserNamecliente").innerHTML = `
-        <strong>${updatedUser.nombres || ''} ${updatedUser.apellidos || ''}</strong><br>
-        <small>${updatedUser.rol || ''}</small>
-      `;
-      
       // Mostrar un mensaje de éxito al usuario
       alert("Perfil actualizado con éxito");
     } else {
@@ -168,78 +167,3 @@ async function actualizarContadorCarrito() {
 
 // Llama a la función para actualizar el contador del carrito cuando la página se carga
 document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
-
-
-
-// Función para cargar las facturas y mostrarlas en la vista
-const cargarFacturas = async () => {
-  try {
-    // Obtener las facturas desde el servidor
-    const response = await fetch('http://localhost:3000/factura');
-    const facturas = await response.json();
-
-    // Obtener el ID del usuario desde localStorage
-    const userId = localStorage.getItem('userId');
-
-    // Filtrar las facturas para obtener solo las del usuario actual
-    const facturasFiltradas = facturas.filter(factura => factura.userId === userId);
-
-    // Seleccionar el contenedor para las facturas
-    const facturasContenedor = document.querySelector('#facturasContenedor');
-    const noPedidos = document.querySelector('#noPedidos');
-    const template = facturasContenedor.content;
-
-    // Si no hay facturas, mostrar el mensaje correspondiente
-    if (facturasFiltradas.length === 0) {
-      noPedidos.style.display = 'flex';
-      return;
-    }
-
-    noPedidos.style.display = 'none';
-
-    // Limpiar cualquier contenido previo en el contenedor
-    const facturasFragment = document.createDocumentFragment();
-
-    // Recorrer cada factura y crear un elemento basado en el template
-    facturasFiltradas.forEach(factura => {
-    // Clonar el contenido del template
-    const facturaElement = document.importNode(template, true);
-
-    // Función para convertir la fecha del formato dd/mm/yyyy a yyyy-mm-dd
-    const convertirFecha = (fechaStr) => {
-    const [day, month, year] = fechaStr.split('/');
-    return `${year}-${month}-${day}`;
-  };
-
-    // Función para formatear la fecha como dd/mm/yyyy
-    const formatearFecha = (fechaStr) => {
-      const [year, month, day] = fechaStr.split('-');
-      return `${day}/${month}/${year}`;
-    };
-
-    // Procesar la lista de productos
-    const productos = factura.productos.map(p => `${p.nombre} (${p.cantidad})`).join(', ');
-    const fechaConvertida = convertirFecha(factura.fecha);
-    const fechaFormateada = formatearFecha(fechaConvertida);
-
-    // Rellenar los datos de la factura
-    facturaElement.querySelector('.factura-id').innerHTML = `Factura ID: ${factura.id}`;
-    facturaElement.querySelector('.fecha').innerHTML = `<strong>Fecha:</strong> ${fechaFormateada}`;
-    facturaElement.querySelector('.estado').innerHTML = `<strong>Estado:</strong>  ${factura.estado_factura}`;
-    facturaElement.querySelector('.total').innerHTML = `<strong>Total:</strong>  $${factura.total.toFixed(2)}`;
-    facturaElement.querySelector('.productos').innerHTML = `<strong>Productos:</strong>  ${productos}`;
-
-    // Añadir el elemento al fragmento de facturas
-    facturasFragment.appendChild(facturaElement);
-    });
-
-    // Insertar el fragmento con todas las facturas en el contenedor
-    facturasContenedor.parentNode.appendChild(facturasFragment);
-
-  } catch (error) {
-      console.error('Error al cargar las facturas:', error);
-  }
-};
-
-// Llamar a la función cuando el documento esté completamente cargado
-document.addEventListener('DOMContentLoaded', cargarFacturas);

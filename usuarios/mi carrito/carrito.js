@@ -1,3 +1,6 @@
+// IMPORTANCIONES
+import solicitud, { enviar } from "../../modulos/solicitud.js";
+
 // Función asíncrona para cargar y mostrar los productos del carrito del usuario
 async function Carrito() {
     try {
@@ -92,7 +95,7 @@ document.addEventListener("DOMContentLoaded", Carrito);
 
 
 // Función para generar y descargar un PDF con la factura
-function generarPDF(factura) {
+export function generarPDF(factura) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({
         format: 'letter' // Configurar el tamaño del documento a carta
@@ -160,33 +163,69 @@ function generarPDF(factura) {
     doc.save("factura.pdf");
 }
 
+
+
+// Función para actualizar el stock de los productos en el servidor
+async function actualizarStock(productosVendidos) {
+    try {
+        // Obtener el stock actual de los productos desde el servidor
+        const productosStock = await solicitud("productos");
+        console.log('Productos en stock:', productosStock);
+
+        // Actualizar las cantidades en el stock
+        for (const productoVendido of productosVendidos) {
+            const productoEnStock = productosStock.find(producto => producto.nombre === productoVendido.nombre);
+            if (productoEnStock) {
+                console.log('Actualizando cantidad de:', productoEnStock.nombre);
+                console.log('Cantidad anterior:', productoEnStock.cantidad);
+
+                productoEnStock.cantidad -= productoVendido.cantidad;
+                console.log('Cantidad nueva:', productoEnStock.cantidad);
+
+                // Crear opciones para enviar la actualización individual del producto
+                const opciones = {
+                    method: 'PUT',
+                    body: JSON.stringify(productoEnStock), // Enviar solo el producto actualizado
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                };
+
+                // Utilizar la función enviar con el ID del producto
+                const respuesta = await enviar(`productos/${productoEnStock.id}`, opciones);
+                console.log('Respuesta del servidor para', productoEnStock.nombre, ':', respuesta);
+            }
+        }
+    } catch (error) {
+        console.error('Error al actualizar el stock:', error);
+    }
+}
+
+
 // Función para guardar la factura en el servidor
 async function guardarFactura(factura) {
     const userId = localStorage.getItem('userId');
-
     try {
         const response = await fetch('http://localhost:3000/factura', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                ...factura,
-                userId: userId // Incluir el ID del usuario en el cuerpo de la solicitud
-            })
+            body: JSON.stringify({ ...factura, userId: userId })
         });
         const result = await response.json();
         console.log('Factura guardada exitosamente:', result);
+
+        // Llamar a la función para actualizar el stock con los productos de la factura
+        await actualizarStock(factura.productos);
     } catch (error) {
         console.error('Error al guardar la factura:', error);
     }
 }
 
+
 // Función para obtener los datos de la factura y luego generar y guardar la factura
 async function generarYGuardarFactura() {
-
-
-    // Crear un array para almacenar los productos obtenidos del DOM
     const productos = [];
     const productosDOM = document.querySelectorAll("#carritoProductos .producto");
 
@@ -203,17 +242,17 @@ async function generarYGuardarFactura() {
     const total = subtotal + iva + envio;
 
     const factura = {
-        numero : String(Math.floor(Math.random() * 900000) + 100000), // Genera un número entre 100000 y 999999 
+        numero: String(Math.floor(Math.random() * 900000) + 100000), // Genera un número entre 100000 y 999999 
         fecha: new Date().toLocaleDateString(),
         subtotal: subtotal,
         iva: iva,
         envio: envio,
         total: total,
         productos: productos,
-        estado_factura: "Pendiente" 
+        estado_factura: "Su pedido se encuentra en revision."
     };
 
-    // Guardar la factura en el servidor
+    // Guardar la factura en el servidor y actualizar el stock
     await guardarFactura(factura);
 
     // Eliminar todos los productos del carrito del usuario
@@ -228,6 +267,7 @@ document.querySelector("#botonFinalizarCompra").addEventListener("click", (event
     event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
     generarYGuardarFactura(); // Llamar a la función para generar y guardar la factura
 });
+
 
 
 // Función para eliminar todos los productos del carrito del usuario

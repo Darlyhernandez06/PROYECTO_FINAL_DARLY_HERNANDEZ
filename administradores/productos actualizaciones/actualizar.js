@@ -44,7 +44,8 @@ const updateProduct = async (event) => {
         precio: inputPrecio.value,
         cantidad: inputCantidad.value,
         imagen: inputImagen.value,
-        categoria: inputCategoria.value
+        categoria: inputCategoria.value,
+        estado: "activo"
     };
 
     try {

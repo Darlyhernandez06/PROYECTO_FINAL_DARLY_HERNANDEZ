@@ -51,10 +51,10 @@ document.querySelector("#formEditarProducto").addEventListener("submit", async f
 
     // Crea un objeto con los datos del producto que se van a enviar al servidor
     const datosProducto = {
-        nombre: document.querySelector('#nombre').value,
-        precio: document.querySelector('#precio').value,
-        imagen: document.querySelector('#imagen').value,
-        categoria: document.querySelector('#categoria').value, // Asegúrate de que el campo coincida
+        nombre: document.querySelector('#product-name').value,
+        precio: document.querySelector('#product-price').value,
+        imagen: document.querySelector('#productImage').value,
+        categoria: document.querySelector('#productCategory').value, // Asegúrate de que el campo coincida
     };
 
     try {
@@ -72,6 +72,7 @@ document.querySelector("#formEditarProducto").addEventListener("submit", async f
         if (response.ok) {
             // Muestra una alerta indicando que el producto se actualizó exitosamente
             alert('Producto actualizado exitosamente');
+            window.location.href = "/administradores/pagina_principal.html"; 
         } else {
             // Muestra un mensaje de error en la consola si la respuesta no es exitosa
             console.error('Error al actualizar el producto:', response.statusText);

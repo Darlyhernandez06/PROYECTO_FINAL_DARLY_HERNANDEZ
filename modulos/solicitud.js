@@ -1,33 +1,19 @@
 import URL from "../../modulos/config.js";
 
-const solicitud = async () => {
-    let solicitar = await fetch(`${URL}/productos`);
+const solicitud = async (url) => {
+    let solicitar = await fetch(`${URL}/${url}`);
     let respuesta = await solicitar.json()
     return respuesta;
 }
 
-export const productos_destacados = async () => {
-    let solicitar = await fetch(`${URL}/productos_destacados`);
-    let respuesta = await solicitar.json()
-    return respuesta;
-}
-
-export const solicitud_usuarios = async () => {
-    let solicitar = await fetch(`${URL}/users`);
-    let respuesta = await solicitar.json()
-    return respuesta;
-}
-
-export const carrito = async () => {
-    let solicitar = await fetch(`${URL}/carrito`);
-    let respuesta = await solicitar.json()
-    return respuesta;
-}
-
-export const factura = async () => {
-    let solicitar = await fetch(`${URL}/factura`);
-    let respuesta = await solicitar.json()
-    return respuesta;
+export const enviar = async (endpoint, options ) =>{
+    try{
+        let solicitud = await fetch(`${URL}/${endpoint}`, options);
+        let data = await solicitud.json()
+        return data;
+    } catch(error){
+        return error
+    }
 }
 
 export default solicitud;

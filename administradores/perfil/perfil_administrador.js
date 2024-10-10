@@ -1,5 +1,5 @@
-// Importa la función solicitud_usuarios desde un módulo para hacer solicitudes al servidor
-import { solicitud_usuarios } from "../../modulos/solicitud.js";
+// IMPORTANCIONES
+import solicitud, { enviar } from "../../modulos/solicitud.js";
 
 // Deshabilitar estado de cuenta, rol, contraseña, confirmarcontraseña
 // Se asegura de que el contenido del documento HTML esté completamente cargado antes de ejecutar el código dentro de la función.
@@ -28,7 +28,7 @@ let loggedInUserId = null;
 const cargarPerfil = async () => {
   try {
     // Obtener la lista de usuarios desde el servidor
-    const users = await solicitud_usuarios("users");
+    const users = await solicitud("users");
 
     // Traer el correo electrónico del usuario logueado desde la lista de usuarios
     const loggedInUserCorreo = users.find(user => user.rol === 'Administrador').correo;
@@ -74,11 +74,16 @@ const cargarPerfil = async () => {
 document.querySelector(".boton__actualizar-link").addEventListener("click", async (event) => {
   event.preventDefault();
   
-  // Crear un objeto con los datos actualizados del usuario a partir de los valores del formulario
+  // Crear un objeto con los datos del usuario a partir de los valores del formulario, incluidos los campos deshabilitados
   const updatedUser = {
+    nombres: document.querySelector("#nombres").value,
+    apellidos: document.querySelector("#apellidos").value,
+    correo: document.querySelector("#correo").value,
     telefono: document.querySelector("#telefono").value,
     direccion: document.querySelector("#direccion").value,
     descripcion: document.querySelector("#descripcion").value,
+    rol: document.querySelector("#rol").value,
+    estado_cuenta: document.querySelector("#estado_cuenta").value,
   };
 
   try {
@@ -99,12 +104,6 @@ document.querySelector(".boton__actualizar-link").addEventListener("click", asyn
     
     // Verificar si la solicitud fue exitosa
     if (response.ok) {
-      // Actualizar la interfaz con los datos del usuario actualizado
-      document.querySelector("#loggedInUserName").innerHTML = `
-        <strong>${updatedUser.nombres || ''} ${updatedUser.apellidos || ''}</strong><br>
-        <small>${updatedUser.rol || ''}</small>
-      `;
-      
       // Mostrar un mensaje de éxito al usuario
       alert("Perfil actualizado con éxito");
     } else {

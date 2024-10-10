@@ -1,4 +1,5 @@
-import { solicitud_usuarios } from "../../modulos/solicitud.js"; 
+// IMPORTANCIONES
+import solicitud, { enviar } from "../../modulos/solicitud.js";
 
 // Obtener el ID del usuario de la URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -10,7 +11,7 @@ const estadoCuentaSelect = document.querySelector('#estado_cuenta');
 // Función para cargar los datos del usuario y llenar el formulario
 const cargarDatosUsuario = async () => {
     try {
-        const usuarios = await solicitud_usuarios();
+        const usuarios = await solicitud("users");
         const usuario = usuarios.find(user => user.id === parseInt(userId, 10));
 
         if (usuario) {

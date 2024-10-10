@@ -83,6 +83,8 @@ $formulario.addEventListener("submit", (event) => {
             descripcion.classList.remove("correcto");
 
             alert("Señor usuario tus datos fueron enviados exitosamente");
+            // Redirigir a la página de inicio de sesión
+            window.location.href = "/ingresar/ingresar.html"; 
         })
         .catch(error => {
             alert("Señor usuario tus datos no fueron enviados");

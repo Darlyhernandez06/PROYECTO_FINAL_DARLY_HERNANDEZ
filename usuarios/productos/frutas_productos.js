@@ -54,6 +54,8 @@ async function productos() {
                     let cantidadActual = parseInt(inputCantidad.value);
                     if (cantidadActual < productQuantity) {
                         inputCantidad.value = cantidadActual + 1;
+                    }  else {
+                        alert('No hay más unidades de este producto.');
                     }
                 });
 

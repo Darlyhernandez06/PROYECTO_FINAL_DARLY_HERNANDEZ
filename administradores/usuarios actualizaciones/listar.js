@@ -1,5 +1,5 @@
 // IMPORTANCIONES
-import { solicitud_usuarios } from "../../modulos/solicitud.js";
+import solicitud, { enviar } from "../../modulos/solicitud.js";
 
 // Seleccionar el tbody en el que agregar las filas
 const tbody = document.querySelector('tbody');
@@ -10,18 +10,21 @@ const $template = document.querySelector("#template").content;
 // FRAGMENTOS
 const $fragmento = document.createDocumentFragment();
 
-// LISTAR LOS USUARIOS
+// LISTAR LOS USUARIOS CON ROL DE CLIENTE
 const listarUsuarios = async () => {
     try {
         // Obtener los datos de usuarios
-        const data = await solicitud_usuarios();
+        const data = await solicitud("users");
 
         // Vaciar el tbody
         tbody.innerHTML = '';
 
-        // Procesar cada usuario y llenar el template
-        data.forEach((element) => {
-            // Llenar los datos del usuario en el template clonado
+        // Filtrar solo los usuarios con rol de "cliente"
+        const clientes = data.filter(usuario => usuario.rol === 'cliente');
+
+        // Procesar cada cliente y llenar el template
+        clientes.forEach((element) => {
+            // Llenar los datos del cliente en el template clonado
             $template.querySelector('.id').textContent = element.id || '';
             $template.querySelector('.nombres').textContent = element.nombres || '';
             $template.querySelector('.apellidos').textContent = element.apellidos || '';
@@ -52,6 +55,7 @@ const listarUsuarios = async () => {
         console.error('Error al listar usuarios:', error);
     }
 };
+
 
 // Ejecutar la función para listar usuarios al cargar el script
 listarUsuarios();

@@ -1,3 +1,5 @@
+import { generarPDF } from '../../descargar_factura.js';
+
 // Función para obtener el nombre del cliente basado en el userId
 async function obtenerNombreCliente(userId) {
     try {
@@ -55,6 +57,12 @@ const cargarFacturas = async () => {
             clone.querySelector('.numero').textContent = factura.numero || 'N/A';
             clone.querySelector('.fecha').textContent = factura.fecha || 'N/A';
             clone.querySelector('.total').textContent = `$${factura.total ? factura.total.toFixed(0) : 'N/A'}`;
+
+            const linkDescargar = clone.querySelector('.factura');
+            linkDescargar.addEventListener('click', function(event) {
+                event.preventDefault();
+                generarPDF(factura);
+            });
 
             // Mostrar productos con cantidad
             const productos = factura.productos.map(p => `${p.nombre} (${p.cantidad})`).join(', ');
