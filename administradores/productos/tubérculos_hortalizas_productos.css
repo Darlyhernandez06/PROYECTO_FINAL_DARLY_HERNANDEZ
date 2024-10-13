@@ -40,6 +40,7 @@ body {
     background-size: cover;         /* La imagen de fondo cubre toda la pantalla */
     font-family: 'MiFuente';        /* Fuente personalizada */
     background-position: center;    /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Mantiene el fondo fijo */
 }
 
 /*PARTE DEL MENU DE NAVEGACION*/

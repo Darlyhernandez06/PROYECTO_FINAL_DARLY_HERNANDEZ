@@ -1,6 +1,5 @@
 // IMPORTACIONES
 import remover from "../productos actualizaciones/modulos_validaciones/validarremover.js"; // Importa el módulo para eliminar mensajes de error o clases de los campos.
-import validarSoloLetras from "../productos actualizaciones/modulos_validaciones/validarSoloLetras.js"; // Importa el módulo que valida que solo se ingresen letras.
 import validarnumero from "../productos actualizaciones/modulos_validaciones/validarnumero.js"; // Importa el módulo que valida que solo se ingresen números.
 import validarSelect from "../productos actualizaciones/modulos_validaciones/validarSelect.js"; // Importa el módulo que valida la selección de opciones en un elemento select.
 
@@ -16,11 +15,6 @@ const categorias = document.querySelector('#productCategory'); // Selecciona el 
     input.addEventListener("blur", () => {
         remover(input); // Llama a la función 'remover' para quitar mensajes de error cuando el campo pierde el foco.
     });
-});
-
-// Agrega un evento de 'input' al campo de nombre que valida la entrada en tiempo real.
-nombre.addEventListener("input", (event) => {
-    validarSoloLetras(event, nombre); // Valida que solo se ingresen letras en el campo de nombre.
 });
 
 // Agrega un evento de 'input' al campo de precio que valida la entrada en tiempo real.

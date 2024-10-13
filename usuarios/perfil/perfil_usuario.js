@@ -30,16 +30,14 @@ const cargarPerfil = async () => {
     // Obtener la lista de usuarios desde el servidor
     const users = await solicitud("users");
 
-    // Traer el correo electrónico del usuario logueado desde la lista de usuarios
-    const loggedInUserCorreo = users.find(user => user.rol === 'cliente').correo;
+    // Suponiendo que guardaste el correo del usuario logueado en el localStorage
+    const loggedInUserCorreo = localStorage.getItem('correoLogueado'); // Cambia esto por el método que uses para obtener el correo
 
-    // Verificar si se obtuvo el correo electrónico del usuario logueado
     if (!loggedInUserCorreo) {
-      console.error('No hay un correo almacenado en el JSON para el usuario logueado.');
+      console.error('No hay un correo almacenado en el localStorage para el usuario logueado.');
       return;
     }
 
-    // Buscar el usuario logueado en la lista de usuarios usando el correo electrónico
     const loggedInUser = users.find((user) => user.correo === loggedInUserCorreo);
 
     // Verificar si el usuario logueado fue encontrado
@@ -56,6 +54,8 @@ const cargarPerfil = async () => {
       document.querySelector("#descripcion").value = loggedInUser.descripcion || '';
       document.querySelector("#rol").value = loggedInUser.rol || '';
       document.querySelector("#estado_cuenta").value = loggedInUser.estado_cuenta || '';
+      document.querySelector("#contraseña").value = loggedInUser.contraseña || '';
+      document.querySelector("#confirmarContraseña").value = loggedInUser.confirmarContraseña || '';
 
       // Mostrar el nombre completo y el rol del usuario en la interfaz
       document.querySelector("#loggedInUserNamecliente").innerHTML = `
@@ -84,6 +84,8 @@ document.querySelector(".boton__actualizar-link").addEventListener("click", asyn
     descripcion: document.querySelector("#descripcion").value,
     rol: document.querySelector("#rol").value,
     estado_cuenta: document.querySelector("#estado_cuenta").value,
+    contraseña: document.querySelector("#contraseña").value,
+    confirmarContraseña: document.querySelector("#confirmarContraseña").value
   };
 
   try {

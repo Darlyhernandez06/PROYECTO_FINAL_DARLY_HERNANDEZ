@@ -56,6 +56,8 @@ const cargarPerfil = async () => {
       document.querySelector("#descripcion").value = loggedInUser.descripcion || '';
       document.querySelector("#rol").value = loggedInUser.rol || '';
       document.querySelector("#estado_cuenta").value = loggedInUser.estado_cuenta || '';
+      document.querySelector("#contraseña").value = loggedInUser.contraseña || '';
+      document.querySelector("#confirmarContraseña").value = loggedInUser.confirmarContraseña || '';
 
       // Mostrar el nombre completo y el rol del usuario en la interfaz
       document.querySelector("#loggedInUserName").innerHTML = `
@@ -84,6 +86,8 @@ document.querySelector(".boton__actualizar-link").addEventListener("click", asyn
     descripcion: document.querySelector("#descripcion").value,
     rol: document.querySelector("#rol").value,
     estado_cuenta: document.querySelector("#estado_cuenta").value,
+    contraseña: document.querySelector("#contraseña").value,
+    confirmarContraseña: document.querySelector("#confirmarContraseña").value,
   };
 
   try {

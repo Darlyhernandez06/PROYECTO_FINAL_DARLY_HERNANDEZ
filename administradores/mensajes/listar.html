@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡LISTAR PRODUCTOS!</title>
+    <title>¡LISTAR MENSAJES!</title>
     <!-- Enlace al archivo CSS para estilos -->
     <link rel="stylesheet" href="listar.css">
     <!-- Favicon para el navegador -->
@@ -108,28 +108,13 @@
 
     <!-- Contenedor principal con título y línea decorativa -->
     <div class="contenedor__principal">
-        <p class="titulo__principal">Gestión de Productos</p>
+        <p class="titulo__principal">Gestión de Mensajes</p>
         <div class="contenedor__linea"></div>
-    </div>
-
-    <!-- Segundo contenedor principal para el boton de la papelera productos -->
-    <div class="contenedor__principal">
-        <!-- Enlace a la acción de listar productos en la papelera, con un icono de papelera de reciclaje -->
-        <a href="../productos actualizaciones/papelera.html" class="delete-product2">
-            <!-- SVG del icono de papelera en color rojo, con tamaño de 32x32 px y margen a la izquierda -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-trash" viewBox="0 0 16 16" style="margin-left: 950px">
-                <!-- Definición del icono en dos trazos (path) que forman la imagen de la papelera -->
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-            </svg>
-            <i class="bi bi-trash"></i>
-        </a>
     </div>
     
     <!-- Contenedor para la tabla de productos -->
     <div class="container mt-5 text-center">
-        <a href="../productos actualizaciones/crear.html" class="btn btn-success w-100 mb-2">Crear Producto</a>
-        <!-- Tabla de listar los productos -->
+        <!-- Tabla de listar los mensajes -->
 
         <div class="tabla_contenedor">
             <table>
@@ -137,12 +122,9 @@
                     <tr class="borde1">
                         <th class="borde1">Id</th>
                         <th class="borde1">Nombre</th>
-                        <th class="borde1">Descripción</th>
-                        <th class="borde1">Precio</th>
-                        <th class="borde1" >Cantidad</th>
-                        <th class="borde1">Imagen</th>
-                        <th class="borde1">Categoria</th>
-                        <th class="borde1">Acciones</th>
+                        <th class="borde1">Correo</th>
+                        <th class="borde1">Telefono</th>
+                        <th class="borde1">Mensaje</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -154,31 +136,9 @@
             <tr class="borde1">
                 <td class="borde1 id"></td>
                 <td class="borde1 nombre"></td>
-                <td class="borde1 descripción"></td>
-                <td class="borde1 precio"></td>
-                <td class="borde1 cantidad"></td>
-                <td class="borde1 imagen"></td>
-                <td class="borde1 categoria"></td>
-                <!-- Nueva celda para los botones -->
-                <td class="d-flex align-items-center justify-content-center ">
-                    <!-- Enlace para editar el producto -->
-                    <a href="#" class="edit-product" style="margin-top: 20px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="orange" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                        </svg>    
-                    </a>
-                    <!-- Enlace para enviar el producto a la papelera -->
-                    <a href="#" class="papelera-product" style="margin-top: 20px;" >
-                        <!-- SVG del icono de papelera en color rojo -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-trash" viewBox="0 0 16 16">
-                            <!-- Definición del icono de papelera -->
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                        </svg>
-                        <i class="bi bi-trash"></i>
-                    </a>
-                </td>
+                <td class="borde1 correo"></td>
+                <td class="borde1 telefono"></td>
+                <td class="borde1 mensaje"></td>
             </tr>
         </template>               
     </div>

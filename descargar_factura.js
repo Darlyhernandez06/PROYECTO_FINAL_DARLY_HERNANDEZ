@@ -20,7 +20,7 @@ export function generarPDF(factura) {
     doc.text("Carrera 9 #30-14 — La cumbre", 20, 70); // Dirección del negocio
     doc.text("3187800946 - Megapaquetesalego12@gmail.com", 20, 80); // Contacto del negocio
 
-    doc.text("DATE: " + new Date().toLocaleDateString(), 150, 60); // Fecha de la factura
+    doc.text("DATE: " + factura.fecha, 150, 60); // Fecha de la factura
     doc.text(`Factura# ${factura.numero}`, 150, 70); // Número de la factura
 
     // Crear la tabla de productos
@@ -38,30 +38,30 @@ export function generarPDF(factura) {
     factura.productos.forEach((producto) => {
         y += 20; // Mover hacia abajo para la siguiente fila
         doc.text(producto.nombre, 20, y); // Descripción del producto
-        doc.text(`$${producto.precio.toFixed(2)}`, 100, y); // Precio del producto
+        doc.text(`$${producto.precio.toFixed(0)}`, 100, y); // Precio del producto
         doc.text(`${producto.cantidad}`, 130, y); // Cantidad del producto
-        doc.text(`$${(producto.precio * producto.cantidad).toFixed(2)}`, 160, y); // Total del producto
+        doc.text(`$${(producto.precio * producto.cantidad).toFixed(0)}`, 160, y); // Total del producto
     });
 
     y += 20; // Mover hacia abajo para los subtotales
     doc.setFontSize(12);
     doc.setTextColor("#000000");
     doc.text("Subtotal: ", 130, y); // Subtotal
-    doc.text(`$${factura.subtotal.toFixed(2)}`, 160, y); // Valor del subtotal
+    doc.text(`$${factura.subtotal.toFixed(0)}`, 160, y); // Valor del subtotal
 
     y += 10; // Mover hacia abajo para el IVA
     doc.text("IVA: ", 130, y); // IVA
-    doc.text(`$${factura.iva.toFixed(2)}`, 160, y); // Valor del IVA
+    doc.text(`$${factura.iva.toFixed(0)}`, 160, y); // Valor del IVA
 
     y += 10; // Mover hacia abajo para el costo de envío
     doc.text("Envio: ", 130, y); // Costo de envío
-    doc.text(`$${factura.envio.toFixed(2)}`, 160, y); // Valor del envío
+    doc.text(`$${factura.envio.toFixed(0)}`, 160, y); // Valor del envío
 
     y += 10; // Mover hacia abajo para el total final
     doc.setFontSize(14);
     doc.setTextColor("#ff9933");
     doc.text("Total: ", 130, y); // Total final
-    doc.text(`$${(factura.total).toFixed(2)}`, 160, y); // Valor del total final
+    doc.text(`$${(factura.total).toFixed(0)}`, 160, y); // Valor del total final
 
     doc.save("factura.pdf");
 }

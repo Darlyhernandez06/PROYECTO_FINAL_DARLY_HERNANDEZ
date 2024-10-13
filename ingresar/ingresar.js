@@ -37,12 +37,14 @@ $formulario.addEventListener("submit", (event) => {
                 alert('Login exitoso como administrador');
                 localStorage.setItem('userName', user.nombres + ' ' + user.apellidos); 
                 localStorage.setItem('userType', 'Administrador');
+                localStorage.setItem('correoLogueado', data.correo);
                 window.location.href = '../administradores/pagina_principal.html';
               } else {
                 // Cliente
                 alert('Login exitoso como cliente');
                 localStorage.setItem('userName', user.nombres + ' ' + user.apellidos); 
-                localStorage.setItem('userType', 'Cliente');
+                localStorage.setItem('userType', 'cliente');
+                localStorage.setItem('correoLogueado', data.correo);
                 localStorage.setItem('userId', user.id);
                 window.location.href = '../usuarios/pagina_principal.html';
               }

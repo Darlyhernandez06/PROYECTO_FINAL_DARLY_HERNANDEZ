@@ -4,7 +4,7 @@
 //   - `.` coincide con cualquier carácter individual (letras, números, símbolos, espacios, etc.)
 //   - `{1,200}` especifica que el carácter puede repetirse de 1 a 200 veces, lo que limita la longitud del texto a un máximo de 200 caracteres.
 // - `$` al final asegura que la coincidencia termine al final de la cadena.
-const regexDescripcion = /^.{1,200}$/;
+const regexDescripcion = /^.{1,255}$/;
 
 const validarDescripcion = (event, elemento) => {
     // Seleccionar el elemento HTML donde se mostrará el mensaje de error
@@ -12,7 +12,7 @@ const validarDescripcion = (event, elemento) => {
 
     // Número máximo de caracteres permitidos
     // Se define una constante maxCaracteres que almacena el valor máximo permitido para la longitud de la descripción.
-    const maxCaracteres = 200;
+    const maxCaracteres = 255;
 
     // Validar la longitud del texto en tiempo real usando la expresión regular
     // Se verifica si el valor del elemento (texto ingresado) no cumple con la expresión regular. Si no cumple, se ejecuta el bloque de código dentro del if.

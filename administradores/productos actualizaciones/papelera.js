@@ -27,7 +27,20 @@ const listarProductosPapelera = async () => {
                 $template.querySelector('.descripción').textContent = element.descripción;
                 $template.querySelector('.precio').textContent = element.precio;
                 $template.querySelector('.cantidad').textContent = element.cantidad;
-                $template.querySelector('.imagen').textContent = element.imagen;
+                
+                // Crear un elemento de imagen
+                const imgElement = document.createElement('img');
+                imgElement.src = element.imagen; // Establecer la URL de la imagen
+                imgElement.alt = element.nombre; // Agregar un texto alternativo 
+                imgElement.classList.add('imagen'); // Agregar la clase si la necesitas para CSS
+                imgElement.style.width = '100%'; // Ajustar el ancho si es necesario
+                imgElement.style.height = 'auto'; // Mantener la proporción de la imagen
+                
+                // Limpiar el contenido anterior de la clase imagen y agregar la nueva imagen
+                const imagenContainer = $template.querySelector('.imagen');
+                imagenContainer.innerHTML = ''; // Limpiar el contenido anterior
+                imagenContainer.appendChild(imgElement); // Agregar la imagen al contenedor
+
                 $template.querySelector('.categoria').textContent = element.categoria;
 
                 // Actualizar los enlaces con el id del producto
