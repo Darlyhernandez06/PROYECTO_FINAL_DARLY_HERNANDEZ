@@ -53,7 +53,8 @@ $formulario.addEventListener("submit", (event) => {
                 alert('Login exitoso como administrador'); // Muestra un mensaje de éxito.
 
                 // Almacena información del usuario en localStorage
-                // El metodo setItem guarda un valor en el almacenamiento local del navegador asociado a la clave proporcionada.
+                // El metodo setItem guarda un valor en el almacenamiento local del navegador asociado a la 
+                // clave proporcionada.
                 // clave (string) la clave o nombre del valor que se va a guardar
                 // valor (string) el valor que se va a guardar
 
