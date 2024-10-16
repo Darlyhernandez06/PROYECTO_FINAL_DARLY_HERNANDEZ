@@ -14,47 +14,47 @@ const $fragmento = document.createDocumentFragment(); // Crea un fragmento de do
 
 // LISTAR LOS PRODUCTOS
 const listarProductos = async (page) => {
-     // Definición de la función listarProductos que toma un parámetro opcional 'page'.
-     const _page = page ? page : 1; // Si 'page' está definido, se usa; de lo contrario, se asigna 1.
+    // Definición de la función listarProductos que toma un parámetro opcional 'page'.
+    const _page = page ? page : 1; // Si 'page' está definido, se usa; de lo contrario, se asigna 1.
 
-     try {
-         // Obtener los datos de productos desde el servidor
-         // La función 'solicitud' realiza una llamada a la API y se espera que resuelva (await)
-         const data = await solicitud(`productos?_page=${_page}&_per_page=3`); // Llama a la función de solicitud para obtener productos
+    try {
+        // Obtener los datos de productos desde el servidor
+        // La función 'solicitud' realiza una llamada a la API y se espera que resuelva (await)
+        const data = await solicitud(`productos?_page=${_page}&_per_page=3`); // Llama a la función de solicitud para obtener productos
  
-         console.log(data); // Imprime la respuesta para verificar su estructura.
+        console.log(data); // Imprime la respuesta para verificar su estructura.
  
-         // Manejo con los botones de navegación
-         const nav = document.querySelector(".navegacion"); // Selecciona el elemento de navegación en el DOM.
+        // Manejo con los botones de navegación
+        const nav = document.querySelector(".navegacion"); // Selecciona el elemento de navegación en el DOM.
  
-         // Carga los datos que trae la API
-         const first = data.first; // Obtiene el número de la primera página.
-         const prev = data.prev; // Obtiene el número de la página anterior.
-         const next = data.next; // Obtiene el número de la siguiente página.
-         const last = data.last; // Obtiene el número de la última página.
+        // Carga los datos que trae la API
+        const first = data.first; // Obtiene el número de la primera página.
+        const prev = data.prev; // Obtiene el número de la página anterior.
+        const next = data.next; // Obtiene el número de la siguiente página.
+        const last = data.last; // Obtiene el número de la última página.
  
-         console.log(`first: ${first}, prev: ${prev}, next: ${next}, last: ${last}`); // Imprime los números de página para depuración.
+        console.log(`first: ${first}, prev: ${prev}, next: ${next}, last: ${last}`); // Imprime los números de página para depuración.
  
-         // Habilitar/deshabilitar botones según la página actual
-         nav.querySelector(".first").disabled = prev ? false : true; // Habilita el botón "Primero" si hay una página anterior.
-         nav.querySelector(".prev").disabled = prev ? false : true; // Habilita el botón "Anterior" si hay una página anterior.
-         nav.querySelector(".next").disabled = next ? false : true; // Habilita el botón "Siguiente" si hay una página siguiente.
-         nav.querySelector(".last").disabled = next ? false : true; // Habilita el botón "Último" si hay una página siguiente.
+        // Habilitar/deshabilitar botones según la página actual
+        nav.querySelector(".first").disabled = prev ? false : true; // Habilita el botón "Primero" si hay una página anterior.
+        nav.querySelector(".prev").disabled = prev ? false : true; // Habilita el botón "Anterior" si hay una página anterior.
+        nav.querySelector(".next").disabled = next ? false : true; // Habilita el botón "Siguiente" si hay una página siguiente.
+        nav.querySelector(".last").disabled = next ? false : true; // Habilita el botón "Último" si hay una página siguiente.
  
-         // Establecer atributos data para los botones de navegación
-         nav.querySelector(".first").setAttribute("data-first", first); // Asigna el número de la primera página al botón correspondiente.
-         nav.querySelector(".prev").setAttribute("data-prev", prev); // Asigna el número de la página anterior al botón correspondiente.
-         nav.querySelector(".next").setAttribute("data-next", next); // Asigna el número de la siguiente página al botón correspondiente.
-         nav.querySelector(".last").setAttribute("data-last", last); // Asigna el número de la última página al botón correspondiente.
+        // Establecer atributos data para los botones de navegación
+        nav.querySelector(".first").setAttribute("data-first", first); // Asigna el número de la primera página al botón correspondiente.
+        nav.querySelector(".prev").setAttribute("data-prev", prev); // Asigna el número de la página anterior al botón correspondiente.
+        nav.querySelector(".next").setAttribute("data-next", next); // Asigna el número de la siguiente página al botón correspondiente.
+        nav.querySelector(".last").setAttribute("data-last", last); // Asigna el número de la última página al botón correspondiente.
  
-         // Limpiar el contenido anterior de la tabla
-         tbody.innerHTML = ""; // Borra el contenido anterior de la tabla para evitar duplicados.
+        // Limpiar el contenido anterior de la tabla
+        tbody.innerHTML = ""; // Borra el contenido anterior de la tabla para evitar duplicados.
  
-         // Procesar cada producto y llenar el template
-         // La línea data.data.forEach((element) => { itera sobre cada producto en el array 'data', permitiendo que se
-         // ejecute un bloque de código para cada producto, donde 'element' se refiere al producto actual en
-         // esa iteración. Esto permite manipular y mostrar la información de cada producto según sea necesario.
-         data.data.forEach((element) => {
+        // Procesar cada producto y llenar el template
+        // La línea data.data.forEach((element) => { itera sobre cada producto en el array 'data', permitiendo que se
+        // ejecute un bloque de código para cada producto, donde 'element' se refiere al producto actual en
+        // esa iteración. Esto permite manipular y mostrar la información de cada producto según sea necesario.
+        data.data.forEach((element) => {
             // el primer data es el objeto que has recibido, y el segundo data es una propiedad de ese objeto. La propiedad data suele contener 
             // un array con la información que deseas procesar
             
@@ -163,6 +163,10 @@ const listarProductos = async (page) => {
     }
 };
 
+
+
+
+
 // Función asíncrona para enviar el producto a la papelera
 // @param {string} productId - El ID del producto que se desea enviar a la papelera.
 const enviarProductoAPapelera = async (productId) => {
@@ -206,6 +210,13 @@ const enviarProductoAPapelera = async (productId) => {
 // Ejecutar la función para listar productos al cargar el script
 listarProductos(); // Llama a la función para mostrar los productos al cargar la página
 
+
+
+
+
+
+
+
 // Obtener el nombre completo del usuario almacenado en localStorage
 const userName = localStorage.getItem('userName'); // Obtiene el nombre del usuario
 
@@ -237,46 +248,81 @@ salir.addEventListener('click', () => {
     menu.classList.remove('estilos'); // Quita la clase que muestra el menú
 });
 
+
+
+
+
+
+// Escucha cualquier clic en el documento
 document.addEventListener("click", (e) => {
 
-    if(e.target.matches(".first")){
-        const nodos = tbody;
-        const first = e.target.dataset.first;
+    // 'e' es el evento que ocurre cuando se hace clic. 'e.target' es el elemento exacto donde se hizo clic.
+    // 'e.target.matches' verifica si el elemento clicado tiene una clase CSS específica.
+    if(e.target.matches(".first")) { 
+        // Verifica si el elemento clicado tiene la clase 'first'.
+
+        const nodos = tbody; 
+        // 'tbody' es la referencia al cuerpo de la tabla (el lugar donde se listan los productos).
+
+        const first = e.target.dataset.first; 
+        // 'e.target.dataset' contiene todos los atributos 'data-*' personalizados del elemento clicado.
+        // 'dataset.first' obtiene el valor del atributo 'data-first', que indica la primera página a cargar.
+
+        // Limpia la tabla eliminando todas las filas antes de cargar nuevos datos
         while (nodos.firstChild) {
-            nodos.removeChild(nodos.firstChild)
-            
+            // 'nodos.firstChild' hace referencia al primer elemento hijo dentro del tbody (las filas de la tabla).
+            // El bucle continúa mientras haya elementos hijos en el tbody.
+            // firstChild es una propiedad que devuelve el primer nodo hijo de un elemento.
+            nodos.removeChild(nodos.firstChild); 
+            // 'nodos.removeChild(nodos.firstChild)' elimina el primer elemento hijo (primera fila de la tabla).
         }
-        listarProductos(first)
+
+        listarProductos(first); 
+        // Llama a la función 'listarProductos' y le pasa el valor de la primera página para cargar los productos correspondientes.
     }
-    if(e.target.matches(".prev")){
-        const nodos = tbody;
-        const prev = e.target.dataset.prev;
+
+    // Verifica si el elemento clicado tiene la clase 'prev' (para ir a la página anterior)
+    if(e.target.matches(".prev")) { 
+        const nodos = tbody; 
+        const prev = e.target.dataset.prev; 
+        // 'dataset.prev' accede al valor de 'data-prev' del botón para saber qué página anterior cargar.
         while (nodos.firstChild) {
-            nodos.removeChild(nodos.firstChild)
-            
+            nodos.removeChild(nodos.firstChild); 
+            // Elimina todas las filas de la tabla antes de cargar los nuevos productos.
         }
-        listarProductos(prev)
+        listarProductos(prev); 
+        // Llama a la función 'listarProductos' para cargar los productos de la página anterior.
     }
-    if(e.target.matches(".next")){
-        const nodos = tbody;
-        const next = e.target.dataset.next;
+
+    // Verifica si el elemento clicado tiene la clase 'next' (para ir a la página siguiente)
+    if(e.target.matches(".next")) { 
+        const nodos = tbody; 
+        const next = e.target.dataset.next; 
+        // 'dataset.next' accede al valor de 'data-next' del botón para saber qué página siguiente cargar.
         while (nodos.firstChild) {
-            nodos.removeChild(nodos.firstChild)
-            
+            nodos.removeChild(nodos.firstChild); 
+            // Elimina todas las filas de la tabla antes de cargar los nuevos productos.
         }
-        listarProductos(next)
+        listarProductos(next); 
+        // Llama a la función 'listarProductos' para cargar los productos de la siguiente página.
     }
-    if(e.target.matches(".last")){
-        const nodos = tbody;
-        const last = e.target.dataset.last;
+
+    // Verifica si el elemento clicado tiene la clase 'last' (para ir a la última página)
+    if(e.target.matches(".last")) { 
+        const nodos = tbody; 
+        const last = e.target.dataset.last; 
+        // 'dataset.last' accede al valor de 'data-last' del botón para saber qué última página cargar.
         while (nodos.firstChild) {
-            nodos.removeChild(nodos.firstChild)
-            
+            nodos.removeChild(nodos.firstChild); 
+            // Elimina todas las filas de la tabla antes de cargar los nuevos productos.
         }
-        listarProductos(last)
-    }    
+        listarProductos(last); 
+        // Llama a la función 'listarProductos' para cargar los productos de la última página.
+    }
 
 });
+
+
 
 
 

@@ -367,3 +367,36 @@ tr {
         padding: 5px; /* Reduce el espacio alrededor del contenido de las celdas */
     }
 }
+
+/* Estilos para el contenedor de la navegación */
+.navegacion {
+    display: flex;
+    justify-content: center; /* Centrar los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    margin: 20px 0; /* Espaciado alrededor de la barra de navegación */
+}
+
+/* Estilos generales para todos los botones */
+.navegacion button {
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño del texto */
+    background-color: var(--color-terciario); /* Color de fondo */
+    color: var(--color-fondo-principal); /* Color del texto */
+    border: 2px solid transparent; /* Borde inicialmente transparente */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Mostrar cursor de mano al pasar sobre el botón */
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Efecto hover para todos los botones */
+.navegacion button:hover {
+    background-color: var(--color-acento-2); /* Oscurecer el fondo al pasar el ratón */
+    border-color: var(--color-secundario); /* Cambiar el color del borde */
+    transform: scale(1.05); /* Agrandar un poco el botón al hacer hover */
+}
+
+/* Efecto activo cuando se hace clic en los botones */
+.navegacionbutton:active {
+    transform: scale(0.95); /* Disminuir un poco el tamaño cuando se hace clic */
+    background-color: var(--color-acento-2); /* Color de fondo más oscuro */
+}

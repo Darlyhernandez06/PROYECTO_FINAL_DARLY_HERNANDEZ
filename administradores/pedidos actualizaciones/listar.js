@@ -115,3 +115,27 @@ desplegable.addEventListener('click', () => {
 salir.addEventListener('click', () => {
     menu.classList.remove('estilos'); // Quitar la clase que muestra el menú
 });
+
+
+// Evento para el filtro de búsqueda
+document.addEventListener("keyup", (e) => {
+    if (e.target.matches(".search")) {
+        // Si se presiona "Escape", limpiar el campo de búsqueda
+        if (e.key === "Escape") {
+            e.target.value = "";
+            // Volver a mostrar todos los productos si el campo de búsqueda está vacío
+            document.querySelectorAll("tr").forEach((factura) => {
+                factura.classList.remove("filtro");
+            });
+        } else {
+            // Filtrar productos según el texto de búsqueda
+            const searchValue = e.target.value.toLowerCase();
+            document.querySelectorAll("tr").forEach((factura) => {
+                // Comprueba si el texto del producto incluye el valor de búsqueda
+                factura.textContent.toLowerCase().includes(searchValue)
+                    ? factura.classList.remove("filtro") // Muestra el producto si coincide
+                    : factura.classList.add("filtro"); // Oculta el producto si no coincide
+            });
+        }
+    }
+});

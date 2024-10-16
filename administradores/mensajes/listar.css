@@ -368,3 +368,9 @@ tr {
         padding: 5px; /* Reduce el espacio alrededor del contenido de las celdas */
     }
 }
+
+/* Clase para ocultar productos que no coinciden con la búsqueda */
+.filtro {
+    /* Establece que los elementos con esta clase no se mostrarán en la página */
+    display: none;
+}
