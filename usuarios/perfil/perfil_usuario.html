@@ -145,7 +145,7 @@
         <!-- Formulario de edición de perfil -->
         <div class="form__contenedor">
             <div class="formulario">
-                <form class="from__principal">
+                <form class="from__principal" novalidate>
                     <!-- Campo del nombre completo -->
                     <div class="form__group">
                         <label class="form__label" for="nombres">Nombres</label>
@@ -165,6 +165,7 @@
                     <div class="form__group">
                         <label class="form__label" for="telefono">Teléfono</label>
                         <input class="form__input" type="tel" id="telefono" name="telefono" required>
+                        <span id="telefono-error" class="error-message"></span>
                     </div>
                     <!-- Campo de la dirección -->
                     <div class="form__group">
@@ -175,6 +176,7 @@
                     <div class="form__group d-flex flex-column">
                         <label class="form__label" for="descripcion">Descripción</label>
                         <textarea class="textarea" id="descripcion" name="descripcion" rows="4" required></textarea>
+                        <span id="descripcion-error" class="error-message"></span>
                     </div>
                     <!-- Campo del rol -->
                     <div class="form__group">

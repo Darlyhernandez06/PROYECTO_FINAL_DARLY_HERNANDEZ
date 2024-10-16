@@ -1,3 +1,5 @@
+import is_valid from "../productos actualizaciones/modulos_validaciones/modulo_validacion.js";
+
 // Agrega un event listener que se activa cuando el contenido del DOM ha sido completamente cargado
 document.addEventListener("DOMContentLoaded", async function () {
     // Crea un objeto URLSearchParams a partir de la cadena de consulta de la URL actual
@@ -40,13 +42,24 @@ document.addEventListener("DOMContentLoaded", async function () {
             // Maneja cualquier error que ocurra durante la carga del producto
             console.error('Error al cargar el producto:', error);
         }
+    } else {
+        alert('ID de producto no válido.');
     }
 });
 
 // Añade un event listener al formulario para manejar el evento de envío
 document.querySelector("#formEditarProducto").addEventListener("submit", function (event) {
-    // Previene el comportamiento por defecto del formulario (recarga de página)
-    event.preventDefault();
+    event.preventDefault(); // Evitar el envío del formulario por defecto
+
+    // Validar los campos del formulario
+    const valid = is_valid(event, "form [required]");
+
+    // Si la validación falla, evitar que se envíe el formulario
+    if (!valid) {
+        alert("Por favor, corrige los campos con errores.");
+        window.location.href = "../../errores/error4.html";
+        return; // Detener la ejecución si hay errores
+    }
 
     // Crea un objeto URLSearchParams a partir de la cadena de consulta de la URL actual
     const urlParams = new URLSearchParams(window.location.search);

@@ -22,7 +22,7 @@
     <!-- Formulario para actualizar producto con estilo de Bootstrap y margen superior -->
     <div class="borde container mt-5 bg-white p-5 text-center">
         <h2 class="mb-5 pb-5 text-center titulo">Actualizar Producto</h2>
-        <form id="formEditarProducto" class="px-5">
+        <form id="formEditarProducto" class="px-5" novalidate>
             <!-- Campo oculto para almacenar el índice del producto -->
             <input type="hidden" id="product-id">
             <!-- Campo para el nombre del producto -->
@@ -64,7 +64,7 @@
         <a href="../../administradores/pagina_principal.html" class="boton__regresar--link" style="text-decoration: none;">Regresar</a>
     </div>
 
-    <script src="editar_productos.js"></script>
+    <script src="editar_productos.js" type="module"></script>
     <script src="validaciones.js" type="module"></script>
 </body>
 </html>

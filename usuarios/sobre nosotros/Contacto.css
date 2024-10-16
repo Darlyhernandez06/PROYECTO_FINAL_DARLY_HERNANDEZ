@@ -303,6 +303,7 @@ li .dropdown-item:active {
     display: flex; /* Establece el contenedor como flex */
     justify-content: center; /* Centrar contenido horizontalmente */
     align-items: center; /* Centrar contenido verticalmente */
+    background-attachment: fixed; /* Mantiene el fondo fijo */
 }
 
 .contenedor__seccion--dentro {

@@ -86,7 +86,7 @@ const userType = localStorage.getItem('userType'); // Obtiene el tipo de usuario
 // Verificar si hay un nombre de usuario almacenado en localStorage
 if (userName) {
     // Si hay un nombre de usuario almacenado, actualizar el contenido del elemento HTML con ese nombre
-    document.querySelector('#loggedInUserName').innerHTML = ` // Actualiza el contenido del elemento con el nombre de usuario.
+    document.querySelector('#loggedInUserName').innerHTML = `
         <strong>${userName}</strong><br>
         <small>${userType}</small>
     `;

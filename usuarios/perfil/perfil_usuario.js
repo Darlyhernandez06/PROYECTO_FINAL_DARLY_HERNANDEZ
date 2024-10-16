@@ -1,6 +1,16 @@
 // IMPORTANCIONES
 import solicitud, { enviar } from "../../modulos/solicitud.js";
 
+// IMPORTACIONES
+import remover from "../../modulos/modulo_remover.js";// Importa el módulo para eliminar mensajes de error o clases de los campos.
+import solonumeros from "../../modulos/modulo_solonumeros.js"; // Importa la función que permite solo números en un campo.
+import validarDescripcion from "../../modulos/modulo_descripcion.js"; // Importa la función que valida la descripción.
+
+// VARIABLES
+const telefono = document.querySelector('#telefono'); // Campo de entrada para el teléfono
+const direccion = document.querySelector('#direccion'); // Campo de entrada para la dirección
+const descripcion = document.querySelector('#descripcion'); // Campo de entrada para la descripción
+
 // Deshabilitar estado de cuenta, rol, contraseña, confirmarcontraseña
 // Se asegura de que el contenido del documento HTML esté completamente cargado antes de ejecutar el código dentro de la función.
 document.addEventListener("DOMContentLoaded", function() {
@@ -70,9 +80,37 @@ const cargarPerfil = async () => {
   }
 };
 
+// Función para validar los campos requeridos
+function validateFields() {
+  let valid = true;
+  const inputs = [telefono, direccion, descripcion];
+
+  inputs.forEach(input => {
+      if (input.value.trim() === '') {
+          valid = false;
+          input.classList.add('error'); // Agrega clase de error si está vacío
+      } else {
+          input.classList.remove('error'); // Remueve clase de error si está lleno
+      }
+  });
+
+  return valid;
+}
+
 // Agregar un evento de clic al botón de actualización
 document.querySelector(".boton__actualizar-link").addEventListener("click", async (event) => {
   event.preventDefault();
+
+   // Validar campos
+   let response = validateFields();
+
+   // Si la validación falla
+   if (!response) {
+     event.preventDefault();
+     alert("Por favor, corrige los campos con errores.");
+     window.location.href = "../../../errores/error1.html";
+     return;  // Detenemos el envío del formulario
+   }
   
   // Crear un objeto con los datos del usuario a partir de los valores del formulario, incluidos los campos deshabilitados
   const updatedUser = {
@@ -169,3 +207,20 @@ async function actualizarContadorCarrito() {
 
 // Llama a la función para actualizar el contador del carrito cuando la página se carga
 document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
+
+// EVENTOS DE VALIDACIÓN EN TIEMPO REAL
+[telefono, direccion, descripcion].forEach(input => {
+  input.addEventListener("blur", () => {
+      remover(input); // Llama a la función 'remover' para quitar mensajes de error
+  });
+});
+
+// Validación del teléfono
+telefono.addEventListener("keypress", (event) => {
+  solonumeros(event, telefono); // Permitir solo números
+});
+
+// Validación de la descripción
+descripcion.addEventListener("blur", (event) => {
+  validarDescripcion(event, descripcion); // Validar la descripción
+});

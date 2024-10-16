@@ -20,9 +20,14 @@ const descripcion = document.querySelector('#descripcion');
 //  Se añade un listener al formulario que llama a la función validar cuando se intenta enviar el formulario.
 $formulario.addEventListener("submit", (event) => {
     let response = is_valid(event, "form [required]");
-    // para hacer las peticiones 
-    // En lugar de pasar la ruta al recurso que deseas solicitar a la llamada del método fetch(), puedes crear un objeto de petición
-    // capturar todos los atributos
+
+    // Si la validación falla, evitar que se envíe el formulario
+    if (!response) {
+        event.preventDefault();
+        alert("Por favor, corrige los campos con errores.");
+        window.location.href = "../../../errores/error1.html";
+        return;  // Detenemos el envío del formulario
+    }
 
     const data = {
         nombres: nombres.value,

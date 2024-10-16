@@ -564,3 +564,18 @@ li .dropdown-item:active {
         min-height: 150px; /* Altura mínima reducida para móviles */
     }
 }
+
+.error {
+    border: solid 2px #bd0003;
+}
+
+.correcto {
+    border: solid 2px #5ccb5f;
+}
+
+.error-message {
+    color: #bd0003;
+    font-size: 16px;
+    margin-top: -25px;
+    margin-left: 4px;
+}

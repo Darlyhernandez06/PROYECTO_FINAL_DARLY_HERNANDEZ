@@ -1,3 +1,5 @@
+import is_valid from "../productos actualizaciones/modulos_validaciones/modulo_validacion.js";
+
 // Obtener el ID del producto de la URL
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
@@ -43,8 +45,18 @@ const loadProductData = async () => {
 
 // Actualizar el producto
 const updateProduct = async (event) => {
-    event.preventDefault();
+    // Validar los campos del formulario
+    const valid = is_valid(event, "form [required]");
+        
+    // Si la validación falla, evitar que se envíe el formulario
+    if (!valid) {
+        event.preventDefault();
+        alert("Por favor, corrige los campos con errores.");
+        window.location.href = "../../errores/error2.html";
+        return false;  // Detenemos el envío del formulario
+    }
 
+    // Crear el objeto del producto actualizado
     const updatedProduct = {
         nombre: inputNombre.value,
         descripción: inputDescripcion.value,
