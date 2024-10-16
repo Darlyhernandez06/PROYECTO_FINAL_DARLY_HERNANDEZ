@@ -8,9 +8,10 @@ const inputId = document.querySelector('#product-id');
 const inputNombre = document.querySelector('#product-name');
 const inputDescripcion = document.querySelector('#product-description');
 const inputPrecio = document.querySelector('#product-price');
-const inputImagen = document.querySelector('#productImage');
+const inputImagen = document.querySelector('#productImage'); // Input de archivo
 const inputCategoria = document.querySelector('#productCategory');
 const inputCantidad = document.querySelector('#product-quantity');
+const imgPreview = document.querySelector('#product-preview'); // Imagen de vista previa
 
 // Cargar datos del producto y llenar el formulario
 const loadProductData = async () => {
@@ -23,8 +24,14 @@ const loadProductData = async () => {
             inputDescripcion.value = product.descripción;
             inputPrecio.value = product.precio;
             inputCantidad.value = product.cantidad;
-            inputImagen.value = product.imagen;
             inputCategoria.value = product.categoria;
+
+            // Mostrar la imagen del producto en el elemento <img>
+            if (product.imagen) {
+                imgPreview.src = product.imagen; // Asignar el src de la imagen
+            } else {
+                imgPreview.src = ''; // Si no hay imagen, dejar el campo vacío
+            }
         } else {
             alert('Error al cargar los datos del producto.');
         }
@@ -43,7 +50,7 @@ const updateProduct = async (event) => {
         descripción: inputDescripcion.value,
         precio: inputPrecio.value,
         cantidad: inputCantidad.value,
-        imagen: inputImagen.value,
+        imagen: imgPreview.src, // Usar la imagen que ya está cargada como Base64
         categoria: inputCategoria.value,
         estado: "activo"
     };
@@ -74,6 +81,7 @@ document.addEventListener('DOMContentLoaded', loadProductData);
 
 // Manejar el envío del formulario
 form.addEventListener('submit', updateProduct);
+
 
 // - setItem: Almacena un valor en `localStorage` usando una clave específica.
 
