@@ -1,3 +1,3 @@
 # “COMPRA FRESCO CON MEGAPAQUETES: LA PLATAFORMA DE VENTA EN LINEA DE FRUTAS, VERDURAS, TUBERCULOS Y HORTALIZAS FRESCAS Y SALUDABLES”
 
-# LINK: https://drive.google.com/drive/folders/1YkdDFxGPnK2tR_AWLg7oE4UAnVbpjPVq?usp=sharing
+# LINK: https://drive.google.com/drive/folders/1TLtAlrz8XNAGJl5kaKJEcqg0AK-fsLd7?usp=sharing
